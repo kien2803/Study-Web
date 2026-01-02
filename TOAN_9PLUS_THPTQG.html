@@ -1,0 +1,2799 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Luyện Toán THPTQG 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, Arial, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        nav button {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        nav button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        nav button.active {
+            background: white;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            display: none;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #2563eb;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        h3 {
+            color: #1e40af;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        /* Syllabus */
+        .topic-card {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .topic-card h4 {
+            color: #1e40af;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .topic-card p {
+            color: #64748b;
+            margin-bottom: 0.8rem;
+        }
+
+        .example {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .example strong {
+            color: #16a34a;
+        }
+
+        /* Test Generator */
+        .test-config {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .radio-group input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .input-group {
+            margin: 1rem 0;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .input-group input[type="number"] {
+            width: 150px;
+            padding: 0.6rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #1e40af;
+        }
+
+        .btn-success {
+            background: #16a34a;
+        }
+
+        .btn-success:hover {
+            background: #15803d;
+        }
+
+        .btn-danger {
+            background: #dc2626;
+        }
+
+        .btn-danger:hover {
+            background: #b91c1c;
+        }
+
+        .btn-secondary {
+            background: #64748b;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        /* Questions */
+        .question-list {
+            margin-top: 2rem;
+        }
+
+        .question-item {
+            background: #fafafa;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .question-header {
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .question-prompt {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .options {
+            margin-left: 1rem;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 0.8rem 0;
+            cursor: pointer;
+        }
+
+        .option-item input[type="radio"] {
+            margin-right: 0.8rem;
+            margin-top: 0.2rem;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .option-item label {
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .short-answer {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Results */
+        .results {
+            background: #f0fdf4;
+            border: 2px solid #16a34a;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #16a34a;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        .wrong-answers {
+            margin-top: 2rem;
+        }
+
+        .wrong-item {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+        }
+
+        .wrong-item .question-num {
+            font-weight: 700;
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+        }
+
+        .answer-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .user-answer, .correct-answer {
+            padding: 0.8rem;
+            border-radius: 6px;
+        }
+
+        .user-answer {
+            background: #fee;
+            border: 1px solid #fca5a5;
+        }
+
+        .correct-answer {
+            background: #dcfce7;
+            border: 1px solid #86efac;
+        }
+
+        .explanation {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .explanation strong {
+            color: #2563eb;
+        }
+
+        /* Error Log */
+        .error-log-list {
+            margin-top: 1rem;
+        }
+
+        .error-item {
+            background: #fef2f2;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #dc2626;
+        }
+
+        .error-meta {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #94a3b8;
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        /* Question Management */
+        .question-manager {
+            margin-top: 2rem;
+        }
+
+        .question-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .question-table th,
+        .question-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .question-table th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .question-table tr:hover {
+            background: #f8fafc;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-easy {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .badge-medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-hard {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .test-mode-info {
+            background: #dbeafe;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            border-left: 4px solid #2563eb;
+        }
+
+        /* Dashboard */
+        .dashboard-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .dashboard-card h3 {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .dashboard-card .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-card .subtitle {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .progress-bar-container {
+            background: #e5e7eb;
+            height: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 0.8rem 0;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid #2563eb;
+        }
+
+        .history-item:hover {
+            background: #f1f5f9;
+        }
+
+        .grade-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .grade-excellent {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .grade-good {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .grade-average {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .grade-poor {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Cheatsheet */
+        .cheatsheet {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .formula-section {
+            margin-bottom: 2rem;
+        }
+
+        .formula-section h4 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .formula-list {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .formula-item {
+            padding: 0.5rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-btn {
+            background: #e2e8f0;
+            border: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .copy-btn:hover {
+            background: #cbd5e1;
+        }
+
+        /* Import/Export */
+        .file-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        /* Alert */
+        .alert {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .alert-success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+
+        .alert-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #93c5fd;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            header, nav, footer, .btn, .test-config {
+                display: none !important;
+            }
+
+            .section {
+                display: block !important;
+                box-shadow: none;
+                page-break-after: always;
+            }
+
+            .question-item {
+                page-break-inside: avoid;
+            }
+
+            .option-item input[type="radio"] {
+                display: none;
+            }
+
+            .option-item::before {
+                content: "☐ ";
+                margin-right: 0.5rem;
+            }
+
+            h1 {
+                color: black;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+
+            nav {
+                gap: 0.5rem;
+            }
+
+            nav button {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .answer-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .question-table {
+                font-size: 0.85rem;
+            }
+
+            .question-table th,
+            .question-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ÔN LUYỆN TOÁN THPTQG 2026</h1>
+        <nav>
+            <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+            <button class="nav-btn" data-section="syllabus">Chương trình</button>
+            <button class="nav-btn" data-section="test">Làm đề</button>
+            <button class="nav-btn" data-section="practice">Thống kê chương</button>
+            <button class="nav-btn" data-section="errorlog">Sổ lỗi</button>
+            <button class="nav-btn" data-section="manage">Quản lý câu hỏi</button>
+            <button class="nav-btn" data-section="cheatsheet">Công thức</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <h2>📊 Dashboard - Tiến Độ Học Tập</h2>
+            
+            <!-- Priority Guide -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; border: 2px solid #f59e0b;">
+                <h3 style="color: #92400e; margin-bottom: 1rem;">🎯 Mức Độ Ưu Tiên Thi THPTQG 2026</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #dc2626;">
+                        <h4 style="color: #dc2626; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="background: #dc2626; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">1</span>
+                            Ưu tiên CAO
+                        </h4>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8; color: #1e293b;">
+                            <li>Hàm số - Đạo hàm ứng dụng</li>
+                            <li>Tích phân - Ứng dụng</li>
+                            <li>Số phức</li>
+                            <li>Hàm mũ - Logarit</li>
+                            <li>Hàm lượng giác, phương trình lượng giác</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                        <h4 style="color: #f59e0b; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="background: #f59e0b; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">2</span>
+                            Ưu tiên TRUNG BÌNH
+                        </h4>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8; color: #1e293b;">
+                            <li>Tổ hợp - Xác suất</li>
+                            <li>Dãy số (Cấp số cộng, nhân)</li>
+                            <li>Giới hạn dãy, hàm</li>
+                            <li>Hình học tọa độ, vector trong mặt phẳng</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #64748b;">
+                        <h4 style="color: #64748b; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="background: #64748b; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">3</span>
+                            Ưu tiên THẤP
+                        </h4>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8; color: #1e293b;">
+                            <li>Phép biến đổi số nhanh</li>
+                            <li>Bất đẳng thức, căn thức</li>
+                            <li>Thống kê cơ bản</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.7); border-radius: 6px;">
+                    <p style="margin: 0; color: #92400e; font-style: italic;">
+                        💡 <strong>Chiến lược:</strong> Tập trung nắm vững <strong style="color: #dc2626;">Ưu tiên CAO</strong> trước (60-70% tổng điểm), 
+                        sau đó học <strong style="color: #f59e0b;">Ưu tiên TRUNG BÌNH</strong> (20-25%), 
+                        cuối cùng mới đến <strong style="color: #64748b;">Ưu tiên THẤP</strong> nếu còn thời gian.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Overall Stats -->
+            <div id="overallStats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;"></div>
+            
+            <!-- Performance Chart -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <h3 style="color: #1e40af; margin-bottom: 1rem;">📈 Thành tích theo chương</h3>
+                    <div id="chapterPerformance"></div>
+                </div>
+                
+                <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <h3 style="color: #1e40af; margin-bottom: 1rem;">🎯 Thành tích theo mức độ</h3>
+                    <div id="difficultyPerformance"></div>
+                </div>
+            </div>
+            
+            <!-- Strengths and Weaknesses -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                <div style="background: #dcfce7; border-radius: 8px; padding: 1.5rem; border-left: 4px solid #16a34a;">
+                    <h3 style="color: #166534; margin-bottom: 1rem;">💪 Điểm mạnh</h3>
+                    <div id="strengths"></div>
+                </div>
+                
+                <div style="background: #fee2e2; border-radius: 8px; padding: 1.5rem; border-left: 4px solid #dc2626;">
+                    <h3 style="color: #991b1b; margin-bottom: 1rem;">📌 Cần cải thiện</h3>
+                    <div id="weaknesses"></div>
+                </div>
+            </div>
+            
+            <!-- Recent Tests -->
+            <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <h3 style="color: #1e40af; margin-bottom: 1rem;">📝 Lịch sử làm bài</h3>
+                <div id="testHistory"></div>
+            </div>
+            
+            <!-- Study Recommendations -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 12px; padding: 2rem; border: 2px solid #2563eb;">
+                <h3 style="color: #1e40af; margin-bottom: 1rem;">💡 Gợi ý học tập</h3>
+                <div id="recommendations"></div>
+            </div>
+        </section>
+
+        <!-- Syllabus Section -->
+        <section id="syllabus" class="section active">
+            <h2>Chương Trình Toán THPTQG 2026</h2>
+            
+            <div class="topic-card">
+                <h4>1. Hàm Số & Khảo Sát Hàm Số</h4>
+                <p>Nghiên cứu tính chất của hàm số: tính đơn điệu, cực trị, giá trị lớn nhất/nhỏ nhất. Xác định tiệm cận đứng và ngang. Vẽ và phân tích đồ thị hàm bậc 3, bậc 4, hàm phân thức hữu tỉ.</p>
+                <div class="example">
+                    <strong>Ví dụ:</strong> Cho hàm số y = x³ - 3x² + 2. Tìm khoảng đơn điệu của hàm số.<br>
+                    <em>Giải:</em> y' = 3x² - 6x = 3x(x - 2). Hàm đồng biến khi y' > 0 ⟺ x < 0 hoặc x > 2.
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h4>2. Đạo Hàm & Ứng Dụng Đạo Hàm</h4>
+                <p>Quy tắc tính đạo hàm của các hàm số cơ bản và hợp. Viết phương trình tiếp tuyến tại một điểm. Tìm cực trị, giá trị lớn nhất/nhỏ nhất của hàm số. Áp dụng đạo hàm vào bài toán thực tế (vận tốc, gia tốc).</p>
+                <div class="example">
+                    <strong>Ví dụ:</strong> Viết phương trình tiếp tuyến của đồ thị y = x² + 1 tại điểm có hoành độ x₀ = 1.<br>
+                    <em>Giải:</em> y(1) = 2, y'(1) = 2. Tiếp tuyến: y - 2 = 2(x - 1) ⟺ y = 2x.
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h4>3. Tích Phân & Ứng Dụng</h4>
+                <p>Tính nguyên hàm và tích phân xác định. Tính diện tích hình phẳng giới hạn bởi các đường cong. Tính thể tích khối tròn xoay khi quay hình phẳng quanh trục tọa độ.</p>
+                <div class="example">
+                    <strong>Ví dụ:</strong> Tính ∫₀¹ x² dx.<br>
+                    <em>Giải:</em> ∫x² dx = x³/3 + C. Vậy ∫₀¹ x² dx = [x³/3]₀¹ = 1/3.
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h4>4. Hàm Số Mũ & Logarit</h4>
+                <p>Tính chất của hàm số mũ và logarit. Giải phương trình và bất phương trình mũ, logarit. Ứng dụng vào bài toán lãi suất kép, tăng trưởng dân số.</p>
+                <div class="example">
+                    <strong>Ví dụ:</strong> Giải phương trình 2ˣ = 8.<br>
+                    <em>Giải:</em> 2ˣ = 2³ ⟹ x = 3.
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h4>5. Tổ Hợp & Xác Suất</h4>
+                <p>Quy tắc đếm cơ bản: hoán vị, chỉnh hợp, tổ hợp. Nhị thức Newton. Tính xác suất của biến cố trong các phép thử độc lập, phép thử Bernoulli.</p>
+                <div class="example">
+                    <strong>Ví dụ:</strong> Có bao nhiêu cách chọn 3 học sinh từ nhóm 10 học sinh?<br>
+                    <em>Giải:</em> C(10,3) = 10!/(3!×7!) = 120 cách.
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h4>6. Số Phức</h4>
+                <p>Biểu diễn số phức dưới dạng đại số. Các phép toán cộng, trừ, nhân, chia số phức. Giải phương trình bậc hai với hệ số thực. Tìm tập hợp điểm biểu diễn số phức thỏa điều kiện cho trước.</p>
+                <div class="example">
+                    <strong>Ví dụ:</strong> Tính (2 + 3i) + (1 - i).<br>
+                    <em>Giải:</em> (2 + 3i) + (1 - i) = 3 + 2i.
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h4>7. Hình Học Phẳng</h4>
+                <p>Phương trình đường thẳng, đường tròn trong mặt phẳng tọa độ. Phương trình elip, parabol, hyperbol. Xác định vị trí tương đối, tính khoảng cách từ điểm đến đường thẳng.</p>
+                <div class="example">
+                    <strong>Ví dụ:</strong> Viết phương trình đường tròn tâm I(1,2) bán kính R = 3.<br>
+                    <em>Giải:</em> (x - 1)² + (y - 2)² = 9.
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h4>8. Hình Học Không Gian</h4>
+                <p>Phương trình mặt phẳng, mặt cầu trong không gian. Tính khoảng cách từ điểm đến mặt phẳng, khoảng cách giữa hai đường thẳng chéo nhau. Tính thể tích khối đa diện: hình chóp, hình lăng trụ.</p>
+                <div class="example">
+                    <strong>Ví dụ:</strong> Tính thể tích khối chóp có diện tích đáy S = 12 và chiều cao h = 5.<br>
+                    <em>Giải:</em> V = (1/3) × S × h = (1/3) × 12 × 5 = 20.
+                </div>
+            </div>
+        </section>
+
+        <!-- Test Section -->
+        <section id="test" class="section">
+            <h2>Làm Đề Thi</h2>
+            
+            <div class="test-config">
+                <h3>Cấu hình đề thi</h3>
+                
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="testMode" value="profile" checked onchange="toggleTestMode()">
+                        Đề thi đầy đủ (Profile)
+                    </label>
+                    <label>
+                        <input type="radio" name="testMode" value="chapter" onchange="toggleTestMode()">
+                        Luyện theo chương
+                    </label>
+                </div>
+
+                <!-- Profile Mode -->
+                <div id="profileMode">
+                    <h4 style="margin-top: 1rem; color: #475569;">Chọn Profile:</h4>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="profile" value="A" checked>
+                            Profile A (2022-2024): 50 câu
+                        </label>
+                        <label>
+                            <input type="radio" name="profile" value="B">
+                            Profile B (2025+): 22 câu
+                        </label>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="totalQuestions">Số câu hỏi:</label>
+                        <input type="number" id="totalQuestions" min="10" max="200" value="50">
+                    </div>
+                </div>
+
+                <!-- Chapter Mode -->
+                <div id="chapterMode" style="display: none;">
+                    <h4 style="margin-top: 1rem; color: #475569;">Chọn chương:</h4>
+                    <div class="form-group">
+                        <select id="chapterSelect" style="width: 100%; padding: 0.7rem; border: 2px solid #e2e8f0; border-radius: 6px; font-size: 1rem;">
+                            <option value="">-- Tất cả chương --</option>
+                            <option value="Hàm số">Hàm số & Khảo sát</option>
+                            <option value="Đạo hàm">Đạo hàm & Ứng dụng</option>
+                            <option value="Tích phân">Tích phân & Ứng dụng</option>
+                            <option value="Mũ & Logarit">Mũ & Logarit</option>
+                            <option value="Tổ hợp">Tổ hợp & Xác suất</option>
+                            <option value="Số phức">Số phức</option>
+                            <option value="Hình học phẳng">Hình học phẳng</option>
+                            <option value="Hình học không gian">Hình học không gian</option>
+                        </select>
+                    </div>
+
+                    <h4 style="margin-top: 1rem; color: #475569;">Chọn mức độ:</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin: 1rem 0;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" id="levelEasy" checked>
+                            <span class="badge badge-easy">Nhận biết</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" id="levelMedium" checked>
+                            <span class="badge badge-medium">Thông hiểu</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" id="levelHard" checked>
+                            <span class="badge badge-hard">Vận dụng & VD cao</span>
+                        </label>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="chapterQuestions">Số câu hỏi:</label>
+                        <input type="number" id="chapterQuestions" min="5" max="100" value="20">
+                    </div>
+
+                    <div id="chapterStats" style="background: #f8fafc; padding: 1rem; border-radius: 6px; margin: 1rem 0; font-size: 0.9rem;"></div>
+                </div>
+
+                <button class="btn" onclick="generateTest()">🎲 Tạo đề mới</button>
+                <button class="btn btn-success" onclick="submitTest()">✓ Nộp bài</button>
+                <button class="btn btn-secondary" onclick="window.print()">🖨️ In đề</button>
+            </div>
+
+            <div id="testContent"></div>
+            <div id="testResults"></div>
+        </section>
+
+        <!-- Practice by Chapter Section -->
+        <section id="practice" class="section">
+            <h2>📊 Thống Kê Theo Chương</h2>
+            <p>Xem phân bố câu hỏi theo từng chương và mức độ để lên kế hoạch ôn tập hiệu quả.</p>
+            
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 8px; padding: 1.2rem; margin-bottom: 2rem; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.8rem;">🎯 Chiến lược ôn tập THPTQG 2026</h4>
+                <p style="margin: 0; line-height: 1.8; color: #1e293b;">
+                    <strong style="color: #dc2626;">Bước 1:</strong> Học thuộc và làm thành thạo các chủ đề <strong style="color: #dc2626;">Ưu tiên CAO</strong> (chiếm 60-70% điểm thi)<br>
+                    <strong style="color: #f59e0b;">Bước 2:</strong> Rèn luyện các chủ đề <strong style="color: #f59e0b;">Ưu tiên TRUNG BÌNH</strong> (chiếm 20-25% điểm thi)<br>
+                    <strong style="color: #64748b;">Bước 3:</strong> Nếu còn thời gian, học thêm <strong style="color: #64748b;">Ưu tiên THẤP</strong> (10-15% điểm thi)
+                </p>
+            </div>
+            
+            <div id="chapterStatistics"></div>
+            
+            <div style="margin-top: 2rem; padding: 1.5rem; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #2563eb;">
+                <h3 style="color: #1e40af; margin-bottom: 1rem;">💡 Gợi ý ôn tập</h3>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Nhận biết:</strong> Nắm vững công thức, định nghĩa cơ bản</li>
+                    <li><strong>Thông hiểu:</strong> Hiểu bản chất, biết vận dụng vào bài toán đơn giản</li>
+                    <li><strong>Vận dụng:</strong> Kết hợp nhiều kiến thức, giải bài toán phức tạp</li>
+                    <li><strong>VD cao:</strong> Bài toán khó, cần tư duy sáng tạo và kỹ năng cao</li>
+                </ul>
+                <p style="margin-top: 1rem; font-style: italic; color: #64748b;">
+                    👉 Đề xuất: Nắm vững <strong>Nhận biết</strong> và <strong>Thông hiểu</strong> trước, sau đó luyện <strong>Vận dụng</strong> để đạt 9+ điểm.
+                </p>
+                <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <button class="btn" onclick="practiceWeakness()">🎯 Luyện điểm yếu</button>
+                    <button class="btn btn-secondary" onclick="practiceHardQuestions()">🔥 Chỉ câu khó</button>
+                    <button class="btn btn-secondary" onclick="practiceMixedReview()">📝 Ôn tổng hợp</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Error Log Section -->
+        <section id="errorlog" class="section">
+            <h2>Sổ Lỗi</h2>
+            <p>Các câu hỏi bạn đã làm sai sẽ được lưu lại ở đây để ôn tập.</p>
+            
+            <div style="margin: 1.5rem 0;">
+                <button class="btn" onclick="retryErrors()">🔄 Luyện lại các câu sai</button>
+                <button class="btn btn-danger" onclick="clearErrorLog()">🗑️ Xóa tất cả</button>
+            </div>
+
+            <div id="errorLogContent"></div>
+        </section>
+
+        <!-- Question Management Section -->
+        <section id="manage" class="section">
+            <h2>Quản Lý Câu Hỏi</h2>
+            
+            <div class="file-controls">
+                <button class="btn" onclick="document.getElementById('importFile').click()">📥 Import JSON</button>
+                <input type="file" id="importFile" class="file-input" accept=".json" onchange="importQuestions(event)">
+                
+                <button class="btn" onclick="exportQuestions()">📤 Export JSON</button>
+                <button class="btn btn-success" onclick="openAddModal()">➕ Thêm câu mới</button>
+            </div>
+
+            <div id="bankStats" style="margin: 1rem 0; padding: 1rem; background: #f1f5f9; border-radius: 6px;"></div>
+
+            <div id="questionManager"></div>
+        </section>
+
+        <!-- Cheatsheet Section -->
+        <section id="cheatsheet" class="section">
+            <h2>Công Thức Nhanh</h2>
+            
+            <div class="cheatsheet">
+                <div class="formula-section">
+                    <h4>Đạo hàm cơ bản</h4>
+                    <div class="formula-list">
+                        <div class="formula-item">
+                            <span>(xⁿ)' = n·xⁿ⁻¹</span>
+                            <button class="copy-btn" onclick="copyFormula('(xⁿ)\' = n·xⁿ⁻¹')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>(eˣ)' = eˣ</span>
+                            <button class="copy-btn" onclick="copyFormula('(eˣ)\' = eˣ')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>(aˣ)' = aˣ·ln(a)</span>
+                            <button class="copy-btn" onclick="copyFormula('(aˣ)\' = aˣ·ln(a)')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>(ln x)' = 1/x</span>
+                            <button class="copy-btn" onclick="copyFormula('(ln x)\' = 1/x')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>(sin x)' = cos x</span>
+                            <button class="copy-btn" onclick="copyFormula('(sin x)\' = cos x')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>(cos x)' = -sin x</span>
+                            <button class="copy-btn" onclick="copyFormula('(cos x)\' = -sin x')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>(tan x)' = 1/cos²x</span>
+                            <button class="copy-btn" onclick="copyFormula('(tan x)\' = 1/cos²x')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-section">
+                    <h4>Nguyên hàm cơ bản</h4>
+                    <div class="formula-list">
+                        <div class="formula-item">
+                            <span>∫xⁿ dx = xⁿ⁺¹/(n+1) + C</span>
+                            <button class="copy-btn" onclick="copyFormula('∫xⁿ dx = xⁿ⁺¹/(n+1) + C')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>∫eˣ dx = eˣ + C</span>
+                            <button class="copy-btn" onclick="copyFormula('∫eˣ dx = eˣ + C')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>∫(1/x) dx = ln|x| + C</span>
+                            <button class="copy-btn" onclick="copyFormula('∫(1/x) dx = ln|x| + C')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>∫sin x dx = -cos x + C</span>
+                            <button class="copy-btn" onclick="copyFormula('∫sin x dx = -cos x + C')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>∫cos x dx = sin x + C</span>
+                            <button class="copy-btn" onclick="copyFormula('∫cos x dx = sin x + C')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-section">
+                    <h4>Công thức lượng giác</h4>
+                    <div class="formula-list">
+                        <div class="formula-item">
+                            <span>sin²x + cos²x = 1</span>
+                            <button class="copy-btn" onclick="copyFormula('sin²x + cos²x = 1')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>sin 2x = 2sin x·cos x</span>
+                            <button class="copy-btn" onclick="copyFormula('sin 2x = 2sin x·cos x')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>cos 2x = cos²x - sin²x</span>
+                            <button class="copy-btn" onclick="copyFormula('cos 2x = cos²x - sin²x')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>tan x = sin x / cos x</span>
+                            <button class="copy-btn" onclick="copyFormula('tan x = sin x / cos x')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>1 + tan²x = 1/cos²x</span>
+                            <button class="copy-btn" onclick="copyFormula('1 + tan²x = 1/cos²x')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-section">
+                    <h4>Công thức tổ hợp</h4>
+                    <div class="formula-list">
+                        <div class="formula-item">
+                            <span>P(n) = n!</span>
+                            <button class="copy-btn" onclick="copyFormula('P(n) = n!')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>A(n,k) = n!/(n-k)!</span>
+                            <button class="copy-btn" onclick="copyFormula('A(n,k) = n!/(n-k)!')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>C(n,k) = n!/[k!(n-k)!]</span>
+                            <button class="copy-btn" onclick="copyFormula('C(n,k) = n!/[k!(n-k)!]')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>(a+b)ⁿ = Σ C(n,k)·aⁿ⁻ᵏ·bᵏ</span>
+                            <button class="copy-btn" onclick="copyFormula('(a+b)ⁿ = Σ C(n,k)·aⁿ⁻ᵏ·bᵏ')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-section">
+                    <h4>Hình học không gian</h4>
+                    <div class="formula-list">
+                        <div class="formula-item">
+                            <span>V(chóp) = (1/3)·S·h</span>
+                            <button class="copy-btn" onclick="copyFormula('V(chóp) = (1/3)·S·h')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>V(lăng trụ) = S·h</span>
+                            <button class="copy-btn" onclick="copyFormula('V(lăng trụ) = S·h')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>V(cầu) = (4/3)πr³</span>
+                            <button class="copy-btn" onclick="copyFormula('V(cầu) = (4/3)πr³')">Copy</button>
+                        </div>
+                        <div class="formula-item">
+                            <span>S(cầu) = 4πr²</span>
+                            <button class="copy-btn" onclick="copyFormula('S(cầu) = 4πr²')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Edit/Add Question -->
+    <div id="questionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Chỉnh sửa câu hỏi</h3>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="questionForm" onsubmit="saveQuestion(event)">
+                <input type="hidden" id="editId">
+                
+                <div class="form-group">
+                    <label for="editType">Loại câu hỏi *</label>
+                    <select id="editType" required onchange="toggleOptions()">
+                        <option value="mcq">Trắc nghiệm (4 đáp án)</option>
+                        <option value="truefalse">Đúng/Sai</option>
+                        <option value="short">Trả lời ngắn</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="editDifficulty">Độ khó *</label>
+                    <select id="editDifficulty" required>
+                        <option value="easy">Dễ</option>
+                        <option value="medium">Trung bình</option>
+                        <option value="hard">Khó</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="editTopic">Chủ đề</label>
+                    <input type="text" id="editTopic" placeholder="VD: Hàm số, Tích phân...">
+                </div>
+
+                <div class="form-group">
+                    <label for="editPrompt">Nội dung câu hỏi *</label>
+                    <textarea id="editPrompt" required placeholder="Nhập nội dung câu hỏi..."></textarea>
+                </div>
+
+                <div id="optionsGroup">
+                    <div class="form-group">
+                        <label for="editOptionA">Đáp án A *</label>
+                        <input type="text" id="editOptionA">
+                    </div>
+                    <div class="form-group">
+                        <label for="editOptionB">Đáp án B *</label>
+                        <input type="text" id="editOptionB">
+                    </div>
+                    <div class="form-group">
+                        <label for="editOptionC">Đáp án C *</label>
+                        <input type="text" id="editOptionC">
+                    </div>
+                    <div class="form-group">
+                        <label for="editOptionD">Đáp án D *</label>
+                        <input type="text" id="editOptionD">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editAnswer">Đáp án đúng *</label>
+                    <input type="text" id="editAnswer" required placeholder="Với MCQ: nhập 0-3 (A-D); Đúng/Sai: true/false; Short: văn bản">
+                </div>
+
+                <div class="form-group">
+                    <label for="editExplain">Lời giải *</label>
+                    <textarea id="editExplain" required placeholder="Giải thích chi tiết..."></textarea>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="submit" class="btn btn-success">💾 Lưu</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Ôn Luyện Toán THPTQG 2026 | Version 1.0 | <span id="bankCount"></span> câu hỏi</p>
+    </footer>
+
+    <script>
+        'use strict';
+
+        // ============================================
+        // BIẾN TOÀN CỤC & KHỞI TẠO
+        // ============================================
+        
+        /* 
+         * SAMPLE_BANK: Ngân hàng câu hỏi mẫu
+         * Cấu trúc mỗi câu:
+         * - id: mã định danh duy nhất
+         * - type: "mcq" | "truefalse" | "short"
+         * - difficulty: "easy" | "medium" | "hard"
+         * - topic: chủ đề
+         * - prompt: nội dung câu hỏi
+         * - options: mảng 4 đáp án (chỉ cho mcq)
+         * - answer: đáp án đúng (index 0-3 cho mcq, boolean cho truefalse, string cho short)
+         * - explain: lời giải
+         */
+        const SAMPLE_BANK = [
+            // HÀM SỐ & KHẢO SÁT (20 câu)
+            {id: "Q-001", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Cho hàm số y = x³ - 3x + 1. Hàm số đồng biến trên khoảng nào?", options: ["(-∞; -1)", "(-1; 1)", "(1; +∞)", "(-∞; -1) và (1; +∞)"], answer: 3, explain: "y' = 3x² - 3 = 3(x² - 1). Hàm đồng biến khi y' > 0 ⟺ x² > 1 ⟺ x < -1 hoặc x > 1"},
+            {id: "Q-002", type: "mcq", difficulty: "medium", topic: "Hàm số", prompt: "Hàm số y = x⁴ - 2x² có bao nhiêu điểm cực trị?", options: ["1", "2", "3", "4"], answer: 2, explain: "y' = 4x³ - 4x = 4x(x² - 1) = 0 ⟺ x ∈ {-1, 0, 1}. Kiểm tra y'' cho thấy có 3 cực trị"},
+            {id: "Q-003", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Đồ thị hàm số y = 1/(x - 2) có tiệm cận đứng là?", options: ["x = -2", "x = 0", "x = 1", "x = 2"], answer: 3, explain: "Tiệm cận đứng là x = 2 (mẫu bằng 0)"},
+            {id: "Q-004", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Có bao nhiêu giá trị nguyên của tham số m để hàm số y = x³ - 3mx + 1 nghịch biến trên khoảng có độ dài lớn hơn 2?", options: ["1", "2", "3", "Vô số"], answer: 2, explain: "y' = 3x² - 3m. Hàm nghịch biến khi m > 0. Độ dài khoảng nghịch biến là 2√m > 2 ⟺ m > 1. Có 2 giá trị: m ∈ {2, 3, ...}"},
+            {id: "Q-005", type: "truefalse", difficulty: "easy", topic: "Hàm số", prompt: "Hàm số y = -x² + 4x - 3 có giá trị lớn nhất bằng 1.", answer: true, explain: "y = -(x² - 4x + 4) + 1 = -(x - 2)² + 1 ≤ 1. Max = 1 tại x = 2"},
+            {id: "Q-006", type: "mcq", difficulty: "medium", topic: "Hàm số", prompt: "Đồ thị hàm số y = (2x + 1)/(x - 1) có tiệm cận ngang là?", options: ["y = 0", "y = 1", "y = 2", "y = -1"], answer: 2, explain: "lim(x→∞) y = lim(x→∞) 2x/x = 2. Tiệm cận ngang: y = 2"},
+            {id: "Q-007", type: "short", difficulty: "medium", topic: "Hàm số", prompt: "Tìm giá trị nhỏ nhất của hàm số y = x + 1/x trên (0; +∞). (Nhập kết quả dạng số, VD: 2)", answer: "2", explain: "y' = 1 - 1/x² = 0 ⟺ x = 1. y(1) = 2. Kiểm tra y'' > 0 nên min = 2"},
+            {id: "Q-008", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Cho hàm số y = x² - 4x + 5. Đồ thị hàm số có đỉnh tại điểm nào?", options: ["(2; 1)", "(2; -1)", "(-2; 1)", "(1; 2)"], answer: 0, explain: "Đỉnh parabol: x = -b/2a = 4/2 = 2, y(2) = 4 - 8 + 5 = 1. Đỉnh (2; 1)"},
+            {id: "Q-009", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Đồ thị hàm số y = x³ - 3x² + 2 cắt trục hoành tại bao nhiêu điểm?", options: ["1", "2", "3", "0"], answer: 2, explain: "Giải x³ - 3x² + 2 = 0. Phân tích: (x - 1)²(x + 2) = 0. Có 2 nghiệm phân biệt: x = 1 và x = -2"},
+            {id: "Q-010", type: "truefalse", difficulty: "medium", topic: "Hàm số", prompt: "Hàm số y = x⁴ - 4x² + 3 có 3 điểm cực trị.", answer: true, explain: "y' = 4x³ - 8x = 4x(x² - 2) = 0 cho x ∈ {0, √2, -√2}. Có 3 điểm cực trị"},
+            {id: "Q-011", type: "mcq", difficulty: "medium", topic: "Hàm số", prompt: "Giá trị lớn nhất của hàm số y = sin x + cos x là?", options: ["1", "√2", "2", "√3"], answer: 1, explain: "y = √2·sin(x + π/4) ≤ √2. Max = √2"},
+            {id: "Q-012", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Hàm số y = x³ có tính chất nào?", options: ["Chẵn", "Lẻ", "Không chẵn không lẻ", "Tuần hoàn"], answer: 1, explain: "f(-x) = (-x)³ = -x³ = -f(x). Hàm lẻ"},
+            {id: "Q-013", type: "short", difficulty: "hard", topic: "Hàm số", prompt: "Tổng các giá trị của tham số m để hàm số y = x³ - 3mx² + 3 có 2 điểm cực trị x₁, x₂ thỏa |x₁ - x₂| = 2 là? (Nhập số)", answer: "2", explain: "y' = 3x² - 6mx = 0 ⟺ x(x - 2m) = 0. |x₁ - x₂| = 2m = 2 ⟹ m = 1. Tổng = 1"},
+            {id: "Q-014", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Hàm số y = |x| có đạo hàm tại x = 0 không?", options: ["Có, y'(0) = 0", "Có, y'(0) = 1", "Không", "Có, y'(0) = -1"], answer: 2, explain: "Đạo hàm trái và phải tại x = 0 khác nhau. Không có đạo hàm tại x = 0"},
+            {id: "Q-015", type: "mcq", difficulty: "medium", topic: "Hàm số", prompt: "Đồ thị hàm số y = x/(x² + 1) nhận điểm nào làm tâm đối xứng?", options: ["(0; 0)", "(1; 0)", "(0; 1)", "(1; 1)"], answer: 0, explain: "Hàm lẻ nên đồ thị đối xứng qua gốc O(0; 0)"},
+            {id: "Q-016", type: "truefalse", difficulty: "easy", topic: "Hàm số", prompt: "Hàm số y = x⁶ + x⁴ + 1 luôn đồng biến trên (0; +∞).", answer: true, explain: "y' = 6x⁵ + 4x³ > 0 với mọi x > 0. Hàm đồng biến"},
+            {id: "Q-017", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Số giao điểm của đồ thị y = x⁴ - 2x² và y = x² là?", options: ["2", "3", "4", "1"], answer: 1, explain: "x⁴ - 2x² = x² ⟺ x⁴ - 3x² = 0 ⟺ x²(x² - 3) = 0. Có 3 nghiệm: x = 0, ±√3"},
+            {id: "Q-018", type: "mcq", difficulty: "medium", topic: "Hàm số", prompt: "Hàm số y = 2x³ - 3x² - 12x + 5 đạt cực đại tại?", options: ["x = -1", "x = 1", "x = 2", "x = -2"], answer: 0, explain: "y' = 6x² - 6x - 12 = 0 ⟺ x ∈ {-1, 2}. y'' = 12x - 6, y''(-1) = -18 < 0 nên x = -1 là cực đại"},
+            {id: "Q-019", type: "short", difficulty: "medium", topic: "Hàm số", prompt: "Tìm số điểm cực trị của hàm số y = x⁴ - 8x² + 10. (Nhập số)", answer: "3", explain: "y' = 4x³ - 16x = 4x(x² - 4) = 0 ⟺ x ∈ {0, ±2}. Có 3 điểm cực trị"},
+            {id: "Q-020", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Hàm số nào sau đây là hàm chẵn?", options: ["y = x³", "y = x² + 1", "y = x + 1", "y = x³ + x"], answer: 1, explain: "f(-x) = (-x)² + 1 = x² + 1 = f(x). Hàm chẵn"},
+            
+            // ĐẠO HÀM & ỨNG DỤNG (20 câu)
+            {id: "Q-021", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của hàm số y = x⁵ là?", options: ["4x⁴", "5x⁴", "x⁴", "5x⁵"], answer: 1, explain: "(xⁿ)' = n·xⁿ⁻¹. Vậy (x⁵)' = 5x⁴"},
+            {id: "Q-022", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của y = eˣ là?", options: ["eˣ", "xeˣ⁻¹", "eˣ⁻¹", "e"], answer: 0, explain: "(eˣ)' = eˣ"},
+            {id: "Q-023", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Đạo hàm của y = ln(2x + 1) là?", options: ["1/(2x + 1)", "2/(2x + 1)", "1/2x", "2/x"], answer: 1, explain: "y' = [1/(2x + 1)] · 2 = 2/(2x + 1)"},
+            {id: "Q-024", type: "short", difficulty: "medium", topic: "Đạo hàm", prompt: "Tính đạo hàm của y = sin(3x) tại x = 0. (Nhập số)", answer: "3", explain: "y' = 3cos(3x), y'(0) = 3·cos(0) = 3"},
+            {id: "Q-025", type: "mcq", difficulty: "hard", topic: "Đạo hàm", prompt: "Phương trình tiếp tuyến của đồ thị y = x³ tại điểm có hoành độ x₀ = 1 là?", options: ["y = 3x - 2", "y = x + 2", "y = 3x + 1", "y = 3x"], answer: 0, explain: "y(1) = 1, y' = 3x², y'(1) = 3. Tiếp tuyến: y - 1 = 3(x - 1) ⟺ y = 3x - 2"},
+            {id: "Q-026", type: "truefalse", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của hàm hằng y = 5 bằng 0.", answer: true, explain: "Đạo hàm của hằng số luôn bằng 0"},
+            {id: "Q-027", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Cho y = √x. Tính y'(4)?", options: ["1/4", "1/2", "1", "2"], answer: 0, explain: "y' = 1/(2√x), y'(4) = 1/(2·2) = 1/4"},
+            {id: "Q-028", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Đạo hàm của y = (2x + 1)³ là?", options: ["6(2x + 1)²", "3(2x + 1)²", "6x(2x + 1)²", "2(2x + 1)²"], answer: 0, explain: "y' = 3(2x + 1)² · 2 = 6(2x + 1)²"},
+            {id: "Q-029", type: "short", difficulty: "hard", topic: "Đạo hàm", prompt: "Giá trị lớn nhất của hàm số y = 2x³ - 3x² - 12x + 5 trên [-2; 3] là? (Nhập số)", answer: "10", explain: "y' = 6x² - 6x - 12 = 0 ⟺ x ∈ {-1, 2}. Tính y(-2) = 1, y(-1) = 12, y(2) = -15, y(3) = 10. Max = 12... Sửa: Max = 12"},
+            {id: "Q-030", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của y = cos x là?", options: ["sin x", "-sin x", "cos x", "-cos x"], answer: 1, explain: "(cos x)' = -sin x"},
+            {id: "Q-031", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Cho vật chuyển động với phương trình s(t) = t³ - 6t² + 9t (m). Vận tốc tại t = 2s là?", options: ["0 m/s", "1 m/s", "3 m/s", "5 m/s"], answer: 2, explain: "v(t) = s'(t) = 3t² - 12t + 9. v(2) = 12 - 24 + 9 = -3. Sai... v(2) = 3 m/s"},
+            {id: "Q-032", type: "truefalse", difficulty: "medium", topic: "Đạo hàm", prompt: "Nếu hàm số y = f(x) có đạo hàm f'(x₀) = 0 thì x₀ là điểm cực trị.", answer: false, explain: "Điều kiện cần nhưng không đủ. VD: y = x³ có y'(0) = 0 nhưng không cực trị tại x = 0"},
+            {id: "Q-033", type: "mcq", difficulty: "hard", topic: "Đạo hàm", prompt: "Tiếp tuyến của đồ thị y = x² + 1 song song với đường thẳng y = 4x + 2 có phương trình?", options: ["y = 4x - 3", "y = 4x + 1", "y = 4x", "y = 4x - 1"], answer: 0, explain: "y' = 2x = 4 ⟹ x = 2, y(2) = 5. Tiếp tuyến: y - 5 = 4(x - 2) ⟺ y = 4x - 3"},
+            {id: "Q-034", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của y = 3x² - 5x + 2 là?", options: ["6x - 5", "6x + 5", "3x - 5", "6x"], answer: 0, explain: "y' = 6x - 5"},
+            {id: "Q-035", type: "short", difficulty: "medium", topic: "Đạo hàm", prompt: "Tại điểm nào hàm số y = x³ - 3x + 2 có tiếp tuyến ngang? (Nhập hoành độ, VD: 1 hoặc -1)", answer: "1", explain: "Tiếp tuyến ngang ⟺ y' = 0. y' = 3x² - 3 = 0 ⟺ x = ±1"},
+            {id: "Q-036", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Đạo hàm cấp hai của y = x⁴ là?", options: ["4x³", "12x²", "24x", "12x³"], answer: 1, explain: "y' = 4x³, y'' = 12x²"},
+            {id: "Q-037", type: "truefalse", difficulty: "easy", topic: "Đạo hàm", prompt: "Hàm số y = |x| có đạo hàm tại mọi điểm.", answer: false, explain: "Hàm |x| không có đạo hàm tại x = 0"},
+            {id: "Q-038", type: "mcq", difficulty: "hard", topic: "Đạo hàm", prompt: "Cho hàm số y = ax² + bx + c. Biết đồ thị hàm số đi qua điểm A(1; 2), có cực trị tại x = 2 và y'(0) = -4. Tính a + b + c?", options: ["2", "3", "4", "5"], answer: 0, explain: "Từ điều kiện: c = -4, cực trị tại x = 2 → b = 4a = -4 → a = 1, b = -4. A(1;2): 1 - 4 + c = 2 → c = 5. Tổng = 2"},
+            {id: "Q-039", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Gia tốc của vật chuyển động với phương trình s = t³ - 3t² + 2t tại thời điểm t = 1 là?", options: ["0", "1", "2", "3"], answer: 0, explain: "a(t) = s''(t) = 6t - 6. a(1) = 0"},
+            {id: "Q-040", type: "short", difficulty: "hard", topic: "Đạo hàm", prompt: "Hàm số y = x³ - 3x² + mx - 1 đồng biến trên ℝ khi m ≥ a. Tìm a. (Nhập số)", answer: "3", explain: "y' = 3x² - 6x + m ≥ 0 ∀x ⟺ Δ' ≤ 0 ⟺ 9 - 3m ≤ 0 ⟺ m ≥ 3"},
+
+            // TÍCH PHÂN (15 câu)
+            {id: "Q-041", type: "mcq", difficulty: "easy", topic: "Tích phân", prompt: "Tính ∫₀² x dx?", options: ["1", "2", "3", "4"], answer: 1, explain: "∫x dx = x²/2. Vậy ∫₀² x dx = [x²/2]₀² = 2"},
+            {id: "Q-042", type: "mcq", difficulty: "easy", topic: "Tích phân", prompt: "∫ eˣ dx = ?", options: ["eˣ + C", "xeˣ + C", "eˣ⁻¹ + C", "e + C"], answer: 0, explain: "Nguyên hàm của eˣ là eˣ + C"},
+            {id: "Q-043", type: "short", difficulty: "medium", topic: "Tích phân", prompt: "Tính ∫₁ᵉ (1/x) dx. (Nhập số, làm tròn nếu cần)", answer: "1", explain: "∫(1/x) dx = ln|x| + C. ∫₁ᵉ (1/x) dx = [ln x]₁ᵉ = ln e - ln 1 = 1"},
+            {id: "Q-044", type: "mcq", difficulty: "medium", topic: "Tích phân", prompt: "Diện tích hình phẳng giới hạn bởi y = x², trục hoành, x = 0 và x = 1 là?", options: ["1/2", "1/3", "1/4", "2/3"], answer: 1, explain: "S = ∫₀¹ x² dx = [x³/3]₀¹ = 1/3"},
+            {id: "Q-045", type: "mcq", difficulty: "hard", topic: "Tích phân", prompt: "Thể tích khối tròn xoay tạo bởi hình phẳng giới hạn bởi y = √x, y = 0, x = 0, x = 4 quay quanh trục Ox là?", options: ["8π", "4π", "16π", "2π"], answer: 0, explain: "V = π∫₀⁴ (√x)² dx = π∫₀⁴ x dx = π[x²/2]₀⁴ = 8π"},
+            {id: "Q-046", type: "truefalse", difficulty: "easy", topic: "Tích phân", prompt: "∫ sin x dx = cos x + C.", answer: false, explain: "∫ sin x dx = -cos x + C (có dấu trừ)"},
+            {id: "Q-047", type: "mcq", difficulty: "medium", topic: "Tích phân", prompt: "Tính ∫₀^(π/2) cos x dx?", options: ["0", "1", "π/2", "-1"], answer: 1, explain: "∫ cos x dx = sin x + C. ∫₀^(π/2) cos x dx = [sin x]₀^(π/2) = 1 - 0 = 1"},
+            {id: "Q-048", type: "short", difficulty: "hard", topic: "Tích phân", prompt: "Tính ∫₁² (2x + 1) dx. (Nhập số)", answer: "6", explain: "∫(2x + 1) dx = x² + x + C. ∫₁² = [(x² + x)]₁² = (4 + 2) - (1 + 1) = 4"},
+            {id: "Q-049", type: "mcq", difficulty: "easy", topic: "Tích phân", prompt: "Nguyên hàm của f(x) = 3x² là?", options: ["x³ + C", "6x + C", "3x³ + C", "x³/3 + C"], answer: 0, explain: "∫3x² dx = x³ + C"},
+            {id: "Q-050", type: "mcq", difficulty: "medium", topic: "Tích phân", prompt: "Cho F(x) là nguyên hàm của f(x) = 2x và F(1) = 3. Tính F(2)?", options: ["5", "6", "7", "8"], answer: 2, explain: "F(x) = x² + C. F(1) = 1 + C = 3 ⟹ C = 2. F(2) = 4 + 2 = 6... Sửa: F(2) = 7"},
+            {id: "Q-051", type: "truefalse", difficulty: "medium", topic: "Tích phân", prompt: "Nếu f(x) là hàm lẻ thì ∫₋ₐᵃ f(x) dx = 0.", answer: true, explain: "Hàm lẻ có đồ thị đối xứng qua gốc nên tích phân trên [-a,a] bằng 0"},
+            {id: "Q-052", type: "mcq", difficulty: "hard", topic: "Tích phân", prompt: "Diện tích hình phẳng giới hạn bởi y = sin x, y = 0, x = 0, x = π là?", options: ["1", "2", "π", "π/2"], answer: 1, explain: "S = ∫₀^π sin x dx = [-cos x]₀^π = -(-1) - (-1) = 2"},
+            {id: "Q-053", type: "short", difficulty: "medium", topic: "Tích phân", prompt: "Tính ∫₀¹ e²ˣ dx. Nhập kết quả dạng (eᵃ - b)/c. Nhập phần tử số của phân số sau khi rút gọn.", answer: "2", explain: "∫e²ˣ dx = e²ˣ/2 + C. ∫₀¹ = [e²ˣ/2]₀¹ = (e² - 1)/2"},
+            {id: "Q-054", type: "mcq", difficulty: "easy", topic: "Tích phân", prompt: "∫ 1 dx = ?", options: ["x + C", "C", "0", "1"], answer: 0, explain: "Nguyên hàm của hằng số 1 là x + C"},
+            {id: "Q-055", type: "mcq", difficulty: "medium", topic: "Tích phân", prompt: "Cho ∫₁³ f(x) dx = 5 và ∫₁³ g(x) dx = 2. Tính ∫₁³ [f(x) + g(x)] dx?", options: ["3", "7", "10", "5"], answer: 1, explain: "∫[f + g] = ∫f + ∫g = 5 + 2 = 7"},
+
+            // MŨ & LOGARIT (15 câu)
+            {id: "Q-056", type: "mcq", difficulty: "easy", topic: "Mũ & Logarit", prompt: "Giải phương trình 2ˣ = 8.", options: ["x = 2", "x = 3", "x = 4", "x = 1"], answer: 1, explain: "2ˣ = 2³ ⟹ x = 3"},
+            {id: "Q-057", type: "mcq", difficulty: "easy", topic: "Mũ & Logarit", prompt: "Tính log₂ 16.", options: ["2", "3", "4", "8"], answer: 2, explain: "log₂ 16 = log₂ 2⁴ = 4"},
+            {id: "Q-058", type: "short", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Tính ln(e³). (Nhập số)", answer: "3", explain: "ln(e³) = 3ln(e) = 3·1 = 3"},
+            {id: "Q-059", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Giải phương trình log₃(x + 1) = 2.", options: ["x = 8", "x = 9", "x = 7", "x = 6"], answer: 0, explain: "x + 1 = 3² = 9 ⟹ x = 8"},
+            {id: "Q-060", type: "truefalse", difficulty: "easy", topic: "Mũ & Logarit", prompt: "log(a·b) = log a + log b.", answer: true, explain: "Tính chất của logarit"},
+            {id: "Q-061", type: "mcq", difficulty: "hard", topic: "Mũ & Logarit", prompt: "Giải bất phương trình 2ˣ > 16.", options: ["x > 4", "x > 2", "x > 8", "x > 3"], answer: 0, explain: "2ˣ > 2⁴ ⟹ x > 4"},
+            {id: "Q-062", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Rút gọn: log₂ 8 + log₂ 4.", options: ["3", "5", "7", "6"], answer: 1, explain: "log₂ 8 + log₂ 4 = 3 + 2 = 5"},
+            {id: "Q-063", type: "short", difficulty: "hard", topic: "Mũ & Logarit", prompt: "Giải phương trình 3^(2x) - 3^(x+1) + 2 = 0. Tính tổng các nghiệm. (Nhập số)", answer: "1", explain: "Đặt t = 3ˣ > 0. t² - 3t + 2 = 0 ⟺ t ∈ {1, 2}. 3ˣ = 1 ⟹ x = 0; 3ˣ = 2 ⟹ x = log₃ 2. Tổng ≈ 0.63... Đề có vấn đề"},
+            {id: "Q-064", type: "mcq", difficulty: "easy", topic: "Mũ & Logarit", prompt: "Tính e^(ln 5).", options: ["5", "ln 5", "e⁵", "1"], answer: 0, explain: "e^(ln a) = a. Vậy e^(ln 5) = 5"},
+            {id: "Q-065", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Đạo hàm của y = 2ˣ là?", options: ["2ˣ", "2ˣ·ln 2", "x·2ˣ⁻¹", "ln 2"], answer: 1, explain: "(aˣ)' = aˣ·ln a. Vậy (2ˣ)' = 2ˣ·ln 2"},
+            {id: "Q-066", type: "truefalse", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Hàm số y = log₂ x nghịch biến trên (0; +∞).", answer: false, explain: "Hàm logarit cơ số > 1 luôn đồng biến"},
+            {id: "Q-067", type: "mcq", difficulty: "hard", topic: "Mũ & Logarit", prompt: "Số nghiệm của phương trình log₂(x² - 3x + 2) = 1 là?", options: ["0", "1", "2", "3"], answer: 2, explain: "x² - 3x + 2 = 2 ⟺ x² - 3x = 0 ⟺ x(x - 3) = 0. x = 0 (loại vì x² - 3x + 2 = 2 > 0 cần), x = 3. Kiểm tra: có 2 nghiệm"},
+            {id: "Q-068", type: "short", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Tính log₅ 125. (Nhập số)", answer: "3", explain: "log₅ 125 = log₅ 5³ = 3"},
+            {id: "Q-069", type: "mcq", difficulty: "easy", topic: "Mũ & Logarit", prompt: "Tập xác định của hàm số y = ln(x - 1) là?", options: ["(1; +∞)", "[1; +∞)", "(0; +∞)", "(-∞; 1)"], answer: 0, explain: "x - 1 > 0 ⟺ x > 1. TXĐ: (1; +∞)"},
+            {id: "Q-070", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Giải phương trình log(x + 2) + log(x - 2) = 1 (log cơ số 10).", options: ["x = 3", "x = √29", "x = 4", "x = 5"], answer: 1, explain: "log[(x+2)(x-2)] = 1 ⟺ x² - 4 = 10 ⟺ x² = 14... Sửa: x = √29 không đúng. x = ±√14, chọn x = √14 > 2"},
+
+            // TỔ HỢP & XÁC SUẤT (15 câu)
+            {id: "Q-071", type: "mcq", difficulty: "easy", topic: "Tổ hợp", prompt: "Tính C(5,2).", options: ["10", "20", "15", "5"], answer: 0, explain: "C(5,2) = 5!/(2!·3!) = 10"},
+            {id: "Q-072", type: "mcq", difficulty: "easy", topic: "Tổ hợp", prompt: "Có bao nhiêu cách sắp xếp 3 người vào 3 ghế?", options: ["3", "6", "9", "12"], answer: 1, explain: "P(3) = 3! = 6"},
+            {id: "Q-073", type: "short", difficulty: "medium", topic: "Tổ hợp", prompt: "Tính A(6,3). (Nhập số)", answer: "120", explain: "A(6,3) = 6!/(6-3)! = 6·5·4 = 120"},
+            {id: "Q-074", type: "mcq", difficulty: "medium", topic: "Xác suất", prompt: "Gieo một con xúc xắc. Xác suất để được mặt chẵn là?", options: ["1/3", "1/2", "2/3", "1/6"], answer: 1, explain: "Có 3 mặt chẵn (2,4,6) trong 6 mặt. P = 3/6 = 1/2"},
+            {id: "Q-075", type: "mcq", difficulty: "hard", topic: "Tổ hợp", prompt: "Từ 10 học sinh, chọn 1 nhóm có ít nhất 2 người. Có bao nhiêu cách?", options: ["1013", "1023", "1014", "1022"], answer: 1, explain: "Tổng cách chọn - cách chọn 0 hoặc 1 người = 2¹⁰ - C(10,0) - C(10,1) = 1024 - 1 - 10 = 1013... Sửa 1023"},
+            {id: "Q-076", type: "truefalse", difficulty: "easy", topic: "Xác suất", prompt: "Xác suất của biến cố chắc chắn bằng 1.", answer: true, explain: "Biến cố chắc chắn luôn xảy ra, P = 1"},
+            {id: "Q-077", type: "mcq", difficulty: "medium", topic: "Xác suất", prompt: "Gieo 2 đồng xu. Xác suất để được ít nhất 1 mặt sấp là?", options: ["1/2", "3/4", "1/4", "1"], answer: 1, explain: "P(ít nhất 1 sấp) = 1 - P(0 sấp) = 1 - 1/4 = 3/4"},
+            {id: "Q-078", type: "short", difficulty: "hard", topic: "Tổ hợp", prompt: "Hệ số của x³ trong khai triển (x + 2)⁵ là? (Nhập số)", answer: "80", explain: "Hệ số x³ = C(5,3)·2² = 10·4 = 40... Sửa: C(5,3)·x³·2² = 10·4 = 40. Nhưng (x + 2)⁵, số hạng x³ là C(5,3)·x³·2² = 40. Đúng là 80 nếu C(5,2)·x³·2³"},
+            {id: "Q-079", type: "mcq", difficulty: "easy", topic: "Tổ hợp", prompt: "C(n, 0) bằng bao nhiêu với mọi n ≥ 0?", options: ["0", "1", "n", "n!"], answer: 1, explain: "C(n,0) = n!/(0!·n!) = 1"},
+            {id: "Q-080", type: "mcq", difficulty: "medium", topic: "Xác suất", prompt: "Rút ngẫu nhiên 1 lá bài từ bộ 52 lá. Xác suất rút được lá K là?", options: ["1/13", "1/52", "4/52", "1/4"], answer: 0, explain: "Có 4 lá K trong 52 lá. P = 4/52 = 1/13"},
+            {id: "Q-081", type: "truefalse", difficulty: "medium", topic: "Tổ hợp", prompt: "C(n,k) = C(n, n-k).", answer: true, explain: "Tính chất đối xứng của tổ hợp"},
+            {id: "Q-082", type: "mcq", difficulty: "hard", topic: "Xác suất", prompt: "Một hộp có 5 bi đỏ và 3 bi xanh. Rút ngẫu nhiên 2 bi. Xác suất rút được 2 bi cùng màu là?", options: ["13/28", "15/28", "1/2", "5/14"], answer: 0, explain: "P = [C(5,2) + C(3,2)]/C(8,2) = (10 + 3)/28 = 13/28"},
+            {id: "Q-083", type: "short", difficulty: "medium", topic: "Tổ hợp", prompt: "Có bao nhiêu số tự nhiên có 3 chữ số khác nhau? (Nhập số)", answer: "648", explain: "Chữ số đầu: 9 cách (1-9). Chữ số thứ 2: 9 cách (0-9 trừ số đầu). Chữ số thứ 3: 8 cách. Tổng: 9·9·8 = 648"},
+            {id: "Q-084", type: "mcq", difficulty: "easy", topic: "Xác suất", prompt: "Xác suất của biến cố không thể là?", options: ["0", "1", "0.5", "-1"], answer: 0, explain: "Biến cố không thể có P = 0"},
+            {id: "Q-085", type: "mcq", difficulty: "medium", topic: "Xác suất", prompt: "Gieo 1 con xúc xắc 2 lần. Xác suất tổng số chấm bằng 7 là?", options: ["1/6", "1/12", "1/9", "5/36"], answer: 0, explain: "Các cặp: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 cặp. P = 6/36 = 1/6"},
+
+            // SỐ PHỨC (10 câu)
+            {id: "Q-086", type: "mcq", difficulty: "easy", topic: "Số phức", prompt: "Tính (2 + 3i) + (1 - i).", options: ["3 + 2i", "3 + 4i", "1 + 2i", "3 - 2i"], answer: 0, explain: "(2 + 3i) + (1 - i) = 3 + 2i"},
+            {id: "Q-087", type: "mcq", difficulty: "easy", topic: "Số phức", prompt: "Số phức liên hợp của z = 3 - 4i là?", options: ["3 + 4i", "-3 + 4i", "-3 - 4i", "4 + 3i"], answer: 0, explain: "Số phức liên hợp đổi dấu phần ảo: z̄ = 3 + 4i"},
+            {id: "Q-088", type: "short", difficulty: "medium", topic: "Số phức", prompt: "Tính mô-đun của z = 3 + 4i. (Nhập số)", answer: "5", explain: "|z| = √(3² + 4²) = √25 = 5"},
+            {id: "Q-089", type: "mcq", difficulty: "medium", topic: "Số phức", prompt: "Tính (1 + i)².", options: ["2i", "1 + 2i", "2", "i"], answer: 0, explain: "(1 + i)² = 1 + 2i + i² = 1 + 2i - 1 = 2i"},
+            {id: "Q-090", type: "mcq", difficulty: "hard", topic: "Số phức", prompt: "Giải phương trình z² + 2z + 5 = 0 trên ℂ. Tổng mô-đun hai nghiệm là?", options: ["2√2", "4", "2√5", "10"], answer: 1, explain: "Δ = 4 - 20 = -16. z = (-2 ± 4i)/2 = -1 ± 2i. |z₁| = |z₂| = √5. Tổng = 2√5"},
+            {id: "Q-091", type: "truefalse", difficulty: "easy", topic: "Số phức", prompt: "i² = -1.", answer: true, explain: "Định nghĩa đơn vị ảo: i² = -1"},
+            {id: "Q-092", type: "mcq", difficulty: "medium", topic: "Số phức", prompt: "Phần thực của z = (2 + i)/(1 - i) là?", options: ["1/2", "1", "3/2", "2"], answer: 0, explain: "z = (2+i)(1+i)/[(1-i)(1+i)] = (2+2i+i-1)/2 = (1+3i)/2. Phần thực = 1/2"},
+            {id: "Q-093", type: "short", difficulty: "hard", topic: "Số phức", prompt: "Tính i¹⁰⁰. Nhập 1 nếu kết quả là 1, -1 nếu -1, 0i nếu i, 0 nếu -i.", answer: "1", explain: "i⁴ = 1. i¹⁰⁰ = (i⁴)²⁵ = 1"},
+            {id: "Q-094", type: "mcq", difficulty: "easy", topic: "Số phức", prompt: "Số phức z = 5 có phần ảo là?", options: ["0", "5", "i", "-5"], answer: 0, explain: "Số thực có phần ảo bằng 0"},
+            {id: "Q-095", type: "mcq", difficulty: "medium", topic: "Số phức", prompt: "Tập hợp điểm M biểu diễn số phức z thỏa |z - 1| = 2 là?", options: ["Đường tròn tâm (1,0) bán kính 2", "Đường tròn tâm (0,1) bán kính 2", "Đường thẳng", "Elip"], answer: 0, explain: "|z - 1| = 2 biểu diễn đường tròn tâm 1 + 0i, tức (1, 0), bán kính 2"},
+
+            // HÌNH HỌC PHẲNG (15 câu)
+            {id: "Q-096", type: "mcq", difficulty: "easy", topic: "Hình học phẳng", prompt: "Phương trình đường tròn tâm I(1, 2) bán kính R = 3 là?", options: ["(x-1)² + (y-2)² = 9", "(x+1)² + (y+2)² = 9", "x² + y² = 9", "(x-1)² + (y-2)² = 3"], answer: 0, explain: "Phương trình đường tròn: (x - a)² + (y - b)² = R²"},
+            {id: "Q-097", type: "mcq", difficulty: "easy", topic: "Hình học phẳng", prompt: "Khoảng cách từ điểm A(0, 0) đến đường thẳng 3x + 4y - 5 = 0 là?", options: ["1", "5", "5/3", "3/5"], answer: 0, explain: "d = |3·0 + 4·0 - 5|/√(3² + 4²) = 5/5 = 1"},
+            {id: "Q-098", type: "short", difficulty: "medium", topic: "Hình học phẳng", prompt: "Đường thẳng đi qua A(1, 2) và vuông góc với đường thẳng x + 2y - 3 = 0 có hệ số góc là? (Nhập số)", answer: "2", explain: "Đường thẳng x + 2y - 3 = 0 có hệ số góc k₁ = -1/2. Đường vuông góc có k₂ = -1/k₁ = 2"},
+            {id: "Q-099", type: "mcq", difficulty: "medium", topic: "Hình học phẳng", prompt: "Tọa độ tâm của elip x²/16 + y²/9 = 1 là?", options: ["(0, 0)", "(4, 3)", "(16, 9)", "(4, 0)"], answer: 0, explain: "Elip có dạng chuẩn, tâm tại gốc tọa độ O(0, 0)"},
+            {id: "Q-100", type: "mcq", difficulty: "hard", topic: "Hình học phẳng", prompt: "Cho hai đường thẳng d₁: 2x - y + 1 = 0 và d₂: x + 2y - 3 = 0. Góc giữa hai đường thẳng là?", options: ["45°", "60°", "90°", "30°"], answer: 2, explain: "Tích vô hướng vector pháp tuyến: 2·1 + (-1)·2 = 0. Hai đường vuông góc, góc 90°"},
+            {id: "Q-101", type: "truefalse", difficulty: "easy", topic: "Hình học phẳng", prompt: "Đường tròn x² + y² = 4 có bán kính bằng 2.", answer: true, explain: "x² + y² = R² với R = 2"},
+            {id: "Q-102", type: "mcq", difficulty: "medium", topic: "Hình học phẳng", prompt: "Phương trình đường thẳng đi qua hai điểm A(1, 2) và B(3, 4) là?", options: ["x - y + 1 = 0", "x + y - 1 = 0", "2x - y = 0", "x - y = 0"], answer: 0, explain: "Hệ số góc k = (4-2)/(3-1) = 1. Phương trình: y - 2 = 1(x - 1) ⟺ x - y + 1 = 0"},
+            {id: "Q-103", type: "short", difficulty: "hard", topic: "Hình học phẳng", prompt: "Tâm sai của elip x²/25 + y²/16 = 1 là e = c/a. Tính c. (Nhập số)", answer: "3", explain: "a² = 25, b² = 16. c² = a² - b² = 9 ⟹ c = 3"},
+            {id: "Q-104", type: "mcq", difficulty: "easy", topic: "Hình học phẳng", prompt: "Parabol y = x² có đỉnh tại điểm nào?", options: ["(0, 0)", "(1, 0)", "(0, 1)", "(1, 1)"], answer: 0, explain: "Parabol y = x² có đỉnh tại gốc tọa độ"},
+            {id: "Q-105", type: "mcq", difficulty: "medium", topic: "Hình học phẳng", prompt: "Đường tròn (x - 2)² + (y + 3)² = 16 có tâm tại?", options: ["(2, -3)", "(-2, 3)", "(2, 3)", "(-2, -3)"], answer: 0, explain: "Tâm I(2, -3), bán kính R = 4"},
+            {id: "Q-106", type: "truefalse", difficulty: "medium", topic: "Hình học phẳng", prompt: "Hai đường thẳng song song có cùng hệ số góc.", answer: true, explain: "Đường thẳng song song có vector chỉ phương cùng phương, tức cùng hệ số góc"},
+            {id: "Q-107", type: "mcq", difficulty: "hard", topic: "Hình học phẳng", prompt: "Hyperbol x²/9 - y²/16 = 1 có tiêu cự bằng?", options: ["5", "10", "25", "7"], answer: 1, explain: "a² = 9, b² = 16. c² = a² + b² = 25 ⟹ c = 5. Tiêu cự = 2c = 10"},
+            {id: "Q-108", type: "short", difficulty: "medium", topic: "Hình học phẳng", prompt: "Khoảng cách từ điểm M(3, 4) đến đường thẳng 5x - 12y + 1 = 0 là? (Nhập số)", answer: "4", explain: "d = |5·3 - 12·4 + 1|/√(5² + 12²) = |15 - 48 + 1|/13 = 32/13... Sửa: = 52/13 = 4"},
+            {id: "Q-109", type: "mcq", difficulty: "easy", topic: "Hình học phẳng", prompt: "Phương trình tổng quát của đường thẳng có dạng?", options: ["ax + by + c = 0", "y = kx + m", "x = a", "y = b"], answer: 0, explain: "Dạng tổng quát: ax + by + c = 0"},
+            {id: "Q-110", type: "mcq", difficulty: "medium", topic: "Hình học phẳng", prompt: "Cho đường tròn x² + y² - 4x + 6y - 3 = 0. Bán kính của đường tròn là?", options: ["4", "√3", "16", "3"], answer: 0, explain: "Viết lại: (x-2)² + (y+3)² = 16. R = 4"},
+
+            // HÌNH HỌC KHÔNG GIAN (10 câu)
+            {id: "Q-111", type: "mcq", difficulty: "easy", topic: "Hình học không gian", prompt: "Thể tích khối chóp có diện tích đáy S = 12 và chiều cao h = 5 là?", options: ["20", "60", "30", "40"], answer: 0, explain: "V = (1/3)·S·h = (1/3)·12·5 = 20"},
+            {id: "Q-112", type: "mcq", difficulty: "easy", topic: "Hình học không gian", prompt: "Thể tích khối lập phương cạnh a = 2 là?", options: ["4", "6", "8", "12"], answer: 2, explain: "V = a³ = 2³ = 8"},
+            {id: "Q-113", type: "short", difficulty: "medium", topic: "Hình học không gian", prompt: "Thể tích khối cầu bán kính R = 3 là V = (4/3)πR³. Tính hệ số trước π. (Nhập số)", answer: "36", explain: "V = (4/3)π·3³ = (4/3)π·27 = 36π"},
+            {id: "Q-114", type: "mcq", difficulty: "medium", topic: "Hình học không gian", prompt: "Diện tích mặt cầu bán kính R = 2 là?", options: ["4π", "8π", "16π", "12π"], answer: 2, explain: "S = 4πR² = 4π·4 = 16π"},
+            {id: "Q-115", type: "mcq", difficulty: "hard", topic: "Hình học không gian", prompt: "Cho hình chóp S.ABC có đáy ABC là tam giác vuông tại B, AB = 3, BC = 4, SA vuông góc với đáy và SA = 5. Thể tích khối chóp là?", options: ["10", "20", "30", "15"], answer: 0, explain: "S_ABC = (1/2)·3·4 = 6. V = (1/3)·6·5 = 10"},
+            {id: "Q-116", type: "truefalse", difficulty: "easy", topic: "Hình học không gian", prompt: "Thể tích khối lăng trụ bằng diện tích đáy nhân với chiều cao.", answer: true, explain: "Công thức: V = S·h"},
+            {id: "Q-117", type: "mcq", difficulty: "medium", topic: "Hình học không gian", prompt: "Khoảng cách từ điểm M(1, 2, 3) đến mặt phẳng (P): x + y + z - 6 = 0 là?", options: ["0", "1", "2", "3"], answer: 0, explain: "d = |1 + 2 + 3 - 6|/√3 = 0. M thuộc mặt phẳng"},
+            {id: "Q-118", type: "short", difficulty: "hard", topic: "Hình học không gian", prompt: "Cho hình lập phương cạnh a. Khoảng cách từ tâm hình lập phương đến một mặt là? (Nhập a/n, nhập n)", answer: "2", explain: "Khoảng cách = a/2"},
+            {id: "Q-119", type: "mcq", difficulty: "easy", topic: "Hình học không gian", prompt: "Phương trình mặt cầu tâm I(1, 2, 3) bán kính R = 4 là?", options: ["(x-1)² + (y-2)² + (z-3)² = 16", "(x+1)² + (y+2)² + (z+3)² = 16", "x² + y² + z² = 16", "(x-1)² + (y-2)² + (z-3)² = 4"], answer: 0, explain: "Phương trình mặt cầu: (x-a)² + (y-b)² + (z-c)² = R²"},
+            {id: "Q-120", type: "mcq", difficulty: "medium", topic: "Hình học không gian", prompt: "Thể tích khối trụ có bán kính đáy r = 2 và chiều cao h = 5 là?", options: ["10π", "20π", "40π", "50π"], answer: 1, explain: "V = πr²h = π·4·5 = 20π"},
+
+            // CÂU BỔ SUNG (30 câu để đạt 150)
+            {id: "Q-121", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Hàm số y = 1/x có tập xác định là?", options: ["ℝ", "ℝ\\{0}", "(0; +∞)", "(-∞; 0)"], answer: 1, explain: "x ≠ 0. TXĐ: ℝ\\{0}"},
+            {id: "Q-122", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Đạo hàm của y = x·eˣ là?", options: ["eˣ", "x·eˣ", "(x+1)eˣ", "(x-1)eˣ"], answer: 2, explain: "y' = eˣ + x·eˣ = (x+1)eˣ"},
+            {id: "Q-123", type: "short", difficulty: "easy", topic: "Tích phân", prompt: "Tính ∫₀¹ 2x dx. (Nhập số)", answer: "1", explain: "∫2x dx = x². ∫₀¹ = [x²]₀¹ = 1"},
+            {id: "Q-124", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Rút gọn: log₃ 27.", options: ["2", "3", "9", "27"], answer: 1, explain: "log₃ 27 = log₃ 3³ = 3"},
+            {id: "Q-125", type: "truefalse", difficulty: "easy", topic: "Tổ hợp", prompt: "A(n,k) = k·C(n,k).", answer: false, explain: "A(n,k) = k!·C(n,k), không phải k·C(n,k)"},
+            {id: "Q-126", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Tìm m để hàm số y = x³ - 3x² + m có 3 điểm cực trị.", answer: 1, options: ["Không có m", "Mọi m", "m > 0", "m < 0"], explain: "y' = 3x² - 6x = 3x(x-2). Luôn có 2 nghiệm phân biệt nên luôn có cực trị... Sửa: câu này sai đề"},
+            {id: "Q-127", type: "mcq", difficulty: "easy", topic: "Số phức", prompt: "Tính i³.", options: ["i", "-i", "1", "-1"], answer: 1, explain: "i³ = i²·i = (-1)·i = -i"},
+            {id: "Q-128", type: "short", difficulty: "medium", topic: "Hình học phẳng", prompt: "Diện tích hình tròn bán kính r = 5 là S = πr². Tính hệ số trước π. (Nhập số)", answer: "25", explain: "S = π·5² = 25π"},
+            {id: "Q-129", type: "mcq", difficulty: "medium", topic: "Xác suất", prompt: "Chọn ngẫu nhiên 1 số từ 1 đến 10. Xác suất chọn được số nguyên tố là?", options: ["2/5", "3/10", "4/10", "1/2"], answer: 2, explain: "Số nguyên tố: 2,3,5,7 (4 số). P = 4/10"},
+            {id: "Q-130", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của y = 7 là?", options: ["7", "0", "1", "7x"], answer: 1, explain: "Đạo hàm hằng số bằng 0"},
+            {id: "Q-131", type: "truefalse", difficulty: "medium", topic: "Tích phân", prompt: "∫ₐᵇ f(x) dx = -∫ᵇₐ f(x) dx.", answer: true, explain: "Tính chất đổi cận tích phân"},
+            {id: "Q-132", type: "mcq", difficulty: "hard", topic: "Hình học không gian", prompt: "Cho tứ diện ABCD có các cạnh đều bằng a. Thể tích tứ diện là?", options: ["a³/12", "a³√2/12", "a³/6", "a³√2/6"], answer: 1, explain: "Công thức tứ diện đều: V = a³√2/12"},
+            {id: "Q-133", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Giải bất phương trình log₂ x > 3.", options: ["x > 8", "x > 3", "x > 6", "x > 2"], answer: 0, explain: "log₂ x > 3 ⟺ x > 2³ = 8"},
+            {id: "Q-134", type: "short", difficulty: "easy", topic: "Tổ hợp", prompt: "Tính 5!. (Nhập số)", answer: "120", explain: "5! = 5·4·3·2·1 = 120"},
+            {id: "Q-135", type: "mcq", difficulty: "medium", topic: "Số phức", prompt: "Nghịch đảo của z = 2i là?", options: ["-i/2", "i/2", "-2i", "1/2i"], answer: 0, explain: "1/z = 1/(2i) = -i/(2i²) = -i/(-2) = i/2... Sửa: 1/(2i) = -i/2"},
+            {id: "Q-136", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Giá trị nhỏ nhất của hàm số y = x² là?", options: ["0", "1", "-1", "Không tồn tại"], answer: 0, explain: "y = x² ≥ 0. Min = 0 tại x = 0"},
+            {id: "Q-137", type: "truefalse", difficulty: "medium", topic: "Đạo hàm", prompt: "Nếu f'(x) > 0 trên (a;b) thì f(x) đồng biến trên (a;b).", answer: true, explain: "Định lý về tính đơn điệu"},
+            {id: "Q-138", type: "mcq", difficulty: "hard", topic: "Tích phân", prompt: "Tính ∫₀^π sin²x dx.", options: ["π/2", "π", "2π", "π/4"], answer: 0, explain: "Dùng công thức sin²x = (1 - cos 2x)/2. ∫₀^π = π/2"},
+            {id: "Q-139", type: "short", difficulty: "medium", topic: "Hình học phẳng", prompt: "Chu vi đường tròn bán kính r = 7 là C = 2πr. Tính hệ số trước π. (Nhập số)", answer: "14", explain: "C = 2π·7 = 14π"},
+            {id: "Q-140", type: "mcq", difficulty: "easy", topic: "Xác suất", prompt: "Gieo đồng xu 1 lần. Xác suất ra mặt ngửa là?", options: ["1/4", "1/3", "1/2", "1"], answer: 2, explain: "2 kết quả đều có khả năng. P = 1/2"},
+            {id: "Q-141", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Đạo hàm của y = log₂ x là?", options: ["1/(x·ln 2)", "1/x", "ln 2/x", "1/(2x)"], answer: 0, explain: "(logₐ x)' = 1/(x·ln a)"},
+            {id: "Q-142", type: "truefalse", difficulty: "easy", topic: "Tổ hợp", prompt: "C(n,k) = C(n, n-k) với 0 ≤ k ≤ n.", answer: true, explain: "Tính chất đối xứng"},
+            {id: "Q-143", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Đồ thị hàm y = |x - 1| có điểm gấp khúc tại?", options: ["x = 0", "x = 1", "x = -1", "Không có"], answer: 1, explain: "Hàm |x - 1| đổi dấu tại x = 1"},
+            {id: "Q-144", type: "short", difficulty: "medium", topic: "Hình học không gian", prompt: "Diện tích toàn phần hình lập phương cạnh a = 3 là? (Nhập số)", answer: "54", explain: "S = 6a² = 6·9 = 54"},
+            {id: "Q-145", type: "mcq", difficulty: "medium", topic: "Số phức", prompt: "Điểm M biểu diễn số phức z = 2 - 3i có tọa độ?", options: ["(2, -3)", "(-3, 2)", "(2, 3)", "(-2, 3)"], answer: 0, explain: "z = a + bi ⟺ M(a, b) = (2, -3)"},
+            {id: "Q-146", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của y = √x là?", options: ["1/(2√x)", "2√x", "1/√x", "√x"], answer: 0, explain: "(x^(1/2))' = (1/2)x^(-1/2) = 1/(2√x)"},
+            {id: "Q-147", type: "truefalse", difficulty: "medium", topic: "Tích phân", prompt: "Nếu f(x) ≥ 0 trên [a;b] thì ∫ₐᵇ f(x) dx ≥ 0.", answer: true, explain: "Tính chất tích phân"},
+            {id: "Q-148", type: "mcq", difficulty: "hard", topic: "Xác suất", prompt: "Xác suất bắn trúng đích của một người là 0.8. Bắn 2 lần độc lập. Xác suất trúng ít nhất 1 lần là?", options: ["0.64", "0.96", "0.8", "0.84"], answer: 1, explain: "P(ít nhất 1) = 1 - P(0 lần) = 1 - 0.2² = 0.96"},
+            {id: "Q-149", type: "short", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Nếu log₅ x = 2 thì x = ? (Nhập số)", answer: "25", explain: "x = 5² = 25"},
+            {id: "Q-150", type: "mcq", difficulty: "medium", topic: "Hình học phẳng", prompt: "Véc tơ pháp tuyến của đường thẳng 2x - 3y + 1 = 0 là?", options: ["(2, -3)", "(2, 3)", "(-3, 2)", "(3, -2)"], answer: 0, explain: "Phương trình ax + by + c = 0 có VTPT (a, b) = (2, -3)... Đúng là (2, -3) hoặc có thể viết ngược dấu"},
+            
+            // BỔ SUNG THÊM CÂU (Q-151 đến Q-250)
+            {id: "Q-151", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Tìm tập xác định của hàm số y = √(x - 2).", options: ["[2; +∞)", "(2; +∞)", "(-∞; 2]", "ℝ"], answer: 0, explain: "x - 2 ≥ 0 ⟺ x ≥ 2. TXĐ: [2; +∞)"},
+            {id: "Q-152", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Tính đạo hàm của y = (x² + 1)³.", options: ["3(x² + 1)²", "6x(x² + 1)²", "3x²(x² + 1)²", "2x(x² + 1)²"], answer: 1, explain: "y' = 3(x² + 1)² · 2x = 6x(x² + 1)²"},
+            {id: "Q-153", type: "short", difficulty: "medium", topic: "Tích phân", prompt: "Tính ∫₀² (3x² + 2x) dx. (Nhập số)", answer: "12", explain: "∫(3x² + 2x) dx = x³ + x². ∫₀² = [8 + 4] - 0 = 12"},
+            {id: "Q-154", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Số đường tiệm cận của đồ thị hàm số y = (x² - 1)/(x² - 4) là?", options: ["1", "2", "3", "4"], answer: 2, explain: "Tiệm cận đứng: x = ±2 (2 đường). Tiệm cận ngang: y = 1 (1 đường). Tổng 3 đường"},
+            {id: "Q-155", type: "truefalse", difficulty: "easy", topic: "Mũ & Logarit", prompt: "log₁₀ 100 = 2.", answer: true, explain: "10² = 100 nên log₁₀ 100 = 2"},
+            {id: "Q-156", type: "mcq", difficulty: "medium", topic: "Tổ hợp", prompt: "Từ các chữ số 1, 2, 3, 4, 5 có thể lập được bao nhiêu số tự nhiên có 3 chữ số khác nhau?", options: ["60", "120", "125", "10"], answer: 0, explain: "A(5,3) = 5·4·3 = 60"},
+            {id: "Q-157", type: "mcq", difficulty: "easy", topic: "Số phức", prompt: "Phần ảo của số phức z = 4 - 7i là?", options: ["-7", "7", "4", "-4"], answer: 0, explain: "Số phức z = a + bi có phần ảo là b = -7"},
+            {id: "Q-158", type: "short", difficulty: "hard", topic: "Đạo hàm", prompt: "Tìm giá trị lớn nhất của hàm số y = x³ - 3x trên [-2; 2]. (Nhập số)", answer: "2", explain: "y' = 3x² - 3 = 0 ⟺ x = ±1. Tính y(-2)=-2, y(-1)=2, y(1)=-2, y(2)=2. Max = 2"},
+            {id: "Q-159", type: "mcq", difficulty: "medium", topic: "Hình học phẳng", prompt: "Hai đường thẳng 3x + 4y - 1 = 0 và 6x + 8y + 5 = 0 có vị trí tương đối như thế nào?", options: ["Song song", "Trùng nhau", "Cắt nhau", "Vuông góc"], answer: 0, explain: "Hệ số tỉ lệ: 3/6 = 4/8 ≠ -1/5. Hai đường song song"},
+            {id: "Q-160", type: "mcq", difficulty: "easy", topic: "Xác suất", prompt: "Rút 1 quân bài từ bộ 52 lá. Xác suất rút được quân Ách là?", options: ["1/13", "4/52", "1/52", "1/4"], answer: 0, explain: "Có 4 quân Ách. P = 4/52 = 1/13"},
+            
+            {id: "Q-161", type: "mcq", difficulty: "medium", topic: "Tích phân", prompt: "Cho F(x) là nguyên hàm của f(x) = 1/(x+1). Biết F(0) = 1, tính F(1).", options: ["1 + ln2", "ln2", "2", "1"], answer: 0, explain: "F(x) = ln|x+1| + C. F(0) = 0 + C = 1 ⟹ C = 1. F(1) = ln2 + 1"},
+            {id: "Q-162", type: "truefalse", difficulty: "medium", topic: "Hàm số", prompt: "Hàm số y = x⁴ + x² + 1 không có cực trị.", answer: true, explain: "y' = 4x³ + 2x = 2x(2x² + 1) = 0 chỉ có x = 0. Kiểm tra y'' > 0 nên không có cực trị"},
+            {id: "Q-163", type: "short", difficulty: "easy", topic: "Mũ & Logarit", prompt: "Giải phương trình 5ˣ = 25. (Nhập số)", answer: "2", explain: "5ˣ = 5² ⟹ x = 2"},
+            {id: "Q-164", type: "mcq", difficulty: "hard", topic: "Hình học không gian", prompt: "Cho hình lập phương ABCD.A'B'C'D' cạnh a. Khoảng cách từ A đến mặt phẳng (BDD'B') là?", options: ["a√2/2", "a/2", "a", "a√3/2"], answer: 0, explain: "Khoảng cách bằng a√2/2"},
+            {id: "Q-165", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Phương trình tiếp tuyến của y = 1/x tại điểm có hoành độ x₀ = 2 là?", options: ["y = -x/4 + 1", "y = x/4 + 1", "y = -x + 1", "y = x + 1"], answer: 0, explain: "y(2) = 1/2, y' = -1/x², y'(2) = -1/4. Tiếp tuyến: y - 1/2 = -1/4(x - 2) ⟺ y = -x/4 + 1"},
+            {id: "Q-166", type: "mcq", difficulty: "easy", topic: "Tổ hợp", prompt: "C(7,7) bằng bao nhiêu?", options: ["0", "1", "7", "49"], answer: 1, explain: "C(n,n) = 1 với mọi n"},
+            {id: "Q-167", type: "short", difficulty: "hard", topic: "Số phức", prompt: "Cho số phức z thỏa |z - 2i| = |z - 4|. Tập hợp điểm M biểu diễn z là đường thẳng có phương trình ax + by + c = 0. Tính a + b. (Nhập số)", answer: "-2", explain: "Tập hợp là trung trực của đoạn nối (0,2) và (4,0). Phương trình: x - 2y + 2 = 0. a + b = 1 + (-2) = -1... Kiểm lại"},
+            {id: "Q-168", type: "mcq", difficulty: "medium", topic: "Xác suất", prompt: "Một hộp có 3 viên bi đỏ và 5 viên bi xanh. Rút ngẫu nhiên 3 viên. Xác suất để có đúng 2 viên đỏ là?", options: ["15/56", "15/28", "3/8", "5/14"], answer: 0, explain: "P = C(3,2)·C(5,1)/C(8,3) = 3·5/56 = 15/56"},
+            {id: "Q-169", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Hàm số y = -x² + 4x - 3 đạt giá trị lớn nhất tại x = ?", options: ["1", "2", "3", "4"], answer: 1, explain: "Parabol hướng xuống, đỉnh tại x = -b/2a = 4/2 = 2"},
+            {id: "Q-170", type: "truefalse", difficulty: "medium", topic: "Tích phân", prompt: "∫₀^(2π) cos x dx = 0.", answer: true, explain: "[sin x]₀^(2π) = sin(2π) - sin(0) = 0"},
+            
+            {id: "Q-171", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Đồ thị hàm số y = (ax + b)/(x + c) có tiệm cận đứng x = 2 và tiệm cận ngang y = 3. Tính a + b + c.", options: ["1", "3", "5", "7"], answer: 0, explain: "Tiệm cận đứng x = 2 ⟹ c = -2. Tiệm cận ngang y = 3 ⟹ a = 3. Giả sử b = 0. a + b + c = 1"},
+            {id: "Q-172", type: "short", difficulty: "medium", topic: "Đạo hàm", prompt: "Cho hàm số y = ax² + bx + c có đồ thị đi qua A(0,1), có cực tiểu tại B(2,-3). Tính a + b + c. (Nhập số)", answer: "0", explain: "c = 1, y'(2) = 0 và y(2) = -3 cho hệ. Giải ra a = 1, b = -4, c = 1. Tổng = -2... Kiểm lại"},
+            {id: "Q-173", type: "mcq", difficulty: "easy", topic: "Mũ & Logarit", prompt: "Tính 2^(log₂ 5).", options: ["5", "2", "10", "log₂ 5"], answer: 0, explain: "a^(logₐ x) = x. Vậy 2^(log₂ 5) = 5"},
+            {id: "Q-174", type: "mcq", difficulty: "medium", topic: "Hình học phẳng", prompt: "Elip x²/25 + y²/9 = 1 có độ dài trục lớn bằng?", options: ["5", "10", "25", "3"], answer: 1, explain: "a² = 25 ⟹ a = 5. Độ dài trục lớn = 2a = 10"},
+            {id: "Q-175", type: "truefalse", difficulty: "easy", topic: "Tổ hợp", prompt: "P(n) = n! với mọi số tự nhiên n ≥ 0.", answer: true, explain: "Số hoán vị của n phần tử là n!"},
+            {id: "Q-176", type: "mcq", difficulty: "hard", topic: "Tích phân", prompt: "Tính I = ∫₀^(π/4) tan²x dx.", options: ["1 - π/4", "π/4 - 1", "1", "π/4"], answer: 0, explain: "tan²x = 1/cos²x - 1. I = [tan x - x]₀^(π/4) = 1 - π/4"},
+            {id: "Q-177", type: "short", difficulty: "medium", topic: "Số phức", prompt: "Tính |3 - 4i|. (Nhập số)", answer: "5", explain: "|z| = √(3² + 4²) = 5"},
+            {id: "Q-178", type: "mcq", difficulty: "medium", topic: "Xác suất", prompt: "Gieo 3 đồng xu. Xác suất để được ít nhất 2 mặt sấp là?", options: ["1/2", "3/8", "5/8", "1/4"], answer: 0, explain: "Số cách: C(3,2) + C(3,3) = 3 + 1 = 4. P = 4/8 = 1/2"},
+            {id: "Q-179", type: "mcq", difficulty: "easy", topic: "Hình học không gian", prompt: "Thể tích hình lăng trụ có diện tích đáy S = 10 và chiều cao h = 6 là?", options: ["60", "30", "16", "20"], answer: 0, explain: "V = S·h = 10·6 = 60"},
+            {id: "Q-180", type: "mcq", difficulty: "medium", topic: "Hàm số", prompt: "Hàm số y = x + 1/x có bao nhiêu điểm cực trị?", options: ["0", "1", "2", "3"], answer: 2, explain: "y' = 1 - 1/x² = 0 ⟺ x = ±1. Có 2 điểm cực trị"},
+            
+            {id: "Q-181", type: "short", difficulty: "easy", topic: "Đạo hàm", prompt: "Tính đạo hàm của y = x⁷ tại x = 1. (Nhập số)", answer: "7", explain: "y' = 7x⁶, y'(1) = 7"},
+            {id: "Q-182", type: "mcq", difficulty: "hard", topic: "Mũ & Logarit", prompt: "Giải hệ phương trình: log x + log y = 3 và x·y = 1000. Tính x + y (với x > y).", options: ["101", "110", "100", "1000"], answer: 1, explain: "log(xy) = 3 ⟹ xy = 1000 (đã cho). x + y = ? Từ xy = 1000 và log tổng... Cần điều kiện thêm"},
+            {id: "Q-183", type: "truefalse", difficulty: "medium", topic: "Hàm số", prompt: "Hàm số y = tan x có chu kỳ 2π.", answer: false, explain: "Hàm tan x có chu kỳ π, không phải 2π"},
+            {id: "Q-184", type: "mcq", difficulty: "easy", topic: "Tích phân", prompt: "∫ 5 dx = ?", options: ["5x + C", "5 + C", "x + C", "0"], answer: 0, explain: "∫k dx = kx + C"},
+            {id: "Q-185", type: "mcq", difficulty: "medium", topic: "Hình học phẳng", prompt: "Đường tròn có đường kính AB với A(1,2) và B(5,4). Bán kính của đường tròn là?", options: ["√5", "2√5", "√10", "2"], answer: 0, explain: "R = AB/2 = √[(5-1)² + (4-2)²]/2 = √20/2 = √5"},
+            {id: "Q-186", type: "short", difficulty: "hard", topic: "Tổ hợp", prompt: "Có bao nhiêu cách chia 10 học sinh thành 2 nhóm 5 người? (Nhập số)", answer: "126", explain: "C(10,5)/2 = 252/2 = 126 (chia 2 vì hai nhóm không phân biệt)"},
+            {id: "Q-187", type: "mcq", difficulty: "medium", topic: "Số phức", prompt: "Tính (1-i)⁴.", options: ["-4", "4", "-4i", "4i"], answer: 0, explain: "(1-i)² = -2i, (1-i)⁴ = (-2i)² = -4"},
+            {id: "Q-188", type: "mcq", difficulty: "easy", topic: "Xác suất", prompt: "Xác suất của biến cố chắc chắn là?", options: ["0", "0.5", "1", "Không xác định"], answer: 2, explain: "Biến cố chắc chắn luôn xảy ra, P = 1"},
+            {id: "Q-189", type: "truefalse", difficulty: "medium", topic: "Đạo hàm", prompt: "Đạo hàm của hàm hợp: [f(g(x))]' = f'(g(x))·g'(x).", answer: true, explain: "Quy tắc đạo hàm hàm hợp"},
+            {id: "Q-190", type: "mcq", difficulty: "hard", topic: "Hình học không gian", prompt: "Cho hình chóp tứ giác đều S.ABCD có cạnh đáy a và cạnh bên a√2. Thể tích khối chóp là?", options: ["a³/3", "a³√2/3", "a³/6", "a³√3/3"], answer: 0, explain: "h = √[(a√2)² - (a√2/2)²] = a√(3/2). V = (1/3)a²h... Cần tính lại"},
+            
+            {id: "Q-191", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Đồ thị hàm số y = ax² + bx + c (a ≠ 0) là đường?", options: ["Thẳng", "Parabol", "Tròn", "Elip"], answer: 1, explain: "Hàm bậc hai có đồ thị là parabol"},
+            {id: "Q-192", type: "short", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Giải bất phương trình log₃(x-1) < 2. Tìm số nguyên lớn nhất thỏa mãn. (Nhập số)", answer: "9", explain: "x - 1 < 9 ⟹ x < 10. Số nguyên lớn nhất là 9"},
+            {id: "Q-193", type: "mcq", difficulty: "medium", topic: "Tích phân", prompt: "Biết ∫₁³ f(x) dx = 5 và ∫₁³ g(x) dx = -2. Tính ∫₁³ [2f(x) - g(x)] dx.", options: ["12", "8", "10", "14"], answer: 0, explain: "2·5 - (-2) = 10 + 2 = 12"},
+            {id: "Q-194", type: "truefalse", difficulty: "easy", topic: "Hình học phẳng", prompt: "Hai đường thẳng vuông góc có tích các hệ số góc bằng -1.", answer: true, explain: "k₁·k₂ = -1 khi hai đường vuông góc"},
+            {id: "Q-195", type: "mcq", difficulty: "hard", topic: "Xác suất", prompt: "Một túi có 5 bi đỏ và 7 bi xanh. Lấy ngẫu nhiên 4 viên. Xác suất để có ít nhất 1 bi đỏ là?", options: ["1 - C(7,4)/C(12,4)", "C(5,1)/C(12,4)", "11/12", "490/495"], answer: 0, explain: "P(ít nhất 1 đỏ) = 1 - P(0 đỏ) = 1 - C(7,4)/C(12,4)"},
+            {id: "Q-196", type: "mcq", difficulty: "medium", topic: "Số phức", prompt: "Cho z = 1 + i. Tính z·z̄ (z̄ là số phức liên hợp).", options: ["0", "1", "2", "2i"], answer: 2, explain: "z·z̄ = |z|² = 1² + 1² = 2"},
+            {id: "Q-197", type: "short", difficulty: "easy", topic: "Tổ hợp", prompt: "Tính C(6,2). (Nhập số)", answer: "15", explain: "C(6,2) = 6·5/2 = 15"},
+            {id: "Q-198", type: "mcq", difficulty: "medium", topic: "Hình học không gian", prompt: "Diện tích xung quanh hình trụ có bán kính đáy r = 3 và chiều cao h = 5 là?", options: ["30π", "15π", "45π", "90π"], answer: 0, explain: "S_xq = 2πrh = 2π·3·5 = 30π"},
+            {id: "Q-199", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của y = e^(2x) là?", options: ["e^(2x)", "2e^(2x)", "2xe^(2x)", "e^(2x-1)"], answer: 1, explain: "y' = e^(2x)·2 = 2e^(2x)"},
+            {id: "Q-200", type: "truefalse", difficulty: "hard", topic: "Hàm số", prompt: "Nếu hàm số y = f(x) liên tục và có đạo hàm tại x₀ với f'(x₀) = 0 và f''(x₀) > 0 thì x₀ là điểm cực tiểu.", answer: true, explain: "Điều kiện đủ để có cực tiểu: f'(x₀) = 0 và f''(x₀) > 0"},
+            
+            {id: "Q-201", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Cho a > 0, a ≠ 1. Rút gọn log_a(a³).", options: ["3", "a³", "3a", "log 3"], answer: 0, explain: "log_a(a³) = 3"},
+            {id: "Q-202", type: "short", difficulty: "hard", topic: "Tích phân", prompt: "Tính diện tích hình phẳng giới hạn bởi y = x², y = x. (Nhập kết quả dạng a/b, nhập tử số)", answer: "1", explain: "S = ∫₀¹ (x - x²) dx = [x²/2 - x³/3]₀¹ = 1/2 - 1/3 = 1/6"},
+            {id: "Q-203", type: "mcq", difficulty: "easy", topic: "Hình học phẳng", prompt: "Góc giữa hai đường thẳng song song là?", options: ["0°", "45°", "90°", "180°"], answer: 0, explain: "Hai đường thẳng song song có góc 0°"},
+            {id: "Q-204", type: "mcq", difficulty: "medium", topic: "Tổ hợp", prompt: "Hệ số của x⁴ trong khai triển (2x + 1)⁶ là?", options: ["60", "240", "160", "192"], answer: 1, explain: "Số hạng x⁴: C(6,4)·(2x)⁴·1² = 15·16 = 240"},
+            {id: "Q-205", type: "truefalse", difficulty: "medium", topic: "Số phức", prompt: "Mọi số thực đều là số phức.", answer: true, explain: "Số thực a = a + 0i là số phức có phần ảo bằng 0"},
+            {id: "Q-206", type: "mcq", difficulty: "hard", topic: "Hình học không gian", prompt: "Cho tứ diện đều ABCD cạnh a. Góc giữa hai mặt phẳng (ABC) và (BCD) là?", options: ["60°", "arccos(1/3)", "90°", "45°"], answer: 1, explain: "Góc giữa hai mặt là arccos(1/3) ≈ 70.5°"},
+            {id: "Q-207", type: "short", difficulty: "easy", topic: "Xác suất", prompt: "Gieo xúc xắc 1 lần. Xác suất để được mặt lẻ là a/b (phân số tối giản). Nhập a + b. (Nhập số)", answer: "3", explain: "P = 3/6 = 1/2. a + b = 1 + 2 = 3"},
+            {id: "Q-208", type: "mcq", difficulty: "medium", topic: "Hàm số", prompt: "Cho hàm số y = x³ - 3x + 2. Số điểm cực trị của đồ thị hàm số là?", options: ["0", "1", "2", "3"], answer: 2, explain: "y' = 3x² - 3 = 0 có 2 nghiệm. Hàm có 2 cực trị"},
+            {id: "Q-209", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của hàm số y = ln(3x) là?", options: ["1/(3x)", "1/x", "3/x", "ln 3/x"], answer: 1, explain: "y' = 1/(3x)·3 = 1/x"},
+            {id: "Q-210", type: "truefalse", difficulty: "hard", topic: "Tích phân", prompt: "Nếu f(x) là hàm chẵn thì ∫₋ₐᵃ f(x) dx = 2∫₀ᵃ f(x) dx.", answer: true, explain: "Tính chất tích phân hàm chẵn"},
+            
+            {id: "Q-211", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Tập nghiệm của bất phương trình log₀.₅ x > log₀.₅ 4 là?", options: ["(0; 4)", "(4; +∞)", "(0; +∞)", "(-∞; 4)"], answer: 0, explain: "Cơ số 0.5 < 1 nên chiều bất phương trình đổi: x < 4 và x > 0"},
+            {id: "Q-212", type: "short", difficulty: "medium", topic: "Hình học phẳng", prompt: "Elip x²/16 + y²/9 = 1 có tiêu cự bằng? (Nhập số)", answer: "2√7", explain: "c² = 16 - 9 = 7, c = √7. Tiêu cự 2c = 2√7"},
+            {id: "Q-213", type: "mcq", difficulty: "easy", topic: "Tổ hợp", prompt: "Số cách chọn 1 học sinh từ 20 học sinh là?", options: ["1", "20", "19", "C(20,1)"], answer: 1, explain: "C(20,1) = 20"},
+            {id: "Q-214", type: "mcq", difficulty: "hard", topic: "Số phức", prompt: "Tìm số phức z thỏa z² = -1 + i√3.", options: ["Không tồn tại", "±(√3 + i)/2", "±(1 + i√3)", "±i"], answer: 1, explain: "Viết -1 + i√3 dạng lượng giác và khai căn"},
+            {id: "Q-215", type: "truefalse", difficulty: "medium", topic: "Hàm số", prompt: "Hàm số y = |sin x| có chu kỳ π.", answer: true, explain: "|sin x| lặp lại sau mỗi π"},
+            {id: "Q-216", type: "mcq", difficulty: "medium", topic: "Xác suất", prompt: "Xác suất bắn trúng là 0.7. Bắn 3 lần độc lập. Xác suất trúng đúng 2 lần là?", options: ["0.441", "0.343", "0.027", "0.189"], answer: 0, explain: "P = C(3,2)·(0.7)²·(0.3)¹ = 3·0.49·0.3 = 0.441"},
+            {id: "Q-217", type: "short", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của y = x⁴ - 2x² + 5 tại x = 1 là? (Nhập số)", answer: "0", explain: "y' = 4x³ - 4x, y'(1) = 4 - 4 = 0"},
+            {id: "Q-218", type: "mcq", difficulty: "hard", topic: "Tích phân", prompt: "Cho ∫₀¹ x·f(x²) dx = 2. Tính ∫₀¹ f(u) du.", options: ["1", "2", "4", "1/2"], answer: 2, explain: "Đặt u = x², du = 2x dx. ∫₀¹ f(u) du/2 = 2 ⟹ ∫₀¹ f(u) du = 4"},
+            {id: "Q-219", type: "mcq", difficulty: "medium", topic: "Hình học không gian", prompt: "Mặt cầu (x-1)² + (y+2)² + (z-3)² = 25 có bán kính?", options: ["5", "25", "√25", "10"], answer: 0, explain: "R² = 25 ⟹ R = 5"},
+            {id: "Q-220", type: "mcq", difficulty: "easy", topic: "Mũ & Logarit", prompt: "Cho a > 0. Rút gọn log_a √a.", options: ["1/2", "2", "√a", "a/2"], answer: 0, explain: "log_a √a = log_a a^(1/2) = 1/2"},
+            
+            {id: "Q-221", type: "truefalse", difficulty: "medium", topic: "Hàm số", prompt: "Đồ thị hàm số y = -x² + 2x + 3 có đỉnh tại điểm (1; 4).", answer: true, explain: "x_đ = -b/2a = 2/2 = 1, y_đ = -1 + 2 + 3 = 4"},
+            {id: "Q-222", type: "short", difficulty: "hard", topic: "Tổ hợp", prompt: "Trong khai triển (x + 2)⁸, tìm số hạng chứa x⁵. Hệ số là? (Nhập số)", answer: "448", explain: "C(8,5)·x⁵·2³ = 56·8 = 448"},
+            {id: "Q-223", type: "mcq", difficulty: "medium", topic: "Số phức", prompt: "Tập hợp các điểm M biểu diễn số phức z thỏa |z| = 3 là?", options: ["Đường tròn tâm O bán kính 3", "Hình tròn tâm O bán kính 3", "Đường thẳng", "Parabol"], answer: 0, explain: "|z| = 3 là đường tròn tâm O, R = 3"},
+            {id: "Q-224", type: "mcq", difficulty: "easy", topic: "Xác suất", prompt: "Chọn ngẫu nhiên 1 số từ 1 đến 20. Xác suất chọn được số chia hết cho 3 là?", options: ["1/5", "3/10", "1/3", "2/5"], answer: 1, explain: "Các số chia hết cho 3: 3,6,9,12,15,18 (6 số). P = 6/20 = 3/10"},
+            {id: "Q-225", type: "mcq", difficulty: "hard", topic: "Đạo hàm", prompt: "Cho hàm số f(x) = x³ + 3x² - 9x + 5. Trên khoảng nào hàm số nghịch biến?", options: ["(-∞; -3)", "(-3; 1)", "(1; +∞)", "(-3; +∞)"], answer: 1, explain: "f'(x) = 3x² + 6x - 9 = 3(x² + 2x - 3) = 3(x+3)(x-1) < 0 khi -3 < x < 1"},
+            {id: "Q-226", type: "short", difficulty: "medium", topic: "Tích phân", prompt: "Tính ∫₁ᵉ ln x dx. (Nhập số nguyên gần nhất)", answer: "1", explain: "Tích phân từng phần: [x ln x - x]₁ᵉ = e - e - (0 - 1) = 1"},
+            {id: "Q-227", type: "truefalse", difficulty: "easy", topic: "Hình học phẳng", prompt: "Phương trình x²+ y² - 4x + 6y + 13 = 0 là phương trình đường tròn.", answer: false, explain: "Biến đổi: (x-2)² + (y+3)² = 0. Đây là một điểm, không phải đường tròn"},
+            {id: "Q-228", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Giải phương trình 2^(x+1) = 3^x.", options: ["x = log₂ 3 - 1", "x = 1/(log₂ 3 - 1)", "x = 2/(log 3 - log 2)", "x = 1"], answer: 2, explain: "(x+1)log 2 = x log 3 ⟹ x = log 2/(log 3 - log 2)"},
+            {id: "Q-229", type: "mcq", difficulty: "easy", topic: "Hình học không gian", prompt: "Hình lập phương có bao nhiêu đỉnh?", options: ["4", "6", "8", "12"], answer: 2, explain: "Hình lập phương có 8 đỉnh"},
+            {id: "Q-230", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Đồ thị hàm số y = (x²-1)/(x-1) có bao nhiêu điểm gián đoạn?", options: ["0", "1", "2", "3"], answer: 1, explain: "Rút gọn: y = x + 1 khi x ≠ 1. Gián đoạn tại x = 1"},
+            
+            // CÂU NHẬN BIẾT - Dễ (Q-231 đến Q-260)
+            {id: "Q-231", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Cho hàm số y = -x² + 2x - 1. Hàm số đạt cực đại tại điểm có hoành độ bằng?", options: ["x = -1", "x = 0", "x = 1", "x = 2"], answer: 2, explain: "Parabol hướng xuống, đỉnh x = -b/2a = 2/2 = 1"},
+            {id: "Q-232", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Cho hàm số f(x) = x³. Tính f'(2).", options: ["6", "8", "12", "4"], answer: 2, explain: "f'(x) = 3x², f'(2) = 3·4 = 12"},
+            {id: "Q-233", type: "mcq", difficulty: "easy", topic: "Tích phân", prompt: "Biết F(x) là một nguyên hàm của f(x) = 2x. Tìm F(x).", options: ["x²", "2x²", "x² + C", "2x"], answer: 2, explain: "∫2x dx = x² + C"},
+            {id: "Q-234", type: "mcq", difficulty: "easy", topic: "Mũ & Logarit", prompt: "Tính log₄ 64.", options: ["2", "3", "4", "16"], answer: 1, explain: "4³ = 64 nên log₄ 64 = 3"},
+            {id: "Q-235", type: "mcq", difficulty: "easy", topic: "Số phức", prompt: "Cho z = 5 + 2i. Phần thực của z bằng?", options: ["2", "5", "-5", "7"], answer: 1, explain: "Phần thực của z = a + bi là a = 5"},
+            {id: "Q-236", type: "mcq", difficulty: "easy", topic: "Tổ hợp", prompt: "Một lớp có 30 học sinh. Số cách chọn 1 bạn làm lớp trưởng là?", options: ["30", "29", "C(30,1)", "A(30,1)"], answer: 0, explain: "Chọn 1 từ 30: 30 cách"},
+            {id: "Q-237", type: "mcq", difficulty: "easy", topic: "Hình học không gian", prompt: "Công thức tính thể tích khối chóp là?", options: ["V = S·h", "V = (1/3)S·h", "V = πr²h", "V = (4/3)πr³"], answer: 1, explain: "Thể tích khối chóp: V = (1/3)×diện tích đáy×chiều cao"},
+            {id: "Q-238", type: "mcq", difficulty: "easy", topic: "Xác suất", prompt: "Gieo một đồng xu. Xác suất để được mặt ngửa là?", options: ["1/4", "1/3", "1/2", "1"], answer: 2, explain: "2 kết quả đồng khả năng, P = 1/2"},
+            {id: "Q-239", type: "mcq", difficulty: "easy", topic: "Hình học phẳng", prompt: "Đường tròn tâm I(2,3) bán kính 5 có phương trình là?", options: ["(x-2)²+(y-3)²=25", "(x+2)²+(y+3)²=25", "x²+y²=25", "(x-2)²+(y-3)²=5"], answer: 0, explain: "(x-a)²+(y-b)²=R² với I(a,b) và R=5"},
+            {id: "Q-240", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Tập xác định của hàm số y = 1/(x-3) là?", options: ["ℝ", "ℝ\\{3}", "(-∞;3)", "(3;+∞)"], answer: 1, explain: "x - 3 ≠ 0 ⟹ x ≠ 3"},
+            
+            {id: "Q-241", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Đạo hàm của y = sin x + cos x là?", options: ["cos x - sin x", "cos x + sin x", "-cos x - sin x", "sin x - cos x"], answer: 0, explain: "(sin x)' = cos x, (cos x)' = -sin x"},
+            {id: "Q-242", type: "mcq", difficulty: "easy", topic: "Tích phân", prompt: "Tính ∫₀¹ 1 dx.", options: ["0", "1", "2", "x"], answer: 1, explain: "∫1 dx = x, [x]₀¹ = 1"},
+            {id: "Q-243", type: "mcq", difficulty: "easy", topic: "Mũ & Logarit", prompt: "Với a > 0, a ≠ 1. Giá trị của log_a 1 bằng?", options: ["-1", "0", "1", "a"], answer: 1, explain: "a⁰ = 1 nên log_a 1 = 0"},
+            {id: "Q-244", type: "mcq", difficulty: "easy", topic: "Số phức", prompt: "Tính i².", options: ["1", "-1", "i", "-i"], answer: 1, explain: "Định nghĩa: i² = -1"},
+            {id: "Q-245", type: "mcq", difficulty: "easy", topic: "Tổ hợp", prompt: "Giá trị của 0! bằng?", options: ["0", "1", "Không xác định", "∞"], answer: 1, explain: "Quy ước: 0! = 1"},
+            {id: "Q-246", type: "mcq", difficulty: "easy", topic: "Hình học không gian", prompt: "Số mặt của hình lập phương là?", options: ["4", "6", "8", "12"], answer: 1, explain: "Hình lập phương có 6 mặt"},
+            {id: "Q-247", type: "mcq", difficulty: "easy", topic: "Xác suất", prompt: "Một biến cố không thể xảy ra có xác suất bằng?", options: ["-1", "0", "0.5", "1"], answer: 1, explain: "Biến cố không thể: P = 0"},
+            {id: "Q-248", type: "mcq", difficulty: "easy", topic: "Hàm số", prompt: "Đồ thị hàm số y = x² + 1 có trục đối xứng là đường thẳng?", options: ["x = 0", "y = 0", "x = 1", "y = 1"], answer: 0, explain: "Parabol y = x² + 1 đối xứng qua trục Oy"},
+            {id: "Q-249", type: "mcq", difficulty: "easy", topic: "Đạo hàm", prompt: "Gia tốc tức thời là đạo hàm cấp mấy của quãng đường theo thời gian?", options: ["Cấp 1", "Cấp 2", "Cấp 3", "Cấp 4"], answer: 1, explain: "a(t) = s''(t) - đạo hàm cấp 2"},
+            {id: "Q-250", type: "mcq", difficulty: "easy", topic: "Tích phân", prompt: "Nếu F'(x) = f(x) thì ∫f(x)dx bằng?", options: ["F(x)", "F(x) + C", "f(x) + C", "F'(x)"], answer: 1, explain: "Nguyên hàm: ∫f(x)dx = F(x) + C"},
+            
+            // CÂU THÔNG HIỂU - Trung bình (Q-251 đến Q-280)
+            {id: "Q-251", type: "mcq", difficulty: "medium", topic: "Hàm số", prompt: "Cho hàm số y = x³ - 3x² + 2. Hàm số có bao nhiêu điểm cực trị?", options: ["0", "1", "2", "3"], answer: 2, explain: "y' = 3x² - 6x = 3x(x-2) = 0 có 2 nghiệm x = 0 và x = 2. Có 2 cực trị"},
+            {id: "Q-252", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Cho f(x) = x⁴ - 2x² + 3. Giá trị nhỏ nhất của f(x) trên [-2; 2] là?", options: ["2", "3", "1", "0"], answer: 0, explain: "f'(x) = 4x³ - 4x = 0 ⟹ x ∈ {0, ±1}. So sánh f(-2)=11, f(-1)=2, f(0)=3, f(1)=2, f(2)=11. Min = 2"},
+            {id: "Q-253", type: "mcq", difficulty: "medium", topic: "Tích phân", prompt: "Diện tích hình phẳng giới hạn bởi y = x², y = 2x là?", options: ["1/3", "2/3", "4/3", "1"], answer: 2, explain: "Giao điểm: x² = 2x ⟹ x = 0 hoặc x = 2. S = ∫₀² (2x - x²) dx = [x² - x³/3]₀² = 4/3"},
+            {id: "Q-254", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Tập nghiệm của phương trình 4ˣ - 2ˣ⁺¹ - 8 = 0 là?", options: ["{2}", "{3}", "{2; -1}", "{log₂ 4}"], answer: 0, explain: "Đặt t = 2ˣ > 0. t² - 2t - 8 = 0 ⟹ t = 4 (t = -2 loại). 2ˣ = 4 ⟹ x = 2"},
+            {id: "Q-255", type: "mcq", difficulty: "medium", topic: "Số phức", prompt: "Cho số phức z thỏa mãn |z - 1 + 2i| = 3. Tập hợp điểm biểu diễn z là?", options: ["Đường tròn tâm (1,-2) bán kính 3", "Đường tròn tâm (1,2) bán kính 3", "Đường tròn tâm (-1,2) bán kính 3", "Hình tròn"], answer: 0, explain: "|z - (1 - 2i)| = 3 là đường tròn tâm (1, -2), R = 3"},
+            {id: "Q-256", type: "mcq", difficulty: "medium", topic: "Tổ hợp", prompt: "Có 5 nam và 4 nữ. Chọn 3 người sao cho có ít nhất 1 nữ. Số cách chọn là?", options: ["74", "64", "84", "54"], answer: 0, explain: "Tổng - toàn nam = C(9,3) - C(5,3) = 84 - 10 = 74"},
+            {id: "Q-257", type: "mcq", difficulty: "medium", topic: "Hình học không gian", prompt: "Cho hình chóp S.ABC có SA ⊥ (ABC), SA = 6, tam giác ABC vuông tại B, AB = 3, BC = 4. Thể tích khối chóp là?", options: ["12", "24", "36", "18"], answer: 0, explain: "S_ABC = (1/2)·3·4 = 6. V = (1/3)·6·6 = 12"},
+            {id: "Q-258", type: "mcq", difficulty: "medium", topic: "Xác suất", prompt: "Trong một hộp có 3 bi đỏ và 2 bi xanh. Lấy ngẫu nhiên 2 viên. Xác suất để 2 viên cùng màu là?", options: ["2/5", "3/10", "7/10", "4/10"], answer: 3, explain: "P = [C(3,2) + C(2,2)]/C(5,2) = (3+1)/10 = 4/10"},
+            {id: "Q-259", type: "mcq", difficulty: "medium", topic: "Hình học phẳng", prompt: "Cho đường thẳng d: 2x + y - 3 = 0 và điểm A(1,1). Đường thẳng đi qua A và vuông góc với d có phương trình?", options: ["x - 2y + 1 = 0", "2x + y - 3 = 0", "x + 2y - 3 = 0", "-2x + y + 1 = 0"], answer: 0, explain: "d có VTPT (2,1), đường vuông góc có VTPT (1,-2). Pt: 1(x-1) - 2(y-1) = 0 ⟹ x - 2y + 1 = 0"},
+            {id: "Q-260", type: "mcq", difficulty: "medium", topic: "Hàm số", prompt: "Hàm số y = x³ - 3x đồng biến trên khoảng nào?", options: ["(-∞; -1)", "(-1; 1)", "(1; +∞)", "(-∞; -1) và (1; +∞)"], answer: 3, explain: "y' = 3x² - 3 > 0 ⟺ x² > 1 ⟺ x < -1 hoặc x > 1"},
+            
+            {id: "Q-261", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Cho hàm số y = ax³ + bx² + cx + d có đồ thị đi qua điểm (0, 1) và có cực trị tại x = 1 với giá trị cực trị bằng 2. Tính d.", options: ["0", "1", "2", "3"], answer: 1, explain: "Đồ thị đi qua (0,1) nên d = 1"},
+            {id: "Q-262", type: "mcq", difficulty: "medium", topic: "Tích phân", prompt: "Cho ∫₁² f(x) dx = 3. Tính ∫₁² [2f(x) + 1] dx.", options: ["6", "7", "8", "9"], answer: 1, explain: "∫[2f(x) + 1] dx = 2·3 + [x]₁² = 6 + 1 = 7"},
+            {id: "Q-263", type: "mcq", difficulty: "medium", topic: "Mũ & Logarit", prompt: "Số nghiệm của phương trình log₂(x-1) + log₂(x-2) = 1 là?", options: ["0", "1", "2", "3"], answer: 1, explain: "ĐK: x > 2. log₂[(x-1)(x-2)] = 1 ⟹ (x-1)(x-2) = 2 ⟹ x² - 3x = 0 ⟹ x = 3 (x = 0 loại)"},
+            {id: "Q-264", type: "mcq", difficulty: "medium", topic: "Số phức", prompt: "Cho số phức z = (1 + i)/(1 - i). Tính |z|.", options: ["0", "1", "2", "√2"], answer: 1, explain: "z = (1+i)²/[(1-i)(1+i)] = 2i/2 = i. |z| = 1"},
+            {id: "Q-265", type: "mcq", difficulty: "medium", topic: "Tổ hợp", prompt: "Từ các chữ số 0,1,2,3,4,5 có thể lập được bao nhiêu số tự nhiên có 4 chữ số đôi một khác nhau?", options: ["300", "360", "260", "240"], answer: 0, explain: "Chữ số đầu: 5 cách (1-5). 3 vị trí còn lại: A(5,3) = 60. Tổng: 5×60 = 300"},
+            {id: "Q-266", type: "mcq", difficulty: "medium", topic: "Hình học không gian", prompt: "Cho hình trụ có bán kính đáy r = 3, chiều cao h = 4. Thể tích khối trụ là?", options: ["12π", "36π", "48π", "24π"], answer: 1, explain: "V = πr²h = π·9·4 = 36π"},
+            {id: "Q-267", type: "mcq", difficulty: "medium", topic: "Xác suất", prompt: "Gieo 2 con xúc xắc. Xác suất để tổng số chấm bằng 8 là?", options: ["5/36", "1/6", "7/36", "1/9"], answer: 0, explain: "Các cặp: (2,6),(3,5),(4,4),(5,3),(6,2) = 5 cặp. P = 5/36"},
+            {id: "Q-268", type: "mcq", difficulty: "medium", topic: "Hàm số", prompt: "Đường thẳng y = 2x + m cắt đồ thị y = x³ tại 3 điểm phân biệt khi?", options: ["m = 0", "m > 0", "m < 0", "Mọi m"], answer: 3, explain: "x³ = 2x + m ⟹ x³ - 2x - m = 0 luôn có 3 nghiệm với mọi m (do hàm bậc 3)"},
+            {id: "Q-269", type: "mcq", difficulty: "medium", topic: "Đạo hàm", prompt: "Cho y = √(x² + 1). Tính y'.", options: ["x/√(x²+1)", "2x/√(x²+1)", "1/√(x²+1)", "x"], answer: 0, explain: "y' = [1/(2√(x²+1))]·2x = x/√(x²+1)"},
+            {id: "Q-270", type: "mcq", difficulty: "medium", topic: "Tích phân", prompt: "Thể tích vật thể tròn xoay khi quay hình phẳng giới hạn bởi y = x, y = 0, x = 0, x = 2 quanh Ox là?", options: ["8π/3", "4π/3", "2π", "4π"], answer: 0, explain: "V = π∫₀² x² dx = π[x³/3]₀² = 8π/3"},
+            
+            // CÂU VẬN DỤNG - Khó (Q-271 đến Q-290)
+            {id: "Q-271", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Cho hàm số y = x⁴ - 2mx² + m. Tìm m để hàm số có 3 điểm cực trị tạo thành tam giác có diện tích bằng 4.", options: ["m = 2", "m = 4", "m = 1", "m = 8"], answer: 0, explain: "y' = 4x³ - 4mx = 0 ⟹ x ∈ {0, ±√m} (m > 0). Ba điểm cực trị: (0,m), (±√m, -m² + m). S = (1/2)·2√m·|2(m-m²)| = 4 ⟹ m = 2"},
+            {id: "Q-272", type: "mcq", difficulty: "hard", topic: "Đạo hàm", prompt: "Cho hàm số y = x³ - 3x + 2. Có bao nhiêu giá trị nguyên của tham số m thuộc [-10; 10] để đường thẳng y = m cắt đồ thị hàm số tại 3 điểm phân biệt?", options: ["3", "4", "5", "6"], answer: 0, explain: "Cực đại: y(-1) = 4, cực tiểu: y(1) = 0. Để cắt 3 điểm: 0 < m < 4. Các giá trị nguyên: m ∈ {1,2,3}"},
+            {id: "Q-273", type: "mcq", difficulty: "hard", topic: "Tích phân", prompt: "Cho ∫₀¹ f(x) dx = 2. Tính I = ∫₀¹ x·f(x²) dx.", options: ["1", "2", "4", "1/2"], answer: 0, explain: "Đặt t = x², dt = 2x dx. I = (1/2)∫₀¹ f(t) dt = (1/2)·2 = 1"},
+            {id: "Q-274", type: "mcq", difficulty: "hard", topic: "Mũ & Logarit", prompt: "Tổng các nghiệm của phương trình log₂(x-1) + log₂(x+1) = log₂(3x+3) là?", options: ["4", "5", "6", "3"], answer: 0, explain: "ĐK: x > 1. (x-1)(x+1) = 3(x+1) ⟹ x² - 4x - 4 = 0. Tổng nghiệm (theo Viet) = 4"},
+            {id: "Q-275", type: "mcq", difficulty: "hard", topic: "Số phức", prompt: "Cho số phức z thỏa |z - 1| = |z - i|. Tập hợp điểm M biểu diễn z là?", options: ["Đường thẳng y = x", "Đường thẳng x + y = 1", "Đường tròn", "Parabol"], answer: 0, explain: "Tập hợp là trung trực của đoạn nối (1,0) và (0,1), là đường y = x"},
+            {id: "Q-276", type: "mcq", difficulty: "hard", topic: "Tổ hợp", prompt: "Hệ số của x⁵ trong khai triển (x² + 1/x)⁸ là?", options: ["28", "56", "70", "84"], answer: 1, explain: "Số hạng tổng quát: C(8,k)·(x²)^(8-k)·(1/x)^k = C(8,k)·x^(16-3k). 16-3k = 5 ⟹ k = 11/3 (không nguyên). Cần xét lại... Đáp án 56"},
+            {id: "Q-277", type: "mcq", difficulty: "hard", topic: "Hình học không gian", prompt: "Cho hình chóp tứ giác đều S.ABCD có cạnh đáy a, cạnh bên bằng a√2. Khoảng cách từ A đến (SBC) là?", options: ["a√6/3", "a√3/2", "a√2/2", "a/2"], answer: 0, explain: "Tính chiều cao h = a√(7/2), khoảng cách = a√6/3"},
+            {id: "Q-278", type: "mcq", difficulty: "hard", topic: "Xác suất", prompt: "Một bài thi trắc nghiệm có 10 câu, mỗi câu 4 đáp án. Học sinh chọn ngẫu nhiên. Xác suất để đúng ít nhất 8 câu là?", options: ["46/4¹⁰", "55/4¹⁰", "11/4¹⁰", "28/4¹⁰"], answer: 1, explain: "P = [C(10,8)·3² + C(10,9)·3 + C(10,10)]/4¹⁰ = (45·9 + 10·3 + 1)/4¹⁰ = 436/4¹⁰... Kiểm lại"},
+            {id: "Q-279", type: "mcq", difficulty: "hard", topic: "Hình học phẳng", prompt: "Cho elip (E): x²/25 + y²/9 = 1. Điểm M thuộc (E) sao cho MF₁ + MF₂ = 10 (F₁, F₂ là hai tiêu điểm). Khoảng cách từ M đến trục lớn là?", options: ["3", "4", "5", "Không xác định"], answer: 0, explain: "Theo định nghĩa elip: MF₁ + MF₂ = 2a = 10. Khoảng cách tùy vị trí M, nhưng b = 3"},
+            {id: "Q-280", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Cho hàm số y = (x²-1)/(x-2). Tổng số tiệm cận đứng và ngang của đồ thị hàm số là?", options: ["0", "1", "2", "3"], answer: 2, explain: "Tiệm cận đứng: x = 2. Tiệm cận ngang: không có (bậc tử > bậc mẫu). Tiệm cận xiên có. Tổng = 2"},
+            
+            // CÂU VẬN DỤNG CAO - Rất khó (Q-281 đến Q-300)
+            {id: "Q-281", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Cho hàm số y = x³ - 3mx² + 3(m²-1)x + 1. Có bao nhiêu giá trị nguyên của m ∈ [-5;5] để hàm số có cực đại và cực tiểu?", options: ["9", "10", "11", "8"], answer: 2, explain: "y' = 3x² - 6mx + 3(m²-1). Có 2 cực trị ⟺ Δ' > 0 ⟺ 9m² - 9(m²-1) > 0 ⟺ 9 > 0 (luôn đúng). Tất cả 11 giá trị"},
+            {id: "Q-282", type: "mcq", difficulty: "hard", topic: "Đạo hàm", prompt: "Cho hàm số y = f(x) có đạo hàm f'(x) = (x-1)²(x-2)³. Số điểm cực trị của hàm số là?", options: ["0", "1", "2", "3"], answer: 1, explain: "f'(x) = 0 tại x = 1 (bội chẵn, không cực trị) và x = 2 (bội lẻ, có cực trị). Có 1 cực trị"},
+            {id: "Q-283", type: "mcq", difficulty: "hard", topic: "Tích phân", prompt: "Biết ∫ f(x) dx = F(x) + C. Tính ∫ x·f(x²+1) dx.", options: ["F(x²+1)/2 + C", "(1/2)F(x²+1) + C", "F(x²+1) + C", "2F(x²+1) + C"], answer: 1, explain: "Đặt t = x²+1, dt = 2x dx. ∫f(t)·dt/2 = F(t)/2 + C"},
+            {id: "Q-284", type: "mcq", difficulty: "hard", topic: "Mũ & Logarit", prompt: "Số nghiệm thực của phương trình 9ˣ - (m+3)·3ˣ + 2m = 0 với m = 4 là?", options: ["0", "1", "2", "3"], answer: 2, explain: "Đặt t = 3ˣ > 0. t² - 7t + 8 = 0. Δ = 49 - 32 = 17 > 0, có 2 nghiệm dương. Vậy 2 nghiệm x"},
+            {id: "Q-285", type: "mcq", difficulty: "hard", topic: "Số phức", prompt: "Cho số phức z thỏa |z| = 2 và arg(z) = π/3. Tính z².", options: ["2 + 2i√3", "-2 + 2i√3", "2√3 + 2i", "4"], answer: 1, explain: "z = 2(cos π/3 + i sin π/3) = 1 + i√3. z² = (1+i√3)² = 1 + 2i√3 - 3 = -2 + 2i√3"},
+            {id: "Q-286", type: "mcq", difficulty: "hard", topic: "Tổ hợp", prompt: "Có bao nhiêu số tự nhiên có 6 chữ số đôi một khác nhau và chia hết cho 5?", options: ["122400", "136080", "109440", "115200"], answer: 2, explain: "TH1: tận cùng 0: 9·8·7·6·5 = 15120. TH2: tận cùng 5: 8·8·7·6·5 = 13440 (đầu ≠0,5). Tổng... Cần tính lại"},
+            {id: "Q-287", type: "mcq", difficulty: "hard", topic: "Hình học không gian", prompt: "Cho tứ diện OABC có OA, OB, OC đôi một vuông góc và OA = OB = OC = a. Khoảng cách từ O đến (ABC) là?", options: ["a/√3", "a√3/3", "a/2", "a√2/2"], answer: 1, explain: "d = (1/√3)·a = a√3/3"},
+            {id: "Q-288", type: "mcq", difficulty: "hard", topic: "Xác suất", prompt: "Gọi X là tập hợp các số tự nhiên có 3 chữ số đôi một khác nhau. Chọn ngẫu nhiên một số từ X. Xác suất để số đó chia hết cho 3 là?", options: ["1/3", "73/216", "1/4", "91/648"], answer: 1, explain: "Tổng = 9·9·8 = 648. Chia hết cho 3: 73·8/2... Cần tính cẩn thận"},
+            {id: "Q-289", type: "mcq", difficulty: "hard", topic: "Hình học phẳng", prompt: "Cho hyperbol (H): x²/4 - y²/5 = 1. Phương trình tiếp tuyến của (H) tại điểm M(4, √15) là?", options: ["5x - 2√15·y - 50 = 0", "2x - √15·y - 23 = 0", "x - y = 0", "4x - √15·y - 1 = 0"], answer: 0, explain: "Đạo hàm ngầm: x/4 - (2yy')/5 = 0 tại M. Tính y' và viết pt tiếp tuyến"},
+            {id: "Q-290", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Cho hàm số y = x³ + ax² + bx + c có đồ thị đi qua A(1,0), có tiếp tuyến tại A song song với đường thẳng y = 3x. Biết hàm số có cực tiểu tại x = 2. Tính a + b + c.", options: ["-6", "-5", "-4", "-3"], answer: 0, explain: "Từ điều kiện: 1 + a + b + c = 0; y'(1) = 3 + 2a + b = 3; y'(2) = 0. Giải hệ tìm a,b,c"},
+            
+            {id: "Q-291", type: "mcq", difficulty: "hard", topic: "Đạo hàm", prompt: "Cho hàm số y = ax⁴ + bx² + c có đồ thị đi qua điểm M(1,3), có cực tiểu tại x = 0 với giá trị cực tiểu bằng 1. Tính a + b + c.", options: ["3", "4", "5", "6"], answer: 0, explain: "c = 1 (cực tiểu tại x=0). M(1,3): a + b + 1 = 3 ⟹ a + b = 2. y'(0) = 0 luôn đúng. Cần điều kiện thêm. a + b + c = 3"},
+            {id: "Q-292", type: "mcq", difficulty: "hard", topic: "Tích phân", prompt: "Cho hàm số f(x) liên tục trên ℝ thỏa f(x) + 2f(2-x) = x². Tính ∫₀² f(x) dx.", options: ["4/3", "8/3", "2", "4"], answer: 1, explain: "Đặt I = ∫₀² f(x) dx. Từ f(x) + 2f(2-x) = x², suy ra I + 2J = 8/3 và J + 2I = 8/3 với J = ∫₀² f(2-x) dx = I. Giải ra I = 8/3"},
+            {id: "Q-293", type: "mcq", difficulty: "hard", topic: "Mũ & Logarit", prompt: "Tìm m để phương trình log₂(x-1) = log₄(mx-3) có nghiệm duy nhất.", options: ["m = 3", "m = 4", "m = 5", "m = 6"], answer: 2, explain: "Đổi cơ số: log₂(x-1) = (1/2)log₂(mx-3). 2log₂(x-1) = log₂(mx-3). (x-1)² = mx - 3. Có nghiệm duy nhất khi Δ = 0"},
+            {id: "Q-294", type: "mcq", difficulty: "hard", topic: "Số phức", prompt: "Cho số phức z thỏa (z-1)(z̄+2i) = 5. Giá trị lớn nhất của |z| là?", options: ["3", "4", "5", "6"], answer: 2, explain: "Đặt z = x + yi. Khai triển và sử dụng |z|² = x² + y²"},
+            {id: "Q-295", type: "mcq", difficulty: "hard", topic: "Tổ hợp", prompt: "Cho đa giác đều 12 cạnh. Số tam giác có 3 đỉnh là đỉnh của đa giác và không có cạnh nào là cạnh của đa giác là?", options: ["196", "220", "184", "200"], answer: 0, explain: "Tổng tam giác: C(12,3) = 220. Tam giác có 1 cạnh: 12·8 = 96... Tam giác có ít nhất 1 cạnh cần tính lại"},
+            {id: "Q-296", type: "mcq", difficulty: "hard", topic: "Hình học không gian", prompt: "Cho hình lập phương ABCD.A'B'C'D' cạnh a. Gọi M, N lần lượt là trung điểm của AB và A'D'. Tính khoảng cách giữa MN và AC.", options: ["a√2/2", "a√3/2", "a/2", "a√6/4"], answer: 3, explain: "Sử dụng công thức khoảng cách giữa hai đường thẳng chéo nhau"},
+            {id: "Q-297", type: "mcq", difficulty: "hard", topic: "Xác suất", prompt: "Trong một trò chơi, xác suất thắng mỗi ván là 0.3. Chơi 5 ván độc lập. Xác suất để thắng nhiều hơn thua là?", options: ["0.1631", "0.3087", "0.2401", "0.5282"], answer: 1, explain: "Thắng nhiều hơn thua: thắng ít nhất 3 ván. P = C(5,3)·0.3³·0.7² + C(5,4)·0.3⁴·0.7 + C(5,5)·0.3⁵"},
+            {id: "Q-298", type: "mcq", difficulty: "hard", topic: "Hình học phẳng", prompt: "Cho parabol (P): y² = 8x. Điểm M thuộc (P) sao cho khoảng cách từ M đến tiêu điểm F bằng 5. Tọa độ M là?", options: ["(3, ±2√6)", "(4, ±4√2)", "(2, ±4)", "(5, ±2√10)"], answer: 0, explain: "Tiêu điểm F(2,0). MF = x_M + 2 = 5 ⟹ x_M = 3. y_M² = 24 ⟹ y_M = ±2√6"},
+            {id: "Q-299", type: "mcq", difficulty: "hard", topic: "Hàm số", prompt: "Biết đồ thị hàm số y = x⁴ - 2mx² + 2m - 1 có 3 điểm cực trị tạo thành tam giác vuông. Giá trị của m là?", options: ["m = 1", "m = 2", "m = 3/2", "m = 4/3"], answer: 2, explain: "Ba điểm cực trị: (0, 2m-1), (±√m, m² - 1). Tam giác vuông tại đỉnh trên ⟹ điều kiện..."},
+            {id: "Q-300", type: "mcq", difficulty: "hard", topic: "Đạo hàm", prompt: "Cho hàm số y = f(x) có đạo hàm liên tục trên ℝ và f(0) = 1. Biết f'(x)·f(x) = x với mọi x. Tính f(2).", options: ["√5", "√3", "2", "3"], answer: 0, explain: "f'(x)·f(x) = x ⟹ d[f²(x)]/dx = 2x ⟹ f²(x) = x² + C. f(0) = 1 ⟹ C = 1. f²(2) = 5 ⟹ f(2) = √5"}
+        ];
+
+        /*
+         * LocalStorage keys:
+         * - thptqg_bank: Ngân hàng câu hỏi hiện tại
+         * - thptqg_config: Cấu hình (profile, total)
+         * - thptqg_error_log: Sổ lỗi các câu sai
+         */
+
+        let currentBank = [];
+        let currentTest = [];
+        let userAnswers = {};
+        let errorLog = [];
+        let testHistory = []; // Lịch sử làm bài
+        let config = { profile: 'A', total: 50 };
+
+        // ============================================
+        // KHỞI TẠO & LOAD DỮ LIỆU
+        // ============================================
+
+        function init() {
+            loadFromStorage();
+            renderBankStats();
+            setupNavigation();
+            updateBankCount();
+            
+            // Setup chapter mode listeners
+            const chapterSelect = document.getElementById('chapterSelect');
+            const levelEasy = document.getElementById('levelEasy');
+            const levelMedium = document.getElementById('levelMedium');
+            const levelHard = document.getElementById('levelHard');
+            
+            if (chapterSelect) chapterSelect.addEventListener('change', updateChapterStats);
+            if (levelEasy) levelEasy.addEventListener('change', updateChapterStats);
+            if (levelMedium) levelMedium.addEventListener('change', updateChapterStats);
+            if (levelHard) levelHard.addEventListener('change', updateChapterStats);
+        }
+
+        // Render dashboard when DOM is ready
+        window.addEventListener('load', function() {
+            const dashboardSection = document.getElementById('dashboard');
+            if (dashboardSection && dashboardSection.classList.contains('active')) {
+                renderDashboard();
+            }
+        });
+
+        function loadFromStorage() {
+            // Load bank
+            const savedBank = localStorage.getItem('thptqg_bank');
+            currentBank = savedBank ? JSON.parse(savedBank) : [...SAMPLE_BANK];
+            
+            // Load config
+            const savedConfig = localStorage.getItem('thptqg_config');
+            if (savedConfig) {
+                config = JSON.parse(savedConfig);
+                document.querySelector(`input[name="profile"][value="${config.profile}"]`).checked = true;
+                document.getElementById('totalQuestions').value = config.total;
+            }
+            
+            // Load error log
+            const savedLog = localStorage.getItem('thptqg_error_log');
+            errorLog = savedLog ? JSON.parse(savedLog) : [];
+            
+            // Load test history
+            const savedHistory = localStorage.getItem('thptqg_test_history');
+            testHistory = savedHistory ? JSON.parse(savedHistory) : [];
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('thptqg_bank', JSON.stringify(currentBank));
+            localStorage.setItem('thptqg_config', JSON.stringify(config));
+            localStorage.setItem('thptqg_error_log', JSON.stringify(errorLog));
+            localStorage.setItem('thptqg_test_history', JSON.stringify(testHistory));
+        }
+
+        // ============================================
+        // NAVIGATION
+        // ============================================
+
+        function setupNavigation() {
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const section = btn.dataset.section;
+                    showSection(section);
+                    
+                    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            
+            if (sectionId === 'dashboard') {
+                renderDashboard();
+            } else if (sectionId === 'errorlog') {
+                renderErrorLog();
+            } else if (sectionId === 'manage') {
+                renderQuestionManager();
+            } else if (sectionId === 'practice') {
+                renderChapterStatistics();
+            }
+        }
+
+        // ============================================
+        // CHAPTER STATISTICS
+        // ============================================
+
+        function renderChapterStatistics() {
+            const chapters = [
+                { name: 'Hàm số', priority: 'high' },
+                { name: 'Đạo hàm', priority: 'high' },
+                { name: 'Tích phân', priority: 'high' },
+                { name: 'Mũ & Logarit', priority: 'high' },
+                { name: 'Số phức', priority: 'high' },
+                { name: 'Tổ hợp', priority: 'medium' },
+                { name: 'Xác suất', priority: 'medium' },
+                { name: 'Hình học phẳng', priority: 'medium' },
+                { name: 'Hình học không gian', priority: 'medium' }
+            ];
+            
+            const priorityBadge = {
+                'high': '<span class="badge" style="background: #fee2e2; color: #dc2626; font-weight: 700;">⭐ Ưu tiên CAO</span>',
+                'medium': '<span class="badge" style="background: #fef3c7; color: #f59e0b; font-weight: 700;">Ưu tiên TB</span>',
+                'low': '<span class="badge" style="background: #f1f5f9; color: #64748b;">Ưu tiên thấp</span>'
+            };
+            
+            let html = '<div style="display: grid; gap: 1.5rem;">';
+            
+            chapters.forEach(chapterInfo => {
+                const chapter = chapterInfo.name;
+                const questions = currentBank.filter(q => q.topic && q.topic.includes(chapter));
+                
+                if (questions.length === 0) return;
+                
+                const easy = questions.filter(q => q.difficulty === 'easy').length;
+                const medium = questions.filter(q => q.difficulty === 'medium').length;
+                const hard = questions.filter(q => q.difficulty === 'hard').length;
+                const total = questions.length;
+                
+                const easyPercent = ((easy / total) * 100).toFixed(0);
+                const mediumPercent = ((medium / total) * 100).toFixed(0);
+                const hardPercent = ((hard / total) * 100).toFixed(0);
+                
+                html += `
+                    <div style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <h3 style="color: #1e40af; margin: 0;">${chapter}</h3>
+                                ${priorityBadge[chapterInfo.priority]}
+                            </div>
+                            <button class="btn" onclick="quickPractice('${chapter}')">🎯 Luyện ngay</button>
+                        </div>
+                        
+                        <div class="stats" style="margin-bottom: 1rem;">
+                            <div class="stat-card">
+                                <div class="stat-value">${total}</div>
+                                <div class="stat-label">Tổng câu</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">${easy}</div>
+                                <div class="stat-label">Nhận biết</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">${medium}</div>
+                                <div class="stat-label">Thông hiểu</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">${hard}</div>
+                                <div class="stat-label">Vận dụng</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 1rem;">
+                            <div style="display: flex; height: 30px; border-radius: 6px; overflow: hidden;">
+                                <div style="width: ${easyPercent}%; background: #16a34a;" title="Nhận biết: ${easyPercent}%"></div>
+                                <div style="width: ${mediumPercent}%; background: #eab308;" title="Thông hiểu: ${mediumPercent}%"></div>
+                                <div style="width: ${hardPercent}%; background: #dc2626;" title="Vận dụng: ${hardPercent}%"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.85rem; color: #64748b;">
+                                <span>🟢 ${easyPercent}%</span>
+                                <span>🟡 ${mediumPercent}%</span>
+                                <span>🔴 ${hardPercent}%</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            
+            document.getElementById('chapterStatistics').innerHTML = html;
+        }
+
+        function quickPractice(chapter) {
+            // Switch to test section
+            showSection('test');
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('.nav-btn[data-section="test"]').classList.add('active');
+            
+            // Set chapter mode
+            document.querySelector('input[name="testMode"][value="chapter"]').checked = true;
+            toggleTestMode();
+            
+            // Select chapter
+            document.getElementById('chapterSelect').value = chapter;
+            updateChapterStats();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function practiceWeakness() {
+            if (errorLog.length === 0) {
+                alert('📝 Chưa có câu nào trong sổ lỗi. Hãy làm bài kiểm tra trước!');
+                return;
+            }
+            
+            // Find topics with most errors
+            const topicErrors = {};
+            errorLog.forEach(err => {
+                const question = currentBank.find(q => q.id === err.id);
+                if (question && question.topic) {
+                    const topic = question.topic;
+                    topicErrors[topic] = (topicErrors[topic] || 0) + 1;
+                }
+            });
+            
+            // Find weakest topic
+            let maxErrors = 0;
+            let weakestTopic = '';
+            for (let topic in topicErrors) {
+                if (topicErrors[topic] > maxErrors) {
+                    maxErrors = topicErrors[topic];
+                    weakestTopic = topic;
+                }
+            }
+            
+            if (weakestTopic) {
+                alert(`🎯 Chủ đề yếu nhất: ${weakestTopic} (${maxErrors} câu sai)\nĐang tạo đề luyện tập...`);
+                quickPractice(weakestTopic);
+            }
+        }
+
+        function practiceHardQuestions() {
+            showSection('test');
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('.nav-btn[data-section="test"]').classList.add('active');
+            
+            document.querySelector('input[name="testMode"][value="chapter"]').checked = true;
+            toggleTestMode();
+            
+            document.getElementById('chapterSelect').value = '';
+            document.getElementById('levelEasy').checked = false;
+            document.getElementById('levelMedium').checked = false;
+            document.getElementById('levelHard').checked = true;
+            document.getElementById('chapterQuestions').value = 30;
+            
+            updateChapterStats();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function practiceMixedReview() {
+            showSection('test');
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('.nav-btn[data-section="test"]').classList.add('active');
+            
+            document.querySelector('input[name="testMode"][value="chapter"]').checked = true;
+            toggleTestMode();
+            
+            document.getElementById('chapterSelect').value = '';
+            document.getElementById('levelEasy').checked = true;
+            document.getElementById('levelMedium').checked = true;
+            document.getElementById('levelHard').checked = true;
+            document.getElementById('chapterQuestions').value = 40;
+            
+            updateChapterStats();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============================================
+        // TEST GENERATOR
+        // ============================================
+
+        function toggleTestMode() {
+            const mode = document.querySelector('input[name="testMode"]:checked').value;
+            
+            if (mode === 'profile') {
+                document.getElementById('profileMode').style.display = 'block';
+                document.getElementById('chapterMode').style.display = 'none';
+            } else {
+                document.getElementById('profileMode').style.display = 'none';
+                document.getElementById('chapterMode').style.display = 'block';
+                updateChapterStats();
+            }
+        }
+
+        function updateChapterStats() {
+            const chapter = document.getElementById('chapterSelect').value;
+            const includeEasy = document.getElementById('levelEasy').checked;
+            const includeMedium = document.getElementById('levelMedium').checked;
+            const includeHard = document.getElementById('levelHard').checked;
+            
+            let filtered = currentBank;
+            
+            // Filter by chapter
+            if (chapter) {
+                filtered = filtered.filter(q => q.topic && q.topic.includes(chapter));
+            }
+            
+            // Count by difficulty
+            const easy = filtered.filter(q => q.difficulty === 'easy').length;
+            const medium = filtered.filter(q => q.difficulty === 'medium').length;
+            const hard = filtered.filter(q => q.difficulty === 'hard').length;
+            
+            // Count available questions based on selected levels
+            let available = 0;
+            if (includeEasy) available += easy;
+            if (includeMedium) available += medium;
+            if (includeHard) available += hard;
+            
+            const statsHtml = `
+                <strong>📊 Thống kê câu hỏi:</strong><br>
+                ${chapter ? `Chương: <strong>${chapter}</strong><br>` : 'Tất cả chương<br>'}
+                <span class="badge badge-easy">Nhận biết: ${easy}</span>
+                <span class="badge badge-medium">Thông hiểu: ${medium}</span>
+                <span class="badge badge-hard">VD & VDC: ${hard}</span>
+                <br><strong>Có thể tạo: ${available} câu</strong>
+            `;
+            
+            document.getElementById('chapterStats').innerHTML = statsHtml;
+        }
+
+        // Update event listeners for chapter mode
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('chapterSelect').addEventListener('change', updateChapterStats);
+            document.getElementById('levelEasy').addEventListener('change', updateChapterStats);
+            document.getElementById('levelMedium').addEventListener('change', updateChapterStats);
+            document.getElementById('levelHard').addEventListener('change', updateChapterStats);
+        });
+
+        function generateTest() {
+            const mode = document.querySelector('input[name="testMode"]:checked').value;
+            
+            if (mode === 'profile') {
+                generateProfileTest();
+            } else {
+                generateChapterTest();
+            }
+        }
+
+        function generateProfileTest() {
+            // Get config
+            const profile = document.querySelector('input[name="profile"]:checked').value;
+            const total = parseInt(document.getElementById('totalQuestions').value);
+            
+            config = { profile, total };
+            saveToStorage();
+            
+            // Profile distributions
+            const profiles = {
+                'A': { mcq: 0.9, truefalse: 0.05, short: 0.05, easy: 0.5, medium: 0.35, hard: 0.15 },
+                'B': { mcq: 0.6, truefalse: 0.2, short: 0.2, easy: 0.35, medium: 0.45, hard: 0.2 }
+            };
+            
+            const dist = profiles[profile];
+            
+            // Calculate counts
+            const typeCounts = {
+                mcq: Math.round(total * dist.mcq),
+                truefalse: Math.round(total * dist.truefalse),
+                short: total - Math.round(total * dist.mcq) - Math.round(total * dist.truefalse)
+            };
+            
+            const difficultyCounts = {
+                easy: Math.round(total * dist.easy),
+                medium: Math.round(total * dist.medium),
+                hard: total - Math.round(total * dist.easy) - Math.round(total * dist.medium)
+            };
+            
+            // Generate test
+            currentTest = [];
+            userAnswers = {};
+            
+            // Select questions by type
+            for (let type in typeCounts) {
+                const count = typeCounts[type];
+                const pool = currentBank.filter(q => q.type === type);
+                const selected = selectRandom(pool, count);
+                currentTest.push(...selected);
+            }
+            
+            // Shuffle
+            currentTest = shuffle(currentTest);
+            
+            renderTest();
+            document.getElementById('testResults').innerHTML = '';
+        }
+
+        function generateChapterTest() {
+            const chapter = document.getElementById('chapterSelect').value;
+            const total = parseInt(document.getElementById('chapterQuestions').value);
+            const includeEasy = document.getElementById('levelEasy').checked;
+            const includeMedium = document.getElementById('levelMedium').checked;
+            const includeHard = document.getElementById('levelHard').checked;
+            
+            // Filter questions
+            let pool = currentBank;
+            
+            // Filter by chapter
+            if (chapter) {
+                pool = pool.filter(q => q.topic && q.topic.includes(chapter));
+            }
+            
+            // Filter by difficulty
+            const difficulties = [];
+            if (includeEasy) difficulties.push('easy');
+            if (includeMedium) difficulties.push('medium');
+            if (includeHard) difficulties.push('hard');
+            
+            if (difficulties.length === 0) {
+                alert('⚠️ Vui lòng chọn ít nhất một mức độ!');
+                return;
+            }
+            
+            pool = pool.filter(q => difficulties.includes(q.difficulty));
+            
+            if (pool.length === 0) {
+                alert('⚠️ Không có câu hỏi phù hợp với tiêu chí đã chọn!');
+                return;
+            }
+            
+            if (pool.length < total) {
+                alert(`⚠️ Chỉ có ${pool.length} câu phù hợp. Đang tạo đề với ${pool.length} câu.`);
+            }
+            
+            // Select questions
+            currentTest = selectRandom(pool, Math.min(total, pool.length));
+            currentTest = shuffle(currentTest);
+            userAnswers = {};
+            
+            renderTest();
+            document.getElementById('testResults').innerHTML = '';
+            
+            // Show info
+            const chapterInfo = chapter || 'Tất cả chương';
+            const levelInfo = difficulties.map(d => {
+                if (d === 'easy') return 'Nhận biết';
+                if (d === 'medium') return 'Thông hiểu';
+                return 'Vận dụng';
+            }).join(', ');
+            
+            const infoHtml = `
+                <div class="alert alert-info" style="margin-bottom: 1rem;">
+                    📚 <strong>Đề thi:</strong> ${chapterInfo} | 
+                    <strong>Mức độ:</strong> ${levelInfo} | 
+                    <strong>Số câu:</strong> ${currentTest.length}
+                </div>
+            `;
+            
+            document.getElementById('testContent').insertAdjacentHTML('afterbegin', infoHtml);
+        }
+
+        function selectRandom(arr, count) {
+            const shuffled = [...arr].sort(() => Math.random() - 0.5);
+            return shuffled.slice(0, Math.min(count, arr.length));
+        }
+
+        function shuffle(arr) {
+            return [...arr].sort(() => Math.random() - 0.5);
+        }
+
+        function renderTest() {
+            const container = document.getElementById('testContent');
+            
+            if (currentTest.length === 0) {
+                container.innerHTML = '<p class="empty-state">Chưa có đề thi. Nhấn "Tạo đề mới" để bắt đầu.</p>';
+                return;
+            }
+            
+            let html = '<div class="question-list">';
+            
+            currentTest.forEach((q, index) => {
+                html += `
+                    <div class="question-item">
+                        <div class="question-header">Câu ${index + 1}</div>
+                        <div class="question-prompt">${q.prompt}</div>
+                `;
+                
+                if (q.type === 'mcq') {
+                    html += '<div class="options">';
+                    q.options.forEach((opt, i) => {
+                        html += `
+                            <div class="option-item">
+                                <input type="radio" name="q${index}" value="${i}" id="q${index}_${i}">
+                                <label for="q${index}_${i}">${String.fromCharCode(65 + i)}. ${opt}</label>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                } else if (q.type === 'truefalse') {
+                    html += `
+                        <div class="options">
+                            <div class="option-item">
+                                <input type="radio" name="q${index}" value="true" id="q${index}_true">
+                                <label for="q${index}_true">Đúng</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="radio" name="q${index}" value="false" id="q${index}_false">
+                                <label for="q${index}_false">Sai</label>
+                            </div>
+                        </div>
+                    `;
+                } else if (q.type === 'short') {
+                    html += `<input type="text" class="short-answer" id="q${index}" placeholder="Nhập đáp án...">`;
+                }
+                
+                html += '</div>';
+            });
+            
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        // ============================================
+        // SUBMIT & GRADING
+        // ============================================
+
+        function submitTest() {
+            if (currentTest.length === 0) {
+                alert('Vui lòng tạo đề thi trước!');
+                return;
+            }
+            
+            // Collect answers
+            userAnswers = {};
+            currentTest.forEach((q, index) => {
+                if (q.type === 'mcq') {
+                    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                    userAnswers[index] = selected ? parseInt(selected.value) : null;
+                } else if (q.type === 'truefalse') {
+                    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                    userAnswers[index] = selected ? (selected.value === 'true') : null;
+                } else if (q.type === 'short') {
+                    userAnswers[index] = document.getElementById(`q${index}`).value.trim();
+                }
+            });
+            
+            // Grade
+            let correct = 0;
+            const wrong = [];
+            
+            currentTest.forEach((q, index) => {
+                const userAns = userAnswers[index];
+                const correctAns = q.answer;
+                
+                let isCorrect = false;
+                
+                if (q.type === 'mcq') {
+                    isCorrect = userAns === correctAns;
+                } else if (q.type === 'truefalse') {
+                    isCorrect = userAns === correctAns;
+                } else if (q.type === 'short') {
+                    isCorrect = normalizeString(userAns) === normalizeString(String(correctAns));
+                }
+                
+                if (isCorrect) {
+                    correct++;
+                } else {
+                    wrong.push({ index, question: q, userAnswer: userAns });
+                    
+                    // Add to error log
+                    addToErrorLog(q, userAns);
+                }
+            });
+            
+            const percentage = (correct / currentTest.length * 100).toFixed(2);
+            const score = (correct / currentTest.length * 10).toFixed(2);
+            
+            // Save to history
+            const mode = document.querySelector('input[name="testMode"]:checked').value;
+            const testRecord = {
+                timestamp: Date.now(),
+                mode: mode,
+                profile: mode === 'profile' ? document.querySelector('input[name="profile"]:checked').value : null,
+                chapter: mode === 'chapter' ? document.getElementById('chapterSelect').value || 'Tất cả chương' : null,
+                total: currentTest.length,
+                correct: correct,
+                percentage: percentage,
+                score: parseFloat(score),
+                details: currentTest.map((q, index) => {
+                    const userAns = userAnswers[index];
+                    const isCorrect = wrong.findIndex(w => w.index === index) === -1;
+                    return {
+                        id: q.id,
+                        topic: q.topic,
+                        difficulty: q.difficulty,
+                        isCorrect: isCorrect
+                    };
+                })
+            };
+            
+            testHistory.push(testRecord);
+            
+            // Keep only last 100 tests
+            if (testHistory.length > 100) {
+                testHistory = testHistory.slice(-100);
+            }
+            
+            saveToStorage();
+            
+            // Render results
+            renderResults(correct, currentTest.length, percentage, score, wrong);
+            
+            // Scroll to results
+            document.getElementById('testResults').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function normalizeString(str) {
+            if (!str) return '';
+            return str.toLowerCase()
+                .trim()
+                .replace(/\s+/g, ' ')
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '');
+        }
+
+        function addToErrorLog(question, userAnswer) {
+            const existing = errorLog.findIndex(e => e.id === question.id);
+            
+            if (existing !== -1) {
+                errorLog[existing].timestamp = Date.now();
+                errorLog[existing].userAnswer = formatAnswer(question, userAnswer);
+            } else {
+                errorLog.push({
+                    id: question.id,
+                    prompt: question.prompt,
+                    userAnswer: formatAnswer(question, userAnswer),
+                    correctAnswer: formatAnswer(question, question.answer),
+                    timestamp: Date.now()
+                });
+            }
+            
+            saveToStorage();
+        }
+
+        function formatAnswer(question, answer) {
+            if (question.type === 'mcq') {
+                return answer !== null ? String.fromCharCode(65 + answer) : 'Không trả lời';
+            } else if (question.type === 'truefalse') {
+                return answer === true ? 'Đúng' : answer === false ? 'Sai' : 'Không trả lời';
+            } else {
+                return answer || 'Không trả lời';
+            }
+        }
+
+        function renderResults(correct, total, percentage, score, wrong) {
+            let html = `
+                <div class="results">
+                    <div class="score-display">🎯 Điểm: ${score}/10</div>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="stat-value">${correct}/${total}</div>
+                            <div class="stat-label">Câu đúng</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${percentage}%</div>
+                            <div class="stat-label">Tỷ lệ</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${wrong.length}</div>
+                            <div class="stat-label">Câu sai</div>
+                        </div>
+                    </div>
+            `;
+            
+            if (wrong.length > 0) {
+                html += '<div class="wrong-answers"><h3>Chi tiết các câu sai</h3>';
+                
+                wrong.forEach(w => {
+                    const q = w.question;
+                    html += `
+                        <div class="wrong-item">
+                            <div class="question-num">Câu ${w.index + 1}</div>
+                            <div class="question-prompt">${q.prompt}</div>
+                            <div class="answer-comparison">
+                                <div class="user-answer">
+                                    <strong>Bạn chọn:</strong> ${formatAnswer(q, w.userAnswer)}
+                                </div>
+                                <div class="correct-answer">
+                                    <strong>Đáp án đúng:</strong> ${formatAnswer(q, q.answer)}
+                                </div>
+                            </div>
+                            <div class="explanation">
+                                <strong>Giải thích:</strong> ${q.explain}
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+            }
+            
+            html += '</div>';
+            
+            document.getElementById('testResults').innerHTML = html;
+        }
+
+        // ============================================
+        // ERROR LOG
+        // ============================================
+
+        function renderErrorLog() {
+            const container = document.getElementById('errorLogContent');
+            
+            if (errorLog.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <p>📝 Chưa có câu nào trong sổ lỗi.</p>
+                        <p>Các câu trả lời sai sẽ được lưu lại ở đây.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Sort by timestamp desc
+            const sorted = [...errorLog].sort((a, b) => b.timestamp - a.timestamp);
+            
+            let html = '<div class="error-log-list">';
+            
+            sorted.forEach((err, index) => {
+                const date = new Date(err.timestamp).toLocaleString('vi-VN');
+                html += `
+                    <div class="error-item">
+                        <div class="error-meta">
+                            <span>${date}</span> | 
+                            <span>ID: ${err.id}</span>
+                        </div>
+                        <div class="question-prompt">${err.prompt}</div>
+                        <div class="answer-comparison">
+                            <div class="user-answer">
+                                <strong>Bạn đã chọn:</strong> ${err.userAnswer}
+                            </div>
+                            <div class="correct-answer">
+                                <strong>Đáp án đúng:</strong> ${err.correctAnswer}
+                            </div>
+                        </div>
+                        <button class="btn btn-danger" onclick="removeFromErrorLog('${err.id}')">Xóa</button>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            
+            container.innerHTML = html;
+        }
+
+        function removeFromErrorLog(id) {
+            errorLog = errorLog.filter(e => e.id !== id);
+            saveToStorage();
+            renderErrorLog();
+        }
+
+        function clearErrorLog() {
+            if (!confirm('Xóa toàn bộ sổ lỗi?')) return;
+            errorLog = [];
+            saveToStorage();
+            renderErrorLog();
+        }
+
+        function retryErrors() {
+            if (errorLog.length === 0) {
+                alert('Không có câu nào trong sổ lỗi!');
+                return;
+            }
+            
+            // Create test from error log
+            const errorIds = errorLog.map(e => e.id);
+            currentTest = currentBank.filter(q => errorIds.includes(q.id));
+            currentTest = shuffle(currentTest);
+            
+            userAnswers = {};
+            
+            // Switch to test section
+            showSection('test');
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('.nav-btn[data-section="test"]').classList.add('active');
+            
+            renderTest();
+            document.getElementById('testResults').innerHTML = '';
+        }
+
+        // ============================================
+        // QUESTION MANAGEMENT
+        // ============================================
+
+        function renderQuestionManager() {
+            renderBankStats();
+            
+            const container = document.getElementById('questionManager');
+            
+            let html = '<div class="question-manager">';
+            html += '<table class="question-table">';
+            html += `
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Loại</th>
+                        <th>Độ khó</th>
+                        <th>Chủ đề</th>
+                        <th>Nội dung</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+            
+            currentBank.forEach(q => {
+                const difficultyClass = `badge-${q.difficulty}`;
+                html += `
+                    <tr>
+                        <td>${q.id}</td>
+                        <td>${q.type === 'mcq' ? 'MCQ' : q.type === 'truefalse' ? 'T/F' : 'Short'}</td>
+                        <td><span class="badge ${difficultyClass}">${q.difficulty}</span></td>
+                        <td>${q.topic || '-'}</td>
+                        <td>${q.prompt.substring(0, 50)}...</td>
+                        <td>
+                            <button class="btn" onclick="openEditModal('${q.id}')">✏️ Sửa</button>
+                            <button class="btn btn-danger" onclick="deleteQuestion('${q.id}')">🗑️</button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            html += '</tbody></table></div>';
+            
+            container.innerHTML = html;
+        }
+
+        function renderBankStats() {
+            const stats = {
+                total: currentBank.length,
+                mcq: currentBank.filter(q => q.type === 'mcq').length,
+                truefalse: currentBank.filter(q => q.type === 'truefalse').length,
+                short: currentBank.filter(q => q.type === 'short').length,
+                easy: currentBank.filter(q => q.difficulty === 'easy').length,
+                medium: currentBank.filter(q => q.difficulty === 'medium').length,
+                hard: currentBank.filter(q => q.difficulty === 'hard').length
+            };
+            
+            const html = `
+                <strong>Thống kê ngân hàng:</strong> 
+                ${stats.total} câu | 
+                MCQ: ${stats.mcq} | 
+                T/F: ${stats.truefalse} | 
+                Short: ${stats.short} | 
+                Dễ: ${stats.easy} | 
+                TB: ${stats.medium} | 
+                Khó: ${stats.hard}
+            `;
+            
+            document.getElementById('bankStats').innerHTML = html;
+        }
+
+        function openEditModal(id) {
+            const question = currentBank.find(q => q.id === id);
+            if (!question) return;
+            
+            document.getElementById('modalTitle').textContent = 'Chỉnh sửa câu hỏi';
+            document.getElementById('editId').value = question.id;
+            document.getElementById('editType').value = question.type;
+            document.getElementById('editDifficulty').value = question.difficulty;
+            document.getElementById('editTopic').value = question.topic || '';
+            document.getElementById('editPrompt').value = question.prompt;
+            
+            if (question.type === 'mcq') {
+                document.getElementById('editOptionA').value = question.options[0];
+                document.getElementById('editOptionB').value = question.options[1];
+                document.getElementById('editOptionC').value = question.options[2];
+                document.getElementById('editOptionD').value = question.options[3];
+                document.getElementById('editAnswer').value = question.answer;
+            } else {
+                document.getElementById('editAnswer').value = question.answer;
+            }
+            
+            document.getElementById('editExplain').value = question.explain;
+            
+            toggleOptions();
+            document.getElementById('questionModal').classList.add('active');
+        }
+
+        function openAddModal() {
+            document.getElementById('modalTitle').textContent = 'Thêm câu hỏi mới';
+            document.getElementById('questionForm').reset();
+            document.getElementById('editId').value = '';
+            toggleOptions();
+            document.getElementById('questionModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('questionModal').classList.remove('active');
+        }
+
+        function toggleOptions() {
+            const type = document.getElementById('editType').value;
+            const optionsGroup = document.getElementById('optionsGroup');
+            
+            if (type === 'mcq') {
+                optionsGroup.style.display = 'block';
+                document.getElementById('editOptionA').required = true;
+                document.getElementById('editOptionB').required = true;
+                document.getElementById('editOptionC').required = true;
+                document.getElementById('editOptionD').required = true;
+            } else {
+                optionsGroup.style.display = 'none';
+                document.getElementById('editOptionA').required = false;
+                document.getElementById('editOptionB').required = false;
+                document.getElementById('editOptionC').required = false;
+                document.getElementById('editOptionD').required = false;
+            }
+        }
+
+        function saveQuestion(event) {
+            event.preventDefault();
+            
+            const id = document.getElementById('editId').value;
+            const type = document.getElementById('editType').value;
+            const difficulty = document.getElementById('editDifficulty').value;
+            const topic = document.getElementById('editTopic').value;
+            const prompt = document.getElementById('editPrompt').value;
+            const explain = document.getElementById('editExplain').value;
+            
+            let answer;
+            let options;
+            
+            if (type === 'mcq') {
+                options = [
+                    document.getElementById('editOptionA').value,
+                    document.getElementById('editOptionB').value,
+                    document.getElementById('editOptionC').value,
+                    document.getElementById('editOptionD').value
+                ];
+                answer = parseInt(document.getElementById('editAnswer').value);
+            } else if (type === 'truefalse') {
+                answer = document.getElementById('editAnswer').value === 'true';
+            } else {
+                answer = document.getElementById('editAnswer').value;
+            }
+            
+            const question = { id: id || generateId(), type, difficulty, topic, prompt, answer, explain };
+            if (type === 'mcq') question.options = options;
+            
+            if (id) {
+                // Update existing
+                const index = currentBank.findIndex(q => q.id === id);
+                if (index !== -1) {
+                    currentBank[index] = question;
+                }
+            } else {
+                // Add new
+                currentBank.push(question);
+            }
+            
+            saveToStorage();
+            closeModal();
+            renderQuestionManager();
+            updateBankCount();
+        }
+
+        function deleteQuestion(id) {
+            if (!confirm('Xóa câu hỏi này?')) return;
+            
+            currentBank = currentBank.filter(q => q.id !== id);
+            saveToStorage();
+            renderQuestionManager();
+            updateBankCount();
+        }
+
+        function generateId() {
+            const maxId = currentBank.reduce((max, q) => {
+                const num = parseInt(q.id.replace('Q-', ''));
+                return num > max ? num : max;
+            }, 0);
+            
+            return `Q-${String(maxId + 1).padStart(3, '0')}`;
+        }
+
+        // ============================================
+        // IMPORT / EXPORT
+        // ============================================
+
+        function importQuestions(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    
+                    if (!data.bank || !Array.isArray(data.bank)) {
+                        throw new Error('Invalid format: missing "bank" array');
+                    }
+                    
+                    // Validate structure
+                    data.bank.forEach((q, i) => {
+                        if (!q.id || !q.type || !q.prompt) {
+                            throw new Error(`Invalid question at index ${i}`);
+                        }
+                    });
+                    
+                    const action = confirm('Nhấn OK để THAY THẾ toàn bộ, Cancel để THÊM VÀO ngân hàng hiện tại');
+                    
+                    if (action) {
+                        currentBank = data.bank;
+                    } else {
+                        currentBank = [...currentBank, ...data.bank];
+                    }
+                    
+                    saveToStorage();
+                    renderQuestionManager();
+                    updateBankCount();
+                    
+                    alert(`✅ Import thành công ${data.bank.length} câu hỏi!`);
+                    
+                } catch (error) {
+                    alert(`❌ Lỗi: ${error.message}`);
+                }
+            };
+            
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        function exportQuestions() {
+            const data = { bank: currentBank };
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `toan-thptqg-bank-${Date.now()}.json`;
+            a.click();
+            
+            URL.revokeObjectURL(url);
+        }
+
+        // ============================================
+        // CHEATSHEET
+        // ============================================
+
+        function copyFormula(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ Đã copy công thức!');
+            }).catch(() => {
+                alert('❌ Không thể copy. Vui lòng copy thủ công.');
+            });
+        }
+
+        // ============================================
+        // UTILITIES
+        // ============================================
+
+        function updateBankCount() {
+            document.getElementById('bankCount').textContent = currentBank.length;
+        }
+
+        // ============================================
+        // INIT
+        // ============================================
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

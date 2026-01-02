@@ -1,0 +1,2969 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Reading Master - Aim 9.0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+            to { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #764ba2; }
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 30px;
+            min-height: 400px;
+        }
+
+        .drill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .drill-card {
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .drill-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+
+        .drill-card:hover::before {
+            top: -100%;
+            right: -100%;
+        }
+
+        .drill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .drill-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .drill-card p {
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .drill-card .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.3);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-card .number {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .stat-card .label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .question-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .passage-text {
+            background: white;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin: 15px 0;
+            line-height: 1.8;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .options {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .option-btn {
+            flex: 1;
+            min-width: 100px;
+            padding: 15px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: #667eea;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .option-btn.correct {
+            background: #28a745;
+            border-color: #28a745;
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: #dc3545;
+            border-color: #dc3545;
+            color: white;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .error-analysis {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .error-analysis h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .tip-box {
+            background: #d1ecf1;
+            border-left: 4px solid #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .tip-box h4 {
+            color: #0c5460;
+            margin-bottom: 10px;
+        }
+
+        .vocab-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .vocab-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .vocab-word {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .vocab-type {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .tab-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab:hover {
+            background: #f8f9fa;
+        }
+
+        .tab.active {
+            border-bottom-color: #667eea;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .explanation {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .content {
+                padding: 15px;
+            }
+            .drill-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 IELTS Reading Master</h1>
+            <p>Advanced Training System • Aim for 9.0 Band Score</p>
+        </header>
+        
+        <nav id="nav"></nav>
+        <div class="content" id="content"></div>
+    </div>
+
+    <script>
+        // ============= ENHANCED DATA STRUCTURE =============
+        const QUESTION_TYPES = {
+            tfng: 'True/False/Not Given',
+            ynng: 'Yes/No/Not Given',
+            matching_headings: 'Matching Headings',
+            matching_info: 'Matching Information',
+            sentence_completion: 'Sentence Completion',
+            summary: 'Summary Completion',
+            multiple_choice: 'Multiple Choice',
+            short_answer: 'Short Answer',
+            list_selection: 'List Selection',
+            diagram: 'Diagram Labelling'
+        };
+
+        const VOCABULARY_DATABASE = {
+            academic: [
+                { word: 'significant', type: 'adj', meaning: 'quan trọng, đáng kể', synonyms: 'important, notable, considerable', example: 'The study shows significant improvements.' },
+                { word: 'demonstrate', type: 'v', meaning: 'chứng minh, thể hiện', synonyms: 'show, prove, illustrate', example: 'Research demonstrates clear benefits.' },
+                { word: 'consequently', type: 'adv', meaning: 'do đó, vì vậy', synonyms: 'therefore, thus, hence', example: 'Consequently, the results were positive.' },
+                { word: 'substantial', type: 'adj', meaning: 'đáng kể, lớn', synonyms: 'considerable, significant, major', example: 'There was substantial evidence.' },
+                { word: 'moreover', type: 'adv', meaning: 'hơn nữa, thêm vào đó', synonyms: 'furthermore, additionally, besides', example: 'Moreover, costs have decreased.' }
+            ],
+            science: [
+                { word: 'hypothesis', type: 'n', meaning: 'giả thuyết', synonyms: 'theory, assumption, premise', example: 'The hypothesis was tested extensively.' },
+                { word: 'phenomenon', type: 'n', meaning: 'hiện tượng', synonyms: 'occurrence, event, incident', example: 'This phenomenon requires further study.' },
+                { word: 'correlation', type: 'n', meaning: 'mối tương quan', synonyms: 'connection, relationship, link', example: 'There is a strong correlation between the variables.' },
+                { word: 'viable', type: 'adj', meaning: 'khả thi, có thể thực hiện', synonyms: 'feasible, practical, workable', example: 'The solution is economically viable.' },
+                { word: 'synthesize', type: 'v', meaning: 'tổng hợp', synonyms: 'combine, integrate, merge', example: 'Scientists synthesize data from multiple sources.' }
+            ],
+            environment: [
+                { word: 'sustainability', type: 'n', meaning: 'tính bền vững', synonyms: 'durability, viability', example: 'Environmental sustainability is crucial.' },
+                { word: 'biodiversity', type: 'n', meaning: 'đa dạng sinh học', synonyms: 'variety of life', example: 'Protecting biodiversity is essential.' },
+                { word: 'emissions', type: 'n', meaning: 'khí thải', synonyms: 'discharge, output', example: 'Carbon emissions must be reduced.' },
+                { word: 'renewable', type: 'adj', meaning: 'có thể tái tạo', synonyms: 'sustainable, inexhaustible', example: 'Renewable energy sources are growing.' },
+                { word: 'deforestation', type: 'n', meaning: 'phá rừng', synonyms: 'forest clearance', example: 'Deforestation threatens wildlife.' }
+            ]
+        };
+
+        const TIPS_DATABASE = {
+            tfng: {
+                title: 'True/False/Not Given - Chiến lược đạt 9.0',
+                tips: [
+                    '✅ TRUE: Thông tin trong câu hỏi HOÀN TOÀN khớp với passage (có thể paraphrase)',
+                    '❌ FALSE: Thông tin trong câu hỏi TRÁI NGƯỢC với passage',
+                    '❓ NOT GIVEN: Passage KHÔNG ĐỀ CẬP đến thông tin này (hoặc không đủ để kết luận)',
+                    '🎯 Chú ý: NOT GIVEN ≠ không tìm thấy keyword. Có thể tìm thấy keyword nhưng vẫn là NG',
+                    '⚠️ Cẩn thận với: modality (can/may/must), quantifiers (all/some/many), absolutes (always/never)',
+                    '📊 Thống kê: 60% thí sinh nhầm giữa FALSE và NOT GIVEN',
+                    '💡 Mẹo: Đọc passage TRƯỚC câu hỏi để hiểu context'
+                ],
+                common_mistakes: [
+                    'Nhầm FALSE với NOT GIVEN khi không tìm thấy thông tin',
+                    'Dùng kiến thức bên ngoài thay vì dựa vào passage',
+                    'Bỏ qua các từ quan trọng như "all", "only", "must"'
+                ]
+            },
+            matching_headings: {
+                title: 'Matching Headings - Kỹ thuật scan nhanh',
+                tips: [
+                    '🎯 Đọc tất cả headings TRƯỚC để có overview',
+                    '📍 Xác định main idea của mỗi paragraph (thường ở topic sentence)',
+                    '✂️ Loại trừ headings quá chi tiết hoặc chỉ là supporting idea',
+                    '🔍 Tìm keywords nhưng KHÔNG chỉ match keywords (hay có paraphrase)',
+                    '⚡ Làm các paragraph dễ trước, khó sau',
+                    '💡 Mỗi heading chỉ dùng 1 lần, có thêm 2-3 headings nhiễu'
+                ],
+                common_mistakes: [
+                    'Chỉ match keywords mà không hiểu ý chính',
+                    'Chọn heading về supporting detail thay vì main idea',
+                    'Không đọc hết paragraph trước khi chọn'
+                ]
+            },
+            sentence_completion: {
+                title: 'Sentence Completion - Điền từ chính xác',
+                tips: [
+                    '📏 CHÚ Ý: Giới hạn số từ (ONE WORD, TWO WORDS, THREE WORDS)',
+                    '✍️ Copy CHÍNH XÁC từ passage, không được thay đổi dạng từ',
+                    '🔤 Kiểm tra spelling cẩn thận',
+                    '📖 Đọc câu hoàn chỉnh để check grammar có hợp lý không',
+                    '🎯 Keywords trong câu hỏi giúp locate đáp án trong passage'
+                ],
+                common_mistakes: [
+                    'Viết sai chính tả từ trong passage',
+                    'Thay đổi dạng từ (singular/plural)',
+                    'Vượt quá số từ cho phép'
+                ]
+            },
+            multiple_choice: {
+                title: 'Multiple Choice - Loại trừ thông minh',
+                tips: [
+                    '❌ Loại trừ đáp án SAI trước (easier than finding correct one)',
+                    '🎯 Đọc kỹ stem để hiểu chính xác câu hỏi',
+                    '⚠️ Cẩn thận với "extreme words": always, never, all, only',
+                    '📍 Đáp án đúng thường là paraphrase, không copy nguyên văn',
+                    '🔍 Kiểm tra ALL options trước khi quyết định'
+                ],
+                common_mistakes: [
+                    'Chọn đáp án chỉ vì có keyword giống passage',
+                    'Không đọc hết tất cả options',
+                    'Bị lừa bởi "half-true" answers'
+                ]
+            }
+        };
+
+        const SAMPLE_QUESTIONS = {
+            sentence_completion: [
+                {
+                    id: 'sc1',
+                    passage: 'The Amazon rainforest, often called the "lungs of the Earth," produces approximately 20% of the world\'s oxygen. This vast ecosystem spans across nine countries and covers an area of 5.5 million square kilometers. The forest is home to an estimated 390 billion individual trees representing around 16,000 species.',
+                    question: 'The Amazon rainforest produces about _____ of the global oxygen supply.',
+                    answer: '20%',
+                    wordLimit: 'TWO WORDS',
+                    explanation: 'Passage directly states "produces approximately 20% of the world\'s oxygen"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc2',
+                    passage: 'Recent advances in artificial intelligence have led to the development of machine learning algorithms capable of processing vast amounts of data with unprecedented speed and accuracy. These systems can now perform tasks that previously required human intelligence, such as image recognition, language translation, and decision-making.',
+                    question: 'Machine learning algorithms can process large datasets with exceptional _____ and accuracy.',
+                    answer: 'speed',
+                    wordLimit: 'ONE WORD',
+                    explanation: 'The passage mentions "unprecedented speed and accuracy" when describing data processing.',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sc3',
+                    passage: 'Solar panels convert sunlight into electricity through photovoltaic cells. The efficiency of modern solar panels has improved dramatically, with the best commercial panels now achieving conversion rates of approximately 22%. Installation costs have also decreased by nearly 70% over the past decade, making solar energy increasingly accessible to households and businesses.',
+                    question: 'The most efficient commercial solar panels can convert around _____ of sunlight into electricity.',
+                    answer: '22%',
+                    wordLimit: 'TWO WORDS',
+                    explanation: 'Text states "achieving conversion rates of approximately 22%"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc4',
+                    passage: 'The human brain contains approximately 86 billion neurons, each connected to thousands of other neurons through synapses. This intricate network enables complex cognitive functions including memory, emotion, and reasoning. Neuroscientists estimate that the brain can store the equivalent of 2.5 petabytes of information, roughly the same as 3 million hours of television.',
+                    question: 'The brain has the capacity to store information equivalent to _____ hours of TV programming.',
+                    answer: '3 million',
+                    wordLimit: 'TWO WORDS',
+                    explanation: 'Passage explicitly mentions "3 million hours of television"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sc5',
+                    passage: 'Traditional printing methods used metal type that was individually arranged for each page. Johannes Gutenberg revolutionized this process in the 15th century by developing movable type printing. His innovation reduced the time needed to produce a book from months to mere weeks, making literature accessible to a much broader audience.',
+                    question: 'Gutenberg\'s printing innovation reduced book production time from months to _____ .',
+                    answer: 'weeks',
+                    wordLimit: 'ONE WORD',
+                    explanation: 'The text states it reduced time "from months to mere weeks"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc6',
+                    passage: 'The Dead Sea, located at the lowest point on Earth at 430 meters below sea level, has a salinity level of 34%, nearly ten times saltier than ocean water. This extreme salt concentration makes the water so dense that swimmers float effortlessly on the surface. However, this unique ecosystem faces serious threats as water levels drop by approximately one meter annually due to mineral extraction and reduced water inflow.',
+                    question: 'The Dead Sea is situated _____ meters below sea level.',
+                    answer: '430',
+                    wordLimit: 'ONE WORD',
+                    explanation: 'Text clearly states "430 meters below sea level"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc7',
+                    passage: 'Coral reefs support an extraordinary diversity of marine life, providing habitat for approximately 25% of all ocean species despite occupying less than 1% of the ocean floor. These ecosystems act as natural barriers, protecting coastlines from storms and erosion. Additionally, reefs contribute an estimated $375 billion annually to the global economy through tourism, fishing, and coastal protection.',
+                    question: 'Coral reefs generate approximately _____ billion dollars for the global economy each year.',
+                    answer: '$375',
+                    wordLimit: 'TWO WORDS',
+                    explanation: 'Passage states "an estimated $375 billion annually"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sc8',
+                    passage: 'The International Space Station orbits Earth at an altitude of approximately 408 kilometers, completing one full orbit every 90 minutes. This means astronauts aboard the station witness 16 sunrises and sunsets each day. The station travels at a speed of about 28,000 kilometers per hour, requiring regular adjustments to maintain its orbital path.',
+                    question: 'The ISS completes a full orbit around Earth every _____ minutes.',
+                    answer: '90',
+                    wordLimit: 'ONE WORD',
+                    explanation: 'Directly stated: "completing one full orbit every 90 minutes"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc9',
+                    passage: 'Caffeine, found naturally in coffee beans, tea leaves, and cacao pods, is consumed by approximately 80% of the world\'s population daily. A typical cup of coffee contains between 80-100 milligrams of caffeine, while a cup of tea contains about 40-50 milligrams. The effects of caffeine peak within 30-60 minutes of consumption and can last for several hours.',
+                    question: 'A standard cup of coffee typically contains _____ milligrams of caffeine.',
+                    answer: '80-100',
+                    wordLimit: 'TWO WORDS OR A NUMBER',
+                    explanation: 'Passage states "A typical cup of coffee contains between 80-100 milligrams"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc10',
+                    passage: 'The Sahara Desert covers an area of approximately 9 million square kilometers, making it roughly the size of the United States. Despite being known as one of the hottest places on Earth, temperatures can drop below freezing at night in winter months. The desert receives less than 3 inches of rainfall annually in most regions.',
+                    question: 'The Sahara Desert receives under _____ inches of rain per year in most areas.',
+                    answer: '3',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Text clearly states "receives less than 3 inches of rainfall annually"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc11',
+                    passage: 'The Wright brothers achieved the first powered, sustained, and controlled airplane flight on December 17, 1903, in Kitty Hawk, North Carolina. Their aircraft, the Wright Flyer, remained airborne for 12 seconds and covered a distance of 120 feet during this historic flight. By the end of that day, they had completed four flights, with the longest lasting 59 seconds.',
+                    question: 'The Wright Flyer\'s first flight lasted for _____ seconds.',
+                    answer: '12',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Passage mentions "remained airborne for 12 seconds"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc12',
+                    passage: 'The human body is composed of approximately 60% water, though this percentage varies with age, gender, and body composition. Water plays crucial roles in maintaining body temperature, transporting nutrients, and removing waste. Health experts recommend that adults drink at least 8 glasses of water daily, equivalent to about 2 liters.',
+                    question: 'Adults should consume a minimum of _____ liters of water each day.',
+                    answer: '2',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Text states "at least 8 glasses of water daily, equivalent to about 2 liters"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc13',
+                    passage: 'The Taj Mahal, located in Agra, India, was commissioned by Mughal Emperor Shah Jahan in 1632 as a mausoleum for his beloved wife, Mumtaz Mahal. Construction required approximately 20,000 workers and took 22 years to complete. The monument is constructed primarily of white marble inlaid with precious and semi-precious stones.',
+                    question: 'Construction of the Taj Mahal took _____ years to finish.',
+                    answer: '22',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Directly stated: "took 22 years to complete"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc14',
+                    passage: 'Sound travels at different speeds through different mediums. In air at room temperature, sound travels at approximately 343 meters per second. However, sound travels much faster through water, reaching speeds of about 1,480 meters per second, and even faster through solid materials like steel, where it can travel at speeds exceeding 5,000 meters per second.',
+                    question: 'In water, sound travels at roughly _____ meters per second.',
+                    answer: '1,480',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Passage states "reaching speeds of about 1,480 meters per second" in water',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sc15',
+                    passage: 'The average human heart beats approximately 100,000 times per day, pumping about 5 liters of blood per minute through the circulatory system. Over the course of a lifetime, the heart will beat more than 2.5 billion times. This remarkable organ begins beating around 21 days after conception and continues without rest until death.',
+                    question: 'The human heart pumps approximately _____ liters of blood every minute.',
+                    answer: '5',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Text clearly states "pumping about 5 liters of blood per minute"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc16',
+                    passage: 'The Library of Congress in Washington D.C. is the largest library in the world, containing more than 170 million items including books, recordings, photographs, maps, and manuscripts. The collection occupies approximately 838 miles of bookshelves and adds roughly 12,000 items to its holdings every working day.',
+                    question: 'The Library of Congress adds about _____ new items to its collection each working day.',
+                    answer: '12,000',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Stated as "adds roughly 12,000 items to its holdings every working day"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sc17',
+                    passage: 'Photosynthesis converts approximately 1% of available sunlight into chemical energy. While this may seem inefficient, this process sustains nearly all life on Earth. During photosynthesis, plants absorb carbon dioxide and release oxygen, with a mature tree producing enough oxygen to support two people annually.',
+                    question: 'Photosynthesis converts about _____ of sunlight into usable energy.',
+                    answer: '1%',
+                    wordLimit: 'TWO WORDS OR A NUMBER',
+                    explanation: 'Passage states "converts approximately 1% of available sunlight"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sc18',
+                    passage: 'The human eye can distinguish approximately 10 million different colors. The retina contains about 120 million rod cells, which detect light intensity, and 6 million cone cells, which perceive color. Interestingly, approximately 8% of men and 0.5% of women have some form of color blindness.',
+                    question: 'The human retina has roughly _____ million cone cells for color perception.',
+                    answer: '6',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Text states "6 million cone cells, which perceive color"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sc19',
+                    passage: 'The Eiffel Tower, constructed for the 1889 World\'s Fair in Paris, stands 324 meters tall including its antenna. Built using approximately 18,000 metallic parts held together by 2.5 million rivets, the structure weighs about 10,000 tons. During hot weather, the iron structure expands, causing the tower to grow by up to 15 centimeters.',
+                    question: 'The Eiffel Tower can expand by as much as _____ centimeters in hot weather.',
+                    answer: '15',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Final sentence: "causing the tower to grow by up to 15 centimeters"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sc20',
+                    passage: 'Antarctica is the driest continent on Earth, with some regions receiving less precipitation than the Sahara Desert. The continent contains approximately 70% of the world\'s fresh water, locked in ice that averages 2,160 meters thick. During winter, Antarctica roughly doubles in size as the surrounding ocean freezes.',
+                    question: 'Antarctica\'s ice has an average thickness of _____ meters.',
+                    answer: '2,160',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Passage states "ice that averages 2,160 meters thick"',
+                    difficulty: 'medium'
+                }
+            ],
+            matching_headings: [
+                {
+                    id: 'mh1',
+                    paragraphs: [
+                        {
+                            id: 'A',
+                            text: 'The Great Barrier Reef, located off the coast of Queensland, Australia, is the world\'s largest coral reef system. Stretching over 2,300 kilometers, it comprises thousands of individual reefs and hundreds of islands. The reef is visible from outer space and is considered one of the seven natural wonders of the world.',
+                            correctHeading: 'i'
+                        },
+                        {
+                            id: 'B',
+                            text: 'Climate change poses the most significant threat to the Great Barrier Reef. Rising ocean temperatures cause coral bleaching, a phenomenon where corals expel the algae living in their tissues, turning white and eventually dying. In 2016 and 2017, severe bleaching events affected two-thirds of the reef.',
+                            correctHeading: 'iii'
+                        }
+                    ],
+                    headings: [
+                        { id: 'i', text: 'The geographical extent of the reef system' },
+                        { id: 'ii', text: 'Tourism benefits for Australia' },
+                        { id: 'iii', text: 'Environmental challenges facing the reef' },
+                        { id: 'iv', text: 'Marine species diversity' }
+                    ],
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'mh2',
+                    paragraphs: [
+                        {
+                            id: 'A',
+                            text: 'The discovery of penicillin by Alexander Fleming in 1928 marked a turning point in medical history. Fleming noticed that a mold called Penicillium notatum had contaminated one of his bacterial cultures and killed the surrounding bacteria. This accidental observation led to the development of the first widely used antibiotic.',
+                            correctHeading: 'ii'
+                        },
+                        {
+                            id: 'B',
+                            text: 'Antibiotics have saved countless lives since their introduction, but their overuse has led to a growing problem: antibiotic resistance. Bacteria evolve rapidly, and those that survive antibiotic treatment can pass on resistance genes to their offspring. Today, drug-resistant infections cause approximately 700,000 deaths globally each year, a number predicted to rise to 10 million by 2050 if current trends continue.',
+                            correctHeading: 'iv'
+                        },
+                        {
+                            id: 'C',
+                            text: 'To combat antibiotic resistance, healthcare providers recommend several strategies. Doctors should only prescribe antibiotics when absolutely necessary and patients must complete the full course of treatment even if symptoms improve. Additionally, improved hygiene practices and vaccination programs can reduce the need for antibiotics by preventing infections in the first place.',
+                            correctHeading: 'v'
+                        }
+                    ],
+                    headings: [
+                        { id: 'i', text: 'The chemical composition of antibiotics' },
+                        { id: 'ii', text: 'An accidental medical breakthrough' },
+                        { id: 'iii', text: 'Alternative treatments to antibiotics' },
+                        { id: 'iv', text: 'The growing threat of resistant bacteria' },
+                        { id: 'v', text: 'Prevention strategies and responsible use' }
+                    ],
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'sum3',
+                    passage: 'The invention of the printing press by Johannes Gutenberg around 1440 revolutionized information dissemination in Europe. Before this innovation, books were painstakingly copied by hand, primarily by monks in monasteries, making them rare and expensive. The printing press enabled mass production of texts, dramatically reducing costs and increasing accessibility. This technological breakthrough facilitated the spread of knowledge during the Renaissance and Reformation, contributing to increased literacy rates and the democratization of education. By the end of the 15th century, printing presses had been established in over 200 European cities.',
+                    summary: 'Johannes Gutenberg\'s printing press, invented around _____(1)_____, transformed book production. Previously, books were _____(2)_____ by hand, limiting their availability. The new technology allowed _____(3)_____ production and made books more _____(4)_____. This innovation helped spread knowledge during the Renaissance and increased _____(5)_____ rates across Europe.',
+                    answers: [
+                        { number: 1, answer: '1440', wordLimit: 'ONE WORD OR A NUMBER' },
+                        { number: 2, answer: 'copied', wordLimit: 'ONE WORD' },
+                        { number: 3, answer: 'mass', wordLimit: 'ONE WORD' },
+                        { number: 4, answer: 'accessible', wordLimit: 'ONE WORD' },
+                        { number: 5, answer: 'literacy', wordLimit: 'ONE WORD' }
+                    ],
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sum4',
+                    passage: 'Photosynthesis is the process by which plants convert light energy into chemical energy stored in glucose. The process occurs primarily in the chloroplasts of leaf cells, which contain the green pigment chlorophyll. During photosynthesis, plants absorb carbon dioxide from the atmosphere and water from the soil. Using energy from sunlight, they convert these raw materials into glucose and oxygen. The oxygen is released as a byproduct into the atmosphere, while the glucose is used for energy or stored for later use. This process is essential for life on Earth, as it produces the oxygen needed by most organisms and forms the base of most food chains.',
+                    summary: 'Photosynthesis takes place in _____(1)_____ containing chlorophyll. Plants take in carbon dioxide and _____(2)_____ as raw materials. Using _____(3)_____ energy, they produce glucose and release _____(4)_____ as a byproduct. This process is crucial because it generates oxygen and forms the foundation of _____(5)_____.',
+                    answers: [
+                        { number: 1, answer: 'chloroplasts', wordLimit: 'ONE WORD' },
+                        { number: 2, answer: 'water', wordLimit: 'ONE WORD' },
+                        { number: 3, answer: 'sunlight', wordLimit: 'ONE WORD' },
+                        { number: 4, answer: 'oxygen', wordLimit: 'ONE WORD' },
+                        { number: 5, answer: 'food chains', wordLimit: 'TWO WORDS' }
+                    ],
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sum5',
+                    passage: 'The Great Depression, which began with the stock market crash of October 1929, was the worst economic downturn in modern history. Unemployment in the United States soared to 25%, and industrial production fell by nearly 50%. Banks failed across the country, wiping out the savings of millions. The crisis spread globally, affecting virtually every industrialized nation. President Franklin D. Roosevelt\'s New Deal programs, introduced in 1933, attempted to provide relief, recovery, and reform through government intervention. These programs included job creation initiatives, financial regulations, and social welfare programs. While the New Deal did not end the Depression completely, it helped stabilize the economy and established lasting institutions like Social Security.',
+                    summary: 'The Great Depression started in _____(1)_____ 1929 with a stock market crash. Unemployment reached _____(2)_____ percent in the US, and industrial output dropped dramatically. In response, President Roosevelt launched the _____(3)_____ in 1933, which included job creation and _____(4)_____ regulations. Although it didn\'t fully end the Depression, it created permanent institutions such as _____(5)_____.',
+                    answers: [
+                        { number: 1, answer: 'October', wordLimit: 'ONE WORD' },
+                        { number: 2, answer: '25', wordLimit: 'ONE WORD OR A NUMBER' },
+                        { number: 3, answer: 'New Deal', wordLimit: 'TWO WORDS' },
+                        { number: 4, answer: 'financial', wordLimit: 'ONE WORD' },
+                        { number: 5, answer: 'Social Security', wordLimit: 'TWO WORDS' }
+                    ],
+                    difficulty: 'medium'
+                }
+            ],
+            multiple_choice: [
+                {
+                    id: 'mc1',
+                    passage: 'The Industrial Revolution, which began in Britain in the late 18th century, transformed society from an agrarian economy to an industrial one. While it brought unprecedented economic growth and technological advancement, it also led to significant social problems including poor working conditions, child labor, and urban overcrowding.',
+                    question: 'According to the passage, the Industrial Revolution',
+                    options: [
+                        'A) only had positive effects on society',
+                        'B) began in multiple countries simultaneously',
+                        'C) brought both benefits and problems',
+                        'D) primarily affected rural areas'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage states it "brought unprecedented economic growth" BUT "also led to significant social problems" - indicating both positive and negative effects.',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'mc2',
+                    passage: 'Sleep deprivation affects cognitive performance in multiple ways. Studies show that people who sleep less than six hours per night experience decreased attention span, slower reaction times, and impaired decision-making abilities. Chronic sleep loss has been linked to serious health conditions including obesity, diabetes, and cardiovascular disease. Researchers recommend that adults get between seven to nine hours of sleep each night for optimal health.',
+                    question: 'According to the passage, chronic sleep deprivation',
+                    options: [
+                        'A) only affects mental performance',
+                        'B) can lead to various health problems',
+                        'C) requires more than nine hours of sleep to prevent',
+                        'D) primarily impacts reaction time'
+                    ],
+                    answer: 'B',
+                    explanation: 'The passage explicitly states chronic sleep loss "has been linked to serious health conditions including obesity, diabetes, and cardiovascular disease"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'mc3',
+                    passage: 'The phenomenon of language extinction is accelerating. Linguists estimate that of the approximately 7,000 languages spoken today, half will disappear by the end of this century. When a language dies, humanity loses not just words, but an entire way of understanding and describing the world. Indigenous languages often contain unique knowledge about local ecosystems, medicinal plants, and sustainable practices accumulated over millennia.',
+                    question: 'The main concern about language extinction expressed in the passage is',
+                    options: [
+                        'A) the loss of linguistic diversity alone',
+                        'B) the inability to communicate internationally',
+                        'C) the disappearance of valuable cultural and environmental knowledge',
+                        'D) the dominance of English worldwide'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage emphasizes that languages contain "unique knowledge about local ecosystems, medicinal plants, and sustainable practices" - indicating concern about lost knowledge, not just linguistic diversity.',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'mc4',
+                    passage: 'Urban heat islands occur when cities experience significantly higher temperatures than surrounding rural areas. This phenomenon results from the replacement of natural landscapes with concrete, asphalt, and buildings that absorb and retain heat. The lack of vegetation reduces evaporative cooling, while dark surfaces absorb more solar radiation. During heat waves, urban areas can be 5-7 degrees Celsius warmer than nearby countryside, increasing energy consumption, air pollution, and heat-related illness.',
+                    question: 'Urban heat islands are primarily caused by',
+                    options: [
+                        'A) global warming and climate change',
+                        'B) increased population density in cities',
+                        'C) the replacement of natural surfaces with heat-absorbing materials',
+                        'D) excessive use of air conditioning'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage clearly states the phenomenon "results from the replacement of natural landscapes with concrete, asphalt, and buildings that absorb and retain heat"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'mc5',
+                    passage: 'Neuroplasticity refers to the brain\'s ability to reorganize itself by forming new neural connections throughout life. This capability allows neurons to compensate for injury and adjust their activities in response to new situations or environmental changes. Contrary to earlier beliefs that the brain\'s structure was fixed after childhood, research now shows that the brain continues to change and adapt well into old age. This discovery has revolutionized approaches to rehabilitation after brain injury and stroke.',
+                    question: 'Research on neuroplasticity has shown that',
+                    options: [
+                        'A) the brain only develops during childhood',
+                        'B) brain structure cannot change after injury',
+                        'C) the brain maintains adaptability throughout life',
+                        'D) neural connections are permanent once formed'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage explicitly contradicts earlier beliefs, stating "the brain continues to change and adapt well into old age"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'mc6',
+                    passage: 'The transition to renewable energy faces significant challenges despite growing urgency. While solar and wind power costs have decreased dramatically, these sources are intermittent and require energy storage solutions. Grid infrastructure must be upgraded to handle distributed power generation. Additionally, fossil fuel industries employ millions of workers who need support during the transition. Success requires not only technological innovation but also careful policy planning and social investment.',
+                    question: 'According to the passage, the main obstacle to renewable energy is',
+                    options: [
+                        'A) the high cost of solar and wind power',
+                        'B) lack of public support for clean energy',
+                        'C) the need for multiple coordinated changes',
+                        'D) resistance from environmental groups'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage lists multiple challenges (storage, infrastructure, employment) and concludes that "success requires...technological innovation...policy planning and social investment" - indicating multiple coordinated changes needed',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'mc7',
+                    passage: 'Cryptocurrency operates on blockchain technology, a decentralized digital ledger that records transactions across multiple computers. Unlike traditional currencies controlled by central banks, cryptocurrencies are not regulated by any single authority. Supporters argue this decentralization promotes financial freedom, while critics worry about its use in illegal activities and its environmental impact due to high energy consumption required for transaction verification.',
+                    question: 'Critics of cryptocurrency are concerned about',
+                    options: [
+                        'A) its centralized control structure',
+                        'B) its potential for misuse and environmental costs',
+                        'C) its dependence on central banks',
+                        'D) its inability to record transactions'
+                    ],
+                    answer: 'B',
+                    explanation: 'The passage states critics "worry about its use in illegal activities and its environmental impact" - matching option B',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'mc8',
+                    passage: 'Food deserts are urban or rural areas where residents have limited access to affordable, nutritious food. These areas typically lack full-service grocery stores and instead have predominantly convenience stores and fast-food restaurants. Low-income neighborhoods are disproportionately affected, creating health disparities as residents rely on processed, calorie-dense foods that contribute to obesity, diabetes, and other chronic conditions.',
+                    question: 'The passage suggests that food deserts primarily affect',
+                    options: [
+                        'A) wealthy suburban communities',
+                        'B) areas with many grocery stores',
+                        'C) economically disadvantaged neighborhoods',
+                        'D) regions with high employment rates'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage explicitly states "Low-income neighborhoods are disproportionately affected"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'mc9',
+                    passage: 'The Anthropocene is a proposed geological epoch marking the period when human activity became the dominant influence on Earth\'s geology and ecosystems. Proponents point to evidence including plastic pollution in ocean sediments, radioactive elements from nuclear tests, and a spike in carbon dioxide levels. However, geologists debate whether human impact is significant enough to warrant defining a new epoch and, if so, when it began.',
+                    question: 'The main point of disagreement about the Anthropocene is',
+                    options: [
+                        'A) whether human activity affects the environment',
+                        'B) whether humans have caused climate change',
+                        'C) whether the impact justifies a new geological classification',
+                        'D) whether nuclear tests occurred'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage states geologists "debate whether human impact is significant enough to warrant defining a new epoch" - questioning the geological classification',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'mc10',
+                    passage: 'Biometric authentication systems use unique physical characteristics such as fingerprints, facial features, or iris patterns for identification. These systems offer convenience and are difficult to forge compared to passwords. However, privacy advocates warn that biometric data, once compromised, cannot be changed like a password. Moreover, facial recognition technology has shown higher error rates for certain ethnic groups, raising concerns about bias.',
+                    question: 'A disadvantage of biometric authentication mentioned in the passage is that',
+                    options: [
+                        'A) it is easy to forge biometric features',
+                        'B) compromised biometric data cannot be reset',
+                        'C) it is less convenient than passwords',
+                        'D) everyone has identical biometric features'
+                    ],
+                    answer: 'B',
+                    explanation: 'The passage explicitly states "biometric data, once compromised, cannot be changed like a password"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'mc11',
+                    passage: 'The Dunning-Kruger effect is a cognitive bias where people with limited knowledge or competence in a domain overestimate their own ability. Conversely, experts often underestimate their competence, assuming tasks easy for them are easy for others. This phenomenon has implications for education, hiring, and decision-making, as the least qualified individuals may be most confident in their incorrect judgments.',
+                    question: 'According to the passage, the Dunning-Kruger effect suggests that',
+                    options: [
+                        'A) experts are always overly confident',
+                        'B) incompetent people recognize their limitations',
+                        'C) people with little knowledge may be most self-assured',
+                        'D) education eliminates cognitive biases'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage states people with "limited knowledge...overestimate their own ability" and "least qualified individuals may be most confident"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'mc12',
+                    passage: 'Coral bleaching occurs when stressed corals expel the symbiotic algae that provide them with food and color. Rising ocean temperatures are the primary cause, but pollution and ocean acidification also contribute. While corals can recover if conditions improve quickly, prolonged bleaching leads to coral death. As coral reefs support approximately 25% of marine species despite covering less than 1% of the ocean floor, their loss would have catastrophic consequences for marine biodiversity.',
+                    question: 'The passage implies that coral reef destruction would',
+                    options: [
+                        'A) only affect coral species',
+                        'B) have limited environmental impact',
+                        'C) devastate a large portion of marine life',
+                        'D) improve ocean acidification'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage states reefs "support approximately 25% of marine species" and their loss "would have catastrophic consequences for marine biodiversity"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'mc13',
+                    passage: 'Vertical farming addresses food security challenges by growing crops in stacked layers within controlled indoor environments. This method uses up to 95% less water than traditional farming, eliminates the need for pesticides, and enables year-round production regardless of weather. However, high energy costs for artificial lighting remain a significant barrier. The technology is currently economically viable primarily for high-value crops like leafy greens and herbs.',
+                    question: 'The main limitation of vertical farming mentioned is',
+                    options: [
+                        'A) it requires more water than traditional farming',
+                        'B) it depends on favorable weather conditions',
+                        'C) the energy needed for lighting is expensive',
+                        'D) it can only grow crops during certain seasons'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage explicitly identifies "high energy costs for artificial lighting" as "a significant barrier"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'mc14',
+                    passage: 'The circular economy model aims to eliminate waste by keeping materials in use through recycling, repair, and remanufacturing. Unlike the traditional linear economy of "take, make, dispose," circular systems design products for longevity and eventual disassembly. This approach could reduce resource extraction, decrease pollution, and create new business opportunities. However, implementation requires fundamental changes in manufacturing processes, consumer behavior, and regulatory frameworks.',
+                    question: 'The passage suggests that adopting a circular economy requires',
+                    options: [
+                        'A) only minor adjustments to current practices',
+                        'B) comprehensive changes across multiple areas',
+                        'C) increased resource extraction',
+                        'D) more waste production'
+                    ],
+                    answer: 'B',
+                    explanation: 'The final sentence states "implementation requires fundamental changes in manufacturing processes, consumer behavior, and regulatory frameworks" - indicating comprehensive changes',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'mc15',
+                    passage: 'The Sapir-Whorf hypothesis proposes that language structure influences how speakers perceive and conceptualize the world. For example, languages that have multiple words for snow might make speakers more attuned to different snow conditions. While strong versions claiming language determines thought have been largely rejected, research supports a weaker version: language can influence certain cognitive processes and make particular concepts more salient.',
+                    question: 'Current research on the Sapir-Whorf hypothesis indicates that',
+                    options: [
+                        'A) language completely controls all human thought',
+                        'B) language has no effect on perception',
+                        'C) language can affect some aspects of cognition',
+                        'D) all languages structure thought identically'
+                    ],
+                    answer: 'C',
+                    explanation: 'The passage states "research supports a weaker version: language can influence certain cognitive processes"',
+                    difficulty: 'hard'
+                }
+            ],
+            tfng: [
+                {
+                    id: 'tfng1',
+                    passage: 'Research shows that regular exercise can significantly improve mental health by reducing symptoms of depression and anxiety. Studies indicate that 30 minutes of moderate exercise, five times per week, can be as effective as medication for some individuals.',
+                    question: 'Exercise is always more effective than medication for treating depression.',
+                    answer: 'F',
+                    explanation: 'The passage says exercise can be "as effective as" medication for "some individuals", not always more effective.',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'tfng2',
+                    passage: 'The Roman aqueducts, built over 2,000 years ago, demonstrate remarkable engineering skills. Some of these structures still stand today, a testament to Roman construction techniques. The Pont du Gard in France, for example, continues to attract millions of tourists annually.',
+                    question: 'All Roman aqueducts are still functional today.',
+                    answer: 'NG',
+                    explanation: 'The passage says "some of these structures still stand" but does not state whether they are functional or how many still exist.',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'tfng3',
+                    passage: 'Honey never spoils. Archaeologists have discovered pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. This extraordinary preservation is due to honey\'s low moisture content and acidic pH, which create an inhospitable environment for bacteria and microorganisms.',
+                    question: 'Honey can be preserved indefinitely without spoiling.',
+                    answer: 'T',
+                    explanation: 'The passage states "honey never spoils" and provides evidence of 3,000-year-old honey that is "still perfectly edible"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng4',
+                    passage: 'The practice of meditation has been shown to reduce stress and improve concentration. Brain scans reveal that regular meditators have increased gray matter density in regions associated with learning and memory. Some researchers suggest that meditation may also strengthen the immune system, though more studies are needed to confirm this effect.',
+                    question: 'Meditation has been proven to boost immune system function.',
+                    answer: 'NG',
+                    explanation: 'The passage says researchers "suggest" meditation "may" strengthen immunity, but notes "more studies are needed to confirm" - this is not proven.',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'tfng5',
+                    passage: 'Electric vehicles produce zero emissions during operation, making them environmentally friendly alternatives to conventional cars. However, the production of electric vehicle batteries requires significant amounts of energy and rare earth minerals, which can have environmental impacts. The overall environmental benefit depends on factors such as how the electricity used to charge the vehicle is generated.',
+                    question: 'Electric vehicles have no environmental impact whatsoever.',
+                    answer: 'F',
+                    explanation: 'The passage explicitly states battery production "can have environmental impacts", contradicting the claim of no impact.',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng6',
+                    passage: 'The Great Wall of China, contrary to popular belief, is not visible from space with the naked eye. Astronauts have confirmed that while the wall is long, it is too narrow and blends too well with the surrounding terrain to be distinguished from orbit without magnification.',
+                    question: 'The Great Wall of China can be seen from space without assistance.',
+                    answer: 'F',
+                    explanation: 'The passage directly contradicts this, stating it "is not visible from space with the naked eye"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng7',
+                    passage: 'Caffeine is the world\'s most widely consumed psychoactive substance. Found naturally in coffee, tea, and cocoa, caffeine stimulates the central nervous system and can improve alertness and concentration. However, excessive consumption may lead to side effects including insomnia, anxiety, and increased heart rate. Health experts generally consider moderate caffeine intake safe for most adults.',
+                    question: 'All adults can safely consume unlimited amounts of caffeine.',
+                    answer: 'F',
+                    explanation: 'The passage states "excessive consumption may lead to side effects" and only "moderate caffeine intake" is considered safe.',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng8',
+                    passage: 'Octopuses are remarkably intelligent creatures, capable of solving complex problems and using tools. They have been observed opening jars to access food, navigating mazes, and even displaying what appears to be playful behavior. Each of their eight arms contains its own nerve cluster, allowing the arms to perform tasks independently.',
+                    question: 'Octopuses are more intelligent than all other marine animals.',
+                    answer: 'NG',
+                    explanation: 'While the passage describes octopuses as "remarkably intelligent," it does not compare their intelligence to other marine animals.',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'tfng9',
+                    passage: 'The placebo effect demonstrates the powerful connection between mind and body. In clinical trials, patients receiving inactive treatments often show real improvements in their symptoms simply because they believe they are being treated. This phenomenon has been documented across numerous medical conditions, from pain management to depression.',
+                    question: 'The placebo effect only works if patients are unaware they are receiving a placebo.',
+                    answer: 'NG',
+                    explanation: 'The passage describes how placebo works but does not address whether knowledge of receiving a placebo affects its effectiveness.',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'tfng10',
+                    passage: 'Photosynthesis is the process by which plants convert sunlight into chemical energy. During this process, plants absorb carbon dioxide from the atmosphere and release oxygen, making them crucial for maintaining Earth\'s atmospheric balance. Scientists estimate that photosynthetic organisms produce approximately 330 billion tons of oxygen annually.',
+                    question: 'Plants release oxygen as a byproduct of photosynthesis.',
+                    answer: 'T',
+                    explanation: 'The passage explicitly states that during photosynthesis, plants "release oxygen"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng11',
+                    passage: 'Bees communicate the location of food sources through an intricate dance known as the "waggle dance." The angle and duration of the dance convey information about the direction and distance of flowers. This complex form of non-verbal communication demonstrates remarkable cognitive abilities in these small insects.',
+                    question: 'Bees use the waggle dance to indicate where food can be found.',
+                    answer: 'T',
+                    explanation: 'The passage explicitly states the dance "convey[s] information about the direction and distance of flowers"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng12',
+                    passage: 'The practice of yoga originated in ancient India over 5,000 years ago. Modern scientific studies have confirmed numerous health benefits associated with regular yoga practice, including improved flexibility, reduced stress, and better cardiovascular health. Some practitioners claim yoga can cure serious diseases, though medical experts emphasize it should complement, not replace, conventional medical treatment.',
+                    question: 'Medical experts agree that yoga can cure serious diseases.',
+                    answer: 'F',
+                    explanation: 'The passage states medical experts say yoga "should complement, not replace, conventional medical treatment" - contradicting the cure claim',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'tfng13',
+                    passage: 'The Gutenberg printing press, invented around 1440, revolutionized the distribution of information in Europe. Before this invention, books were copied by hand, making them expensive and rare. The printing press enabled mass production of books, contributing to increased literacy rates and the spread of knowledge during the Renaissance.',
+                    question: 'The printing press was the primary cause of the Renaissance.',
+                    answer: 'NG',
+                    explanation: 'While the passage says it "contributing to" the Renaissance, it does not claim it was the primary or main cause',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'tfng14',
+                    passage: 'Fingerprints are unique to each individual, with no two people sharing identical fingerprint patterns. This uniqueness, combined with the fact that fingerprints remain unchanged throughout a person\'s lifetime, makes them an ideal form of identification. Even identical twins, who share the same DNA, have different fingerprints.',
+                    question: 'Identical twins have the same fingerprints.',
+                    answer: 'F',
+                    explanation: 'The passage explicitly states "Even identical twins...have different fingerprints"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng15',
+                    passage: 'The Mediterranean diet, rich in fruits, vegetables, whole grains, and olive oil, has been associated with numerous health benefits. Studies show that people who follow this diet have lower rates of heart disease and certain cancers. Researchers attribute these benefits primarily to the diet\'s high content of antioxidants and healthy fats.',
+                    question: 'The Mediterranean diet completely prevents heart disease.',
+                    answer: 'F',
+                    explanation: 'The passage says people have "lower rates" of heart disease, not that it "completely prevents" it',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'tfng16',
+                    passage: 'Lightning strikes Earth approximately 100 times per second, or roughly 8.6 million times per day. A single bolt of lightning can heat the surrounding air to temperatures five times hotter than the sun\'s surface. Despite their frequency and power, lightning strikes are rarely fatal, with most victims surviving the encounter.',
+                    question: 'Most people who are struck by lightning survive.',
+                    answer: 'T',
+                    explanation: 'Final sentence clearly states "most victims surviving the encounter"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng17',
+                    passage: 'The Dead Sea Scrolls, discovered between 1947 and 1956, are among the most important archaeological finds of the 20th century. These ancient manuscripts include some of the earliest known copies of biblical texts. Scholars continue to debate the exact origins of the scrolls and the identity of the community that produced them.',
+                    question: 'Scholars have reached a consensus about who created the Dead Sea Scrolls.',
+                    answer: 'F',
+                    explanation: 'The passage states "Scholars continue to debate...the identity of the community" - indicating no consensus',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'tfng18',
+                    passage: 'Quantum computers operate using quantum bits, or qubits, which can exist in multiple states simultaneously unlike classical computer bits. This property, called superposition, allows quantum computers to perform certain calculations exponentially faster than traditional computers. However, quantum computers remain highly experimental and are not yet practical for everyday computing tasks.',
+                    question: 'Quantum computers are currently used for routine computing tasks.',
+                    answer: 'F',
+                    explanation: 'The passage explicitly states they "are not yet practical for everyday computing tasks"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng19',
+                    passage: 'Dolphins are highly intelligent marine mammals capable of complex social behaviors. They use echolocation to navigate and hunt, emitting sounds that bounce off objects and return as echoes. Some researchers believe dolphins may have a form of language, though this hypothesis remains controversial and requires further investigation.',
+                    question: 'Scientists have proven that dolphins possess their own language.',
+                    answer: 'NG',
+                    explanation: 'The passage says some researchers "believe dolphins may have" a language, but it "remains controversial" - not proven',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'tfng20',
+                    passage: 'The human appendix, once considered a useless evolutionary remnant, may actually serve important functions. Recent research suggests it acts as a reservoir for beneficial gut bacteria, helping to repopulate the digestive system after illness. This finding challenges the long-held view that the appendix has no purpose.',
+                    question: 'Scientists now believe the appendix has a function in the human body.',
+                    answer: 'T',
+                    explanation: 'The passage states recent research "suggests it acts as a reservoir" and "may actually serve important functions"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'tfng21',
+                    passage: 'Dark matter comprises approximately 85% of the matter in the universe, yet it cannot be directly observed as it does not emit, absorb, or reflect light. Scientists infer its existence through its gravitational effects on visible matter. Despite decades of research, the exact nature of dark matter remains one of physics\' greatest mysteries.',
+                    question: 'Dark matter has been directly observed by scientists.',
+                    answer: 'F',
+                    explanation: 'The passage explicitly states it "cannot be directly observed"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng22',
+                    passage: 'The Voyager 1 spacecraft, launched in 1977, became the first human-made object to enter interstellar space in 2012. It carries a golden record containing sounds and images representing Earth\'s diversity, intended as a message to any extraterrestrial life that might encounter it. The spacecraft continues to send data back to Earth despite being over 14 billion miles away.',
+                    question: 'Voyager 1 has received responses from extraterrestrial civilizations.',
+                    answer: 'NG',
+                    explanation: 'The passage mentions the record is "intended" for extraterrestrial life but makes no mention of any responses received',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'tfng23',
+                    passage: 'Bamboo is the fastest-growing plant on Earth, with some species capable of growing up to 91 centimeters in a single day. Despite being classified as a grass rather than a tree, bamboo can grow to heights exceeding 30 meters. Its rapid growth rate and strength make it an increasingly popular sustainable building material.',
+                    question: 'Bamboo can grow more than 90 centimeters in one day.',
+                    answer: 'T',
+                    explanation: 'The passage states "some species capable of growing up to 91 centimeters in a single day" - which is more than 90cm',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng24',
+                    passage: 'The placebo effect demonstrates that belief in a treatment can produce real physiological changes. In clinical trials, patients receiving sugar pills often report improvement in symptoms. Brain imaging studies show that placebos can trigger the release of endorphins and activate the same neural pathways as actual medications.',
+                    question: 'Placebos can cause genuine physical changes in the body.',
+                    answer: 'T',
+                    explanation: 'The passage states placebos "produce real physiological changes" and "trigger the release of endorphins"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'tfng25',
+                    passage: 'The Terracotta Army, discovered in 1974 near Xi\'an, China, consists of thousands of life-sized clay soldiers created to guard the tomb of Emperor Qin Shi Huang. Each figure has unique facial features and expressions, suggesting they were modeled after real soldiers. Archaeologists estimate that thousands more figures remain buried and unexcavated.',
+                    question: 'All the Terracotta Army figures have been excavated and are on display.',
+                    answer: 'F',
+                    explanation: 'The passage states "thousands more figures remain buried and unexcavated" - contradicting "all have been excavated"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng26',
+                    passage: 'Lucid dreaming occurs when a person becomes aware they are dreaming while still asleep. Studies indicate that approximately 55% of people have experienced at least one lucid dream in their lifetime. Some researchers are exploring whether lucid dreaming techniques could be used therapeutically to treat nightmares or practice real-world skills.',
+                    question: 'More than half of people have had at least one lucid dream.',
+                    answer: 'T',
+                    explanation: 'The passage states "approximately 55% of people have experienced at least one lucid dream" - 55% is more than half (50%)',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng27',
+                    passage: 'The concept of zero as a number was independently developed by multiple ancient civilizations. The Maya in Central America used zero in their calendar system by 4 CE. Meanwhile, Indian mathematicians were using zero as a digit by the 5th century. The spread of this concept to Europe took several more centuries.',
+                    question: 'Europeans invented the concept of zero.',
+                    answer: 'F',
+                    explanation: 'The passage states zero was developed by Maya and Indian civilizations and only later "spread...to Europe" - Europeans didn\'t invent it',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'tfng28',
+                    passage: 'Hurricanes and typhoons are the same meteorological phenomenon, with different names used in different regions. In the Atlantic and Northeast Pacific, they are called hurricanes, while in the Northwest Pacific they are known as typhoons. These massive storm systems require ocean water temperatures of at least 26.5°C to form and intensify.',
+                    question: 'Hurricanes are more powerful than typhoons.',
+                    answer: 'NG',
+                    explanation: 'The passage states they are "the same meteorological phenomenon" but makes no comparison of their relative power',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'tfng29',
+                    passage: 'The human nose can detect over one trillion different scents, far more than previously estimated. This extraordinary sensitivity helped our ancestors identify food, avoid dangers, and select mates. However, modern urban environments with constant artificial smells may be dulling our natural olfactory abilities.',
+                    question: 'Living in cities may reduce people\'s sense of smell.',
+                    answer: 'T',
+                    explanation: 'The final sentence states "modern urban environments...may be dulling our natural olfactory abilities"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'tfng30',
+                    passage: 'The Arctic tern holds the record for the longest migration of any animal, traveling approximately 70,900 kilometers annually between its Arctic breeding grounds and Antarctic feeding areas. These remarkable birds experience two summers each year and more daylight than any other creature on Earth.',
+                    question: 'The Arctic tern migrates more than 70,000 kilometers each year.',
+                    answer: 'T',
+                    explanation: 'The passage states they travel "approximately 70,900 kilometers annually" - which is more than 70,000km',
+                    difficulty: 'easy'
+                }
+            ],
+            summary: [
+                {
+                    id: 'sum1',
+                    passage: 'The discovery of antibiotics revolutionized medicine in the 20th century. Before penicillin was discovered by Alexander Fleming in 1928, bacterial infections that are now easily treatable were often fatal. The introduction of antibiotics during World War II saved countless lives on the battlefield. However, the overuse and misuse of antibiotics has led to the emergence of antibiotic-resistant bacteria, creating a serious public health challenge. Today, researchers are working urgently to develop new antibiotics and alternative treatments to combat resistant strains.',
+                    summary: 'Antibiotics, discovered by _____(1)_____ in 1928, transformed medical treatment and saved many lives, particularly during _____(2)_____. Unfortunately, their widespread _____(3)_____ has resulted in bacteria becoming resistant, prompting scientists to search for new _____(4)_____.',
+                    answers: [
+                        { number: 1, answer: 'Alexander Fleming', wordLimit: 'TWO WORDS' },
+                        { number: 2, answer: 'World War II', wordLimit: 'THREE WORDS' },
+                        { number: 3, answer: 'overuse and misuse', wordLimit: 'THREE WORDS' },
+                        { number: 4, answer: 'treatments', wordLimit: 'ONE WORD' }
+                    ],
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sum2',
+                    passage: 'Venice, built on more than 100 small islands in a lagoon in the Adriatic Sea, is one of the world\'s most unique cities. The city has no roads, only canals, with the Grand Canal serving as the main waterway. Transportation relies on boats, including the famous gondolas and water buses called vaporetti. Venice faces significant challenges from rising sea levels and subsidence, causing regular flooding known as "acqua alta" or high water. Engineers have constructed a system of mobile barriers called MOSE to protect the city from flooding, though concerns remain about its long-term effectiveness.',
+                    summary: 'Venice is a distinctive city constructed on _____(1)_____ in the Adriatic Sea. Without any roads, residents depend on _____(2)_____ for transportation. The city regularly experiences flooding called _____(3)_____, and a system of _____(4)_____ barriers has been built to combat this problem.',
+                    answers: [
+                        { number: 1, answer: 'small islands', wordLimit: 'TWO WORDS' },
+                        { number: 2, answer: 'boats', wordLimit: 'ONE WORD' },
+                        { number: 3, answer: 'acqua alta', wordLimit: 'TWO WORDS' },
+                        { number: 4, answer: 'mobile', wordLimit: 'ONE WORD' }
+                    ],
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'mh3',
+                    paragraphs: [
+                        {
+                            id: 'A',
+                            text: 'Sleep deprivation affects virtually every aspect of human health and performance. Chronic lack of sleep impairs cognitive function, reducing attention span, memory consolidation, and decision-making abilities. Studies show that people who sleep less than six hours per night perform cognitive tasks at levels comparable to those who are legally intoxicated.',
+                            correctHeading: 'iv'
+                        },
+                        {
+                            id: 'B',
+                            text: 'Beyond mental performance, insufficient sleep has serious physical health consequences. Research links chronic sleep deprivation to increased risk of obesity, diabetes, cardiovascular disease, and weakened immune function. During sleep, the body repairs tissues, regulates hormones, and consolidates memories—processes that cannot occur adequately without sufficient rest.',
+                            correctHeading: 'v'
+                        },
+                        {
+                            id: 'C',
+                            text: 'To improve sleep quality, experts recommend several evidence-based strategies. Maintaining a consistent sleep schedule, even on weekends, helps regulate the body\'s internal clock. Creating a dark, cool, quiet sleeping environment optimizes conditions for rest. Avoiding screens for at least an hour before bedtime prevents blue light from disrupting melatonin production.',
+                            correctHeading: 'ii'
+                        },
+                        {
+                            id: 'D',
+                            text: 'Modern lifestyle factors contribute significantly to widespread sleep problems. Artificial lighting allows people to stay active well past sunset, disrupting natural circadian rhythms. Digital devices provide constant stimulation, making it difficult to wind down. Work schedules that demand early starts or late shifts force people to sleep during times misaligned with their biological clocks.',
+                            correctHeading: 'iii'
+                        }
+                    ],
+                    headings: [
+                        { id: 'i', text: 'Historical sleep patterns' },
+                        { id: 'ii', text: 'Practical strategies for better sleep' },
+                        { id: 'iii', text: 'Modern causes of sleep problems' },
+                        { id: 'iv', text: 'Cognitive impacts of sleep loss' },
+                        { id: 'v', text: 'Physical health effects of poor sleep' },
+                        { id: 'vi', text: 'Medications for insomnia' }
+                    ],
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'mh4',
+                    paragraphs: [
+                        {
+                            id: 'A',
+                            text: 'The concept of emotional intelligence (EQ) refers to the ability to recognize, understand, and manage one\'s own emotions as well as those of others. Unlike IQ, which remains relatively stable throughout life, EQ can be developed and improved through practice and self-awareness. Research suggests that EQ may be a better predictor of success in relationships and careers than traditional measures of intelligence.',
+                            correctHeading: 'ii'
+                        },
+                        {
+                            id: 'B',
+                            text: 'Emotional intelligence comprises five key components. Self-awareness involves recognizing one\'s own emotions and their effects. Self-regulation means managing disruptive emotions and adapting to change. Motivation refers to the drive to achieve goals despite setbacks. Empathy entails understanding others\' emotions and responding appropriately. Social skills enable effective communication and conflict resolution.',
+                            correctHeading: 'iv'
+                        },
+                        {
+                            id: 'C',
+                            text: 'In the workplace, high emotional intelligence correlates with better leadership, teamwork, and job performance. Leaders with strong EQ inspire and motivate their teams more effectively. Employees with high EQ navigate workplace conflicts constructively and build stronger professional relationships. Organizations increasingly recognize EQ as essential for success in collaborative work environments.',
+                            correctHeading: 'v'
+                        }
+                    ],
+                    headings: [
+                        { id: 'i', text: 'The history of intelligence testing' },
+                        { id: 'ii', text: 'Defining emotional intelligence' },
+                        { id: 'iii', text: 'Criticism of EQ theory' },
+                        { id: 'iv', text: 'Elements of emotional intelligence' },
+                        { id: 'v', text: 'Professional benefits of high EQ' },
+                        { id: 'vi', text: 'Genetic factors in emotions' }
+                    ],
+                    difficulty: 'medium'
+                }
+            ],
+            short_answer: [
+                {
+                    id: 'sa1',
+                    passage: 'The Sahara Desert is expanding southward at a rate of approximately 48 kilometers per year, a process known as desertification. This expansion is driven by both climate change and human activities such as overgrazing and deforestation. The advancing desert threatens agricultural lands and forces populations to migrate, creating economic and social challenges for affected regions.',
+                    question: 'At what rate is the Sahara Desert expanding southward each year?',
+                    answer: '48 kilometers',
+                    wordLimit: 'TWO WORDS',
+                    explanation: 'Directly stated: "expanding southward at a rate of approximately 48 kilometers per year"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sa2',
+                    passage: 'Mount Everest, standing at 8,849 meters above sea level, is the world\'s highest peak. Located in the Himalayas on the border between Nepal and Tibet, the mountain was first successfully climbed by Edmund Hillary and Tenzing Norgay in 1953. Despite improved equipment and knowledge, climbing Everest remains extremely dangerous, with over 300 deaths recorded since the first ascent.',
+                    question: 'Who were the first two people to successfully climb Mount Everest?',
+                    answer: 'Edmund Hillary and Tenzing Norgay',
+                    wordLimit: 'NO MORE THAN FIVE WORDS',
+                    explanation: 'Passage clearly states "first successfully climbed by Edmund Hillary and Tenzing Norgay"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sa3',
+                    passage: 'The Panama Canal, completed in 1914 after ten years of construction, connects the Atlantic and Pacific Oceans. This 82-kilometer waterway eliminated the need for ships to sail around South America, reducing voyage times by weeks. The canal uses a system of locks to raise ships 26 meters above sea level to cross the continental divide before lowering them again.',
+                    question: 'How long did it take to complete the construction of the Panama Canal?',
+                    answer: 'ten years',
+                    wordLimit: 'TWO WORDS',
+                    explanation: 'Text states "completed in 1914 after ten years of construction"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sa4',
+                    passage: 'The Olympic Games trace their origins to ancient Greece, where they were held every four years from 776 BCE until 393 CE. The modern Olympics were revived in 1896 by French educator Baron Pierre de Coubertin in Athens, Greece. Today, the Olympics have grown to include both Summer and Winter Games, with thousands of athletes from over 200 countries competing.',
+                    question: 'Who revived the modern Olympic Games in 1896?',
+                    answer: 'Baron Pierre de Coubertin',
+                    wordLimit: 'NO MORE THAN FOUR WORDS',
+                    explanation: 'Passage states "revived in 1896 by French educator Baron Pierre de Coubertin"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sa5',
+                    passage: 'DNA was first isolated by Friedrich Miescher in 1869, but its role in heredity was not understood for many decades. The double helix structure of DNA was finally discovered in 1953 by James Watson and Francis Crick, building on X-ray crystallography work by Rosalind Franklin. This breakthrough revolutionized biology and medicine.',
+                    question: 'In which year was the structure of DNA discovered?',
+                    answer: '1953',
+                    wordLimit: 'ONE WORD OR A NUMBER',
+                    explanation: 'Text clearly states "finally discovered in 1953"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sa6',
+                    passage: 'The Mona Lisa, painted by Leonardo da Vinci between 1503 and 1519, is housed in the Louvre Museum in Paris. The painting depicts a woman with an enigmatic smile and has become one of the most famous artworks in history. It is protected by bulletproof glass and maintained at a constant temperature of 20 degrees Celsius.',
+                    question: 'Where is the Mona Lisa currently displayed?',
+                    answer: 'Louvre Museum',
+                    wordLimit: 'TWO WORDS',
+                    explanation: 'Passage states "housed in the Louvre Museum in Paris"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sa7',
+                    passage: 'The speed of light in a vacuum is approximately 299,792 kilometers per second, often rounded to 300,000 kilometers per second for calculations. This fundamental constant, denoted by the letter c, represents the maximum speed at which all energy, matter, and information in the universe can travel.',
+                    question: 'What letter is commonly used to represent the speed of light?',
+                    answer: 'c',
+                    wordLimit: 'ONE WORD OR A LETTER',
+                    explanation: 'Text states "denoted by the letter c"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sa8',
+                    passage: 'The Berlin Wall, constructed in 1961, physically divided East and West Berlin for 28 years. It stood as a symbol of the Cold War divide between communist and democratic nations. The wall finally fell on November 9, 1989, leading to German reunification in 1990.',
+                    question: 'On what date did the Berlin Wall fall?',
+                    answer: 'November 9, 1989',
+                    wordLimit: 'NO MORE THAN THREE WORDS',
+                    explanation: 'Directly stated: "fell on November 9, 1989"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sa9',
+                    passage: 'The human genome contains approximately 3 billion base pairs of DNA spread across 23 pairs of chromosomes. The Human Genome Project, completed in 2003, was an international effort to sequence and map all human genes. This monumental achievement took 13 years and involved scientists from multiple countries.',
+                    question: 'How many base pairs are in the human genome?',
+                    answer: '3 billion',
+                    wordLimit: 'TWO WORDS OR A NUMBER',
+                    explanation: 'Passage states "approximately 3 billion base pairs"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sa10',
+                    passage: 'The Hubble Space Telescope, launched aboard the Space Shuttle Discovery on April 24, 1990, orbits Earth at an altitude of approximately 547 kilometers. Named after astronomer Edwin Hubble, it has made over 1.5 million observations and helped scientists make numerous groundbreaking discoveries about the universe.',
+                    question: 'Which space shuttle launched the Hubble Telescope?',
+                    answer: 'Discovery',
+                    wordLimit: 'ONE WORD',
+                    explanation: 'Text states "launched aboard the Space Shuttle Discovery"',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'sa11',
+                    passage: 'Penicillin, the first widely used antibiotic, was discovered by Scottish bacteriologist Alexander Fleming in 1928. He noticed that a mold called Penicillium notatum had contaminated one of his bacterial cultures and killed the surrounding bacteria. This accidental discovery revolutionized medicine and has saved countless lives.',
+                    question: 'What type of mold produced penicillin?',
+                    answer: 'Penicillium notatum',
+                    wordLimit: 'TWO WORDS',
+                    explanation: 'Passage identifies "a mold called Penicillium notatum"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sa12',
+                    passage: 'The Richter scale, developed in 1935 by Charles F. Richter, measures the magnitude of earthquakes. The scale is logarithmic, meaning each whole number increase represents a tenfold increase in measured amplitude. Earthquakes above 7.0 on the Richter scale are considered major events capable of causing serious damage.',
+                    question: 'What does each whole number increase on the Richter scale represent?',
+                    answer: 'tenfold increase',
+                    wordLimit: 'TWO WORDS',
+                    explanation: 'Text states "each whole number increase represents a tenfold increase in measured amplitude"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sa13',
+                    passage: 'The Rosetta Stone, discovered in 1799 near the town of Rosetta in Egypt, was instrumental in deciphering ancient Egyptian hieroglyphs. The stone contains the same text written in three scripts: hieroglyphic, Demotic, and ancient Greek. French scholar Jean-François Champollion finally deciphered the hieroglyphs in 1822.',
+                    question: 'Who deciphered the hieroglyphs on the Rosetta Stone?',
+                    answer: 'Jean-François Champollion',
+                    wordLimit: 'NO MORE THAN THREE WORDS',
+                    explanation: 'Passage states "Jean-François Champollion finally deciphered the hieroglyphs"',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'sa14',
+                    passage: 'The Mariana Trench, located in the western Pacific Ocean, is the deepest part of the world\'s oceans. Its deepest point, known as Challenger Deep, reaches a depth of approximately 10,994 meters below sea level. The immense pressure at this depth is more than 1,000 times the atmospheric pressure at sea level.',
+                    question: 'What is the name of the deepest point in the Mariana Trench?',
+                    answer: 'Challenger Deep',
+                    wordLimit: 'TWO WORDS',
+                    explanation: 'Text identifies "Its deepest point, known as Challenger Deep"',
+                    difficulty: 'easy'
+                }
+            ],
+            ynng: [
+                {
+                    id: 'ynng1',
+                    passage: 'The author argues that modern technology has fundamentally changed how we communicate. Social media platforms have enabled people to maintain relationships across vast distances, but they have also created new challenges. The author suggests that while technology offers many benefits, we must be mindful of its impact on face-to-face interactions.',
+                    question: 'The author believes technology has improved all aspects of communication.',
+                    answer: 'N',
+                    explanation: 'The author presents a balanced view ("offers many benefits" BUT "new challenges"), not complete improvement of all aspects.',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'ynng2',
+                    passage: 'In her research, Dr. Martinez claims that bilingual education provides cognitive advantages that extend beyond language skills. She argues that children who learn two languages simultaneously develop enhanced problem-solving abilities and greater mental flexibility.',
+                    question: 'Dr. Martinez supports bilingual education for children.',
+                    answer: 'Y',
+                    explanation: 'The passage clearly states she "claims that bilingual education provides cognitive advantages" - this is supportive.',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'ynng3',
+                    passage: 'The writer contends that renewable energy is essential for addressing climate change. He points out that solar and wind power have become increasingly cost-effective, making them viable alternatives to fossil fuels. However, he acknowledges that storage technology needs further development.',
+                    question: 'The writer thinks renewable energy technology is perfect and needs no improvement.',
+                    answer: 'N',
+                    explanation: 'The writer "acknowledges that storage technology needs further development" - acknowledging imperfection.',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'ynng4',
+                    passage: 'Professor Chen\'s theory suggests that urban green spaces play a crucial role in mental health. Her studies indicate that access to parks and gardens correlates with reduced stress levels and improved well-being among city residents.',
+                    question: 'Professor Chen has conducted research on urban green spaces and mental health.',
+                    answer: 'Y',
+                    explanation: 'The passage states "Her studies indicate..." - confirming she has conducted research.',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'ynng5',
+                    passage: 'The economist argues that universal basic income could address poverty and inequality. She maintains that providing all citizens with a guaranteed income would reduce financial stress and enable people to pursue education or entrepreneurship.',
+                    question: 'The economist recommends implementing universal basic income immediately in all countries.',
+                    answer: 'NG',
+                    explanation: 'While the economist argues it "could address" issues, there\'s no mention of immediate implementation or all countries.',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'ynng6',
+                    passage: 'The author contends that social media has transformed political discourse. She argues that while these platforms enable direct communication between politicians and citizens, they also facilitate the spread of misinformation and create echo chambers where people only encounter views similar to their own.',
+                    question: 'The author believes social media has only negative effects on politics.',
+                    answer: 'N',
+                    explanation: 'The author presents both positive aspects ("enable direct communication") and negative aspects ("spread of misinformation"), not only negative effects',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'ynng7',
+                    passage: 'In his book, Dr. Thompson maintains that genetic factors play a significant role in determining athletic ability. He cites studies showing certain gene variants are more common among elite athletes. However, he emphasizes that genetics alone cannot create a champion without proper training and dedication.',
+                    question: 'Dr. Thompson argues that genes are the only factor in athletic success.',
+                    answer: 'N',
+                    explanation: 'Dr. Thompson says genes play "a significant role" BUT "genetics alone cannot create a champion without proper training" - he doesn\'t argue it\'s the only factor',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'ynng8',
+                    passage: 'The researcher suggests that corporate social responsibility initiatives benefit both companies and society. She points to evidence that businesses with strong CSR programs enjoy better public reputation and employee satisfaction. Her findings indicate that ethical business practices can be profitable.',
+                    question: 'The researcher believes corporations should prioritize profit over social responsibility.',
+                    answer: 'N',
+                    explanation: 'The researcher argues CSR "benefit both companies and society" and that "ethical business practices can be profitable" - the opposite of prioritizing profit over responsibility',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'ynng9',
+                    passage: 'Professor Williams claims that artificial intelligence will fundamentally reshape the job market. He argues that while AI will eliminate some jobs, it will also create new opportunities requiring different skills. He advocates for substantial investment in education and retraining programs to prepare workers for this transition.',
+                    question: 'Professor Williams supports increased funding for worker retraining programs.',
+                    answer: 'Y',
+                    explanation: 'The passage states he "advocates for substantial investment in education and retraining programs" - clearly supporting increased funding',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'ynng10',
+                    passage: 'The historian argues that the Industrial Revolution brought unprecedented economic growth but at significant social cost. She documents the harsh working conditions, child labor, and urban poverty that accompanied industrialization. Her work suggests that economic progress does not automatically translate to improved quality of life for all citizens.',
+                    question: 'The historian believes economic growth always improves everyone\'s well-being.',
+                    answer: 'N',
+                    explanation: 'The historian "suggests that economic progress does not automatically translate to improved quality of life for all citizens" - directly contradicting the belief stated',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'ynng11',
+                    passage: 'The environmentalist contends that individual actions are insufficient to address climate change. While she acknowledges that personal choices like reducing consumption matter, she argues that systemic change through government policy and corporate accountability is essential for meaningful progress.',
+                    question: 'The environmentalist thinks individual actions have no value in fighting climate change.',
+                    answer: 'N',
+                    explanation: 'She "acknowledges that personal choices...matter" - she doesn\'t think they have no value, just that they\'re "insufficient" alone',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'ynng12',
+                    passage: 'Dr. Patel\'s research explores the connection between gut bacteria and mental health. She proposes that the gut microbiome influences brain chemistry and could be a target for treating depression and anxiety. Her preliminary findings are promising, though she emphasizes the need for larger clinical trials.',
+                    question: 'Dr. Patel has conclusively proven that gut bacteria cause mental illness.',
+                    answer: 'N',
+                    explanation: 'She "proposes" a connection and has "preliminary findings" but "emphasizes the need for larger clinical trials" - not conclusively proven',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'ynng13',
+                    passage: 'The philosopher argues that happiness cannot be achieved through material wealth alone. He contends that meaningful relationships, personal growth, and contribution to society are equally important for well-being. His theory challenges the conventional measure of success based primarily on financial achievement.',
+                    question: 'The philosopher believes money contributes nothing to happiness.',
+                    answer: 'N',
+                    explanation: 'He argues material wealth "alone" is insufficient, not that it contributes nothing - he says other factors are "equally important", implying wealth has some role',
+                    difficulty: 'hard'
+                },
+                {
+                    id: 'ynng14',
+                    passage: 'The educator advocates for project-based learning in schools. She argues that hands-on projects help students develop critical thinking and collaboration skills better than traditional lectures. Her research shows improved engagement and retention rates among students in project-based programs.',
+                    question: 'The educator has conducted research on project-based learning.',
+                    answer: 'Y',
+                    explanation: 'The passage states "Her research shows improved engagement..." - confirming she has conducted research',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'ynng15',
+                    passage: 'The journalist contends that traditional news media must adapt to survive in the digital age. He suggests that while online platforms challenge conventional business models, quality journalism remains essential for democracy. He proposes that news organizations should embrace digital tools while maintaining rigorous editorial standards.',
+                    question: 'The journalist believes traditional journalism should completely abandon all previous practices.',
+                    answer: 'N',
+                    explanation: 'He suggests embracing "digital tools while maintaining rigorous editorial standards" - adapting, not abandoning all previous practices',
+                    difficulty: 'medium'
+                }
+            ],
+            matching_info: [
+                {
+                    id: 'mi1',
+                    passage: 'The history of chocolate spans over 3,000 years. The ancient Mayans and Aztecs cultivated cacao trees and used the beans to create a bitter ceremonial drink. When Spanish conquistadors brought chocolate to Europe in the 16th century, it was initially consumed as a beverage by the wealthy elite. The invention of the chocolate bar in 1847 by Joseph Fry revolutionized how chocolate was consumed. Today, Switzerland leads the world in chocolate consumption, with the average Swiss person eating approximately 11 kilograms annually.',
+                    paragraphs: ['A', 'B', 'C', 'D', 'E'],
+                    statements: [
+                        {
+                            id: 1,
+                            text: 'A description of chocolate\'s original form',
+                            answer: 'A',
+                            explanation: 'First sentences describe how ancient civilizations created "a bitter ceremonial drink"'
+                        },
+                        {
+                            id: 2,
+                            text: 'Information about current chocolate consumption patterns',
+                            answer: 'E',
+                            explanation: 'Last sentence provides statistics about Switzerland\'s consumption'
+                        },
+                        {
+                            id: 3,
+                            text: 'When chocolate was first introduced to Europe',
+                            answer: 'B',
+                            explanation: 'Mentions Spanish conquistadors bringing it to Europe in 16th century'
+                        },
+                        {
+                            id: 4,
+                            text: 'A major innovation in chocolate manufacturing',
+                            answer: 'D',
+                            explanation: 'Describes the invention of chocolate bar in 1847'
+                        }
+                    ],
+                    difficulty: 'medium'
+                }
+            ],
+            list_selection: [
+                {
+                    id: 'ls1',
+                    passage: 'Climate change affects various aspects of our planet. Rising global temperatures cause polar ice caps to melt, leading to rising sea levels that threaten coastal communities. Changing weather patterns result in more frequent extreme weather events such as hurricanes, droughts, and floods. Ocean acidification, caused by increased absorption of carbon dioxide, damages coral reefs and disrupts marine ecosystems. Additionally, shifting climate zones force many species to migrate or face extinction.',
+                    question: 'Which THREE effects of climate change are mentioned in the passage?',
+                    options: [
+                        'A) Rising sea levels',
+                        'B) Decreased rainfall everywhere',
+                        'C) Ocean acidification',
+                        'D) Reduced biodiversity',
+                        'E) More extreme weather events',
+                        'F) Increased agricultural productivity',
+                        'G) Mass human migration'
+                    ],
+                    answers: ['A', 'C', 'E'],
+                    explanation: 'The passage explicitly mentions: rising sea levels, ocean acidification, and more frequent extreme weather events.',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'ls2',
+                    passage: 'Effective time management requires several key strategies. First, prioritize tasks by importance and urgency, focusing on high-impact activities. Second, eliminate distractions by turning off notifications and creating a dedicated workspace. Third, break large projects into smaller, manageable steps to avoid feeling overwhelmed. Fourth, learn to delegate tasks when possible to free up time for critical responsibilities. Finally, schedule regular breaks to maintain productivity and prevent burnout.',
+                    question: 'Which FOUR time management strategies are discussed?',
+                    options: [
+                        'A) Prioritizing tasks',
+                        'B) Multitasking constantly',
+                        'C) Eliminating distractions',
+                        'D) Working longer hours',
+                        'E) Breaking down projects',
+                        'F) Taking regular breaks',
+                        'G) Checking email frequently'
+                    ],
+                    answers: ['A', 'C', 'E', 'F'],
+                    explanation: 'The passage mentions: prioritizing tasks, eliminating distractions, breaking down projects, and taking regular breaks.',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'ls3',
+                    passage: 'Maintaining good mental health requires multiple approaches. Regular physical exercise releases endorphins that improve mood and reduce anxiety. Adequate sleep is essential for emotional regulation and cognitive function. Social connections provide support and reduce feelings of isolation. Mindfulness practices like meditation can help manage stress and increase self-awareness. Professional therapy offers targeted interventions for specific mental health concerns.',
+                    question: 'Which FOUR factors for mental health are mentioned?',
+                    options: [
+                        'A) Physical exercise',
+                        'B) Expensive medications',
+                        'C) Sufficient sleep',
+                        'D) Avoiding all stress',
+                        'E) Social relationships',
+                        'F) Meditation practices',
+                        'G) Complete isolation'
+                    ],
+                    answers: ['A', 'C', 'E', 'F'],
+                    explanation: 'The passage explicitly discusses: exercise, sleep, social connections, and mindfulness/meditation',
+                    difficulty: 'easy'
+                },
+                {
+                    id: 'ls4',
+                    passage: 'Successful language learning involves several key strategies. Immersing yourself in the target language through media, conversations, and reading accelerates acquisition. Consistent daily practice, even for short periods, proves more effective than sporadic intensive study. Making mistakes is a natural part of learning and should be embraced rather than feared. Using spaced repetition techniques helps transfer vocabulary from short-term to long-term memory. Setting realistic goals maintains motivation and tracks progress.',
+                    question: 'Which THREE learning strategies are discussed?',
+                    options: [
+                        'A) Language immersion',
+                        'B) Studying grammar rules exclusively',
+                        'C) Daily practice consistency',
+                        'D) Avoiding all errors',
+                        'E) Memorizing dictionaries',
+                        'F) Spaced repetition methods'
+                    ],
+                    answers: ['A', 'C', 'F'],
+                    explanation: 'The passage mentions: immersion, consistent daily practice, and spaced repetition techniques',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'ls5',
+                    passage: 'Urban planning for sustainable cities must address multiple challenges. Efficient public transportation systems reduce car dependency and emissions. Green spaces provide recreational areas and improve air quality. Mixed-use development that combines residential, commercial, and office space reduces commuting distances. Renewable energy infrastructure powers buildings and streetlights sustainably. Water management systems collect rainwater and treat wastewater effectively. Bicycle lanes and pedestrian-friendly streets promote active transportation.',
+                    question: 'Which FOUR features of sustainable cities are mentioned?',
+                    options: [
+                        'A) Public transportation',
+                        'B) Shopping malls',
+                        'C) Parks and green spaces',
+                        'D) Fossil fuel plants',
+                        'E) Bicycle infrastructure',
+                        'F) Renewable energy systems',
+                        'G) Private car ownership incentives'
+                    ],
+                    answers: ['A', 'C', 'E', 'F'],
+                    explanation: 'The passage discusses: public transportation, green spaces, bicycle lanes, and renewable energy',
+                    difficulty: 'medium'
+                },
+                {
+                    id: 'ls6',
+                    passage: 'The scientific method provides a systematic approach to investigating phenomena. Observation of natural events or patterns generates initial questions. Researchers formulate hypotheses to explain these observations. Controlled experiments test the hypotheses under specific conditions. Data collection and analysis determine whether results support or contradict the hypothesis. Peer review ensures findings are scrutinized by other experts before publication. Replication by independent researchers verifies the reliability of results.',
+                    question: 'Which FIVE steps of the scientific method are described?',
+                    options: [
+                        'A) Making observations',
+                        'B) Accepting all theories',
+                        'C) Creating hypotheses',
+                        'D) Conducting experiments',
+                        'E) Ignoring contradictory data',
+                        'F) Analyzing data',
+                        'G) Avoiding peer review',
+                        'H) Independent replication'
+                    ],
+                    answers: ['A', 'C', 'D', 'F', 'H'],
+                    explanation: 'The passage covers: observation, hypothesis formation, experimentation, data analysis, and replication',
+                    difficulty: 'hard'
+                }
+            ],
+            diagram: [
+                {
+                    id: 'dia1',
+                    passage: 'The water cycle, also known as the hydrologic cycle, describes the continuous movement of water on, above, and below Earth\'s surface. The process begins with evaporation, where water from oceans, lakes, and rivers is converted into water vapor by solar energy. This vapor rises into the atmosphere where it cools and undergoes condensation, forming clouds. When clouds become saturated, precipitation occurs in the form of rain, snow, or hail. Water that falls on land may flow as surface runoff into rivers and streams, or infiltrate the soil to become groundwater. Eventually, water returns to the oceans, completing the cycle.',
+                    question: 'Label the diagram of the water cycle.',
+                    labels: [
+                        { number: 1, answer: 'evaporation', position: 'bottom' },
+                        { number: 2, answer: 'condensation', position: 'top' },
+                        { number: 3, answer: 'precipitation', position: 'middle' },
+                        { number: 4, answer: 'runoff', position: 'surface' }
+                    ],
+                    explanation: 'The passage describes each stage: evaporation (conversion to vapor), condensation (cloud formation), precipitation (rain/snow), and runoff (surface flow).',
+                    difficulty: 'medium'
+                }
+            ]
+        };
+
+        // ============= STATE MANAGEMENT =============
+        let appState = {
+            currentView: 'dashboard',
+            currentDrill: null,
+            drillType: null,
+            questions: [],
+            currentQuestionIndex: 0,
+            score: 0,
+            answered: false,
+            userAnswers: {},
+            weaknesses: {},
+            studyTime: 0,
+            targetBand: 9.0
+        };
+
+        // ============= STORAGE FUNCTIONS =============
+        function saveState() {
+            localStorage.setItem('ielts_master_state', JSON.stringify(appState));
+        }
+
+        function loadState() {
+            const saved = localStorage.getItem('ielts_master_state');
+            if (saved) {
+                appState = { ...appState, ...JSON.parse(saved) };
+            }
+        }
+
+        function getErrorAnalysis() {
+            const errors = JSON.parse(localStorage.getItem('ielts_errors') || '[]');
+            const analysis = {
+                total: errors.length,
+                byType: {},
+                bySkill: {},
+                recentErrors: errors.slice(-10),
+                patterns: []
+            };
+
+            errors.forEach(err => {
+                analysis.byType[err.type] = (analysis.byType[err.type] || 0) + 1;
+                
+                // Phân tích skill cụ thể
+                if (err.type === 'tfng' || err.type === 'ynng') {
+                    if (err.yourAnswer === 'NG' && err.correctAnswer !== 'NG') {
+                        analysis.bySkill['overusing_ng'] = (analysis.bySkill['overusing_ng'] || 0) + 1;
+                    } else if (err.yourAnswer === 'F' && err.correctAnswer === 'NG') {
+                        analysis.bySkill['confusing_false_ng'] = (analysis.bySkill['confusing_false_ng'] || 0) + 1;
+                    }
+                }
+            });
+
+            // Xác định patterns
+            if (analysis.bySkill['overusing_ng'] > 3) {
+                analysis.patterns.push('⚠️ Bạn đang lạm dụng NOT GIVEN. Cần học cách phân biệt FALSE vs NOT GIVEN.');
+            }
+            if (analysis.byType['matching_headings'] > 5) {
+                analysis.patterns.push('⚠️ Yếu ở Matching Headings. Cần luyện xác định main idea.');
+            }
+
+            return analysis;
+        }
+
+        // ============= NAVIGATION =============
+        function navigate(view) {
+            appState.currentView = view;
+            renderNav();
+            renderContent();
+            saveState();
+        }
+
+        function renderNav() {
+            const nav = document.getElementById('nav');
+            const views = [
+                { id: 'dashboard', label: '📊 Dashboard', icon: '📊' },
+                { id: 'practice', label: '💪 Practice', icon: '💪' },
+                { id: 'full_test', label: '📝 Full Tests', icon: '📝' },
+                { id: 'analysis', label: '📈 Analysis', icon: '📈' },
+                { id: 'vocabulary', label: '📚 Vocabulary', icon: '📚' },
+                { id: 'tips', label: '💡 Tips & Tricks', icon: '💡' },
+                { id: 'weaknesses', label: '🎯 My Weaknesses', icon: '🎯' }
+            ];
+            
+            nav.innerHTML = views.map(v => 
+                `<button class="nav-btn ${appState.currentView === v.id ? 'active' : ''}" 
+                         onclick="navigate('${v.id}')">${v.icon} ${v.label}</button>`
+            ).join('');
+        }
+
+        // ============= RENDER FUNCTIONS =============
+        function renderContent() {
+            const content = document.getElementById('content');
+            
+            switch(appState.currentView) {
+                case 'dashboard':
+                    renderDashboard(content);
+                    break;
+                case 'practice':
+                    renderPractice(content);
+                    break;
+                case 'full_test':
+                    renderFullTest(content);
+                    break;
+                case 'analysis':
+                    renderAnalysis(content);
+                    break;
+                case 'vocabulary':
+                    renderVocabulary(content);
+                    break;
+                case 'tips':
+                    renderTips(content);
+                    break;
+                case 'weaknesses':
+                    renderWeaknesses(content);
+                    break;
+            }
+        }
+
+        function renderFullTest(container) {
+            container.innerHTML = `
+                <h2>📝 Full Practice Tests</h2>
+                <p>Complete IELTS Reading passages with mixed question types - just like the real test!</p>
+
+                <div class="tip-box">
+                    <h4>⏱️ Test Conditions</h4>
+                    <p><strong>Time limit:</strong> 20 minutes per passage (60 minutes total for 3 passages)</p>
+                    <p><strong>Questions:</strong> 13-14 questions per passage (40 total)</p>
+                    <p><strong>Tip:</strong> Try to simulate real test conditions - no distractions, timed practice!</p>
+                </div>
+
+                <div class="drill-grid" style="margin-top: 30px;">
+                    <div class="drill-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" 
+                         onclick="alert('Full test passages coming soon! For now, practice individual question types.')">
+                        <div class="badge">SOON</div>
+                        <h3>Passage 1</h3>
+                        <p>Academic Text - Easy</p>
+                        <small>14 questions • 20 mins</small>
+                    </div>
+
+                    <div class="drill-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"
+                         onclick="alert('Full test passages coming soon! For now, practice individual question types.')">
+                        <div class="badge">SOON</div>
+                        <h3>Passage 2</h3>
+                        <p>Academic Text - Medium</p>
+                        <small>13 questions • 20 mins</small>
+                    </div>
+
+                    <div class="drill-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"
+                         onclick="alert('Full test passages coming soon! For now, practice individual question types.')">
+                        <div class="badge">SOON</div>
+                        <h3>Passage 3</h3>
+                        <p>Academic Text - Hard</p>
+                        <small>13 questions • 20 mins</small>
+                    </div>
+
+                    <div class="drill-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"
+                         onclick="alert('Full test passages coming soon! For now, practice individual question types.')">
+                        <div class="badge">SOON</div>
+                        <h3>Complete Test</h3>
+                        <p>3 Full Passages</p>
+                        <small>40 questions • 60 mins</small>
+                    </div>
+                </div>
+
+                <div class="error-analysis" style="margin-top: 30px;">
+                    <h3>💡 How to Use Full Tests Effectively</h3>
+                    <ol style="padding-left: 20px; line-height: 2;">
+                        <li><strong>First attempt:</strong> Do it UNTIMED to focus on accuracy</li>
+                        <li><strong>Second attempt:</strong> Do it TIMED (20 mins) to practice speed</li>
+                        <li><strong>Review thoroughly:</strong> Understand EVERY mistake, not just see correct answer</li>
+                        <li><strong>Identify patterns:</strong> What question types do you struggle with?</li>
+                        <li><strong>Practice weaknesses:</strong> Use individual question type practice for your weak areas</li>
+                        <li><strong>Repeat:</strong> Do the same passage again after 1 week - aim for 100%!</li>
+                    </ol>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn-primary" onclick="navigate('practice')">
+                        Practice Question Types First →
+                    </button>
+                </div>
+            `;
+        }
+
+        function renderDashboard(container) {
+            const errors = JSON.parse(localStorage.getItem('ielts_errors') || '[]');
+            const analysis = getErrorAnalysis();
+
+            // Count total questions per type
+            const questionCounts = {};
+            Object.keys(SAMPLE_QUESTIONS).forEach(type => {
+                questionCounts[type] = SAMPLE_QUESTIONS[type].length;
+            });
+
+            container.innerHTML = `
+                <h2>🎯 Welcome to IELTS Reading Master</h2>
+                <div class="tip-box">
+                    <h4>🎓 Your Current Target: Band ${appState.targetBand}</h4>
+                    <p>Để đạt 9.0, bạn cần: <strong>39-40/40 câu đúng</strong> (97.5%+ accuracy)</p>
+                    <p>Band 8.5: 37-38/40 (92.5%) | Band 8.0: 35-36/40 (87.5%) | Band 7.5: 33-34/40 (82.5%)</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                        <div class="label">Total Questions</div>
+                        <div class="number">${Object.values(questionCounts).reduce((a, b) => a + b, 0)}</div>
+                        <div class="label">available to practice</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);">
+                        <div class="label">Errors Made</div>
+                        <div class="number">${analysis.total}</div>
+                        <div class="label">to review</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="label">Accuracy Rate</div>
+                        <div class="number">${analysis.total > 0 ? Math.max(0, Math.round((1 - errors.length / (analysis.total * 2)) * 100)) : 100}%</div>
+                        <div class="label">current</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="label">Study Time</div>
+                        <div class="number">${Math.floor(appState.studyTime / 60)}</div>
+                        <div class="label">hours logged</div>
+                    </div>
+                </div>
+
+                ${analysis.patterns.length > 0 ? `
+                <div class="error-analysis">
+                    <h3>🔍 Phân tích điểm yếu của bạn</h3>
+                    ${analysis.patterns.map(p => `<p>${p}</p>`).join('')}
+                    <button class="btn-primary" onclick="navigate('weaknesses')" style="margin-top: 15px;">
+                        Xem chi tiết & Luyện tập có mục tiêu →
+                    </button>
+                </div>
+                ` : ''}
+
+                <h3 style="margin-top: 30px;">🚀 Question Types - Bắt đầu luyện tập</h3>
+                <div class="drill-grid">
+                    ${Object.keys(QUESTION_TYPES).map((type, idx) => {
+                        const colors = [
+                            'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                            'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                            'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+                            'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+                            'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+                            'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+                            'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+                            'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+                            'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+                            'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)'
+                        ];
+                        const count = questionCounts[type] || 0;
+                        const errorCount = analysis.byType[type] || 0;
+                        return `
+                            <div class="drill-card" style="background: ${colors[idx % colors.length]};" onclick="startPractice('${type}')">
+                                ${errorCount > 3 ? '<div class="badge">WEAK</div>' : ''}
+                                <h3>${QUESTION_TYPES[type]}</h3>
+                                <p style="margin: 10px 0;">${count} questions available</p>
+                                ${errorCount > 0 ? `<small style="opacity: 0.9;">⚠️ ${errorCount} errors made</small>` : '<small style="opacity: 0.9;">✅ No errors yet!</small>'}
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+
+                <div class="tip-box" style="margin-top: 30px;">
+                    <h4>💡 Daily Study Plan for Band 9.0</h4>
+                    <ul style="line-height: 2; padding-left: 20px;">
+                        <li><strong>Morning (30 mins):</strong> Practice 1 full passage (13-14 questions)</li>
+                        <li><strong>Afternoon (20 mins):</strong> Focus on your weakest question type (10-15 questions)</li>
+                        <li><strong>Evening (15 mins):</strong> Review errors & learn 5 new vocabulary words</li>
+                        <li><strong>Weekly:</strong> Do 1 full Reading test (3 passages, 40 questions, 60 minutes)</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>📅 Consistency is key!</strong> Practice every day for 4-6 weeks to see significant improvement.</p>
+                </div>
+            `;
+        }
+
+        function renderPractice(container) {
+            if (!appState.drillType) {
+                container.innerHTML = `
+                    <h2>💪 Choose Practice Type</h2>
+                    
+                    <div class="tab-container">
+                        <div class="tab active" onclick="filterPractice('all')">All Types</div>
+                        <div class="tab" onclick="filterPractice('weak')">My Weaknesses</div>
+                        <div class="tab" onclick="filterPractice('advanced')">Advanced</div>
+                    </div>
+
+                    <div class="drill-grid" id="practice-grid">
+                        ${Object.keys(QUESTION_TYPES).map((type, idx) => {
+                            const colors = [
+                                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                                'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+                                'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+                                'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+                                'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+                                'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+                                'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+                                'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+                                'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)'
+                            ];
+                            return `
+                                <div class="drill-card" style="background: ${colors[idx % colors.length]};" onclick="startPractice('${type}')">
+                                    <h3>${QUESTION_TYPES[type]}</h3>
+                                    <p>Luyện kỹ năng cụ thể</p>
+                                    <div style="margin-top: 15px; font-size: 14px;">
+                                        <strong>15 questions</strong> • 20 mins
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            } else if (appState.drillType === 'ynng') {
+                // Yes/No/Not Given style
+                questionHTML = `
+                    <div class="question-box">
+                        <div class="statement">
+                            <strong>Statement:</strong><br>
+                            ${q.question}
+                        </div>
+                        <div class="options" id="options">
+                            <button class="option-btn" onclick="submitTFNGAnswer('Y')" ${appState.answered ? 'disabled' : ''}>YES</button>
+                            <button class="option-btn" onclick="submitTFNGAnswer('N')" ${appState.answered ? 'disabled' : ''}>NO</button>
+                            <button class="option-btn" onclick="submitTFNGAnswer('NG')" ${appState.answered ? 'disabled' : ''}>NOT GIVEN</button>
+                        </div>
+                    </div>
+                `;
+            } else if (appState.drillType === 'list_selection') {
+                questionHTML = `
+                    <div class="question-box">
+                        <p><strong>${q.question}</strong></p>
+                        <p style="color: #dc3545; font-weight: bold;">Select ${q.answers.length} options</p>
+                        <div id="list-options" style="display: grid; gap: 10px;">
+                            ${q.options.map(opt => `
+                                <label style="display: flex; align-items: center; padding: 15px; background: white; 
+                                       border: 2px solid #e9ecef; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                    <input type="checkbox" id="opt-${opt[0]}" value="${opt[0]}" 
+                                           ${appState.answered ? 'disabled' : ''}
+                                           style="margin-right: 10px; width: 20px; height: 20px; cursor: pointer;">
+                                    <span>${opt}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                        ${!appState.answered ? `
+                            <button class="btn-primary" onclick="submitListSelection()" style="margin-top: 15px;">
+                                Submit Selection
+                            </button>
+                        ` : ''}
+                    </div>
+                `;
+            } else if (appState.drillType === 'diagram') {
+                questionHTML = `
+                    <div class="question-box">
+                        <p><strong>${q.question}</strong></p>
+                        <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                            ${q.labels.map(label => `
+                                <div style="margin: 15px 0;">
+                                    <label><strong>${label.number}.</strong> (${label.position}): </label>
+                                    <input type="text" id="diagram-${label.number}" 
+                                           style="width: 200px; padding: 8px;" 
+                                           ${appState.answered ? 'disabled' : ''}>
+                                </div>
+                            `).join('')}
+                        </div>
+                        ${!appState.answered ? `
+                            <button class="btn-primary" onclick="submitDiagramAnswers()" style="margin-top: 10px;">
+                                Submit Labels
+                            </button>
+                        ` : ''}
+                    </div>
+                `;
+            } else {
+                renderQuestion(container);
+            }
+        }
+
+        function startPractice(type) {
+            appState.drillType = type;
+            appState.currentQuestionIndex = 0;
+            appState.score = 0;
+            appState.answered = false;
+            appState.userAnswers = {};
+            
+            // Load sample questions based on type
+            if (SAMPLE_QUESTIONS[type]) {
+                appState.questions = SAMPLE_QUESTIONS[type];
+            } else {
+                // Generate T/F/NG questions as default
+                appState.questions = generateTFNGQuestions();
+            }
+            
+            renderContent();
+        }
+
+        function generateTFNGQuestions() {
+            // Return sample T/F/NG questions
+            return [
+                {
+                    id: 'tfng1',
+                    passage: 'Research shows that regular exercise can significantly improve mental health by reducing symptoms of depression and anxiety. Studies indicate that 30 minutes of moderate exercise, five times per week, can be as effective as medication for some individuals.',
+                    question: 'Exercise is always more effective than medication for treating depression.',
+                    answer: 'F',
+                    explanation: 'The passage says exercise can be "as effective as" medication for "some individuals", not always more effective.',
+                    difficulty: 'medium'
+                }
+            ];
+        }
+
+        function renderQuestion(container) {
+            if (appState.currentQuestionIndex >= appState.questions.length) {
+                renderResults(container);
+                return;
+            }
+
+            const q = appState.questions[appState.currentQuestionIndex];
+            const progress = ((appState.currentQuestionIndex + 1) / appState.questions.length) * 100;
+
+            let questionHTML = '';
+            
+            // Render based on question type
+            if (appState.drillType === 'sentence_completion' || appState.drillType === 'short_answer') {
+                questionHTML = `
+                    <div class="question-box">
+                        <p><strong>Word Limit:</strong> ${q.wordLimit}</p>
+                        <p><strong>Question:</strong> ${q.question}</p>
+                        <input type="text" id="answer-input" placeholder="Type your answer here..." 
+                               ${appState.answered ? 'disabled' : ''}>
+                        ${!appState.answered ? `
+                            <button class="btn-primary" onclick="submitAnswer()" style="margin-top: 10px;">
+                                Submit Answer
+                            </button>
+                        ` : ''}
+                    </div>
+                `;
+            } else if (appState.drillType === 'multiple_choice') {
+                questionHTML = `
+                    <div class="question-box">
+                        <p><strong>Question:</strong> ${q.question}</p>
+                        <div class="options" id="options">
+                            ${q.options.map((opt, idx) => `
+                                <button class="option-btn" onclick="submitMCAnswer('${opt[0]}')" 
+                                        style="flex: 1 1 100%; text-align: left;"
+                                        ${appState.answered ? 'disabled' : ''}>
+                                    ${opt}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            } else if (appState.drillType === 'matching_headings') {
+                const paragraph = q.paragraphs[appState.currentQuestionIndex % q.paragraphs.length];
+                questionHTML = `
+                    <div class="question-box">
+                        <h4>Paragraph ${paragraph.id}</h4>
+                        <div class="passage-text" style="max-height: 300px;">
+                            ${paragraph.text}
+                        </div>
+                        <p style="margin-top: 20px;"><strong>Choose the correct heading:</strong></p>
+                        <div class="options" id="options">
+                            ${q.headings.map(heading => `
+                                <button class="option-btn" onclick="submitHeadingAnswer('${heading.id}')" 
+                                        style="flex: 1 1 100%; text-align: left; padding: 15px;"
+                                        ${appState.answered ? 'disabled' : ''}>
+                                    <strong>${heading.id}.</strong> ${heading.text}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            } else if (appState.drillType === 'summary') {
+                questionHTML = `
+                    <div class="question-box">
+                        <h4>Complete the summary below:</h4>
+                        <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0; line-height: 2;">
+                            ${q.summary.split(/(_____\(\d+\)_____)/).map((part, idx) => {
+                                const match = part.match(/_____\((\d+)\)_____/);
+                                if (match) {
+                                    const num = match[1];
+                                    return `<input type="text" id="summary-${num}" 
+                                            style="width: 150px; display: inline-block; margin: 0 5px;" 
+                                            placeholder="(${num})" ${appState.answered ? 'disabled' : ''}>`;
+                                }
+                                return part;
+                            }).join('')}
+                        </div>
+                        ${!appState.answered ? `
+                            <button class="btn-primary" onclick="submitSummaryAnswers()" style="margin-top: 10px;">
+                                Submit Answers
+                            </button>
+                        ` : ''}
+                    </div>
+                `;
+            } else {
+                // Default T/F/NG style
+                questionHTML = `
+                    <div class="question-box">
+                        <div class="statement">
+                            <strong>Statement:</strong><br>
+                            ${q.question}
+                        </div>
+                        <div class="options" id="options">
+                            <button class="option-btn" onclick="submitTFNGAnswer('T')" ${appState.answered ? 'disabled' : ''}>TRUE</button>
+                            <button class="option-btn" onclick="submitTFNGAnswer('F')" ${appState.answered ? 'disabled' : ''}>FALSE</button>
+                            <button class="option-btn" onclick="submitTFNGAnswer('NG')" ${appState.answered ? 'disabled' : ''}>NOT GIVEN</button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = `
+                <div style="margin-bottom: 20px;">
+                    <button class="btn-secondary" onclick="exitPractice()">← Back</button>
+                    <h2>💪 ${QUESTION_TYPES[appState.drillType]}</h2>
+                    <span class="vocab-type" style="margin-left: 15px;">Difficulty: ${q.difficulty || 'medium'}</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${progress}%">
+                        ${appState.currentQuestionIndex + 1}/${appState.questions.length}
+                    </div>
+                </div>
+
+                <div class="passage-text">
+                    <strong>Passage:</strong><br>
+                    ${q.passage}
+                </div>
+
+                ${questionHTML}
+
+                <div id="explanation" class="hidden"></div>
+                <div id="next-btn" class="hidden" style="margin-top: 20px;">
+                    <button class="btn-primary" onclick="nextQuestion()">Next Question →</button>
+                </div>
+            `;
+        }
+
+        function submitHeadingAnswer(headingId) {
+            const q = appState.questions[appState.currentQuestionIndex];
+            const paragraph = q.paragraphs[appState.currentQuestionIndex % q.paragraphs.length];
+            appState.answered = true;
+            const isCorrect = headingId === paragraph.correctHeading;
+            
+            if (isCorrect) {
+                appState.score++;
+            } else {
+                saveError(q, headingId);
+            }
+
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach(btn => {
+                const btnHeadingId = btn.textContent.trim().split('.')[0];
+                if (btnHeadingId === paragraph.correctHeading) {
+                    btn.classList.add('correct');
+                }
+                if (btnHeadingId === headingId && !isCorrect) {
+                    btn.classList.add('wrong');
+                }
+            });
+
+            const correctHeading = q.headings.find(h => h.id === paragraph.correctHeading);
+            showExplanation({
+                ...q,
+                question: `Paragraph ${paragraph.id}`,
+                answer: `${correctHeading.id}. ${correctHeading.text}`,
+                explanation: `The main idea of paragraph ${paragraph.id} is about "${correctHeading.text}".`
+            }, headingId, isCorrect);
+        }
+
+        function submitSummaryAnswers() {
+            const q = appState.questions[appState.currentQuestionIndex];
+            appState.answered = true;
+            let correctCount = 0;
+            let userAnswers = [];
+
+            q.answers.forEach(ans => {
+                const input = document.getElementById(`summary-${ans.number}`);
+                const userAnswer = input.value.trim();
+                userAnswers.push(userAnswer);
+                const isCorrect = userAnswer.toLowerCase() === ans.answer.toLowerCase();
+                
+                if (isCorrect) {
+                    correctCount++;
+                    input.style.borderColor = '#28a745';
+                    input.style.background = '#d4edda';
+                } else {
+                    input.style.borderColor = '#dc3545';
+                    input.style.background = '#f8d7da';
+                }
+            });
+
+            const allCorrect = correctCount === q.answers.length;
+            if (allCorrect) {
+                appState.score++;
+            } else {
+                saveError(q, userAnswers.join(', '));
+            }
+
+            document.getElementById('explanation').innerHTML = `
+                <div class="explanation">
+                    <h4>${allCorrect ? '✅ All Correct!' : `❌ ${correctCount}/${q.answers.length} Correct`}</h4>
+                    <h4 style="margin-top: 15px;">Correct Answers:</h4>
+                    ${q.answers.map(ans => `
+                        <p><strong>(${ans.number}):</strong> ${ans.answer}</p>
+                    `).join('')}
+                </div>
+            `;
+            document.getElementById('explanation').classList.remove('hidden');
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        function submitListSelection() {
+            const q = appState.questions[appState.currentQuestionIndex];
+            appState.answered = true;
+            
+            const selectedOptions = [];
+            q.options.forEach(opt => {
+                const checkbox = document.getElementById(`opt-${opt[0]}`);
+                if (checkbox && checkbox.checked) {
+                    selectedOptions.push(opt[0]);
+                    const label = checkbox.parentElement;
+                    if (q.answers.includes(opt[0])) {
+                        label.style.borderColor = '#28a745';
+                        label.style.background = '#d4edda';
+                    } else {
+                        label.style.borderColor = '#dc3545';
+                        label.style.background = '#f8d7da';
+                    }
+                }
+            });
+
+            // Highlight correct answers that weren't selected
+            q.answers.forEach(answer => {
+                const checkbox = document.getElementById(`opt-${answer}`);
+                if (checkbox && !checkbox.checked) {
+                    const label = checkbox.parentElement;
+                    label.style.borderColor = '#ffc107';
+                    label.style.background = '#fff3cd';
+                }
+            });
+
+            const correctCount = selectedOptions.filter(opt => q.answers.includes(opt)).length;
+            const allCorrect = correctCount === q.answers.length && selectedOptions.length === q.answers.length;
+            
+            if (allCorrect) {
+                appState.score++;
+            } else {
+                saveError(q, selectedOptions.join(', '));
+            }
+
+            document.getElementById('explanation').innerHTML = `
+                <div class="explanation">
+                    <h4>${allCorrect ? '✅ Perfect!' : `⚠️ ${correctCount}/${q.answers.length} Correct`}</h4>
+                    <p><strong>Your selection:</strong> ${selectedOptions.join(', ') || 'None'}</p>
+                    <p><strong>Correct answers:</strong> ${q.answers.join(', ')}</p>
+                    <p><strong>Explanation:</strong> ${q.explanation}</p>
+                </div>
+            `;
+            document.getElementById('explanation').classList.remove('hidden');
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        function submitDiagramAnswers() {
+            const q = appState.questions[appState.currentQuestionIndex];
+            appState.answered = true;
+            let correctCount = 0;
+            let userAnswers = [];
+
+            q.labels.forEach(label => {
+                const input = document.getElementById(`diagram-${label.number}`);
+                const userAnswer = input.value.trim();
+                userAnswers.push(userAnswer);
+                const isCorrect = userAnswer.toLowerCase() === label.answer.toLowerCase();
+                
+                if (isCorrect) {
+                    correctCount++;
+                    input.style.borderColor = '#28a745';
+                    input.style.background = '#d4edda';
+                } else {
+                    input.style.borderColor = '#dc3545';
+                    input.style.background = '#f8d7da';
+                }
+            });
+
+            const allCorrect = correctCount === q.labels.length;
+            if (allCorrect) {
+                appState.score++;
+            } else {
+                saveError(q, userAnswers.join(', '));
+            }
+
+            document.getElementById('explanation').innerHTML = `
+                <div class="explanation">
+                    <h4>${allCorrect ? '✅ All Correct!' : `⚠️ ${correctCount}/${q.labels.length} Correct`}</h4>
+                    <h4 style="margin-top: 15px;">Correct Labels:</h4>
+                    ${q.labels.map(label => `
+                        <p><strong>${label.number}.</strong> ${label.answer}</p>
+                    `).join('')}
+                    <p style="margin-top: 15px;"><strong>Explanation:</strong> ${q.explanation}</p>
+                </div>
+            `;
+            document.getElementById('explanation').classList.remove('hidden');
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        function submitAnswer() {
+            const input = document.getElementById('answer-input');
+            const userAnswer = input.value.trim();
+            const q = appState.questions[appState.currentQuestionIndex];
+            
+            appState.answered = true;
+            const isCorrect = userAnswer.toLowerCase() === q.answer.toLowerCase();
+            
+            if (isCorrect) {
+                appState.score++;
+            } else {
+                saveError(q, userAnswer);
+            }
+
+            showExplanation(q, userAnswer, isCorrect);
+        }
+
+        function submitMCAnswer(answer) {
+            const q = appState.questions[appState.currentQuestionIndex];
+            appState.answered = true;
+            const isCorrect = answer === q.answer;
+            
+            if (isCorrect) {
+                appState.score++;
+            } else {
+                saveError(q, answer);
+            }
+
+            // Highlight correct/wrong
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent.startsWith(q.answer)) {
+                    btn.classList.add('correct');
+                }
+                if (btn.textContent.startsWith(answer) && !isCorrect) {
+                    btn.classList.add('wrong');
+                }
+            });
+
+            showExplanation(q, answer, isCorrect);
+        }
+
+        function submitTFNGAnswer(answer) {
+            const q = appState.questions[appState.currentQuestionIndex];
+            appState.answered = true;
+            const isCorrect = answer === q.answer;
+            
+            if (isCorrect) {
+                appState.score++;
+            } else {
+                saveError(q, answer);
+            }
+
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent.includes(q.answer)) {
+                    btn.classList.add('correct');
+                }
+                if (btn.textContent.includes(answer) && !isCorrect) {
+                    btn.classList.add('wrong');
+                }
+            });
+
+            showExplanation(q, answer, isCorrect);
+        }
+
+        function showExplanation(q, userAnswer, isCorrect) {
+            document.getElementById('explanation').innerHTML = `
+                <div class="explanation">
+                    <h4>${isCorrect ? '✅ Correct!' : '❌ Incorrect'}</h4>
+                    <p><strong>Your answer:</strong> ${userAnswer}</p>
+                    <p><strong>Correct answer:</strong> ${q.answer}</p>
+                    <p><strong>Explanation:</strong> ${q.explanation}</p>
+                    ${!isCorrect ? `
+                        <div class="tip-box" style="margin-top: 15px;">
+                            <h4>💡 Learning Point</h4>
+                            <p>This question tests your understanding of ${QUESTION_TYPES[appState.drillType]}. 
+                            Review the tips section for this question type.</p>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+            document.getElementById('explanation').classList.remove('hidden');
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        function saveError(question, userAnswer) {
+            const errors = JSON.parse(localStorage.getItem('ielts_errors') || '[]');
+            errors.push({
+                type: appState.drillType,
+                question: question.question,
+                passage: question.passage,
+                userAnswer: userAnswer,
+                correctAnswer: question.answer,
+                explanation: question.explanation,
+                timestamp: new Date().toISOString(),
+                difficulty: question.difficulty || 'medium'
+            });
+            localStorage.setItem('ielts_errors', JSON.stringify(errors));
+        }
+
+        function nextQuestion() {
+            appState.currentQuestionIndex++;
+            appState.answered = false;
+            renderContent();
+        }
+
+        function exitPractice() {
+            appState.drillType = null;
+            appState.questions = [];
+            renderContent();
+        }
+
+        function renderResults(container) {
+            const percentage = Math.round((appState.score / appState.questions.length) * 100);
+            const band = calculateBand(percentage);
+
+            container.innerHTML = `
+                <h2>🎉 Practice Complete!</h2>
+                
+                <div class="stat-card" style="max-width: 500px; margin: 30px auto;">
+                    <div class="label">Your Score</div>
+                    <div class="number">${appState.score}/${appState.questions.length}</div>
+                    <div class="label">${percentage}%</div>
+                    <div style="margin-top: 15px; font-size: 1.2em;">
+                        Estimated Band: <strong>${band}</strong>
+                    </div>
+                </div>
+
+                ${percentage < 90 ? `
+                <div class="error-analysis">
+                    <h3>📊 Performance Analysis</h3>
+                    <p>You made ${appState.questions.length - appState.score} mistake(s).</p>
+                    <p>To reach Band 9.0, aim for 39-40/40 correct answers (97.5%+)</p>
+                    <button class="btn-primary" onclick="navigate('weaknesses')" style="margin-top: 15px;">
+                        Review Your Mistakes
+                    </button>
+                </div>
+                ` : `
+                <div class="tip-box">
+                    <h4>🎯 Excellent Performance!</h4>
+                    <p>You're on track for Band 9.0! Keep practicing to maintain consistency.</p>
+                </div>
+                `}
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn-primary" onclick="exitPractice()">Back to Practice</button>
+                    <button class="btn-secondary" onclick="navigate('analysis')">View Analysis</button>
+                </div>
+            `;
+        }
+
+        function calculateBand(percentage) {
+            if (percentage >= 97.5) return '9.0';
+            if (percentage >= 92.5) return '8.5';
+            if (percentage >= 87.5) return '8.0';
+            if (percentage >= 82.5) return '7.5';
+            if (percentage >= 75) return '7.0';
+            if (percentage >= 67.5) return '6.5';
+            return '6.0';
+        }
+
+        function renderAnalysis(container) {
+            const errors = JSON.parse(localStorage.getItem('ielts_errors') || '[]');
+            const analysis = getErrorAnalysis();
+
+            container.innerHTML = `
+                <h2>📈 Performance Analysis</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="label">Total Errors</div>
+                        <div class="number">${analysis.total}</div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="label">Most Difficult Type</div>
+                        <div class="number" style="font-size: 1.5em;">
+                            ${Object.keys(analysis.byType).length > 0 ? 
+                                Object.keys(analysis.byType).reduce((a, b) => 
+                                    analysis.byType[a] > analysis.byType[b] ? a : b
+                                ) : 'None'}
+                        </div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="label">Improvement Areas</div>
+                        <div class="number">${Object.keys(analysis.bySkill).length}</div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>📊 Errors by Question Type</h3>
+                    <div id="error-chart">
+                        ${Object.keys(QUESTION_TYPES).map(type => {
+                            const count = analysis.byType[type] || 0;
+                            const percentage = analysis.total > 0 ? (count / analysis.total * 100) : 0;
+                            return `
+                                <div style="margin: 15px 0;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                        <span><strong>${QUESTION_TYPES[type]}</strong></span>
+                                        <span>${count} errors</span>
+                                    </div>
+                                    <div style="background: #e9ecef; border-radius: 10px; height: 20px; overflow: hidden;">
+                                        <div style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); 
+                                                    height: 100%; width: ${percentage}%; transition: width 0.3s;"></div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+
+                ${analysis.patterns.length > 0 ? `
+                <div class="error-analysis">
+                    <h3>🔍 Detected Patterns</h3>
+                    ${analysis.patterns.map(p => `<p>${p}</p>`).join('')}
+                </div>
+                ` : ''}
+
+                <div class="chart-container">
+                    <h3>📋 Recent Errors</h3>
+                    ${analysis.recentErrors.length === 0 ? '<p>No errors yet. Great job!</p>' :
+                        analysis.recentErrors.reverse().map(err => `
+                            <div class="vocab-card">
+                                <div class="vocab-type">${QUESTION_TYPES[err.type] || err.type}</div>
+                                <p><strong>Question:</strong> ${err.question}</p>
+                                <p style="color: #dc3545;"><strong>Your answer:</strong> ${err.userAnswer}</p>
+                                <p style="color: #28a745;"><strong>Correct:</strong> ${err.correctAnswer}</p>
+                                <p style="font-size: 0.9em; color: #666;">
+                                    ${new Date(err.timestamp).toLocaleDateString('vi-VN')}
+                                </p>
+                            </div>
+                        `).join('')
+                    }
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn-primary" onclick="navigate('weaknesses')">
+                        Practice My Weaknesses
+                    </button>
+                    <button class="btn-secondary" onclick="clearAllErrors()">
+                        Clear Error History
+                    </button>
+                </div>
+            `;
+        }
+
+        function renderVocabulary(container) {
+            container.innerHTML = `
+                <h2>📚 IELTS Reading Vocabulary Bank</h2>
+                <p>Master these high-frequency words for Band 9.0</p>
+
+                <div class="tab-container">
+                    <div class="tab active" onclick="showVocabCategory('academic')">Academic Words</div>
+                    <div class="tab" onclick="showVocabCategory('science')">Science & Tech</div>
+                    <div class="tab" onclick="showVocabCategory('environment')">Environment</div>
+                </div>
+
+                <div id="vocab-container">
+                    ${renderVocabCategory('academic')}
+                </div>
+
+                <div class="tip-box" style="margin-top: 30px;">
+                    <h4>💡 How to Learn Vocabulary Effectively</h4>
+                    <ul style="padding-left: 20px; line-height: 2;">
+                        <li>Học từ trong NGỮ CẢNH, không học từ rời</li>
+                        <li>Chú ý COLLOCATIONS (từ đi cùng nhau)</li>
+                        <li>Practice PARAPHRASING với synonyms</li>
+                        <li>Tạo flashcards cho từ mới</li>
+                        <li>Đọc thật nhiều Academic Articles</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn-primary" onclick="exportVocab()">
+                        📥 Export to CSV (Anki-ready)
+                    </button>
+                </div>
+            `;
+        }
+
+        function renderVocabCategory(category) {
+            const words = VOCABULARY_DATABASE[category] || [];
+            return words.map(word => `
+                <div class="vocab-card">
+                    <div class="vocab-word">${word.word}</div>
+                    <span class="vocab-type">${word.type}</span>
+                    <p><strong>Meaning:</strong> ${word.meaning}</p>
+                    <p><strong>Synonyms:</strong> ${word.synonyms}</p>
+                    <p><strong>Example:</strong> <em>"${word.example}"</em></p>
+                </div>
+            `).join('');
+        }
+
+        function showVocabCategory(category) {
+            document.getElementById('vocab-container').innerHTML = renderVocabCategory(category);
+            
+            // Update active tab
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function exportVocab() {
+            let csv = 'Front,Back\n';
+            
+            Object.keys(VOCABULARY_DATABASE).forEach(category => {
+                VOCABULARY_DATABASE[category].forEach(word => {
+                    const front = `"${word.word} (${word.type})"`;
+                    const back = `"Meaning: ${word.meaning}
+Synonyms: ${word.synonyms}
+Example: ${word.example}"`;
+                    csv += `${front},${back}\n`;
+                });
+            });
+
+            downloadCSV(csv, 'ielts_vocabulary.csv');
+        }
+
+        function renderTips(container) {
+            container.innerHTML = `
+                <h2>💡 Tips & Tricks for Band 9.0</h2>
+                
+                <div class="tip-box">
+                    <h4>⏱️ Time Management Strategy</h4>
+                    <ul style="padding-left: 20px; line-height: 2;">
+                        <li><strong>60 minutes total</strong> for 3 passages</li>
+                        <li>Passage 1 (easiest): 15-17 minutes</li>
+                        <li>Passage 2 (medium): 18-20 minutes</li>
+                        <li>Passage 3 (hardest): 20-22 minutes</li>
+                        <li>Review: 3-5 minutes</li>
+                    </ul>
+                </div>
+
+                <div class="tab-container">
+                    ${Object.keys(TIPS_DATABASE).map((type, idx) => `
+                        <div class="tab ${idx === 0 ? 'active' : ''}" onclick="showTips('${type}')">
+                            ${QUESTION_TYPES[type]}
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div id="tips-content">
+                    ${renderTipsContent(Object.keys(TIPS_DATABASE)[0])}
+                </div>
+
+                <div class="error-analysis" style="margin-top: 30px;">
+                    <h3>🎯 General Reading Strategies</h3>
+                    <ol style="padding-left: 20px; line-height: 2;">
+                        <li><strong>SKIM</strong> the passage first (1 minute) - get main idea</li>
+                        <li><strong>SCAN</strong> for keywords in questions</li>
+                        <li><strong>READ</strong> relevant sections carefully</li>
+                        <li>Questions usually follow passage order (except Matching Headings)</li>
+                        <li>NEVER use outside knowledge - answer from passage only</li>
+                        <li>If unsure, eliminate wrong answers first</li>
+                        <li>Watch for SYNONYMS and PARAPHRASING</li>
+                        <li>Be careful with QUALIFIERS: all, some, most, many, few</li>
+                    </ol>
+                </div>
+            `;
+        }
+
+        function renderTipsContent(type) {
+            const tips = TIPS_DATABASE[type];
+            if (!tips) return '<p>No tips available yet.</p>';
+
+            return `
+                <div class="chart-container">
+                    <h3>${tips.title}</h3>
+                    
+                    <h4 style="margin-top: 20px; color: #667eea;">✅ Key Strategies</h4>
+                    <ul style="padding-left: 20px; line-height: 2;">
+                        ${tips.tips.map(tip => `<li>${tip}</li>`).join('')}
+                    </ul>
+
+                    <h4 style="margin-top: 20px; color: #dc3545;">⚠️ Common Mistakes to Avoid</h4>
+                    <ul style="padding-left: 20px; line-height: 2;">
+                        ${tips.common_mistakes.map(mistake => `<li>${mistake}</li>`).join('')}
+                    </ul>
+
+                    <div class="tip-box" style="margin-top: 20px;">
+                        <h4>🎓 Practice Recommendation</h4>
+                        <p>Do at least <strong>10 questions</strong> of this type every day to master it.</p>
+                        <button class="btn-primary" onclick="startPractice('${type}')" style="margin-top: 10px;">
+                            Practice ${QUESTION_TYPES[type]} Now
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showTips(type) {
+            document.getElementById('tips-content').innerHTML = renderTipsContent(type);
+            
+            // Update active tab
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function renderWeaknesses(container) {
+            const analysis = getErrorAnalysis();
+            
+            container.innerHTML = `
+                <h2>🎯 Targeted Practice: My Weaknesses</h2>
+                
+                ${analysis.total === 0 ? `
+                    <div class="tip-box">
+                        <h4>No errors recorded yet!</h4>
+                        <p>Start practicing to identify your weak areas.</p>
+                        <button class="btn-primary" onclick="navigate('practice')" style="margin-top: 15px;">
+                            Start Practice
+                        </button>
+                    </div>
+                ` : `
+                    <div class="error-analysis">
+                        <h3>📊 Your Weakness Profile</h3>
+                        ${analysis.patterns.map(p => `<p>${p}</p>`).join('')}
+                    </div>
+
+                    <h3 style="margin-top: 30px;">🎯 Recommended Practice</h3>
+                    <div class="drill-grid">
+                        ${Object.keys(analysis.byType)
+                            .sort((a, b) => analysis.byType[b] - analysis.byType[a])
+                            .slice(0, 4)
+                            .map((type, idx) => {
+                                const colors = [
+                                    'linear-gradient(135deg, #eb3349 0%, #f45c43 100%)',
+                                    'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+                                    'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                                    'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+                                ];
+                                return `
+                                    <div class="drill-card" style="background: ${colors[idx]};" 
+                                         onclick="startPractice('${type}')">
+                                        <div class="badge">WEAK</div>
+                                        <h3>${QUESTION_TYPES[type]}</h3>
+                                        <p>${analysis.byType[type]} errors made</p>
+                                        <strong>Practice Now!</strong>
+                                    </div>
+                                `;
+                            }).join('')}
+                    </div>
+
+                    <div class="chart-container" style="margin-top: 30px;">
+                        <h3>📝 Error Review</h3>
+                        <p>Review your mistakes to learn from them:</p>
+                        ${analysis.recentErrors.reverse().map(err => `
+                            <div class="question-box" style="margin: 15px 0;">
+                                <span class="vocab-type">${QUESTION_TYPES[err.type] || err.type}</span>
+                                <p><strong>Question:</strong> ${err.question}</p>
+                                ${err.passage ? `<p style="font-size: 0.9em; color: #666;"><strong>Context:</strong> ${err.passage.substring(0, 150)}...</p>` : ''}
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0;">
+                                    <div>
+                                        <p style="color: #dc3545;"><strong>❌ Your answer:</strong> ${err.userAnswer}</p>
+                                    </div>
+                                    <div>
+                                        <p style="color: #28a745;"><strong>✅ Correct:</strong> ${err.correctAnswer}</p>
+                                    </div>
+                                </div>
+                                <div class="explanation">
+                                    <strong>Explanation:</strong> ${err.explanation}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button class="btn-primary" onclick="exportErrors()">
+                            📥 Export Errors to CSV
+                        </button>
+                        <button class="btn-secondary" onclick="clearAllErrors()">
+                            🗑️ Clear All Errors
+                        </button>
+                    </div>
+                `}
+            `;
+        }
+
+        function exportErrors() {
+            const errors = JSON.parse(localStorage.getItem('ielts_errors') || '[]');
+            let csv = 'Question Type,Question,Passage,Your Answer,Correct Answer,Explanation,Date\n';
+            
+            errors.forEach(err => {
+                csv += `"${QUESTION_TYPES[err.type] || err.type}","${err.question}","${(err.passage || '').replace(/"/g, '""')}","${err.userAnswer}","${err.correctAnswer}","${err.explanation}","${new Date(err.timestamp).toLocaleDateString()}"\n`;
+            });
+
+            downloadCSV(csv, 'ielts_errors_review.csv');
+        }
+
+        function downloadCSV(content, filename) {
+            const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+        }
+
+        function clearAllErrors() {
+            if (confirm('⚠️ Are you sure you want to clear ALL error history? This cannot be undone.')) {
+                localStorage.setItem('ielts_errors', '[]');
+                renderContent();
+                alert('✅ Error history cleared!');
+            }
+        }
+
+        // ============= INITIALIZATION =============
+        function init() {
+            loadState();
+            renderNav();
+            renderContent();
+
+            // Track study time
+            setInterval(() => {
+                if (appState.currentView === 'practice' && appState.drillType) {
+                    appState.studyTime += 1;
+                    saveState();
+                }
+            }, 60000); // Every minute
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
