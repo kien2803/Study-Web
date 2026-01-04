@@ -1,0 +1,3343 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar A0-C2 - Học Ngữ Pháp Tiếng Anh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 1em;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            background: #e9ecef;
+        }
+
+        .nav-tab.active {
+            background: white;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .level-section {
+            display: none;
+        }
+
+        .level-section.active {
+            display: block;
+        }
+
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .lesson-card {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .lesson-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .lesson-card .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #dee2e6;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .lesson-card .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s;
+        }
+
+        .lesson-detail {
+            display: none;
+        }
+
+        .lesson-detail.active {
+            display: block;
+        }
+
+        .back-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background: #5a6268;
+        }
+
+        .grammar-section {
+            background: #e7f3ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .grammar-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .example {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #28a745;
+        }
+
+        .example strong {
+            color: #667eea;
+        }
+
+        .mistakes-section {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .exercises-section {
+            margin-top: 30px;
+        }
+
+        .exercise-item {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .exercise-item.correct {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+
+        .exercise-item.incorrect {
+            border-color: #dc3545;
+            background: #f8d7da;
+        }
+
+        .exercise-question {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .exercise-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #dee2e6;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .option-btn:hover {
+            border-color: #667eea;
+            background: #f8f9fa;
+        }
+
+        .option-btn.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .option-btn.correct {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+
+        .option-btn.incorrect {
+            background: #dc3545;
+            color: white;
+            border-color: #dc3545;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 5px;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn, .check-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover, .check-btn:hover {
+            background: #5568d3;
+        }
+
+        .explanation {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .explanation.show {
+            display: block;
+        }
+
+        .explanation strong {
+            color: #667eea;
+        }
+
+        .hint-btn {
+            background: #ffc107;
+            color: #333;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .tools-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tool-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95em;
+        }
+
+        .tool-btn:hover {
+            background: #5a6268;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .nav-tabs, .tools-bar, .back-btn, .submit-btn, .check-btn, .hint-btn {
+                display: none !important;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .lessons-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-tab {
+                padding: 12px 15px;
+                font-size: 0.9em;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h3 {
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .modal-content textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 10px;
+            border: 2px solid #dee2e6;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 English Grammar Master</h1>
+            <p>Học Ngữ Pháp Tiếng Anh từ A0 đến C2</p>
+        </header>
+
+        <nav class="nav-tabs" id="levelTabs">
+            <button class="nav-tab active" data-level="A0">A0 - Beginner</button>
+            <button class="nav-tab" data-level="A1">A1 - Elementary</button>
+            <button class="nav-tab" data-level="A2">A2 - Pre-Intermediate</button>
+            <button class="nav-tab" data-level="B1">B1 - Intermediate</button>
+            <button class="nav-tab" data-level="B2">B2 - Upper-Intermediate</button>
+            <button class="nav-tab" data-level="C1">C1 - Advanced</button>
+            <button class="nav-tab" data-level="C2">C2 - Proficiency</button>
+        </nav>
+
+        <div class="content" id="mainContent">
+            <!-- Levels will be dynamically generated here -->
+        </div>
+    </div>
+
+    <!-- Modal for Export/Import -->
+    <div class="modal" id="exportModal">
+        <div class="modal-content">
+            <h3>📤 Export Progress</h3>
+            <p>Copy JSON này và lưu lại để backup tiến độ của bạn:</p>
+            <textarea id="exportData" readonly></textarea>
+            <div class="modal-actions">
+                <button class="submit-btn" onclick="copyExport()">📋 Copy</button>
+                <button class="tool-btn" onclick="closeModal()">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="importModal">
+        <div class="modal-content">
+            <h3>📥 Import Progress</h3>
+            <p>Paste JSON đã lưu vào đây để khôi phục tiến độ:</p>
+            <textarea id="importData"></textarea>
+            <div class="modal-actions">
+                <button class="submit-btn" onclick="importProgress()">Import</button>
+                <button class="tool-btn" onclick="closeModal()">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== DATA STRUCTURE ====================
+        const curriculum = {
+            A0: {
+                name: "Beginner",
+                description: "Bắt đầu từ con số 0 - Mất gốc / Nhập môn",
+                lessons: [
+                    {
+                        id: "a0-1",
+                        title: "To Be (am/is/are)",
+                        subtitle: "Động từ to be cơ bản",
+                        grammar: {
+                            rule: "To be được dùng để chỉ trạng thái, danh tính, hoặc vị trí.\n\n" +
+                                  "• I am (I'm)\n" +
+                                  "• You/We/They are (You're/We're/They're)\n" +
+                                  "• He/She/It is (He's/She's/It's)",
+                            examples: [
+                                { en: "I am a student.", vi: "Tôi là một học sinh." },
+                                { en: "She is happy.", vi: "Cô ấy vui vẻ." },
+                                { en: "They are from Vietnam.", vi: "Họ đến từ Việt Nam." },
+                                { en: "We are friends.", vi: "Chúng tôi là bạn bè." },
+                                { en: "It is a cat.", vi: "Nó là một con mèo." },
+                                { en: "You are tall.", vi: "Bạn cao." }
+                            ],
+                            mistakes: [
+                                "❌ I is a student → ✅ I am a student",
+                                "❌ She are happy → ✅ She is happy",
+                                "❌ They is friends → ✅ They are friends"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "I ___ a teacher.",
+                                options: ["am", "is", "are", "be"],
+                                correct: 0,
+                                explanation: "'I' luôn đi với 'am'. This is the correct form of 'to be' for the first person singular.",
+                                hint: "Chủ ngữ là 'I'"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She ___ from France.",
+                                options: ["am", "is", "are", "be"],
+                                correct: 1,
+                                explanation: "'She' là ngôi thứ 3 số ít, dùng 'is'.",
+                                hint: "She = ngôi thứ 3"
+                            },
+                            {
+                                type: "mcq",
+                                question: "They ___ students.",
+                                options: ["am", "is", "are", "be"],
+                                correct: 2,
+                                explanation: "'They' là số nhiều, dùng 'are'.",
+                                hint: "They = số nhiều"
+                            },
+                            {
+                                type: "fill",
+                                question: "We ___ happy. (am/is/are)",
+                                correct: "are",
+                                explanation: "'We' là số nhiều, dùng 'are'.",
+                                hint: "We = số nhiều"
+                            },
+                            {
+                                type: "fill",
+                                question: "It ___ a dog. (am/is/are)",
+                                correct: "is",
+                                explanation: "'It' là ngôi thứ 3 số ít, dùng 'is'.",
+                                hint: "It = ngôi thứ 3"
+                            },
+                            {
+                                type: "error",
+                                question: "He are a doctor.",
+                                correct: "He is a doctor.",
+                                explanation: "'He' là ngôi thứ 3 số ít, phải dùng 'is', không phải 'are'.",
+                                hint: "He không đi với are"
+                            },
+                            {
+                                type: "transform",
+                                question: "Transform to negative: I am tired.",
+                                correct: "I am not tired.",
+                                alternatives: ["I'm not tired.", "I am not tired"],
+                                explanation: "Để tạo phủ định với 'to be', thêm 'not' sau động từ.",
+                                hint: "Thêm 'not' sau am"
+                            },
+                            {
+                                type: "mcq",
+                                question: "You ___ my friend.",
+                                options: ["am", "is", "are", "be"],
+                                correct: 2,
+                                explanation: "'You' luôn dùng với 'are', cả số ít và số nhiều.",
+                                hint: "You = are"
+                            },
+                            {
+                                type: "fill",
+                                question: "The cat ___ on the table. (am/is/are)",
+                                correct: "is",
+                                explanation: "Cat (It) là ngôi thứ 3 số ít, dùng 'is'.",
+                                hint: "Cat = It"
+                            },
+                            {
+                                type: "mcq",
+                                question: "My parents ___ at home.",
+                                options: ["am", "is", "are", "be"],
+                                correct: 2,
+                                explanation: "Parents (They) số nhiều, dùng 'are'.",
+                                hint: "Parents = They"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make question: She is a teacher.",
+                                correct: "Is she a teacher?",
+                                alternatives: ["Is she a teacher"],
+                                explanation: "Câu hỏi với 'to be': Đảo 'is' lên trước chủ ngữ.",
+                                hint: "Is + she + ...?"
+                            },
+                            {
+                                type: "fill",
+                                question: "I ___ not hungry. (am/is/are)",
+                                correct: "am",
+                                explanation: "'I' + 'am' + 'not' = phủ định.",
+                                hint: "I am not"
+                            }
+                        ]
+                    },
+                    {
+                        id: "a0-2",
+                        title: "Personal Pronouns",
+                        subtitle: "Đại từ nhân xưng",
+                        grammar: {
+                            rule: "Personal pronouns thay thế cho danh từ chỉ người hoặc vật.\n\n" +
+                                  "Subject pronouns (chủ ngữ):\n" +
+                                  "• I, You, He, She, It, We, They\n\n" +
+                                  "Object pronouns (tân ngữ):\n" +
+                                  "• me, you, him, her, it, us, them",
+                            examples: [
+                                { en: "I love you.", vi: "Tôi yêu bạn." },
+                                { en: "He knows me.", vi: "Anh ấy biết tôi." },
+                                { en: "She likes him.", vi: "Cô ấy thích anh ấy." },
+                                { en: "We see them.", vi: "Chúng tôi nhìn thấy họ." },
+                                { en: "They help us.", vi: "Họ giúp chúng tôi." },
+                                { en: "It is for her.", vi: "Nó dành cho cô ấy." }
+                            ],
+                            mistakes: [
+                                "❌ Me am happy → ✅ I am happy",
+                                "❌ She loves he → ✅ She loves him",
+                                "❌ Them are students → ✅ They are students"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "___ am a student. (subject pronoun)",
+                                options: ["Me", "I", "My", "Mine"],
+                                correct: 1,
+                                explanation: "'I' là đại từ chủ ngữ ngôi thứ nhất.",
+                                hint: "Đại từ chủ ngữ cho 'tôi'"
+                            },
+                            {
+                                type: "mcq",
+                                question: "John loves ___. (object pronoun for 'she')",
+                                options: ["she", "her", "hers", "herself"],
+                                correct: 1,
+                                explanation: "'Her' là đại từ tân ngữ của 'she'.",
+                                hint: "Tân ngữ của 'she'"
+                            },
+                            {
+                                type: "fill",
+                                question: "We see ___ every day. (they → object)",
+                                correct: "them",
+                                explanation: "'Them' là dạng tân ngữ của 'they'.",
+                                hint: "They → object form"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ is my brother. (he/him)",
+                                correct: "He",
+                                explanation: "'He' là chủ ngữ, 'him' là tân ngữ.",
+                                hint: "Cần chủ ngữ ở đây"
+                            },
+                            {
+                                type: "error",
+                                question: "Me love you.",
+                                correct: "I love you.",
+                                explanation: "'Me' không thể làm chủ ngữ, phải dùng 'I'.",
+                                hint: "Me không thể làm chủ ngữ"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She talks to ___. (I → object)",
+                                options: ["I", "me", "my", "mine"],
+                                correct: 1,
+                                explanation: "Sau giới từ 'to' cần dùng tân ngữ 'me'.",
+                                hint: "Sau 'to' cần tân ngữ"
+                            },
+                            {
+                                type: "transform",
+                                question: "Replace with pronoun: Mary and John are happy.",
+                                correct: "They are happy.",
+                                alternatives: ["they are happy"],
+                                explanation: "Mary và John (2 người) = They.",
+                                hint: "2 người = They"
+                            },
+                            {
+                                type: "mcq",
+                                question: "This book is for ___. (we → object)",
+                                options: ["we", "us", "our", "ours"],
+                                correct: 1,
+                                explanation: "'Us' là dạng tân ngữ của 'we'.",
+                                hint: "We → object form"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ are my best friends. (they/them)",
+                                correct: "They",
+                                explanation: "Cần chủ ngữ, dùng 'They'.",
+                                hint: "Subject form"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Can you help ___? (I → object)",
+                                options: ["I", "me", "my", "mine"],
+                                correct: 1,
+                                explanation: "Sau động từ 'help' cần tân ngữ 'me'.",
+                                hint: "After verb = object"
+                            },
+                            {
+                                type: "transform",
+                                question: "Replace with pronoun: The book is interesting.",
+                                correct: "It is interesting.",
+                                alternatives: ["it is interesting"],
+                                explanation: "The book (vật số ít) = It.",
+                                hint: "Book = It"
+                            },
+                            {
+                                type: "fill",
+                                question: "Give ___ the pen. (I → object form)",
+                                correct: "me",
+                                explanation: "Give → object pronoun 'me'.",
+                                hint: "I → me"
+                            }
+                        ]
+                    },
+                    {
+                        id: "a0-3",
+                        title: "Word Order: S + V + O",
+                        subtitle: "Trật tự từ cơ bản trong câu",
+                        grammar: {
+                            rule: "Câu tiếng Anh cơ bản theo trật tự: Subject + Verb + Object\n\n" +
+                                  "• Subject (Chủ ngữ): Ai/cái gì làm hành động\n" +
+                                  "• Verb (Động từ): Hành động gì\n" +
+                                  "• Object (Tân ngữ): Ai/cái gì nhận hành động\n\n" +
+                                  "Example: I (S) eat (V) apples (O).",
+                            examples: [
+                                { en: "I love music.", vi: "Tôi yêu âm nhạc. (S-V-O)" },
+                                { en: "She reads books.", vi: "Cô ấy đọc sách. (S-V-O)" },
+                                { en: "They play football.", vi: "Họ chơi bóng đá. (S-V-O)" },
+                                { en: "We eat rice.", vi: "Chúng tôi ăn cơm. (S-V-O)" },
+                                { en: "He likes cats.", vi: "Anh ấy thích mèo. (S-V-O)" },
+                                { en: "You know me.", vi: "Bạn biết tôi. (S-V-O)" }
+                            ],
+                            mistakes: [
+                                "❌ Like I music → ✅ I like music",
+                                "❌ Books reads she → ✅ She reads books",
+                                "❌ Football play they → ✅ They play football"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "Choose correct order: I / love / cats",
+                                options: ["Love I cats", "I love cats", "Cats love I", "Love cats I"],
+                                correct: 1,
+                                explanation: "Trật tự đúng: Subject (I) + Verb (love) + Object (cats).",
+                                hint: "S + V + O"
+                            },
+                            {
+                                type: "transform",
+                                question: "Put in order: book / reads / she / a",
+                                correct: "She reads a book.",
+                                alternatives: ["She reads a book", "she reads a book"],
+                                explanation: "She (S) + reads (V) + a book (O).",
+                                hint: "Start with subject"
+                            },
+                            {
+                                type: "mcq",
+                                question: "What is the subject? 'They play tennis.'",
+                                options: ["play", "tennis", "They", "play tennis"],
+                                correct: 2,
+                                explanation: "'They' là chủ ngữ - người thực hiện hành động.",
+                                hint: "Who does the action?"
+                            },
+                            {
+                                type: "mcq",
+                                question: "What is the object? 'I eat apples.'",
+                                options: ["I", "eat", "apples", "I eat"],
+                                correct: 2,
+                                explanation: "'Apples' là tân ngữ - thứ nhận hành động.",
+                                hint: "What receives the action?"
+                            },
+                            {
+                                type: "error",
+                                question: "Music loves she.",
+                                correct: "She loves music.",
+                                explanation: "Sai trật tự. Đúng: She (S) + loves (V) + music (O).",
+                                hint: "S must come first"
+                            },
+                            {
+                                type: "transform",
+                                question: "Arrange: friends / have / we / many",
+                                correct: "We have many friends.",
+                                alternatives: ["We have many friends", "we have many friends"],
+                                explanation: "We (S) + have (V) + many friends (O).",
+                                hint: "S + V + O"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ watch TV. (We/TV/watch)",
+                                correct: "We",
+                                explanation: "Chủ ngữ đứng đầu câu.",
+                                hint: "Subject first"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Correct sentence:",
+                                options: ["Know you I", "I know you", "You I know", "Know I you"],
+                                correct: 1,
+                                explanation: "I (S) + know (V) + you (O).",
+                                hint: "S + V + O pattern"
+                            },
+                            {
+                                type: "transform",
+                                question: "Order: English / speaks / he",
+                                correct: "He speaks English.",
+                                alternatives: ["He speaks English", "he speaks English"],
+                                explanation: "He (S) + speaks (V) + English (O).",
+                                hint: "Subject + verb + object"
+                            },
+                            {
+                                type: "fill",
+                                question: "She likes ___. (chocolate/likes/she)",
+                                correct: "chocolate",
+                                explanation: "Object đứng sau động từ.",
+                                hint: "Object comes last"
+                            },
+                            {
+                                type: "error",
+                                question: "Basketball plays my brother.",
+                                correct: "My brother plays basketball.",
+                                explanation: "My brother (S) + plays (V) + basketball (O).",
+                                hint: "Subject first, object last"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Which is correct?",
+                                options: ["Drink I water", "I drink water", "Water drink I", "Drink water I"],
+                                correct: 1,
+                                explanation: "I (S) + drink (V) + water (O) - correct word order.",
+                                hint: "S + V + O"
+                            }
+                        ]
+                    },
+                    {
+                        id: "a0-4",
+                        title: "Basic Nouns & Adjectives",
+                        subtitle: "Danh từ và tính từ cơ bản",
+                        grammar: {
+                            rule: "Nouns (Danh từ): Tên người, vật, địa điểm\n" +
+                                  "Adjectives (Tính từ): Mô tả danh từ\n\n" +
+                                  "Trật tự: Adjective + Noun\n" +
+                                  "• a big house (not: a house big)\n" +
+                                  "• a red car\n" +
+                                  "• happy children\n\n" +
+                                  "Singular nouns: a dog, a cat, a book\n" +
+                                  "Adjectives không thay đổi số ít/nhiều.",
+                            examples: [
+                                { en: "I have a big dog.", vi: "Tôi có một con chó to." },
+                                { en: "She is a good student.", vi: "Cô ấy là học sinh giỏi." },
+                                { en: "This is a red apple.", vi: "Đây là một quả táo đỏ." },
+                                { en: "He lives in a small house.", vi: "Anh ấy sống trong ngôi nhà nhỏ." },
+                                { en: "They are happy people.", vi: "Họ là những người vui vẻ." },
+                                { en: "It's a beautiful day.", vi: "Đó là một ngày đẹp trời." }
+                            ],
+                            mistakes: [
+                                "❌ a house big → ✅ a big house",
+                                "❌ a car red → ✅ a red car",
+                                "❌ a student goods → ✅ a good student (adjective doesn't change)"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "Where does the adjective go? '___' (big/house)",
+                                options: ["house big", "big house", "bigs house", "house bigs"],
+                                correct: 1,
+                                explanation: "Tính từ đứng trước danh từ: big house.",
+                                hint: "Adjective + noun"
+                            },
+                            {
+                                type: "error",
+                                question: "She has a cat black.",
+                                correct: "She has a black cat.",
+                                explanation: "Tính từ đứng trước danh từ: black cat.",
+                                hint: "Adjective before noun"
+                            },
+                            {
+                                type: "fill",
+                                question: "I see a ___ dog. (small/big)",
+                                correct: "small",
+                                alternatives: ["big"],
+                                explanation: "Tính từ đứng trước danh từ để mô tả.",
+                                hint: "Adjective describes noun"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Choose correct: This is a ___ book.",
+                                options: ["goods", "good", "book good", "good book"],
+                                correct: 1,
+                                explanation: "'Good' là tính từ, đứng trước noun.",
+                                hint: "Adjective form"
+                            },
+                            {
+                                type: "transform",
+                                question: "Put in order: car / beautiful / a",
+                                correct: "a beautiful car",
+                                alternatives: ["A beautiful car"],
+                                explanation: "a + adjective + noun.",
+                                hint: "a + adj + noun"
+                            },
+                            {
+                                type: "fill",
+                                question: "They live in a ___ city. (large)",
+                                correct: "large",
+                                explanation: "Large mô tả city.",
+                                hint: "Adjective describes city"
+                            },
+                            {
+                                type: "error",
+                                question: "He is a man tall.",
+                                correct: "He is a tall man.",
+                                explanation: "Tall phải đứng trước man.",
+                                hint: "tall man"
+                            },
+                            {
+                                type: "mcq",
+                                question: "What describes the noun? 'a happy child'",
+                                options: ["a", "happy", "child", "a happy"],
+                                correct: 1,
+                                explanation: "'Happy' là adjective mô tả child.",
+                                hint: "Which word describes?"
+                            },
+                            {
+                                type: "fill",
+                                question: "She has ___ eyes. (blue)",
+                                correct: "blue",
+                                explanation: "Blue mô tả màu của eyes.",
+                                hint: "Color adjective"
+                            },
+                            {
+                                type: "transform",
+                                question: "Correct order: phone / new / a",
+                                correct: "a new phone",
+                                alternatives: ["A new phone"],
+                                explanation: "Article + adjective + noun.",
+                                hint: "a + new + phone"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Which is correct?",
+                                options: ["a shoes red", "reds shoes", "red shoes", "shoes reds"],
+                                correct: 2,
+                                explanation: "Red (adjective) + shoes (noun). Adjective không thêm s.",
+                                hint: "No 's' on adjective"
+                            },
+                            {
+                                type: "error",
+                                question: "I want an ice cream delicious.",
+                                correct: "I want a delicious ice cream.",
+                                explanation: "Delicious đứng trước ice cream.",
+                                hint: "delicious ice cream"
+                            }
+                        ]
+                    }
+                ]
+            },
+            A1: {
+                name: "Elementary",
+                description: "Nền tảng cơ bản - Giao tiếp đơn giản",
+                lessons: [
+                    {
+                        id: "a1-1",
+                        title: "Simple Present Tense",
+                        subtitle: "Thì hiện tại đơn",
+                        grammar: {
+                            rule: "Simple Present diễn tả thói quen, sự thật hiển nhiên, hoặc hành động lặp đi lặp lại.\n\n" +
+                                  "Công thức:\n" +
+                                  "• (+) S + V(s/es)\n" +
+                                  "• (-) S + do/does + not + V\n" +
+                                  "• (?) Do/Does + S + V?\n\n" +
+                                  "Lưu ý: He/She/It thêm s/es",
+                            examples: [
+                                { en: "I work every day.", vi: "Tôi làm việc mỗi ngày." },
+                                { en: "She plays tennis.", vi: "Cô ấy chơi quần vợt." },
+                                { en: "They don't like coffee.", vi: "Họ không thích cà phê." },
+                                { en: "Does he speak English?", vi: "Anh ấy có nói tiếng Anh không?" },
+                                { en: "The sun rises in the east.", vi: "Mặt trời mọc ở phía đông." },
+                                { en: "We study English.", vi: "Chúng tôi học tiếng Anh." }
+                            ],
+                            mistakes: [
+                                "❌ He work hard → ✅ He works hard",
+                                "❌ She don't like it → ✅ She doesn't like it",
+                                "❌ Does they play? → ✅ Do they play?"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "She ___ to school every day.",
+                                options: ["go", "goes", "going", "gone"],
+                                correct: 1,
+                                explanation: "She (ngôi thứ 3 số ít) thêm 's' vào động từ.",
+                                hint: "She = thêm s/es"
+                            },
+                            {
+                                type: "mcq",
+                                question: "They ___ play football on Sundays.",
+                                options: ["doesn't", "don't", "isn't", "aren't"],
+                                correct: 1,
+                                explanation: "'They' số nhiều dùng 'don't', không dùng 'doesn't'.",
+                                hint: "They = don't"
+                            },
+                            {
+                                type: "fill",
+                                question: "He ___ (watch) TV every evening.",
+                                correct: "watches",
+                                explanation: "He + watch → watches (thêm es vì tận cùng ch).",
+                                hint: "watch + es"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ you like pizza? (Do/Does)",
+                                correct: "Do",
+                                explanation: "'You' dùng với 'Do', không dùng 'Does'.",
+                                hint: "You = Do"
+                            },
+                            {
+                                type: "error",
+                                question: "She don't speak French.",
+                                correct: "She doesn't speak French.",
+                                explanation: "She (ngôi thứ 3) phải dùng 'doesn't', không phải 'don't'.",
+                                hint: "She = doesn't"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make negative: I like ice cream.",
+                                correct: "I don't like ice cream.",
+                                alternatives: ["I do not like ice cream."],
+                                explanation: "Thêm 'don't' trước động từ chính để tạo phủ định.",
+                                hint: "Thêm don't"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Water ___ at 100 degrees Celsius.",
+                                options: ["boil", "boils", "boiling", "boiled"],
+                                correct: 1,
+                                explanation: "Sự thật hiển nhiên dùng Simple Present. Water (it) thêm s.",
+                                hint: "Sự thật + ngôi thứ 3"
+                            },
+                            {
+                                type: "fill",
+                                question: "My brother ___ (study) medicine.",
+                                correct: "studies",
+                                explanation: "study → studies (đổi y thành i + es).",
+                                hint: "study → studies"
+                            },
+                            {
+                                type: "mcq",
+                                question: "___ she like chocolate?",
+                                options: ["Do", "Does", "Is", "Are"],
+                                correct: 1,
+                                explanation: "She (ngôi thứ 3) dùng 'Does' trong câu hỏi.",
+                                hint: "She = Does"
+                            },
+                            {
+                                type: "fill",
+                                question: "I ___ (not/eat) meat. I'm vegetarian.",
+                                correct: "don't eat",
+                                alternatives: ["do not eat"],
+                                explanation: "I + don't + động từ nguyên mẫu.",
+                                hint: "I don't"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make question: They play soccer.",
+                                correct: "Do they play soccer?",
+                                alternatives: ["Do they play soccer"],
+                                explanation: "Câu hỏi: Do + they + động từ nguyên mẫu.",
+                                hint: "Do they...?"
+                            },
+                            {
+                                type: "error",
+                                question: "My mother cook very well.",
+                                correct: "My mother cooks very well.",
+                                explanation: "My mother (She) cần thêm 's' vào động từ.",
+                                hint: "She = cooks"
+                            }
+                        ]
+                    },
+                    {
+                        id: "a1-2",
+                        title: "Articles: A, An, The",
+                        subtitle: "Mạo từ",
+                        grammar: {
+                            rule: "Articles được dùng trước danh từ:\n\n" +
+                                  "• A: Trước phụ âm, chỉ một cái không xác định\n" +
+                                  "• An: Trước nguyên âm (a,e,i,o,u), không xác định\n" +
+                                  "• The: Danh từ xác định, cả 2 bên đều biết\n\n" +
+                                  "Không dùng article: plural nouns (general), uncountable nouns (general)",
+                            examples: [
+                                { en: "I have a dog.", vi: "Tôi có một con chó (bất kỳ)." },
+                                { en: "She is an engineer.", vi: "Cô ấy là kỹ sư." },
+                                { en: "The dog is big.", vi: "Con chó đó to (chỉ con cụ thể)." },
+                                { en: "I need an apple.", vi: "Tôi cần một quả táo." },
+                                { en: "The sun is bright.", vi: "Mặt trời sáng (duy nhất)." },
+                                { en: "Dogs are animals.", vi: "Chó là động vật (nói chung)." }
+                            ],
+                            mistakes: [
+                                "❌ I have a apple → ✅ I have an apple",
+                                "❌ He is engineer → ✅ He is an engineer",
+                                "❌ A dogs are cute → ✅ Dogs are cute"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "I saw ___ elephant at the zoo.",
+                                options: ["a", "an", "the", "no article"],
+                                correct: 1,
+                                explanation: "'Elephant' bắt đầu bằng nguyên âm 'e', dùng 'an'.",
+                                hint: "Elephant → nguyên âm"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She is ___ best student in class.",
+                                options: ["a", "an", "the", "no article"],
+                                correct: 2,
+                                explanation: "'The best' - so sánh nhất luôn dùng 'the'.",
+                                hint: "Superlative = the"
+                            },
+                            {
+                                type: "fill",
+                                question: "He wants to be ___ doctor. (a/an/the)",
+                                correct: "a",
+                                explanation: "Doctor bắt đầu bằng phụ âm 'd', dùng 'a'.",
+                                hint: "Doctor → phụ âm"
+                            },
+                            {
+                                type: "fill",
+                                question: "I need ___ umbrella. (a/an/the)",
+                                correct: "an",
+                                explanation: "Umbrella bắt đầu bằng nguyên âm 'u', dùng 'an'.",
+                                hint: "Umbrella → nguyên âm"
+                            },
+                            {
+                                type: "error",
+                                question: "She has a orange.",
+                                correct: "She has an orange.",
+                                explanation: "Orange bắt đầu bằng nguyên âm, phải dùng 'an'.",
+                                hint: "Orange → nguyên âm"
+                            },
+                            {
+                                type: "mcq",
+                                question: "___ cats are cute animals. (general statement)",
+                                options: ["A", "An", "The", "No article"],
+                                correct: 3,
+                                explanation: "Nói chung về cats, không dùng article.",
+                                hint: "General plural = no article"
+                            },
+                            {
+                                type: "fill",
+                                question: "Look at ___ moon! (specific, unique)",
+                                correct: "the",
+                                explanation: "Moon là duy nhất, ai cũng biết, dùng 'the'.",
+                                hint: "Unique = the"
+                            },
+                            {
+                                type: "transform",
+                                question: "Add article: I bought car yesterday. (specific car)",
+                                correct: "I bought a car yesterday.",
+                                alternatives: ["I bought the car yesterday."],
+                                explanation: "Mua một chiếc xe (lần đầu nhắc đến) dùng 'a'.",
+                                hint: "First mention = a"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She plays ___ guitar very well.",
+                                options: ["a", "an", "the", "no article"],
+                                correct: 2,
+                                explanation: "Nhạc cụ (musical instruments) dùng 'the'.",
+                                hint: "Musical instruments = the"
+                            },
+                            {
+                                type: "fill",
+                                question: "He is ___ honest man. (a/an/the)",
+                                correct: "an",
+                                explanation: "Honest phát âm bắt đầu bằng nguyên âm /ɒ/, dùng 'an'.",
+                                hint: "Honest sound = vowel"
+                            },
+                            {
+                                type: "error",
+                                question: "I go to school by the bus.",
+                                correct: "I go to school by bus.",
+                                explanation: "Sau 'by + phương tiện' không dùng article.",
+                                hint: "by + transport = no article"
+                            },
+                            {
+                                type: "mcq",
+                                question: "___ water is essential for life.",
+                                options: ["A", "An", "The", "No article"],
+                                correct: 3,
+                                explanation: "Water (uncountable, general) không dùng article.",
+                                hint: "General uncountable = no article"
+                            }
+                        ]
+                    },
+                    {
+                        id: "a1-3",
+                        title: "There is / There are",
+                        subtitle: "Có (tồn tại)",
+                        grammar: {
+                            rule: "There is/are diễn tả sự tồn tại của người/vật.\n\n" +
+                                  "• There is + singular noun (There is a book)\n" +
+                                  "• There are + plural noun (There are books)\n" +
+                                  "• There is + uncountable noun (There is water)\n\n" +
+                                  "Negative:\n" +
+                                  "• There isn't / There aren't\n\n" +
+                                  "Question:\n" +
+                                  "• Is there...? / Are there...?",
+                            examples: [
+                                { en: "There is a cat on the roof.", vi: "Có một con mèo trên mái nhà." },
+                                { en: "There are three apples.", vi: "Có ba quả táo." },
+                                { en: "Is there a problem?", vi: "Có vấn đề gì không?" },
+                                { en: "There isn't any milk.", vi: "Không có sữa." },
+                                { en: "There are many students in class.", vi: "Có nhiều học sinh trong lớp." },
+                                { en: "Are there any questions?", vi: "Có câu hỏi nào không?" }
+                            ],
+                            mistakes: [
+                                "❌ There are a book → ✅ There is a book",
+                                "❌ There is three cats → ✅ There are three cats",
+                                "❌ Is there books? → ✅ Are there books?"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "___ a dog in the garden.",
+                                options: ["There is", "There are", "There am", "Is there"],
+                                correct: 0,
+                                explanation: "A dog (singular) → There is.",
+                                hint: "Singular = is"
+                            },
+                            {
+                                type: "mcq",
+                                question: "___ five books on the table.",
+                                options: ["There is", "There are", "Is there", "Are there"],
+                                correct: 1,
+                                explanation: "Five books (plural) → There are.",
+                                hint: "Plural = are"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ there any water? (Is/Are)",
+                                correct: "Is",
+                                explanation: "Water (uncountable) → Is there.",
+                                hint: "Uncountable = is"
+                            },
+                            {
+                                type: "error",
+                                question: "There are a chair in the room.",
+                                correct: "There is a chair in the room.",
+                                explanation: "A chair (singular) → There is.",
+                                hint: "Singular noun"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make negative: There is a problem.",
+                                correct: "There isn't a problem.",
+                                alternatives: ["There is not a problem.", "There's not a problem."],
+                                explanation: "Negative: There isn't / There is not.",
+                                hint: "isn't"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Are there ___ pencils in your bag?",
+                                options: ["a", "an", "any", "much"],
+                                correct: 2,
+                                explanation: "Câu hỏi số nhiều dùng 'any'.",
+                                hint: "Questions = any"
+                            },
+                            {
+                                type: "fill",
+                                question: "There ___ many people here. (is/are)",
+                                correct: "are",
+                                explanation: "Many people (plural) → are.",
+                                hint: "Plural = are"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make question: There is a bank near here.",
+                                correct: "Is there a bank near here?",
+                                alternatives: ["Is there a bank near here"],
+                                explanation: "Question: Is there + singular noun?",
+                                hint: "Is there...?"
+                            },
+                            {
+                                type: "mcq",
+                                question: "There ___ any sugar in the coffee.",
+                                options: ["is", "isn't", "are", "aren't"],
+                                correct: 1,
+                                explanation: "Sugar (uncountable), negative → isn't.",
+                                hint: "Negative uncountable"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ there a library in your town? (Is/Are)",
+                                correct: "Is",
+                                explanation: "A library (singular) → Is there.",
+                                hint: "Singular question"
+                            },
+                            {
+                                type: "error",
+                                question: "Is there any students in class?",
+                                correct: "Are there any students in class?",
+                                explanation: "Students (plural) → Are there.",
+                                hint: "Plural = are"
+                            },
+                            {
+                                type: "mcq",
+                                question: "There ___ twenty students in my class.",
+                                options: ["is", "are", "am", "be"],
+                                correct: 1,
+                                explanation: "Twenty students (plural) → are.",
+                                hint: "Number + plural"
+                            }
+                        ]
+                    },
+                    {
+                        id: "a1-4",
+                        title: "Possessive Adjectives",
+                        subtitle: "Tính từ sở hữu",
+                        grammar: {
+                            rule: "Possessive adjectives chỉ sự sở hữu, đứng trước danh từ.\n\n" +
+                                  "• I → my\n" +
+                                  "• You → your\n" +
+                                  "• He → his\n" +
+                                  "• She → her\n" +
+                                  "• It → its\n" +
+                                  "• We → our\n" +
+                                  "• They → their\n\n" +
+                                  "Không thay đổi theo số ít/nhiều của danh từ.",
+                            examples: [
+                                { en: "This is my book.", vi: "Đây là sách của tôi." },
+                                { en: "She loves her cat.", vi: "Cô ấy yêu con mèo của cô ấy." },
+                                { en: "We live in our house.", vi: "Chúng tôi sống trong nhà của chúng tôi." },
+                                { en: "They drive their car.", vi: "Họ lái xe của họ." },
+                                { en: "Is this your phone?", vi: "Đây có phải điện thoại của bạn?" },
+                                { en: "The dog wags its tail.", vi: "Con chó vẫy đuôi của nó." }
+                            ],
+                            mistakes: [
+                                "❌ This is I book → ✅ This is my book",
+                                "❌ She book → ✅ Her book",
+                                "❌ They car → ✅ Their car",
+                                "❌ its' (wrong apostrophe) → ✅ its"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "This is ___ house. (I)",
+                                options: ["I", "my", "me", "mine"],
+                                correct: 1,
+                                explanation: "I → my (possessive adjective).",
+                                hint: "I → my"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She loves ___ parents. (she)",
+                                options: ["she", "her", "hers", "she's"],
+                                correct: 1,
+                                explanation: "She → her (possessive adjective).",
+                                hint: "She → her"
+                            },
+                            {
+                                type: "fill",
+                                question: "We study in ___ classroom. (we)",
+                                correct: "our",
+                                explanation: "We → our.",
+                                hint: "We → our"
+                            },
+                            {
+                                type: "error",
+                                question: "They eat they lunch at 12.",
+                                correct: "They eat their lunch at 12.",
+                                explanation: "They → their (possessive adjective).",
+                                hint: "They → their"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Is this ___ pen? (you)",
+                                options: ["you", "your", "yours", "you're"],
+                                correct: 1,
+                                explanation: "You → your.",
+                                hint: "You → your"
+                            },
+                            {
+                                type: "fill",
+                                question: "The cat licks ___ paws. (it)",
+                                correct: "its",
+                                explanation: "It → its (no apostrophe).",
+                                hint: "It → its"
+                            },
+                            {
+                                type: "transform",
+                                question: "Change: I have a brother. (use possessive) → This is ___ brother.",
+                                correct: "my",
+                                alternatives: ["This is my brother."],
+                                explanation: "I → my brother.",
+                                hint: "my"
+                            },
+                            {
+                                type: "mcq",
+                                question: "He plays with ___ friends. (he)",
+                                options: ["he", "his", "him", "he's"],
+                                correct: 1,
+                                explanation: "He → his.",
+                                hint: "He → his"
+                            },
+                            {
+                                type: "error",
+                                question: "She drives she car to work.",
+                                correct: "She drives her car to work.",
+                                explanation: "She → her (possessive adjective).",
+                                hint: "her car"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ dog is very friendly. (They)",
+                                correct: "Their",
+                                explanation: "They → Their.",
+                                hint: "They → Their"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Don't confuse: The cat hurt ___ (it) leg.",
+                                options: ["it's", "its", "it", "its'"],
+                                correct: 1,
+                                explanation: "'Its' (no apostrophe) = possessive. 'It's' = it is.",
+                                hint: "No apostrophe"
+                            },
+                            {
+                                type: "fill",
+                                question: "I love ___ family. (I)",
+                                correct: "my",
+                                explanation: "I → my.",
+                                hint: "I → my"
+                            }
+                        ]
+                    }
+                ]
+            },
+            A2: {
+                name: "Pre-Intermediate",
+                description: "Tiền trung cấp - Quá khứ, tương lai, so sánh",
+                lessons: [
+                    {
+                        id: "a2-1",
+                        title: "Past Simple Tense",
+                        subtitle: "Thì quá khứ đơn",
+                        grammar: {
+                            rule: "Past Simple diễn tả hành động đã hoàn thành trong quá khứ.\n\n" +
+                                  "Regular verbs: V + ed\n" +
+                                  "Irregular verbs: học thuộc (go→went, see→saw)\n\n" +
+                                  "Công thức:\n" +
+                                  "• (+) S + V2/Ved\n" +
+                                  "• (-) S + didn't + V\n" +
+                                  "• (?) Did + S + V?",
+                            examples: [
+                                { en: "I visited Paris last year.", vi: "Tôi đã thăm Paris năm ngoái." },
+                                { en: "She didn't go to school yesterday.", vi: "Cô ấy không đi học hôm qua." },
+                                { en: "Did you see that movie?", vi: "Bạn đã xem bộ phim đó chưa?" },
+                                { en: "They played football.", vi: "Họ đã chơi bóng đá." },
+                                { en: "He bought a car.", vi: "Anh ấy đã mua một chiếc xe." },
+                                { en: "We were happy.", vi: "Chúng tôi đã vui." }
+                            ],
+                            mistakes: [
+                                "❌ He didn't went → ✅ He didn't go",
+                                "❌ Did she went? → ✅ Did she go?",
+                                "❌ I go there yesterday → ✅ I went there yesterday"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "I ___ to the store yesterday.",
+                                options: ["go", "goes", "went", "gone"],
+                                correct: 2,
+                                explanation: "'Go' là động từ bất quy tắc, quá khứ là 'went'.",
+                                hint: "go → went"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She ___ study last night.",
+                                options: ["doesn't", "didn't", "wasn't", "weren't"],
+                                correct: 1,
+                                explanation: "Phủ định quá khứ dùng 'didn't' + động từ nguyên mẫu.",
+                                hint: "Past negative = didn't"
+                            },
+                            {
+                                type: "fill",
+                                question: "They ___ (play) tennis yesterday.",
+                                correct: "played",
+                                explanation: "Play là động từ có quy tắc, thêm 'ed'.",
+                                hint: "play + ed"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ you see John yesterday? (Did/Do)",
+                                correct: "Did",
+                                explanation: "Câu hỏi quá khứ dùng 'Did' + động từ nguyên mẫu.",
+                                hint: "Past question = Did"
+                            },
+                            {
+                                type: "error",
+                                question: "He didn't went home.",
+                                correct: "He didn't go home.",
+                                explanation: "Sau 'didn't' phải dùng động từ nguyên mẫu, không chia.",
+                                hint: "didn't + V nguyên mẫu"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make past: I eat breakfast.",
+                                correct: "I ate breakfast.",
+                                alternatives: ["I ate breakfast"],
+                                explanation: "Eat là bất quy tắc, quá khứ là 'ate'.",
+                                hint: "eat → ate"
+                            },
+                            {
+                                type: "mcq",
+                                question: "We ___ very tired after the trip.",
+                                options: ["was", "were", "are", "been"],
+                                correct: 1,
+                                explanation: "'We' là số nhiều, quá khứ của 'to be' là 'were'.",
+                                hint: "We (past) = were"
+                            },
+                            {
+                                type: "fill",
+                                question: "She ___ (buy) a new phone last week.",
+                                correct: "bought",
+                                explanation: "Buy là bất quy tắc, quá khứ là 'bought'.",
+                                hint: "buy → bought"
+                            },
+                            {
+                                type: "mcq",
+                                question: "When ___ you arrive?",
+                                options: ["do", "did", "are", "were"],
+                                correct: 1,
+                                explanation: "Câu hỏi quá khứ dùng 'Did'.",
+                                hint: "Past question = Did"
+                            },
+                            {
+                                type: "fill",
+                                question: "I ___ (see) him at the party last night.",
+                                correct: "saw",
+                                explanation: "See → saw (bất quy tắc).",
+                                hint: "see → saw"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make negative: They went to the cinema.",
+                                correct: "They didn't go to the cinema.",
+                                alternatives: ["They did not go to the cinema."],
+                                explanation: "Phủ định: didn't + động từ nguyên mẫu.",
+                                hint: "didn't + V"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Last year, I ___ to Japan.",
+                                options: ["go", "goes", "went", "gone"],
+                                correct: 2,
+                                explanation: "Last year (quá khứ) → went.",
+                                hint: "go → went"
+                            }
+                        ]
+                    },
+                    {
+                        id: "a2-2",
+                        title: "Comparative and Superlative",
+                        subtitle: "So sánh hơn và nhất",
+                        grammar: {
+                            rule: "So sánh hơn (Comparative): A > B\n" +
+                                  "• Short adj: adj + er (tall → taller)\n" +
+                                  "• Long adj: more + adj (beautiful → more beautiful)\n\n" +
+                                  "So sánh nhất (Superlative): A > all\n" +
+                                  "• Short adj: the + adj + est (tallest)\n" +
+                                  "• Long adj: the most + adj (the most beautiful)\n\n" +
+                                  "Bất quy tắc: good→better→best, bad→worse→worst",
+                            examples: [
+                                { en: "She is taller than me.", vi: "Cô ấy cao hơn tôi." },
+                                { en: "This is the tallest building.", vi: "Đây là tòa nhà cao nhất." },
+                                { en: "He is more intelligent than his brother.", vi: "Anh ấy thông minh hơn anh trai." },
+                                { en: "This is the most beautiful place.", vi: "Đây là nơi đẹp nhất." },
+                                { en: "Today is better than yesterday.", vi: "Hôm nay tốt hơn hôm qua." },
+                                { en: "She is the best student.", vi: "Cô ấy là học sinh giỏi nhất." }
+                            ],
+                            mistakes: [
+                                "❌ more taller → ✅ taller",
+                                "❌ most tall → ✅ tallest",
+                                "❌ gooder → ✅ better",
+                                "❌ the bestest → ✅ the best"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "This book is ___ than that one.",
+                                options: ["good", "better", "best", "the best"],
+                                correct: 1,
+                                explanation: "So sánh hơn của 'good' là 'better'.",
+                                hint: "good → better"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She is ___ student in the class.",
+                                options: ["smart", "smarter", "smartest", "the smartest"],
+                                correct: 3,
+                                explanation: "So sánh nhất luôn có 'the' phía trước.",
+                                hint: "Superlative = the + est"
+                            },
+                            {
+                                type: "fill",
+                                question: "This problem is ___ (difficult) than the last one.",
+                                correct: "more difficult",
+                                explanation: "Difficult là tính từ dài, dùng 'more + adj'.",
+                                hint: "Long adj = more"
+                            },
+                            {
+                                type: "fill",
+                                question: "He is the ___ (fast) runner in the team.",
+                                correct: "fastest",
+                                explanation: "Fast là tính từ ngắn, thêm 'est'.",
+                                hint: "fast + est"
+                            },
+                            {
+                                type: "error",
+                                question: "She is more prettier than her sister.",
+                                correct: "She is prettier than her sister.",
+                                explanation: "Pretty là tính từ ngắn, dùng 'prettier', không dùng 'more'.",
+                                hint: "Không dùng more + er"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make superlative: This is a good movie. (among all movies)",
+                                correct: "This is the best movie.",
+                                alternatives: ["This is the best movie"],
+                                explanation: "Good → best (bất quy tắc), thêm 'the'.",
+                                hint: "good → best"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Today is ___ day of the year.",
+                                options: ["hot", "hotter", "hottest", "the hottest"],
+                                correct: 3,
+                                explanation: "So sánh nhất với tính từ ngắn: the + adj + est.",
+                                hint: "Superlative + the"
+                            },
+                            {
+                                type: "fill",
+                                question: "This test is the ___ (easy) one.",
+                                correct: "easiest",
+                                explanation: "Easy → easiest (đổi y thành i + est).",
+                                hint: "easy → easiest"
+                            },
+                            {
+                                type: "mcq",
+                                question: "My house is ___ than yours.",
+                                options: ["big", "bigger", "biggest", "the biggest"],
+                                correct: 1,
+                                explanation: "So sánh hơn: big → bigger (nhân đôi g + er).",
+                                hint: "big → bigger"
+                            },
+                            {
+                                type: "fill",
+                                question: "This is the ___ (bad) movie I've ever seen.",
+                                correct: "worst",
+                                explanation: "Bad → worst (so sánh nhất bất quy tắc).",
+                                hint: "bad → worst"
+                            },
+                            {
+                                type: "transform",
+                                question: "Compare: John is 180cm. Mike is 175cm. (tall)",
+                                correct: "John is taller than Mike.",
+                                alternatives: ["John is taller than Mike", "Mike is shorter than John."],
+                                explanation: "So sánh 2 người: adj + er + than.",
+                                hint: "taller than"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She speaks English ___ fluently than me.",
+                                options: ["more", "most", "the most", "very"],
+                                correct: 0,
+                                explanation: "Fluently (trạng từ dài) → more fluently.",
+                                hint: "Long adverb = more"
+                            }
+                        ]
+                    },
+                    {
+                        id: "a2-3",
+                        title: "Be Going To (Future Plans)",
+                        subtitle: "Kế hoạch tương lai",
+                        grammar: {
+                            rule: "Be going to diễn tả kế hoạch, dự định hoặc dự đoán trong tương lai.\n\n" +
+                                  "Công thức:\n" +
+                                  "• (+) S + am/is/are + going to + V\n" +
+                                  "• (-) S + am/is/are + not + going to + V\n" +
+                                  "• (?) Am/Is/Are + S + going to + V?\n\n" +
+                                  "Dùng khi:\n" +
+                                  "• Có kế hoạch trước (I'm going to study tonight)\n" +
+                                  "• Dự đoán dựa trên bằng chứng (It's going to rain - dark clouds)",
+                            examples: [
+                                { en: "I'm going to visit Paris next month.", vi: "Tôi sẽ thăm Paris tháng sau." },
+                                { en: "She's going to study medicine.", vi: "Cô ấy sẽ học y khoa." },
+                                { en: "Are you going to watch the movie?", vi: "Bạn sẽ xem phim chứ?" },
+                                { en: "They aren't going to come to the party.", vi: "Họ sẽ không đến bữa tiệc." },
+                                { en: "It's going to rain.", vi: "Trời sắp mưa." },
+                                { en: "We're going to buy a new car.", vi: "Chúng tôi sẽ mua xe mới." }
+                            ],
+                            mistakes: [
+                                "❌ I going to go → ✅ I'm going to go / I am going to go",
+                                "❌ She is going to goes → ✅ She is going to go",
+                                "❌ He are going to → ✅ He is going to"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "I ___ watch TV tonight.",
+                                options: ["going to", "am going to", "is going to", "are going to"],
+                                correct: 1,
+                                explanation: "I → am going to.",
+                                hint: "I = am"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She ___ travel to Japan next year.",
+                                options: ["going to", "am going to", "is going to", "are going to"],
+                                correct: 2,
+                                explanation: "She → is going to.",
+                                hint: "She = is"
+                            },
+                            {
+                                type: "fill",
+                                question: "They ___ (not/come) to the meeting.",
+                                correct: "aren't going to come",
+                                alternatives: ["are not going to come", "'re not going to come"],
+                                explanation: "They + are not going to + V.",
+                                hint: "aren't going to"
+                            },
+                            {
+                                type: "error",
+                                question: "He going to buy a house.",
+                                correct: "He is going to buy a house.",
+                                alternatives: ["He's going to buy a house."],
+                                explanation: "Thiếu 'is' giữa He và going to.",
+                                hint: "Need 'is'"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make question: You are going to study.",
+                                correct: "Are you going to study?",
+                                alternatives: ["Are you going to study"],
+                                explanation: "Đảo 'are' lên trước chủ ngữ.",
+                                hint: "Are you...?"
+                            },
+                            {
+                                type: "mcq",
+                                question: "___ it going to rain?",
+                                options: ["Am", "Is", "Are", "Be"],
+                                correct: 1,
+                                explanation: "It → Is.",
+                                hint: "It = Is"
+                            },
+                            {
+                                type: "fill",
+                                question: "We ___ (visit) our grandparents this weekend.",
+                                correct: "are going to visit",
+                                alternatives: ["'re going to visit"],
+                                explanation: "We + are going to + V.",
+                                hint: "We = are going to"
+                            },
+                            {
+                                type: "error",
+                                question: "She is going to goes shopping.",
+                                correct: "She is going to go shopping.",
+                                explanation: "Sau 'going to' dùng động từ nguyên mẫu (go), không chia.",
+                                hint: "going to + V nguyên"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make negative: I am going to eat pizza.",
+                                correct: "I'm not going to eat pizza.",
+                                alternatives: ["I am not going to eat pizza."],
+                                explanation: "Thêm 'not' sau am/is/are.",
+                                hint: "am not going to"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Look at those clouds! It ___ rain.",
+                                options: ["going to", "is going", "is going to", "are going to"],
+                                correct: 2,
+                                explanation: "It + is going to (dự đoán dựa vào bằng chứng).",
+                                hint: "Prediction with evidence"
+                            },
+                            {
+                                type: "fill",
+                                question: "What ___ you ___ do tomorrow? (be going to)",
+                                correct: "are, going to",
+                                alternatives: ["are ... going to"],
+                                explanation: "You + are + going to.",
+                                hint: "are going to"
+                            },
+                            {
+                                type: "mcq",
+                                question: "They ___ move to a new apartment.",
+                                options: ["going to", "is going to", "are going to", "am going to"],
+                                correct: 2,
+                                explanation: "They → are going to.",
+                                hint: "They = are"
+                            }
+                        ]
+                    },
+                    {
+                        id: "a2-4",
+                        title: "Question Words (Wh-)",
+                        subtitle: "Từ để hỏi",
+                        grammar: {
+                            rule: "Question words (Wh- questions) hỏi thông tin cụ thể:\n\n" +
+                                  "• What: Cái gì? (What is your name?)\n" +
+                                  "• Who: Ai? (Who is she?)\n" +
+                                  "• Where: Ở đâu? (Where do you live?)\n" +
+                                  "• When: Khi nào? (When is your birthday?)\n" +
+                                  "• Why: Tại sao? (Why are you sad?)\n" +
+                                  "• How: Như thế nào? (How are you?)\n" +
+                                  "• Which: Cái nào? (Which color do you like?)\n\n" +
+                                  "Cấu trúc: Wh- + auxiliary + S + V?",
+                            examples: [
+                                { en: "What is your name?", vi: "Tên bạn là gì?" },
+                                { en: "Where do you live?", vi: "Bạn sống ở đâu?" },
+                                { en: "When did you arrive?", vi: "Bạn đến khi nào?" },
+                                { en: "Why are you crying?", vi: "Tại sao bạn khóc?" },
+                                { en: "How old are you?", vi: "Bạn bao nhiêu tuổi?" },
+                                { en: "Who is that man?", vi: "Người đàn ông đó là ai?" }
+                            ],
+                            mistakes: [
+                                "❌ Where you live? → ✅ Where do you live?",
+                                "❌ What you want? → ✅ What do you want?",
+                                "❌ Why she is sad? → ✅ Why is she sad?"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "___ is your name?",
+                                options: ["Who", "What", "Where", "When"],
+                                correct: 1,
+                                explanation: "Hỏi tên → What.",
+                                hint: "Name = what"
+                            },
+                            {
+                                type: "mcq",
+                                question: "___ do you live?",
+                                options: ["Who", "What", "Where", "When"],
+                                correct: 2,
+                                explanation: "Hỏi nơi chốn → Where.",
+                                hint: "Place = where"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ are you late? (Why/What)",
+                                correct: "Why",
+                                explanation: "Hỏi lý do → Why.",
+                                hint: "Reason = why"
+                            },
+                            {
+                                type: "error",
+                                question: "Where you are from?",
+                                correct: "Where are you from?",
+                                explanation: "Wh- + be + subject (đảo 'are' lên).",
+                                hint: "Where are you"
+                            },
+                            {
+                                type: "mcq",
+                                question: "___ is your birthday?",
+                                options: ["Where", "When", "Who", "Why"],
+                                correct: 1,
+                                explanation: "Hỏi thời gian → When.",
+                                hint: "Time = when"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ does she work? - At a bank. (Where/What)",
+                                correct: "Where",
+                                explanation: "Hỏi nơi làm việc → Where.",
+                                hint: "Location"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make Wh- question: She is 25 years old. (How old)",
+                                correct: "How old is she?",
+                                alternatives: ["How old is she"],
+                                explanation: "How old + be + subject?",
+                                hint: "How old"
+                            },
+                            {
+                                type: "mcq",
+                                question: "___ is that woman? - She's my teacher.",
+                                options: ["What", "Who", "Where", "How"],
+                                correct: 1,
+                                explanation: "Hỏi người → Who.",
+                                hint: "Person = who"
+                            },
+                            {
+                                type: "error",
+                                question: "What you do every day?",
+                                correct: "What do you do every day?",
+                                explanation: "What + do + you + V? (cần trợ động từ 'do').",
+                                hint: "Need 'do'"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ color do you like? (What/Which)",
+                                correct: "What",
+                                alternatives: ["Which"],
+                                explanation: "What color hoặc Which color đều được (hỏi màu sắc).",
+                                hint: "Both OK"
+                            },
+                            {
+                                type: "mcq",
+                                question: "___ are you crying? - Because I'm sad.",
+                                options: ["What", "Where", "Why", "How"],
+                                correct: 2,
+                                explanation: "Hỏi lý do (trả lời bằng because) → Why.",
+                                hint: "Because = why"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make question: They arrived yesterday. (When)",
+                                correct: "When did they arrive?",
+                                alternatives: ["When did they arrive"],
+                                explanation: "When + did + subject + V?",
+                                hint: "When did"
+                            }
+                        ]
+                    }
+                ]
+            },
+            B1: {
+                name: "Intermediate",
+                description: "Trung cấp - IELTS 5.5-6.0",
+                lessons: [
+                    {
+                        id: "b1-1",
+                        title: "Present Perfect Tense",
+                        subtitle: "Thì hiện tại hoàn thành",
+                        grammar: {
+                            rule: "Present Perfect diễn tả hành động đã hoàn thành nhưng có liên quan đến hiện tại, hoặc hành động xảy ra trong quá khứ không xác định thời gian cụ thể.\n\n" +
+                                  "Công thức:\n" +
+                                  "• (+) S + have/has + V3/Ved\n" +
+                                  "• (-) S + have/has + not + V3\n" +
+                                  "• (?) Have/Has + S + V3?\n\n" +
+                                  "Signal words: already, yet, just, ever, never, for, since",
+                            examples: [
+                                { en: "I have visited London.", vi: "Tôi đã từng đến London." },
+                                { en: "She has just finished her homework.", vi: "Cô ấy vừa hoàn thành bài tập." },
+                                { en: "Have you ever been to Japan?", vi: "Bạn đã bao giờ đến Nhật Bản chưa?" },
+                                { en: "They haven't seen that movie yet.", vi: "Họ chưa xem bộ phim đó." },
+                                { en: "We have lived here for 5 years.", vi: "Chúng tôi đã sống ở đây 5 năm." },
+                                { en: "He has never tried sushi.", vi: "Anh ấy chưa bao giờ thử sushi." }
+                            ],
+                            mistakes: [
+                                "❌ I have go → ✅ I have gone",
+                                "❌ She has ate → ✅ She has eaten",
+                                "❌ Have you went? → ✅ Have you gone?",
+                                "❌ I have seen him yesterday → ✅ I saw him yesterday"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "I ___ that movie three times.",
+                                options: ["see", "saw", "have seen", "am seeing"],
+                                correct: 2,
+                                explanation: "Hành động xảy ra trong quá khứ không rõ thời gian, dùng Present Perfect.",
+                                hint: "Không có thời gian cụ thể"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She ___ her homework yet.",
+                                options: ["hasn't finished", "didn't finish", "doesn't finish", "isn't finishing"],
+                                correct: 0,
+                                explanation: "'Yet' là dấu hiệu của Present Perfect.",
+                                hint: "yet = Present Perfect"
+                            },
+                            {
+                                type: "fill",
+                                question: "They ___ (live) here since 2020.",
+                                correct: "have lived",
+                                explanation: "'Since' chỉ mốc thời gian, dùng Present Perfect.",
+                                hint: "since = have/has + V3"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ you ever ___ (be) to Paris?",
+                                correct: "Have, been",
+                                alternatives: ["Have ... been"],
+                                explanation: "'Ever' dùng trong câu hỏi Present Perfect.",
+                                hint: "ever = Present Perfect"
+                            },
+                            {
+                                type: "error",
+                                question: "He has went to the store.",
+                                correct: "He has gone to the store.",
+                                explanation: "Go → gone (quá khứ phân từ bất quy tắc).",
+                                hint: "go → gone"
+                            },
+                            {
+                                type: "transform",
+                                question: "Change to Present Perfect: I saw this movie. (no specific time)",
+                                correct: "I have seen this movie.",
+                                alternatives: ["I've seen this movie."],
+                                explanation: "Không có thời gian cụ thể → Present Perfect.",
+                                hint: "Không có thời gian = PP"
+                            },
+                            {
+                                type: "mcq",
+                                question: "We ___ our homework already.",
+                                options: ["finish", "finished", "have finished", "are finishing"],
+                                correct: 2,
+                                explanation: "'Already' là dấu hiệu của Present Perfect.",
+                                hint: "already = PP"
+                            },
+                            {
+                                type: "fill",
+                                question: "She has ___ (eat) breakfast.",
+                                correct: "eaten",
+                                explanation: "Eat → eaten (quá khứ phân từ bất quy tắc).",
+                                hint: "eat → eaten"
+                            },
+                            {
+                                type: "mcq",
+                                question: "I ___ my keys. Can you help me find them?",
+                                options: ["lose", "lost", "have lost", "am losing"],
+                                correct: 2,
+                                explanation: "Mất chìa khóa (ảnh hưởng đến hiện tại) → Present Perfect.",
+                                hint: "Effect now = PP"
+                            },
+                            {
+                                type: "fill",
+                                question: "How long ___ you ___ (know) each other?",
+                                correct: "have, known",
+                                alternatives: ["have ... known"],
+                                explanation: "'How long' + Present Perfect cho hành động kéo dài.",
+                                hint: "How long = PP"
+                            },
+                            {
+                                type: "error",
+                                question: "I have saw this movie before.",
+                                correct: "I have seen this movie before.",
+                                explanation: "See → seen (V3).",
+                                hint: "see → seen"
+                            },
+                            {
+                                type: "transform",
+                                question: "Use Present Perfect: She travels to Italy. (She's been there)",
+                                correct: "She has been to Italy.",
+                                alternatives: ["She's been to Italy.", "She has traveled to Italy."],
+                                explanation: "Kinh nghiệm → have/has been to.",
+                                hint: "Experience = have been to"
+                            }
+                        ]
+                    },
+                    {
+                        id: "b1-2",
+                        title: "Modal Verbs: Can, Could, May, Might",
+                        subtitle: "Động từ khuyết thiếu",
+                        grammar: {
+                            rule: "Modal verbs thể hiện khả năng, sự cho phép, khả năng xảy ra.\n\n" +
+                                  "• Can: khả năng trong hiện tại\n" +
+                                  "• Could: khả năng trong quá khứ hoặc lịch sự hơn\n" +
+                                  "• May: sự cho phép lịch sự, khả năng xảy ra\n" +
+                                  "• Might: khả năng xảy ra thấp hơn may\n\n" +
+                                  "Sau modal verb dùng động từ nguyên mẫu không 'to'.",
+                            examples: [
+                                { en: "I can swim.", vi: "Tôi có thể bơi." },
+                                { en: "Could you help me?", vi: "Bạn có thể giúp tôi không? (lịch sự)" },
+                                { en: "May I use your phone?", vi: "Tôi có thể dùng điện thoại của bạn không?" },
+                                { en: "It might rain tomorrow.", vi: "Ngày mai có thể mưa." },
+                                { en: "She could speak French when she was young.", vi: "Cô ấy có thể nói tiếng Pháp khi còn nhỏ." },
+                                { en: "You may leave now.", vi: "Bạn có thể rời đi bây giờ." }
+                            ],
+                            mistakes: [
+                                "❌ He can speaks → ✅ He can speak",
+                                "❌ She may to go → ✅ She may go",
+                                "❌ I could went → ✅ I could go"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "I ___ play the piano when I was a child.",
+                                options: ["can", "could", "may", "might"],
+                                correct: 1,
+                                explanation: "Khả năng trong quá khứ dùng 'could'.",
+                                hint: "Past ability = could"
+                            },
+                            {
+                                type: "mcq",
+                                question: "___ I borrow your pen?",
+                                options: ["Can", "Could", "May", "All are correct"],
+                                correct: 3,
+                                explanation: "Cả ba đều đúng, nhưng May và Could lịch sự hơn Can.",
+                                hint: "Tất cả đều OK"
+                            },
+                            {
+                                type: "fill",
+                                question: "It ___ snow tonight. (possibility - might/may)",
+                                correct: "might",
+                                alternatives: ["may"],
+                                explanation: "Might hoặc may đều diễn tả khả năng xảy ra.",
+                                hint: "possibility = might/may"
+                            },
+                            {
+                                type: "fill",
+                                question: "She ___ speak three languages. (can/could)",
+                                correct: "can",
+                                explanation: "Khả năng hiện tại dùng 'can'.",
+                                hint: "Present ability = can"
+                            },
+                            {
+                                type: "error",
+                                question: "He can speaks English well.",
+                                correct: "He can speak English well.",
+                                explanation: "Sau modal verb dùng động từ nguyên mẫu, không thêm s.",
+                                hint: "can + V nguyên mẫu"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make polite request: Open the window. (use Could)",
+                                correct: "Could you open the window?",
+                                alternatives: ["Could you open the window"],
+                                explanation: "Could you + V là cách lịch sự để nhờ vả.",
+                                hint: "Could you + V?"
+                            },
+                            {
+                                type: "mcq",
+                                question: "You ___ be right, but I'm not sure.",
+                                options: ["can", "could", "may", "might"],
+                                correct: 3,
+                                explanation: "Might diễn tả khả năng không chắc chắn.",
+                                hint: "Uncertain = might"
+                            },
+                            {
+                                type: "fill",
+                                question: "___ I use your bathroom? (May/Can - formal)",
+                                correct: "May",
+                                alternatives: ["Can"],
+                                explanation: "May lịch sự hơn Can trong xin phép.",
+                                hint: "Formal = May"
+                            },
+                            {
+                                type: "mcq",
+                                question: "You ___ be careful when crossing the street.",
+                                options: ["can", "must", "may", "might"],
+                                correct: 1,
+                                explanation: "Cảnh báo, khuyên nhủ mạnh → must.",
+                                hint: "Strong advice = must"
+                            },
+                            {
+                                type: "fill",
+                                question: "She ___ swim when she was five. (could/can)",
+                                correct: "could",
+                                explanation: "Khả năng trong quá khứ (when she was five) → could.",
+                                hint: "Past = could"
+                            },
+                            {
+                                type: "transform",
+                                question: "Make polite: Give me the salt. (use Could)",
+                                correct: "Could you give me the salt?",
+                                alternatives: ["Could you give me the salt", "Could you pass me the salt?"],
+                                explanation: "Could you + V = lịch sự.",
+                                hint: "Could you...?"
+                            },
+                            {
+                                type: "error",
+                                question: "He can to speak Chinese.",
+                                correct: "He can speak Chinese.",
+                                explanation: "Sau modal verb không dùng 'to'.",
+                                hint: "No 'to' after modal"
+                            }
+                        ]
+                    }
+                ]
+            },
+            B2: {
+                name: "Upper-Intermediate",
+                description: "Cao cấp trung cấp",
+                lessons: [
+                    {
+                        id: "b2-1",
+                        title: "Past Perfect Tense",
+                        subtitle: "Thì quá khứ hoàn thành",
+                        grammar: {
+                            rule: "Past Perfect diễn tả hành động xảy ra trước một hành động khác trong quá khứ.\n\n" +
+                                  "Công thức:\n" +
+                                  "• (+) S + had + V3/Ved\n" +
+                                  "• (-) S + had not + V3\n" +
+                                  "• (?) Had + S + V3?\n\n" +
+                                  "Thường dùng với: before, after, when, by the time, already, just",
+                            examples: [
+                                { en: "I had finished my homework before she arrived.", vi: "Tôi đã hoàn thành bài tập trước khi cô ấy đến." },
+                                { en: "They had already left when I got there.", vi: "Họ đã rời đi khi tôi đến đó." },
+                                { en: "Had you ever seen snow before you moved here?", vi: "Bạn đã bao giờ thấy tuyết trước khi chuyển đến đây chưa?" },
+                                { en: "She had never tried sushi before that day.", vi: "Cô ấy chưa bao giờ thử sushi trước ngày đó." },
+                                { en: "By the time we arrived, the movie had started.", vi: "Đến khi chúng tôi tới thì phim đã bắt đầu." },
+                                { en: "He had lived there for 10 years before he moved.", vi: "Anh ấy đã sống ở đó 10 năm trước khi chuyển đi." }
+                            ],
+                            mistakes: [
+                                "❌ I had went → ✅ I had gone",
+                                "❌ She has finished before I arrived → ✅ She had finished before I arrived",
+                                "❌ They had already eat → ✅ They had already eaten"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "By the time I arrived, everyone ___.",
+                                options: ["left", "has left", "had left", "was leaving"],
+                                correct: 2,
+                                explanation: "Hành động 'left' xảy ra trước 'arrived', dùng Past Perfect.",
+                                hint: "Before past action = Past Perfect"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She ___ never ___ to Paris before 2020.",
+                                options: ["has/been", "had/been", "was/being", "did/go"],
+                                correct: 1,
+                                explanation: "Hành động trước một thời điểm trong quá khứ (2020) dùng Past Perfect.",
+                                hint: "Before 2020 = Past Perfect"
+                            },
+                            {
+                                type: "fill",
+                                question: "I ___ (finish) my work before the meeting started.",
+                                correct: "had finished",
+                                explanation: "Finish xảy ra trước started, dùng Past Perfect.",
+                                hint: "before + past = had V3"
+                            },
+                            {
+                                type: "fill",
+                                question: "They ___ already ___ (eat) when I arrived.",
+                                correct: "had, eaten",
+                                alternatives: ["had ... eaten"],
+                                explanation: "Already + Past Perfect khi có mốc thời gian quá khứ.",
+                                hint: "already + past reference"
+                            },
+                            {
+                                type: "error",
+                                question: "He had went home before I called.",
+                                correct: "He had gone home before I called.",
+                                explanation: "Go → gone (quá khứ phân từ).",
+                                hint: "go → gone"
+                            },
+                            {
+                                type: "transform",
+                                question: "Combine: She left. Then I arrived. (use Past Perfect)",
+                                correct: "She had left before I arrived.",
+                                alternatives: ["She had left when I arrived.", "By the time I arrived, she had left."],
+                                explanation: "Hành động xảy ra trước dùng Past Perfect.",
+                                hint: "First action = had V3"
+                            },
+                            {
+                                type: "mcq",
+                                question: "After she ___ dinner, she watched TV.",
+                                options: ["finished", "has finished", "had finished", "finishes"],
+                                correct: 2,
+                                explanation: "After + Past Perfect, Past Simple.",
+                                hint: "After + PP, PS"
+                            },
+                            {
+                                type: "fill",
+                                question: "I realized I ___ (forget) my keys.",
+                                correct: "had forgotten",
+                                explanation: "Realized (quá khứ) → hành động forget xảy ra trước đó.",
+                                hint: "Before realized"
+                            },
+                            {
+                                type: "mcq",
+                                question: "When I got to the station, the train ___.",
+                                options: ["left", "has left", "had left", "leaves"],
+                                correct: 2,
+                                explanation: "Train left trước got → Past Perfect.",
+                                hint: "Before past = PP"
+                            },
+                            {
+                                type: "fill",
+                                question: "She ___ never ___ (see) snow before she moved to Canada.",
+                                correct: "had, seen",
+                                alternatives: ["had ... seen"],
+                                explanation: "Trước khi moved (quá khứ) → had seen.",
+                                hint: "before moved = had V3"
+                            },
+                            {
+                                type: "transform",
+                                question: "Combine: I did my homework. Then mom came home.",
+                                correct: "I had done my homework before mom came home.",
+                                alternatives: ["I had done my homework when mom came home.", "Before mom came home, I had done my homework."],
+                                explanation: "Hành động trước (did) dùng Past Perfect.",
+                                hint: "First action = had V3"
+                            },
+                            {
+                                type: "error",
+                                question: "They have lived there for 10 years before they moved.",
+                                correct: "They had lived there for 10 years before they moved.",
+                                explanation: "Trước 'moved' (quá khứ) phải dùng Past Perfect.",
+                                hint: "before moved = had lived"
+                            }
+                        ]
+                    },
+                    {
+                        id: "b2-2",
+                        title: "Passive Voice",
+                        subtitle: "Câu bị động",
+                        grammar: {
+                            rule: "Passive Voice dùng khi muốn nhấn mạnh hành động hoặc đối tượng bị tác động, không quan tâm ai làm.\n\n" +
+                                  "Công thức:\n" +
+                                  "• Active: S + V + O\n" +
+                                  "• Passive: S(O) + be + V3 + (by agent)\n\n" +
+                                  "Be chia theo thì:\n" +
+                                  "• Present: am/is/are + V3\n" +
+                                  "• Past: was/were + V3\n" +
+                                  "• Present Perfect: have/has been + V3",
+                            examples: [
+                                { en: "The cake was baked by Mary.", vi: "Cái bánh được làm bởi Mary." },
+                                { en: "English is spoken worldwide.", vi: "Tiếng Anh được nói trên toàn thế giới." },
+                                { en: "The letter has been sent.", vi: "Thư đã được gửi." },
+                                { en: "The car was repaired yesterday.", vi: "Xe được sửa hôm qua." },
+                                { en: "The house will be built next year.", vi: "Ngôi nhà sẽ được xây năm sau." },
+                                { en: "The problem is being solved.", vi: "Vấn đề đang được giải quyết." }
+                            ],
+                            mistakes: [
+                                "❌ The book written by him → ✅ The book was written by him",
+                                "❌ It is build last year → ✅ It was built last year",
+                                "❌ They were build → ✅ They were built"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "The house ___ built in 1990.",
+                                options: ["is", "was", "has", "had"],
+                                correct: 1,
+                                explanation: "1990 là quá khứ, dùng 'was' + V3.",
+                                hint: "Past time = was"
+                            },
+                            {
+                                type: "mcq",
+                                question: "English ___ spoken in many countries.",
+                                options: ["is", "was", "has", "been"],
+                                correct: 0,
+                                explanation: "Sự thật hiển nhiên, hiện tại, dùng 'is'.",
+                                hint: "General fact = is"
+                            },
+                            {
+                                type: "fill",
+                                question: "The letter ___ (send) yesterday.",
+                                correct: "was sent",
+                                explanation: "Yesterday = quá khứ, passive: was + V3.",
+                                hint: "yesterday = was V3"
+                            },
+                            {
+                                type: "transform",
+                                question: "Change to passive: They built this bridge in 2010.",
+                                correct: "This bridge was built in 2010.",
+                                alternatives: ["This bridge was built in 2010 by them."],
+                                explanation: "This bridge (O) → chủ ngữ, was built (V3), by them có thể bỏ.",
+                                hint: "O → S, was V3"
+                            },
+                            {
+                                type: "error",
+                                question: "The book written by Shakespeare.",
+                                correct: "The book was written by Shakespeare.",
+                                explanation: "Thiếu động từ 'be', phải có was/were.",
+                                hint: "Cần was/were"
+                            },
+                            {
+                                type: "fill",
+                                question: "The problem ___ (solve) already. (Present Perfect)",
+                                correct: "has been solved",
+                                explanation: "Present Perfect passive: has/have been + V3.",
+                                hint: "PP passive = has been V3"
+                            },
+                            {
+                                type: "mcq",
+                                question: "The movie ___ by millions of people.",
+                                options: ["watched", "was watched", "is watched", "has watched"],
+                                correct: 1,
+                                explanation: "Quá khứ, bị động: was watched.",
+                                hint: "Past passive"
+                            },
+                            {
+                                type: "transform",
+                                question: "Active to Passive: Someone stole my bike.",
+                                correct: "My bike was stolen.",
+                                alternatives: ["My bike was stolen by someone."],
+                                explanation: "My bike → S, was stolen (V3), by someone có thể bỏ.",
+                                hint: "was stolen"
+                            },
+                            {
+                                type: "mcq",
+                                question: "The house ___ painted next week.",
+                                options: ["is", "was", "will be", "has been"],
+                                correct: 2,
+                                explanation: "Next week (tương lai) → will be + V3.",
+                                hint: "Future = will be"
+                            },
+                            {
+                                type: "fill",
+                                question: "The car ___ (repair) right now.",
+                                correct: "is being repaired",
+                                explanation: "Right now (đang diễn ra) → is being + V3.",
+                                hint: "Now = is being V3"
+                            },
+                            {
+                                type: "error",
+                                question: "The homework must be finish by tomorrow.",
+                                correct: "The homework must be finished by tomorrow.",
+                                explanation: "Modal passive: must be + V3 (finished).",
+                                hint: "must be + V3"
+                            },
+                            {
+                                type: "transform",
+                                question: "Change to passive: They are building a new school.",
+                                correct: "A new school is being built.",
+                                alternatives: ["A new school is being built by them."],
+                                explanation: "Present Continuous passive: is/are being + V3.",
+                                hint: "is being built"
+                            }
+                        ]
+                    }
+                ]
+            },
+            C1: {
+                name: "Advanced",
+                description: "Nâng cao",
+                lessons: [
+                    {
+                        id: "c1-1",
+                        title: "Conditional Sentences Type 3",
+                        subtitle: "Câu điều kiện loại 3",
+                        grammar: {
+                            rule: "Conditional Type 3 diễn tả điều kiện không có thật trong quá khứ và kết quả trái ngược.\n\n" +
+                                  "Công thức:\n" +
+                                  "• If + S + had + V3, S + would/could/might + have + V3\n\n" +
+                                  "Dùng để: giả định, hối tiếc về quá khứ",
+                            examples: [
+                                { en: "If I had studied harder, I would have passed the exam.", vi: "Nếu tôi học chăm hơn, tôi đã đỗ kỳ thi." },
+                                { en: "If she had known, she would have told me.", vi: "Nếu cô ấy biết, cô ấy đã nói với tôi." },
+                                { en: "We could have won if we had tried harder.", vi: "Chúng tôi có thể thắng nếu cố gắng hơn." },
+                                { en: "If they had arrived earlier, they wouldn't have missed the train.", vi: "Nếu họ đến sớm hơn, họ đã không lỡ tàu." },
+                                { en: "He might have succeeded if he had worked harder.", vi: "Anh ấy có thể thành công nếu làm việc chăm chỉ hơn." },
+                                { en: "If I had seen you, I would have said hello.", vi: "Nếu tôi nhìn thấy bạn, tôi đã chào." }
+                            ],
+                            mistakes: [
+                                "❌ If I would have known → ✅ If I had known",
+                                "❌ If she has studied → ✅ If she had studied",
+                                "❌ I would pass if I had studied → ✅ I would have passed if I had studied"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "If I ___ about the party, I would have come.",
+                                options: ["knew", "know", "had known", "have known"],
+                                correct: 2,
+                                explanation: "Type 3: If + had V3, would have V3.",
+                                hint: "Type 3 = had V3"
+                            },
+                            {
+                                type: "mcq",
+                                question: "She ___ the test if she had studied more.",
+                                options: ["would pass", "would have passed", "will pass", "passed"],
+                                correct: 1,
+                                explanation: "Main clause Type 3: would have + V3.",
+                                hint: "would have V3"
+                            },
+                            {
+                                type: "fill",
+                                question: "If they ___ (arrive) earlier, they wouldn't have missed the flight.",
+                                correct: "had arrived",
+                                explanation: "Type 3 if-clause: had + V3.",
+                                hint: "If + had V3"
+                            },
+                            {
+                                type: "fill",
+                                question: "I ___ (help) you if I had known you needed it.",
+                                correct: "would have helped",
+                                alternatives: ["could have helped"],
+                                explanation: "Main clause: would/could have + V3.",
+                                hint: "would have V3"
+                            },
+                            {
+                                type: "error",
+                                question: "If I would have seen you, I would have said hi.",
+                                correct: "If I had seen you, I would have said hi.",
+                                explanation: "Không dùng 'would' trong if-clause của Type 3.",
+                                hint: "No would in if-clause"
+                            },
+                            {
+                                type: "transform",
+                                question: "Rewrite: I didn't study, so I failed. (Type 3)",
+                                correct: "If I had studied, I wouldn't have failed.",
+                                alternatives: ["If I had studied, I would have passed."],
+                                explanation: "Điều kiện trái với quá khứ → Type 3.",
+                                hint: "Past unreal = Type 3"
+                            },
+                            {
+                                type: "mcq",
+                                question: "If we ___ harder, we could have won.",
+                                options: ["tried", "had tried", "have tried", "try"],
+                                correct: 1,
+                                explanation: "If-clause Type 3: had + V3.",
+                                hint: "had tried"
+                            },
+                            {
+                                type: "fill",
+                                question: "She ___ (not/make) that mistake if she had been more careful.",
+                                correct: "wouldn't have made",
+                                alternatives: ["would not have made"],
+                                explanation: "Negative main clause: wouldn't have + V3.",
+                                hint: "wouldn't have V3"
+                            },
+                            {
+                                type: "mcq",
+                                question: "If you ___ me, I would have helped you.",
+                                options: ["asked", "ask", "had asked", "have asked"],
+                                correct: 2,
+                                explanation: "Type 3 if-clause: had + V3.",
+                                hint: "had asked"
+                            },
+                            {
+                                type: "transform",
+                                question: "Rewrite: She didn't bring an umbrella, so she got wet.",
+                                correct: "If she had brought an umbrella, she wouldn't have got wet.",
+                                alternatives: ["If she had brought an umbrella, she wouldn't have gotten wet.", "She wouldn't have got wet if she had brought an umbrella."],
+                                explanation: "Điều kiện trái với quá khứ → Type 3.",
+                                hint: "Type 3 structure"
+                            },
+                            {
+                                type: "fill",
+                                question: "If we ___ (leave) earlier, we wouldn't have missed the train.",
+                                correct: "had left",
+                                explanation: "Type 3: If + had + V3.",
+                                hint: "had left"
+                            },
+                            {
+                                type: "error",
+                                question: "If I would have known, I would have come.",
+                                correct: "If I had known, I would have come.",
+                                explanation: "Không bao giờ dùng 'would' trong if-clause của Type 3.",
+                                hint: "Never: If I would have"
+                            }
+                        ]
+                    },
+                    {
+                        id: "c1-2",
+                        title: "Relative Clauses",
+                        subtitle: "Mệnh đề quan hệ",
+                        grammar: {
+                            rule: "Relative clauses bổ sung thông tin cho danh từ.\n\n" +
+                                  "Defining (xác định - không dấu phẩy):\n" +
+                                  "• who (người), which (vật), that (cả hai), where (nơi chốn), when (thời gian)\n\n" +
+                                  "Non-defining (không xác định - có dấu phẩy):\n" +
+                                  "• who, which (không dùng that)\n\n" +
+                                  "Có thể lược bỏ who/which/that khi làm tân ngữ.",
+                            examples: [
+                                { en: "The man who called you is my brother.", vi: "Người đàn ông gọi cho bạn là anh tôi." },
+                                { en: "The book which I bought is interesting.", vi: "Cuốn sách tôi mua rất thú vị." },
+                                { en: "My friend, who lives in London, is coming.", vi: "Bạn tôi, người sống ở London, sắp đến." },
+                                { en: "The house where I was born was demolished.", vi: "Ngôi nhà nơi tôi sinh ra đã bị phá." },
+                                { en: "This is the person (that) I told you about.", vi: "Đây là người tôi nói với bạn." },
+                                { en: "The car which he drives is expensive.", vi: "Chiếc xe anh ấy lái đắt tiền." }
+                            ],
+                            mistakes: [
+                                "❌ The man which called → ✅ The man who called",
+                                "❌ My friend, that lives → ✅ My friend, who lives",
+                                "❌ The book, which I bought it, → ✅ The book, which I bought,"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "The woman ___ lives next door is a doctor.",
+                                options: ["who", "which", "where", "when"],
+                                correct: 0,
+                                explanation: "Người → dùng 'who'.",
+                                hint: "Person = who"
+                            },
+                            {
+                                type: "mcq",
+                                question: "The book ___ I'm reading is fascinating.",
+                                options: ["who", "which", "where", "All correct"],
+                                correct: 1,
+                                explanation: "Vật → dùng 'which' hoặc 'that'.",
+                                hint: "Thing = which"
+                            },
+                            {
+                                type: "fill",
+                                question: "This is the house ___ I grew up. (where/which)",
+                                correct: "where",
+                                explanation: "Nơi chốn → 'where'.",
+                                hint: "Place = where"
+                            },
+                            {
+                                type: "error",
+                                question: "The man which fixed my car was very helpful.",
+                                correct: "The man who fixed my car was very helpful.",
+                                explanation: "Người → dùng 'who', không dùng 'which'.",
+                                hint: "Person = who"
+                            },
+                            {
+                                type: "transform",
+                                question: "Combine: I met a woman. She is a famous artist. (use who)",
+                                correct: "I met a woman who is a famous artist.",
+                                alternatives: ["The woman I met is a famous artist.", "The woman who I met is a famous artist."],
+                                explanation: "Who thay thế cho 'woman' và nối hai câu.",
+                                hint: "who connects"
+                            },
+                            {
+                                type: "mcq",
+                                question: "My sister, ___ is a teacher, lives in Hanoi.",
+                                options: ["who", "that", "which", "where"],
+                                correct: 0,
+                                explanation: "Non-defining clause (có dấu phẩy) không dùng 'that'.",
+                                hint: "Comma = who/which"
+                            },
+                            {
+                                type: "fill",
+                                question: "The day ___ we met was unforgettable. (when/which)",
+                                correct: "when",
+                                explanation: "Thời gian → 'when'.",
+                                hint: "Time = when"
+                            },
+                            {
+                                type: "mcq",
+                                question: "The movie ___ we watched last night was boring.",
+                                options: ["who", "which", "where", "when"],
+                                correct: 1,
+                                explanation: "Vật (movie) → 'which' hoặc có thể lược bỏ.",
+                                hint: "Thing = which"
+                            },
+                            {
+                                type: "fill",
+                                question: "1998 was the year ___ I was born. (when/which)",
+                                correct: "when",
+                                explanation: "The year (thời gian) → when.",
+                                hint: "Year = when"
+                            },
+                            {
+                                type: "transform",
+                                question: "Combine: I have a friend. His father is a pilot. (use whose)",
+                                correct: "I have a friend whose father is a pilot.",
+                                alternatives: ["I have a friend whose father is a pilot"],
+                                explanation: "Whose thể hiện sở hữu (his father = whose father).",
+                                hint: "Possession = whose"
+                            },
+                            {
+                                type: "error",
+                                question: "The restaurant where we ate there was excellent.",
+                                correct: "The restaurant where we ate was excellent.",
+                                explanation: "'Where' đã thay thế cho 'there', không cần lặp lại.",
+                                hint: "Remove 'there'"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Anyone ___ wants to join can sign up here.",
+                                options: ["who", "which", "whose", "whom"],
+                                correct: 0,
+                                explanation: "Anyone (người) → who.",
+                                hint: "Person = who"
+                            }
+                        ]
+                    }
+                ]
+            },
+            C2: {
+                name: "Proficiency",
+                description: "Thông thạo",
+                lessons: [
+                    {
+                        id: "c2-1",
+                        title: "Inversion for Emphasis",
+                        subtitle: "Đảo ngữ nhấn mạnh",
+                        grammar: {
+                            rule: "Inversion (đảo trợ động từ lên trước chủ ngữ) để nhấn mạnh, trang trọng.\n\n" +
+                                  "Các trường hợp:\n" +
+                                  "• Negative adverbs: Never, Rarely, Seldom, Hardly, No sooner\n" +
+                                  "• Only + time: Only then, Only after\n" +
+                                  "• Not only... but also\n" +
+                                  "• So/Such... that\n\n" +
+                                  "Công thức: Adverb + Auxiliary + Subject + Verb",
+                            examples: [
+                                { en: "Never have I seen such a beautiful place.", vi: "Chưa bao giờ tôi thấy nơi đẹp như vậy." },
+                                { en: "Rarely do we get such opportunities.", vi: "Hiếm khi chúng ta có cơ hội như vậy." },
+                                { en: "Only then did I realize my mistake.", vi: "Chỉ lúc đó tôi mới nhận ra lỗi lầm." },
+                                { en: "Not only did she win, but she also broke the record.", vi: "Không chỉ thắng mà cô ấy còn phá kỷ lục." },
+                                { en: "Seldom has the team played so well.", vi: "Hiếm khi đội chơi hay như vậy." },
+                                { en: "No sooner had I arrived than it started raining.", vi: "Vừa mới tôi đến thì trời mưa." }
+                            ],
+                            mistakes: [
+                                "❌ Never I have seen → ✅ Never have I seen",
+                                "❌ Rarely we get → ✅ Rarely do we get",
+                                "❌ Only then I realized → ✅ Only then did I realize"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "Never ___ such a difficult problem.",
+                                options: ["I have seen", "have I seen", "I saw", "did I saw"],
+                                correct: 1,
+                                explanation: "Never → đảo have lên trước chủ ngữ.",
+                                hint: "Never + have + S"
+                            },
+                            {
+                                type: "transform",
+                                question: "Rewrite with inversion: I have rarely seen such beauty.",
+                                correct: "Rarely have I seen such beauty.",
+                                alternatives: ["Rarely have I seen such beauty"],
+                                explanation: "Rarely lên đầu → đảo have lên trước I.",
+                                hint: "Rarely have I"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Only after the war ___ the true cost.",
+                                options: ["we understood", "did we understand", "we did understand", "understand we"],
+                                correct: 1,
+                                explanation: "Only after → đảo trợ động từ (did) lên.",
+                                hint: "Only after + did + S"
+                            },
+                            {
+                                type: "fill",
+                                question: "Seldom ___ (do/does) she complain.",
+                                correct: "does",
+                                explanation: "She (ngôi thứ 3) → does.",
+                                hint: "she = does"
+                            },
+                            {
+                                type: "error",
+                                question: "Never I will forget this day.",
+                                correct: "Never will I forget this day.",
+                                explanation: "Never → đảo will lên trước I.",
+                                hint: "Never will I"
+                            },
+                            {
+                                type: "transform",
+                                question: "Rewrite: We had no sooner arrived than the party started.",
+                                correct: "No sooner had we arrived than the party started.",
+                                alternatives: ["No sooner had we arrived than the party started"],
+                                explanation: "No sooner → đảo had lên trước we.",
+                                hint: "No sooner had"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Not only ___ the race, but he also broke the record.",
+                                options: ["he won", "did he win", "he did win", "won he"],
+                                correct: 1,
+                                explanation: "Not only → đảo trợ động từ.",
+                                hint: "Not only did"
+                            },
+                            {
+                                type: "fill",
+                                question: "Hardly ___ (have/had) I finished when she called.",
+                                correct: "had",
+                                explanation: "Hardly + Past Perfect (had) + when.",
+                                hint: "Hardly had"
+                            },
+                            {
+                                type: "mcq",
+                                question: "Under no circumstances ___ this rule be broken.",
+                                options: ["should", "should not", "it should", "shouldn't"],
+                                correct: 0,
+                                explanation: "Under no circumstances → đảo ngữ (should be).",
+                                hint: "Negative phrase = inversion"
+                            },
+                            {
+                                type: "transform",
+                                question: "Rewrite: We have seldom seen such talent.",
+                                correct: "Seldom have we seen such talent.",
+                                alternatives: ["Seldom have we seen such talent"],
+                                explanation: "Seldom → đảo have lên trước we.",
+                                hint: "Seldom have"
+                            },
+                            {
+                                type: "fill",
+                                question: "Little ___ (do/did) he know what awaited him.",
+                                correct: "did",
+                                explanation: "Little (negative) → đảo trợ động từ.",
+                                hint: "Little did"
+                            },
+                            {
+                                type: "error",
+                                question: "Only when I saw her I realized my mistake.",
+                                correct: "Only when I saw her did I realize my mistake.",
+                                explanation: "Only when → đảo trợ động từ (did) lên trước I.",
+                                hint: "Only when... did I"
+                            }
+                        ]
+                    },
+                    {
+                        id: "c2-2",
+                        title: "Cleft Sentences",
+                        subtitle: "Câu chẻ (nhấn mạnh)",
+                        grammar: {
+                            rule: "Cleft sentences chia câu thành 2 phần để nhấn mạnh một thành phần cụ thể.\n\n" +
+                                  "Các cấu trúc:\n" +
+                                  "• It + be + nhấn mạnh + that/who + phần còn lại\n" +
+                                  "• What + S + V + be + nhấn mạnh\n" +
+                                  "• The thing that... / The person who...\n\n" +
+                                  "Dùng để: nhấn mạnh chủ ngữ, tân ngữ, hoặc trạng ngữ",
+                            examples: [
+                                { en: "It was John who broke the window.", vi: "Chính John đã phá cửa sổ." },
+                                { en: "What I need is a holiday.", vi: "Điều tôi cần là một kỳ nghỉ." },
+                                { en: "It's in Paris that I met her.", vi: "Chính ở Paris tôi gặp cô ấy." },
+                                { en: "What she said surprised me.", vi: "Điều cô ấy nói làm tôi ngạc nhiên." },
+                                { en: "It was yesterday that he called.", vi: "Chính hôm qua anh ấy gọi." },
+                                { en: "The thing that I love most is music.", vi: "Điều tôi yêu nhất là âm nhạc." }
+                            ],
+                            mistakes: [
+                                "❌ It is John which broke → ✅ It was John who broke",
+                                "❌ What I needs is → ✅ What I need is",
+                                "❌ It's Paris where I met → ✅ It's in Paris that I met (hoặc It was Paris where...)"
+                            ]
+                        },
+                        exercises: [
+                            {
+                                type: "mcq",
+                                question: "It was Mary ___ solved the problem.",
+                                options: ["who", "which", "what", "whose"],
+                                correct: 0,
+                                explanation: "Nhấn mạnh người → dùng 'who'.",
+                                hint: "Person = who"
+                            },
+                            {
+                                type: "transform",
+                                question: "Emphasize 'yesterday': I saw her yesterday.",
+                                correct: "It was yesterday that I saw her.",
+                                alternatives: ["It was yesterday when I saw her."],
+                                explanation: "Nhấn mạnh trạng ngữ thời gian với It was... that.",
+                                hint: "It was... that"
+                            },
+                            {
+                                type: "mcq",
+                                question: "What I want ___ some peace and quiet.",
+                                options: ["is", "are", "was", "were"],
+                                correct: 0,
+                                explanation: "What I want (số ít) → is.",
+                                hint: "What I want = singular"
+                            },
+                            {
+                                type: "fill",
+                                question: "It was ___ London ___ we first met. (in/that)",
+                                correct: "in, that",
+                                alternatives: ["in ... that"],
+                                explanation: "Nhấn mạnh nơi chốn: in London that...",
+                                hint: "in... that"
+                            },
+                            {
+                                type: "error",
+                                question: "What she needs are more time.",
+                                correct: "What she needs is more time.",
+                                explanation: "What she needs (chủ ngữ số ít) → is.",
+                                hint: "needs (singular) = is"
+                            },
+                            {
+                                type: "transform",
+                                question: "Emphasize 'coffee': I like coffee most.",
+                                correct: "What I like most is coffee.",
+                                alternatives: ["It is coffee that I like most.", "It's coffee that I like most."],
+                                explanation: "Dùng What... is để nhấn mạnh.",
+                                hint: "What I like... is"
+                            },
+                            {
+                                type: "mcq",
+                                question: "The person ___ helped me was very kind.",
+                                options: ["who", "which", "what", "whose"],
+                                correct: 0,
+                                explanation: "Người → who.",
+                                hint: "Person = who"
+                            },
+                            {
+                                type: "fill",
+                                question: "It ___ (be) John who called me last night.",
+                                correct: "was",
+                                explanation: "Last night (quá khứ) → was.",
+                                hint: "Past = was"
+                            },
+                            {
+                                type: "transform",
+                                question: "Emphasize 'at the party': I met her at the party.",
+                                correct: "It was at the party that I met her.",
+                                alternatives: ["It was at the party where I met her."],
+                                explanation: "Nhấn mạnh nơi chốn: It was... that/where.",
+                                hint: "It was... that"
+                            },
+                            {
+                                type: "mcq",
+                                question: "The thing ___ annoys me most is his attitude.",
+                                options: ["who", "which", "that", "Both B & C"],
+                                correct: 3,
+                                explanation: "Thing → which hoặc that đều được.",
+                                hint: "Thing = which/that"
+                            },
+                            {
+                                type: "fill",
+                                question: "What we need ___ (be) more time and money.",
+                                correct: "is",
+                                explanation: "What we need (singular subject) → is.",
+                                hint: "What we need = singular"
+                            },
+                            {
+                                type: "error",
+                                question: "It's coffee what I like most.",
+                                correct: "It's coffee that I like most.",
+                                explanation: "Cleft sentence dùng 'that', không dùng 'what' ở vị trí này.",
+                                hint: "Use 'that'"
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        // ==================== STATE MANAGEMENT ====================
+        let currentLevel = 'A0';
+        let currentLesson = null;
+        let userAnswers = {};
+        let progress = {}; // {lessonId: {score, completed, wrong: []}}
+
+        // ==================== INITIALIZATION ====================
+        function init() {
+            loadProgress();
+            renderLevelTabs();
+            renderLevelContent(currentLevel);
+            setupEventListeners();
+        }
+
+        function setupEventListeners() {
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                    e.target.classList.add('active');
+                    currentLevel = e.target.dataset.level;
+                    renderLevelContent(currentLevel);
+                });
+            });
+        }
+
+        function renderLevelTabs() {
+            // Already in HTML
+        }
+
+        function renderLevelContent(level) {
+            const levelData = curriculum[level];
+            const container = document.getElementById('mainContent');
+            
+            let html = `
+                <div class="level-section active">
+                    <h2>${level} - ${levelData.name}</h2>
+                    <p style="font-size: 1.1em; color: #666; margin: 10px 0 20px 0;">${levelData.description}</p>
+                    
+                    <div class="tools-bar">
+                        <button class="tool-btn" onclick="exportProgress()">📤 Export Progress</button>
+                        <button class="tool-btn" onclick="showImportModal()">📥 Import Progress</button>
+                        <button class="tool-btn" onclick="resetProgress()">🔄 Reset Progress</button>
+                    </div>
+                    
+                    <div class="lessons-grid">
+            `;
+
+            levelData.lessons.forEach(lesson => {
+                const lessonProgress = progress[lesson.id] || { score: 0, completed: false };
+                const progressPercent = lessonProgress.completed ? 100 : (lessonProgress.score || 0);
+
+                html += `
+                    <div class="lesson-card" onclick="openLesson('${level}', '${lesson.id}')">
+                        <h3>${lesson.title}</h3>
+                        <p style="color: #666; margin: 10px 0;">${lesson.subtitle}</p>
+                        <p style="font-size: 0.9em; color: #999;">
+                            ${lessonProgress.completed ? '✅ Completed' : '📝 In Progress'}
+                        </p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${progressPercent}%"></div>
+                        </div>
+                        <p style="font-size: 0.85em; color: #667eea; margin-top: 5px;">
+                            Score: ${progressPercent}%
+                        </p>
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        function openLesson(level, lessonId) {
+            const levelData = curriculum[level];
+            const lesson = levelData.lessons.find(l => l.id === lessonId);
+            currentLesson = lesson;
+            userAnswers = {};
+
+            const container = document.getElementById('mainContent');
+            
+            let html = `
+                <div class="lesson-detail active">
+                    <button class="back-btn" onclick="backToLessons()">⬅️ Quay lại</button>
+                    
+                    <h2>${lesson.title}</h2>
+                    <p style="font-size: 1.1em; color: #666; margin-bottom: 30px;">${lesson.subtitle}</p>
+                    
+                    <div class="grammar-section">
+                        <h3>📚 Grammar Rule</h3>
+                        <p style="white-space: pre-line; line-height: 1.8;">${lesson.grammar.rule}</p>
+                    </div>
+                    
+                    <div class="grammar-section">
+                        <h3>💡 Examples</h3>
+                        ${lesson.grammar.examples.map(ex => `
+                            <div class="example">
+                                <strong>${ex.en}</strong><br>
+                                <span style="color: #666;">${ex.vi}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="mistakes-section">
+                        <h3>⚠️ Common Mistakes</h3>
+                        ${lesson.grammar.mistakes.map(m => `<p style="margin: 8px 0;">${m}</p>`).join('')}
+                    </div>
+                    
+                    <div class="exercises-section">
+                        <h2 style="margin-bottom: 20px;">✏️ Practice Exercises</h2>
+                        <div class="score-display" id="scoreDisplay">
+                            Score: 0/${lesson.exercises.length} | 0%
+                        </div>
+                        
+                        <div class="tools-bar">
+                            <button class="tool-btn" onclick="window.print()">🖨️ Print Worksheet</button>
+                            <button class="tool-btn" onclick="resetExercises()">🔄 Reset Exercises</button>
+                        </div>
+                        
+                        ${lesson.exercises.map((ex, idx) => renderExercise(ex, idx)).join('')}
+                        
+                        <button class="submit-btn" onclick="submitAllAnswers()" style="font-size: 1.2em; padding: 15px 40px; margin-top: 30px;">
+                            ✅ Submit All Answers
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        function renderExercise(exercise, index) {
+            const types = {
+                'mcq': 'Multiple Choice',
+                'fill': 'Fill in the Blank',
+                'error': 'Error Correction',
+                'transform': 'Sentence Transformation'
+            };
+
+            let html = `
+                <div class="exercise-item" id="exercise-${index}">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="background: #667eea; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">
+                            ${index + 1}. ${types[exercise.type]}
+                        </span>
+                        <button class="hint-btn" onclick="showHint(${index})">💡 Hint</button>
+                    </div>
+                    
+                    <div class="exercise-question">${exercise.question}</div>
+            `;
+
+            if (exercise.type === 'mcq') {
+                html += '<div class="exercise-options">';
+                exercise.options.forEach((opt, optIdx) => {
+                    html += `
+                        <button class="option-btn" onclick="selectOption(${index}, ${optIdx})">
+                            ${String.fromCharCode(65 + optIdx)}. ${opt}
+                        </button>
+                    `;
+                });
+                html += '</div>';
+            } else {
+                html += `
+                    <input type="text" 
+                           id="answer-${index}" 
+                           placeholder="Type your answer here..." 
+                           onkeypress="if(event.key==='Enter') checkSingleAnswer(${index})">
+                    <button class="check-btn" onclick="checkSingleAnswer(${index})">Check Answer</button>
+                `;
+            }
+
+            html += `
+                    <div class="explanation" id="explanation-${index}">
+                        <strong>💡 Hint:</strong> ${exercise.hint}<br><br>
+                        <strong>📖 Explanation:</strong> ${exercise.explanation}<br>
+                        <strong>✅ Correct Answer:</strong> ${getCorrectAnswer(exercise)}
+                    </div>
+                </div>
+            `;
+
+            return html;
+        }
+
+        function getCorrectAnswer(exercise) {
+            if (exercise.type === 'mcq') {
+                return exercise.options[exercise.correct];
+            }
+            return exercise.correct;
+        }
+
+        function selectOption(exerciseIdx, optionIdx) {
+            const exercise = currentLesson.exercises[exerciseIdx];
+            const container = document.getElementById(`exercise-${exerciseIdx}`);
+            
+            // Remove previous selections
+            container.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Mark new selection
+            container.querySelectorAll('.option-btn')[optionIdx].classList.add('selected');
+            
+            userAnswers[exerciseIdx] = optionIdx;
+        }
+
+        function checkSingleAnswer(exerciseIdx) {
+            const exercise = currentLesson.exercises[exerciseIdx];
+            const input = document.getElementById(`answer-${exerciseIdx}`);
+            const userAnswer = input.value.trim().toLowerCase();
+            
+            if (!userAnswer) {
+                alert('Please enter an answer first!');
+                return;
+            }
+
+            userAnswers[exerciseIdx] = userAnswer;
+            
+            const correct = exercise.correct.toLowerCase();
+            const alternatives = exercise.alternatives ? exercise.alternatives.map(a => a.toLowerCase()) : [];
+            
+            const isCorrect = userAnswer === correct || alternatives.includes(userAnswer);
+            
+            const container = document.getElementById(`exercise-${exerciseIdx}`);
+            container.classList.remove('correct', 'incorrect');
+            container.classList.add(isCorrect ? 'correct' : 'incorrect');
+            
+            document.getElementById(`explanation-${exerciseIdx}`).classList.add('show');
+            
+            if (isCorrect) {
+                input.style.borderColor = '#28a745';
+                input.style.background = '#d4edda';
+            } else {
+                input.style.borderColor = '#dc3545';
+                input.style.background = '#f8d7da';
+            }
+        }
+
+        function showHint(exerciseIdx) {
+            const explanation = document.getElementById(`explanation-${exerciseIdx}`);
+            explanation.classList.toggle('show');
+        }
+
+        function submitAllAnswers() {
+            if (Object.keys(userAnswers).length === 0) {
+                alert('Please answer at least one question!');
+                return;
+            }
+
+            let correct = 0;
+            const total = currentLesson.exercises.length;
+            const wrongItems = [];
+
+            currentLesson.exercises.forEach((exercise, idx) => {
+                const container = document.getElementById(`exercise-${idx}`);
+                const userAnswer = userAnswers[idx];
+
+                if (userAnswer === undefined || userAnswer === null || userAnswer === '') {
+                    container.classList.add('incorrect');
+                    wrongItems.push(idx);
+                    return;
+                }
+
+                let isCorrect = false;
+
+                if (exercise.type === 'mcq') {
+                    isCorrect = parseInt(userAnswer) === exercise.correct;
+                    
+                    const buttons = container.querySelectorAll('.option-btn');
+                    buttons.forEach((btn, btnIdx) => {
+                        btn.disabled = true;
+                        if (btnIdx === exercise.correct) {
+                            btn.classList.add('correct');
+                        } else if (btnIdx === parseInt(userAnswer) && !isCorrect) {
+                            btn.classList.add('incorrect');
+                        }
+                    });
+                } else {
+                    const correctAnswer = exercise.correct.toLowerCase();
+                    const alternatives = exercise.alternatives ? exercise.alternatives.map(a => a.toLowerCase()) : [];
+                    const userAnswerLower = String(userAnswer).trim().toLowerCase();
+                    
+                    isCorrect = userAnswerLower === correctAnswer || alternatives.includes(userAnswerLower);
+                }
+
+                container.classList.remove('correct', 'incorrect');
+                container.classList.add(isCorrect ? 'correct' : 'incorrect');
+                
+                document.getElementById(`explanation-${idx}`).classList.add('show');
+
+                if (isCorrect) {
+                    correct++;
+                } else {
+                    wrongItems.push(idx);
+                }
+            });
+
+            const score = Math.round((correct / total) * 100);
+            
+            // Update score display
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            scoreDisplay.innerHTML = `
+                Score: ${correct}/${total} | ${score}%
+                ${score >= 80 ? '🎉 Excellent!' : score >= 60 ? '👍 Good job!' : '💪 Keep practicing!'}
+            `;
+
+            // Save progress
+            progress[currentLesson.id] = {
+                score: score,
+                completed: score >= 80,
+                wrong: wrongItems,
+                lastAttempt: new Date().toISOString()
+            };
+            saveProgress();
+
+            // Scroll to score
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function resetExercises() {
+            if (!confirm('Reset all answers for this lesson?')) return;
+            
+            userAnswers = {};
+            currentLesson.exercises.forEach((exercise, idx) => {
+                const container = document.getElementById(`exercise-${idx}`);
+                container.classList.remove('correct', 'incorrect');
+                
+                if (exercise.type === 'mcq') {
+                    container.querySelectorAll('.option-btn').forEach(btn => {
+                        btn.classList.remove('selected', 'correct', 'incorrect');
+                        btn.disabled = false;
+                    });
+                } else {
+                    const input = document.getElementById(`answer-${idx}`);
+                    input.value = '';
+                    input.style.borderColor = '';
+                    input.style.background = '';
+                }
+                
+                document.getElementById(`explanation-${idx}`).classList.remove('show');
+            });
+            
+            document.getElementById('scoreDisplay').innerHTML = `Score: 0/${currentLesson.exercises.length} | 0%`;
+        }
+
+        function backToLessons() {
+            renderLevelContent(currentLevel);
+        }
+
+        // ==================== PROGRESS MANAGEMENT ====================
+        function saveProgress() {
+            localStorage.setItem('grammar-progress', JSON.stringify(progress));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('grammar-progress');
+            if (saved) {
+                try {
+                    progress = JSON.parse(saved);
+                } catch (e) {
+                    progress = {};
+                }
+            }
+        }
+
+        function exportProgress() {
+            const data = JSON.stringify(progress, null, 2);
+            document.getElementById('exportData').value = data;
+            document.getElementById('exportModal').classList.add('show');
+        }
+
+        function copyExport() {
+            const textarea = document.getElementById('exportData');
+            textarea.select();
+            document.execCommand('copy');
+            alert('✅ Copied to clipboard!');
+        }
+
+        function showImportModal() {
+            document.getElementById('importModal').classList.add('show');
+        }
+
+        function importProgress() {
+            const data = document.getElementById('importData').value;
+            try {
+                const imported = JSON.parse(data);
+                progress = imported;
+                saveProgress();
+                closeModal();
+                alert('✅ Progress imported successfully!');
+                renderLevelContent(currentLevel);
+            } catch (e) {
+                alert('❌ Invalid JSON data. Please check and try again.');
+            }
+        }
+
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(m => m.classList.remove('show'));
+        }
+
+        function resetProgress() {
+            if (!confirm('Are you sure you want to reset ALL progress? This cannot be undone!')) return;
+            
+            progress = {};
+            saveProgress();
+            alert('✅ Progress reset successfully!');
+            renderLevelContent(currentLevel);
+        }
+
+        // Click outside modal to close
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                closeModal();
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // ==================== START APP ====================
+        init();
+    </script>
+</body>
+</html>
