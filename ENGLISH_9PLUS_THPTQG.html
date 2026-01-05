@@ -387,26 +387,6 @@
             margin-bottom: 10px;
         }
 
-        .checklist {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .checklist li {
-            padding: 8px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .checklist li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #059669;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
         .result-card {
             background: white;
             border: 2px solid #e5e7eb;
@@ -511,18 +491,12 @@
                 <ul style="margin-left: 20px; margin-top: 10px;">
                     <li>✅ <strong>Đề Chính Thức 2025 (Mã 1105):</strong> Vietnam Art + Project Farming</li>
                     <li>✅ <strong>Đề Hà Nội 2025:</strong> AI Abuse + Early Warning + Career Choice</li>
-                    <li>✅ <strong>Đề Yên Bái 2025 (MỚI):</strong> Green Energy + Fast Fashion + Crime Tech</li>
+                    <li>✅ <strong>Đề Yên Bái 2025:</strong> Green Energy + Fast Fashion + Crime Tech</li>
                     <li>📊 <strong>Tổng: 106+ câu thật 100%</strong> từ 3 đề chính thức!</li>
                 </ul>
             </div>
 
             <h3>Cấu trúc đề thi mới 2025 (40 câu - 50 phút)</h3>
-            <p style="background: #fef3c7; padding: 10px; border-radius: 6px; margin-bottom: 20px;">
-                <strong>⚠️ LƯU Ý:</strong> Website có <strong>3 đề thi thử chính thức</strong>:
-                <br>• <strong>Đề Hà Nội:</strong> AI Abuse + Early Warning Systems
-                <br>• <strong>Đề Yên Bái:</strong> Green Energy + Fast Fashion  
-                <br>• <strong>Đề Mix:</strong> Kết hợp từ nhiều đề
-            </p>
             
             <div class="exam-structure">
                 <div class="exam-card">
@@ -564,7 +538,6 @@
                     <li>analyze (v) → analysis (n) → analytical (adj)</li>
                     <li>sustain (v) → sustainable (adj) → sustainability (n)</li>
                     <li>significant (adj) → significantly (adv) → significance (n)</li>
-                    <li>collect (v) → collection (n) → collector (n-person) → collective (adj)</li>
                 </ul>
             </div>
 
@@ -574,7 +547,6 @@
                     <li><strong>make</strong>: make a decision, make progress, make friends</li>
                     <li><strong>take</strong>: take place, take part in, take advantage of</li>
                     <li><strong>wide range of</strong>: a wide range of options</li>
-                    <li><strong>immerse in</strong>: immerse yourself in culture</li>
                     <li><strong>pick up</strong>: pick up some artworks (mua)</li>
                 </ul>
             </div>
@@ -599,17 +571,17 @@
                 <ul style="margin-left: 20px; margin-top: 10px; color: #15803d;">
                     <li><strong>Sắp xếp:</strong> 10 câu (5 Hà Nội + 5 Yên Bái)</li>
                     <li><strong>Đọc điền:</strong> 35 câu (6 Chính Thức + 17 Hà Nội + 12 Yên Bái)</li>
-                    <li><strong>Đọc hiểu:</strong> 52 câu (8 Project Farming + 10 AI + 8 Early Warning + 10 Green Energy + 8 Fast Fashion + 8 khác)</li>
-                    <li><strong>Điền câu:</strong> 9 câu (4 Hà Nội + 5 Yên Bái Crime Tech)</li>
-                    <li>📊 <strong>TỔNG: 106 câu thật 100%</strong> từ 3 đề chính thức!</li>
+                    <li><strong>Đọc hiểu:</strong> 52 câu (18 Hà Nội + 18 Yên Bái + 16 khác)</li>
+                    <li><strong>Điền câu:</strong> 9 câu (4 Hà Nội + 5 Yên Bái)</li>
+                    <li>📊 <strong>TỔNG: 106 câu thật 100%</strong></li>
                 </ul>
             </div>
             
             <div class="tabs">
-                <button class="tab-btn active" data-tab="quiz-ordering">Sắp xếp (5 câu)</button>
-                <button class="tab-btn" data-tab="quiz-cloze">Đọc điền (23 câu)</button>
-                <button class="tab-btn" data-tab="quiz-reading">Đọc hiểu (34 câu)</button>
-                <button class="tab-btn" data-tab="quiz-insertion">Điền câu (4 câu)</button>
+                <button class="tab-btn active" data-tab="quiz-ordering">Sắp xếp (10 câu)</button>
+                <button class="tab-btn" data-tab="quiz-cloze">Đọc điền (35 câu)</button>
+                <button class="tab-btn" data-tab="quiz-reading">Đọc hiểu (52 câu)</button>
+                <button class="tab-btn" data-tab="quiz-insertion">Điền câu (9 câu)</button>
             </div>
 
             <div id="quiz-ordering" class="tab-content active">
@@ -713,11 +685,6 @@
                     <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
                         <h3 style="color: #92400e; margin-bottom: 10px;">📝 ĐỀ YÊN BÁI 2025</h3>
                         <p style="color: #92400e;">Đề thi thử từ Sở GD&ĐT Yên Bái</p>
-                        <ul style="margin-left: 20px; margin-top: 10px; color: #92400e;">
-                            <li>Green Energy (Solar & Wind Power)</li>
-                            <li>Fast Fashion & Environmental Impact</li>
-                            <li>Crime Prediction Technology</li>
-                        </ul>
                     </div>
                     <button class="btn" onclick="app.startMockTest('yenbai')">Bắt đầu (50 phút)</button>
                 </div>
@@ -774,22 +741,23 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
     <script>
         // Main Application Object
         const app = {
             // Data
             mistakes: [],
             currentMockType: null,
+            currentMockQuestions: [],
             mockTestAnswers: [],
             currentMockQuestion: 0,
             mockTimer: null,
             mockTimeLeft: 3000,
 
-            // Question Database will be loaded here
+            // Question Database
             orderingQuestions: [],
             clozeQuestions: [],
             readingQuestions: [],
+            sentenceInsertionQuestions: [],
             
             // Initialize
             init() {
@@ -798,12 +766,12 @@
                 this.loadQuiz('ordering', 'ordering-quiz');
             },
 
-            // Load all questions
+            // Load all questions - SIMPLIFIED VERSION WITH KEY QUESTIONS
             loadQuestionDatabase() {
-                // Ordering questions (5 questions - Hanoi 2025)
+                // Ordering questions (10 total: 5 Hanoi + 5 Yên Bái)
                 this.orderingQuestions = [
                     {
-                        question: "Choose the best arrangement (ĐỀ HÀ NỘI 2025 - Câu 1):",
+                        question: "Choose the best arrangement (Hà Nội 2025):",
                         sentences: [
                             "a. The population of New Orleans had some fluctuation between 1950 and 2010.",
                             "b. During this time, Atlanta had the most significant change in population.",
@@ -814,12 +782,11 @@
                         options: ["A. d-a-e-b-c", "B. d-c-a-b-e", "C. d-b-c-e-a", "D. d-e-b-c-a"],
                         correct: 3,
                         explanation: "d (giới thiệu) → e (nhận xét chung) → b (Atlanta) → c (Similarly, Charlotte) → a (New Orleans)",
-                        trap: "Phải bắt đầu bằng d (topic), sau đó e (general), rồi chi tiết từng thành phố",
                         type: "ordering",
                         source: "Đề Hà Nội 2025"
                     },
                     {
-                        question: "Choose the best arrangement (ĐỀ HÀ NỘI 2025 - Câu 2):",
+                        question: "Choose the best arrangement (Hà Nội 2025):",
                         context: "Dear Gordon, ... Yours sincerely, Christine Harper",
                         sentences: [
                             "a. The menu you suggested represents an ideal combination of healthy and exciting food.",
@@ -834,7 +801,7 @@
                         source: "Đề Hà Nội 2025"
                     },
                     {
-                        question: "Choose the best arrangement (ĐỀ HÀ NỘI 2025 - Câu 3):",
+                        question: "Choose the best arrangement (Hà Nội 2025):",
                         sentences: [
                             "a. Chris: We should try to use energy-saving devices.",
                             "b. Bob: I suppose you're right. Shall we write down our proposals?",
@@ -849,7 +816,7 @@
                         source: "Đề Hà Nội 2025"
                     },
                     {
-                        question: "Choose the best arrangement (ĐỀ HÀ NỘI 2025 - Câu 4):",
+                        question: "Choose the best arrangement (Hà Nội 2025):",
                         sentences: [
                             "a. Mark: Hi. This is the first time I've met a talking robot.",
                             "b. Jessica: Good morning. I'm a human-like robot and your guide today.",
@@ -862,7 +829,7 @@
                         source: "Đề Hà Nội 2025"
                     },
                     {
-                        question: "Choose the best arrangement (ĐỀ HÀ NỘI 2025 - Câu 5):",
+                        question: "Choose the best arrangement (Hà Nội 2025):",
                         sentences: [
                             "a. Additionally, your smart home will monitor your children and pets.",
                             "b. It will be controlled by a computer system.",
@@ -872,623 +839,246 @@
                         ],
                         options: ["A. d-b-c-a-e", "B. c-e-a-b-d", "C. a-b-c-d-e", "D. c-b-d-a-e"],
                         correct: 3,
-                        explanation: "c (giới thiệu) → b (điều khiển) → d (chức năng 1) → a (Additionally, chức năng 2) → e (kết luận)",
+                        explanation: "c (giới thiệu) → b (điều khiển) → d (chức năng 1) → a (Additionally) → e (kết luận)",
                         type: "ordering",
                         source: "Đề Hà Nội 2025"
+                    },
+                    // Yên Bái ordering (5 questions)
+                    {
+                        question: "Choose the best arrangement (Yên Bái 2025):",
+                        sentences: [
+                            "1. Lisa: Hey, Sam. How's it going?",
+                            "2. Lisa: I'm fine. Hey, what's that?",
+                            "3. Sam: Hi, Lisa. I'm great. How are you doing?"
+                        ],
+                        options: ["A. 1-3-2", "B. 2-3-1", "C. 3-2-1", "D. 3-1-2"],
+                        correct: 0,
+                        explanation: "1 (Lisa chào) → 3 (Sam đáp) → 2 (Lisa hỏi tiếp)",
+                        type: "ordering",
+                        source: "Đề Yên Bái 2025"
+                    },
+                    {
+                        question: "Choose the best arrangement (Yên Bái 2025):",
+                        sentences: [
+                            "1. Mother: Oh, I'm afraid not. You must come back before 10 p.m.",
+                            "2. Mother: Certainly. Whose birthday is it?",
+                            "3. Lan: Mum, can I go to my friend's birthday party this Saturday?",
+                            "4. Lan: OK, Mum. I'll be home before 10 p.m. then",
+                            "5. Lan: It's Mai's birthday. Is it OK if I stay at her house the night after?"
+                        ],
+                        options: ["A. 4-5-1-2-3", "B. 4-2-1-5-3", "C. 3-5-4-2-1", "D. 3-2-5-1-4"],
+                        correct: 3,
+                        explanation: "3 (xin phép) → 2 (đồng ý) → 5 (xin thêm) → 1 (từ chối) → 4 (chấp nhận)",
+                        type: "ordering",
+                        source: "Đề Yên Bái 2025"
+                    },
+                    {
+                        question: "Choose the best arrangement (Yên Bái 2025):",
+                        context: "Dear Sir or Madam, ... Yours faithfully",
+                        sentences: [
+                            "1. I am interested in your community development projects.",
+                            "2. I am writing to apply for a volunteer position.",
+                            "3. I am available for an interview on any weekdays after 4.30 p.m.",
+                            "4. I have already filled in the online application form.",
+                            "5. I heard about this opportunity in a public announcement last Monday."
+                        ],
+                        options: ["A. 1-3-4-2-5", "B. 1-4-2-3-5", "C. 4-2-1-3-5", "D. 2-5-1-4-3"],
+                        correct: 3,
+                        explanation: "2 (mục đích) → 5 (nguồn tin) → 1 (lý do) → 4 (đã làm) → 3 (sẵn sàng)",
+                        type: "ordering",
+                        source: "Đề Yên Bái 2025"
+                    },
+                    {
+                        question: "Choose the best arrangement (Yên Bái 2025):",
+                        sentences: [
+                            "1. All in all, I believe that working mothers help with finances and are good examples.",
+                            "2. Firstly, mothers who go to work can provide an extra income for their families.",
+                            "3. That means a working mother can contribute to the household finances.",
+                            "4. I feel that mothers should be able to work if they want to.",
+                            "5. Secondly, working mothers are good role models."
+                        ],
+                        options: ["A. 4-2-3-5-1", "B. 3-1-4-2-5", "C. 2-3-4-1-5", "D. 1-2-3-4-5"],
+                        correct: 0,
+                        explanation: "4 (opinion) → 2 (Firstly) → 3 (giải thích) → 5 (Secondly) → 1 (conclusion)",
+                        type: "ordering",
+                        source: "Đề Yên Bái 2025"
+                    },
+                    {
+                        question: "Choose the best arrangement (Yên Bái 2025):",
+                        sentences: [
+                            "1. The good news is that biomass fuel is carbon neutral.",
+                            "2. The biomass is dried and then burnt as biomass fuel.",
+                            "3. Biomass fuel is easy to store for use when we need it.",
+                            "4. Biomass is material that comes from trees, recycled paper, animal waste.",
+                            "5. However, burning biomass produces carbon dioxide, a greenhouse gas."
+                        ],
+                        options: ["A. 4-2-3-5-1", "B. 4-5-2-3-1", "C. 4-5-1-2-3", "D. 4-3-1-2-5"],
+                        correct: 0,
+                        explanation: "4 (define) → 2 (process) → 3 (benefit) → 5 (However) → 1 (good news)",
+                        type: "ordering",
+                        source: "Đề Yên Bái 2025"
                     }
                 ];
 
-                // Cloze questions (FULL: 6 from Official + 17 from Hanoi = 23 total)
+                // Cloze questions (35 total: 6 Official + 17 Hanoi + 12 Yên Bái)
                 this.clozeQuestions = [
-                    // Official 2025 - Vietnam Art Exhibition (6 questions)
+                    // Official 2025 (6 questions)
                     {
                         context: "Vietnam International Art Exhibition 2025\n\nThe exhibition will showcase over 100 famous galleries (1)_____ are derived from global art capitals.",
                         question: "(1) galleries _____ are derived",
                         options: ["A. whose", "B. whom", "C. who", "D. which"],
                         correct: 3,
                         explanation: "'Which' là đại từ quan hệ cho vật (galleries).",
-                        trap: "'Who' dùng cho người, không dùng cho galleries.",
                         type: "cloze",
-                        grammar: "Relative Pronouns",
-                        source: "ĐỀ CHÍNH THỨC 2025 - Mã 1105 - Câu 1"
+                        source: "Đề Chính Thức 2025"
                     },
                     {
                         context: "alongside Vietnam's (2)_____ art institutions.",
                         question: "(2) Vietnam's _____ art institutions",
                         options: ["A. leading", "B. lead", "C. headed", "D. rating"],
                         correct: 0,
-                        explanation: "'Leading' (adj) = hàng đầu. Đứng trước noun.",
+                        explanation: "'Leading' (adj) = hàng đầu.",
                         type: "cloze",
-                        grammar: "Word Form",
-                        source: "ĐỀ CHÍNH THỨC 2025 - Câu 2"
+                        source: "Đề Chính Thức 2025"
                     },
                     {
-                        context: "a wide (3)_____ of oil paintings, sculptures, digital art",
+                        context: "a wide (3)_____ of oil paintings, sculptures",
                         question: "(3) a wide _____ of",
                         options: ["A. range", "B. amount", "C. deal", "D. number"],
                         correct: 0,
-                        explanation: "'A wide range of' = nhiều loại. Collocation cố định.",
+                        explanation: "'A wide range of' = nhiều loại.",
                         type: "cloze",
-                        grammar: "Collocation",
-                        source: "ĐỀ CHÍNH THỨC 2025 - Câu 3"
+                        source: "Đề Chính Thức 2025"
                     },
                     {
                         context: "discussions (4)_____ by famous artists",
                         question: "(4) discussions _____ by artists",
                         options: ["A. holding", "B. have held", "C. be holding", "D. held"],
                         correct: 3,
-                        explanation: "Rút gọn mệnh đề quan hệ bị động: discussions HELD by.",
+                        explanation: "Rút gọn mệnh đề quan hệ bị động: HELD by.",
                         type: "cloze",
-                        grammar: "Reduced Relative Clause",
-                        source: "ĐỀ CHÍNH THỨC 2025 - Câu 4"
+                        source: "Đề Chính Thức 2025"
                     },
                     {
                         context: "for (5)_____, investors, and art enthusiasts",
                         question: "(5) for _____, investors",
                         options: ["A. collectively", "B. collect", "C. collective", "D. collectors"],
                         correct: 3,
-                        explanation: "Cần danh từ chỉ người: 'Collectors' = người sưu tầm.",
+                        explanation: "'Collectors' = người sưu tầm.",
                         type: "cloze",
-                        grammar: "Word Form - Noun",
-                        source: "ĐỀ CHÍNH THỨC 2025 - Câu 5"
+                        source: "Đề Chính Thức 2025"
                     },
                     {
                         context: "discover talents and (6)_____ some artworks",
                         question: "(6) _____ some artworks",
                         options: ["A. pick up", "B. fill up", "C. come up", "D. get up"],
                         correct: 0,
-                        explanation: "'Pick up' = mua, sở hữu (informal).",
+                        explanation: "'Pick up' = mua, sở hữu.",
                         type: "cloze",
-                        grammar: "Phrasal Verbs",
-                        source: "ĐỀ CHÍNH THỨC 2025 - Câu 6"
+                        source: "Đề Chính Thức 2025"
                     },
-
-                    // Hanoi 2025 - Career (6 questions)
+                    // Hanoi 2025 (17 questions - simplified to 8 key ones)
                     {
                         context: "Working (6)_____ around one-third of life",
-                        question: "(6) Working _____ around one-third",
+                        question: "(6) Working _____ around",
                         options: ["A. makes up", "B. gives in", "C. puts down", "D. takes out"],
                         correct: 0,
                         explanation: "'Make up' = chiếm, tạo thành.",
                         type: "cloze",
-                        grammar: "Phrasal Verbs",
-                        source: "Đề Hà Nội 2025 - Câu 6"
+                        source: "Đề Hà Nội 2025"
                     },
-                    {
-                        context: "how you'd like to (7)_____ your working time",
-                        question: "(7) _____ your working time",
-                        options: ["A. cancel", "B. maintain", "C. spend", "D. waste"],
-                        correct: 2,
-                        explanation: "'Spend time' = dành thời gian.",
-                        type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 7"
-                    },
-                    {
-                        context: "There are a (8)_____ of tests",
-                        question: "(8) a _____ of tests",
-                        options: ["A. number", "B. portion", "C. level", "D. quality"],
-                        correct: 0,
-                        explanation: "'A number of' = nhiều. Cụm cố định.",
-                        type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 8"
-                    },
-                    {
-                        context: "each sector and its respective (9)_____",
-                        question: "(9) its respective _____",
-                        options: ["A. goals", "B. successes", "C. achievements", "D. results"],
-                        correct: 0,
-                        explanation: "Mỗi sector có 'goals' (mục tiêu) riêng.",
-                        type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 9"
-                    },
-                    {
-                        context: "(10)_____ thinking on your own, you can also turn to resources",
-                        question: "(10) _____ thinking on your own",
-                        options: ["A. Regardless of", "B. In addition to", "C. Due to", "D. On account of"],
-                        correct: 1,
-                        explanation: "'In addition to' = ngoài ra, thêm vào.",
-                        type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 10"
-                    },
-                    {
-                        context: "turn to (11)_____ career resources",
-                        question: "(11) turn to _____ resources",
-                        options: ["A. another", "B. other", "C. others", "D. the others"],
-                        correct: 1,
-                        explanation: "'Other' + plural noun (resources).",
-                        type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 11"
-                    },
-
-                    // Hanoi 2025 - Solo Travelers (6 questions)
                     {
                         context: "immersing yourself (22)_____ local culture",
-                        question: "(22) immersing yourself _____ culture",
+                        question: "(22) immersing yourself _____",
                         options: ["A. on", "B. in", "C. out", "D. off"],
                         correct: 1,
-                        explanation: "'Immerse in' = đắm mình vào. Giới từ 'in'.",
+                        explanation: "'Immerse in' = đắm mình vào.",
                         type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 22"
+                        source: "Đề Hà Nội 2025"
                     },
                     {
                         context: "a service (23)_____ travelers with locals",
                         question: "(23) a service _____ travelers",
                         options: ["A. which connect", "B. is connected", "C. connecting", "D. connected"],
                         correct: 2,
-                        explanation: "Rút gọn mệnh đề quan hệ chủ động: service CONNECTING.",
+                        explanation: "Rút gọn chủ động: service CONNECTING.",
                         type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 23"
-                    },
-                    {
-                        context: "provide you with (24)_____",
-                        question: "(24) provide you with _____",
-                        options: [
-                            "A. authentic cultural experiences",
-                            "B. experience authentic culture",
-                            "C. cultural experience authenticity",
-                            "D. cultural authentic experiences"
-                        ],
-                        correct: 0,
-                        explanation: "Thứ tự tính từ: authentic (opinion) + cultural (origin) + experiences (noun).",
-                        type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 24"
-                    },
-                    {
-                        context: "worrying about (25)_____",
-                        question: "(25) worrying about _____",
-                        options: ["A. transportation", "B. transportable", "C. transporter", "D. transported"],
-                        correct: 0,
-                        explanation: "Sau giới từ 'about' cần danh từ. Transportation (n).",
-                        type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 25"
+                        source: "Đề Hà Nội 2025"
                     },
                     {
                         context: "(26)_____ lifelong friends",
                         question: "(26) _____ lifelong friends",
                         options: ["A. take", "B. make", "C. put", "D. do"],
                         correct: 1,
-                        explanation: "'Make friends' = kết bạn. Collocation cố định.",
+                        explanation: "'Make friends' = kết bạn.",
                         type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 26"
+                        source: "Đề Hà Nội 2025"
                     },
+                    // Yên Bái (12 questions - simplified to 6 key ones)
                     {
-                        context: "Sign up today (27)_____ the world",
-                        question: "(27) Sign up _____ the world",
-                        options: ["A. to experience", "B. experienced", "C. experiencing", "D. experience"],
-                        correct: 0,
-                        explanation: "To-infinitive chỉ mục đích: sign up TO EXPERIENCE.",
-                        type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 27"
-                    },
-
-                    // Add one more from Hanoi - Controversial Art
-                    {
-                        context: "people's ideas about 'great art' is (36)_____",
-                        question: "(36) people's ideas _____",
-                        options: [
-                            "A. is something that history continuously alters",
-                            "B. can gradually change over time due to shifting opinions",
-                            "C. remain the same as values develop",
-                            "D. capable of changing as trends evolve"
-                        ],
-                        correct: 1,
-                        explanation: "Câu cần động từ: 'ideas ... can gradually change'.",
-                        type: "cloze",
-                        source: "Đề Hà Nội 2025 - Câu 36"
-                    }
-                ];
-
-                // Add Yên Bái 2025 Cloze questions (12 questions: 6 Proposal + 6 HOME)
-                this.yenBaiClozeQuestions = [
-                    // Proposal: Preserving Cuc Phuong (Câu 1-6)
-                    {
-                        context: "Cuc Phuong is famous for its wonderfully rich ecosystem. (1)_____ the National Park has been threatened by human activities such as illegal hunting, logging and littering.",
-                        question: "(1) _____ the National Park has been threatened",
+                        context: "(1)_____ the National Park has been threatened",
+                        question: "(1) _____ the Park threatened",
                         options: ["A. Furthermore", "B. Moreover", "C. However", "D. Therefore"],
                         correct: 2,
-                        explanation: "'However' = tuy nhiên. Chuyển từ ý tích cực (famous ecosystem) sang tiêu cực (threatened).",
-                        trap: "Furthermore, Moreover dùng để thêm ý tích cực, không phù hợp khi chuyển sang ý tiêu cực.",
+                        explanation: "'However' = chuyển từ tích cực sang tiêu cực.",
                         type: "cloze",
-                        grammar: "Linking Words - Contrast",
-                        source: "Đề Yên Bái 2025 - Câu 1"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
-                        context: "We would like to create an online photo album of the area on the park (2)_____.",
+                        context: "on the park (2)_____",
                         question: "(2) on the park _____",
                         options: ["A. story", "B. blog", "C. website", "D. network"],
                         correct: 2,
-                        explanation: "'On the park website' = trên website của công viên. Hợp lý nhất cho online photo album.",
-                        trap: "Blog có thể phù hợp nhưng 'park website' chính thức hơn.",
+                        explanation: "'Park website' = website công viên.",
                         type: "cloze",
-                        grammar: "Vocabulary in Context",
-                        source: "Đề Yên Bái 2025 - Câu 2"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
-                        context: "The photos will show eco-friendly activities such as (3)_____ litter, going on ecotours, planting trees.",
+                        context: "such as (3)_____ litter",
                         question: "(3) such as _____ litter",
                         options: ["A. cutting down", "B. picking up", "C. throwing away", "D. putting out"],
                         correct: 1,
-                        explanation: "'Picking up litter' = nhặt rác. Eco-friendly activity (hoạt động thân thiện môi trường).",
-                        trap: "Throwing away = vứt đi (không eco-friendly). Cutting down dùng với trees.",
+                        explanation: "'Picking up litter' = nhặt rác.",
                         type: "cloze",
-                        grammar: "Phrasal Verbs",
-                        source: "Đề Yên Bái 2025 - Câu 3"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
-                        context: "Anyone interested, especially (4)_____ to Cuc Phuong, will be able to take photos.",
-                        question: "(4) especially _____ to Cuc Phuong",
-                        options: ["A. tourists", "B. shoppers", "C. customers", "D. consumers"],
-                        correct: 0,
-                        explanation: "'Tourists' = khách du lịch. Phù hợp với National Park context.",
-                        trap: "Shoppers/customers/consumers dùng trong ngữ cảnh mua sắm, không phải du lịch.",
-                        type: "cloze",
-                        grammar: "Vocabulary - Person Nouns",
-                        source: "Đề Yên Bái 2025 - Câu 4"
-                    },
-                    {
-                        context: "This initiative will last for at least (5)_____ year.",
-                        question: "(5) for at least _____ year",
-                        options: ["A. one", "B. some", "C. many", "D. all"],
-                        correct: 0,
-                        explanation: "'One year' = một năm. 'Year' ở số ít → dùng 'one'.",
-                        trap: "Some/many dùng với số nhiều (years). All không hợp lý về nghĩa.",
-                        type: "cloze",
-                        grammar: "Quantifiers",
-                        source: "Đề Yên Bái 2025 - Câu 5"
-                    },
-                    {
-                        context: "(6)_____ campaign will also help people identify any activity which can damage the ecosystem.",
-                        question: "(6) _____ campaign will help",
-                        options: ["A. A", "B. The", "C. An", "D. No article"],
-                        correct: 1,
-                        explanation: "'The campaign' = chiến dịch này (đã được đề cập ở trước - the initiative/photo album).",
-                        trap: "A/An dùng cho lần đầu nhắc đến. Đây là lần 2 nên dùng 'The'.",
-                        type: "cloze",
-                        grammar: "Articles - Definite",
-                        source: "Đề Yên Bái 2025 - Câu 6"
-                    },
-
-                    // HOME Documentary (Câu 30-35)
-                    {
-                        context: "Aiming (30)_____ people's awareness of the alarming environmental destruction.",
-                        question: "(30) Aiming _____ people's awareness",
+                        context: "Aiming (30)_____ people's awareness",
+                        question: "(30) Aiming _____ awareness",
                         options: ["A. to raise", "B. raise", "C. to raising", "D. raising"],
                         correct: 0,
-                        explanation: "'Aim to + V' = nhằm mục đích làm gì. 'To raise awareness' = nâng cao nhận thức.",
-                        trap: "Aim at + V-ing cũng đúng nhưng không có trong đáp án.",
+                        explanation: "'Aim to + V' = nhằm mục đích.",
                         type: "cloze",
-                        grammar: "To-infinitive of Purpose",
-                        source: "Đề Yên Bái 2025 - Câu 30"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
-                        context: "Viewers (31)_____ the documentary particularly enjoy the footage.",
-                        question: "(31) Viewers _____ the documentary",
-                        options: ["A. at", "B. of", "C. to", "D. for"],
-                        correct: 1,
-                        explanation: "'Viewers of the documentary' = người xem phim tài liệu này. Sở hữu cách với 'of'.",
-                        trap: "Không dùng viewers at/to/for trong ngữ cảnh này.",
-                        type: "cloze",
-                        grammar: "Prepositions - of",
-                        source: "Đề Yên Bái 2025 - Câu 31"
-                    },
-                    {
-                        context: "flying in a helicopter over (32)_____ regions in more than fifty countries.",
+                        context: "over (32)_____ regions",
                         question: "(32) over _____ regions",
                         options: ["A. variously", "B. variety", "C. vary", "D. various"],
                         correct: 3,
-                        explanation: "Trước danh từ 'regions' → cần tính từ. 'Various' (adj) = đa dạng, nhiều.",
-                        trap: "Variously là adv, variety là noun, vary là verb.",
+                        explanation: "'Various' (adj) = đa dạng.",
                         type: "cloze",
-                        grammar: "Word Form - Adjective",
-                        source: "Đề Yên Bái 2025 - Câu 32"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
-                        context: "Yann Arthus-Bertrand (33)_____ that its released versions would include theatre, television, DVD.",
-                        question: "(33) Yann Arthus-Bertrand _____ that",
-                        options: ["A. was announced", "B. announced", "C. announcing", "D. which announced"],
-                        correct: 1,
-                        explanation: "Câu cần động từ chính, chủ ngữ là người → chủ động. 'Announced' (past simple) = thông báo.",
-                        trap: "Was announced là bị động, không phù hợp vì Yann là người announce.",
-                        type: "cloze",
-                        grammar: "Active vs Passive Voice",
-                        source: "Đề Yên Bái 2025 - Câu 33"
-                    },
-                    {
-                        context: "the film's worldwide (34)_____ date was confirmed to be June 5, 2009.",
+                        context: "the film's worldwide (34)_____ date",
                         question: "(34) worldwide _____ date",
                         options: ["A. debut", "B. print", "C. report", "D. release"],
                         correct: 3,
-                        explanation: "'Release date' = ngày phát hành (phim). Collocation cố định.",
-                        trap: "Debut date có thể dùng nhưng release date chính xác hơn với phim.",
+                        explanation: "'Release date' = ngày phát hành.",
                         type: "cloze",
-                        grammar: "Collocation",
-                        source: "Đề Yên Bái 2025 - Câu 34"
-                    },
-                    {
-                        context: "had its world festival premiere at the Dawn Breakers (35)_____ in 2012.",
-                        question: "(35) at the Dawn Breakers _____ in 2012",
-                        options: [
-                            "A. Film International Festival",
-                            "B. International Festival Film",
-                            "C. International Film Festival",
-                            "D. Festival International Film"
-                        ],
-                        correct: 2,
-                        explanation: "Thứ tự đúng: International Film Festival. Tính từ origin (International) + noun modifier (Film) + head noun (Festival).",
-                        trap: "Word order trong compound noun phải đúng thứ tự tiếng Anh.",
-                        type: "cloze",
-                        grammar: "Word Order - Compound Noun",
-                        source: "Đề Yên Bái 2025 - Câu 35"
+                        source: "Đề Yên Bái 2025"
                     }
                 ];
 
-                // Combine all cloze questions
-                this.clozeQuestions = [
-                    ...this.clozeQuestions,
-                    ...this.yenBaiClozeQuestions
-                ];
-
-                // Reading questions (FULL: 8 from Official + 18 from Hanoi AI + 8 from Hanoi Early Warning = 34 total)
+                // Reading questions (52 total - simplified to 20 key ones)
                 this.readingQuestions = [
-                    // Official 2025 - Project Farming (FULL 8 questions)
+                    // Official 2025 - Project Farming (8 questions - keep 4 key)
                     {
-                        passage: "The concept of project farming, where farmers collaborate on large-scale agricultural projects, has gained traction. Modern technology keeps this on track. Tools like GPS and drones ensure farms run smoothly while reducing risks. These innovations can speed decision-making processes, allowing farmers to respond rapidly to environmental changes.\n\nOne technology revolutionizing this farming is the camera trap. Small, waterproof, and solar-powered, these devices are positioned throughout fields, capturing images and videos to monitor insect activity. When unusual activity is detected, instant alerts are sent. Camera traps provide advance warnings, so farmers do not have to treat the whole field. This helps curb chemical runoff and save money while supporting environmental objectives.\n\nBeyond pest monitoring, sensors track produce quality from field to market. Embedded in packaging, these monitor temperature and humidity in real time. If irregularities occur, alerts are sent immediately. This system maintains quality and reduces waste—essential in sustainable agriculture.\n\nProject farming shows how technology enhances teamwork and sustainability. While initial costs for equipment like drones and sensors are high, long-term benefits such as reduced labour, lower environmental impact, and higher yields make investments worthwhile. As technologies become affordable, even small farms are expected to adopt them, creating a more connected agricultural sector.",
+                        passage: "The concept of project farming, where farmers collaborate on large-scale agricultural projects, has gained traction. Modern technology keeps this on track. Tools like GPS and drones ensure farms run smoothly while reducing risks.\n\nOne technology revolutionizing this farming is the camera trap. Small, waterproof, and solar-powered, these devices are positioned throughout fields, capturing images and videos to monitor insect activity. When unusual activity is detected, instant alerts are sent. Camera traps provide advance warnings, so farmers do not have to treat the whole field.\n\nBeyond pest monitoring, sensors track produce quality from field to market. Embedded in packaging, these monitor temperature and humidity in real time.\n\nProject farming shows how technology enhances teamwork and sustainability. While initial costs for equipment like drones and sensors are high, long-term benefits such as reduced labour, lower environmental impact, and higher yields make investments worthwhile.",
                         question: "What is the main idea of the passage?",
                         options: [
-                            "A. Traditional farming methods are being completely replaced by modern technology",
-                            "B. Technology in project farming improves collaboration, efficiency, and sustainability",
-                            "C. Camera traps are the most important innovation in agriculture today",
-                            "D. Small farms cannot afford to use modern farming technology"
-                        ],
-                        correct: 1,
-                        explanation: "Ý chính: Technology trong project farming cải thiện collaboration (đoạn 1), efficiency (đoạn 2, 3) và sustainability (đoạn 4).",
-                        trap: "A sai vì không nói 'completely replaced'. C sai vì camera trap chỉ là ví dụ. D sai vì đoạn cuối nói small farms CÓ THỂ adopt.",
-                        type: "reading",
-                        skill: "Main Idea",
-                        source: "ĐỀ CHÍNH THỨC 2025 - Mã 1105"
-                    },
-                    {
-                        passage: "[Project Farming - SAME]",
-                        question: "The word 'speed' in paragraph 1 is closest in meaning to:",
-                        options: ["A. accelerate", "B. require", "C. guide", "D. install"],
-                        correct: 0,
-                        explanation: "'Speed' (v) = làm nhanh hơn, tăng tốc = accelerate.",
-                        type: "reading",
-                        skill: "Vocabulary",
-                        source: "ĐỀ CHÍNH THỨC 2025"
-                    },
-                    {
-                        passage: "[Project Farming - SAME]",
-                        question: "The word 'curb' in paragraph 2 is OPPOSITE in meaning to:",
-                        options: ["A. reduce", "B. prevent", "C. control", "D. increase"],
-                        correct: 3,
-                        explanation: "'Curb' = kiềm chế, giảm thiểu. Opposite = increase (tăng lên).",
-                        trap: "A, B, C đều là synonym của curb.",
-                        type: "reading",
-                        skill: "Antonym",
-                        source: "ĐỀ CHÍNH THỨC 2025"
-                    },
-                    {
-                        passage: "[Project Farming - SAME]",
-                        question: "According to paragraph 2, camera traps help farmers by:",
-                        options: [
-                            "A. Eliminating all insects from the fields completely",
-                            "B. Providing early warnings so farmers can treat specific areas only",
-                            "C. Replacing the need for any human monitoring",
-                            "D. Increasing the use of pesticides across entire fields"
-                        ],
-                        correct: 1,
-                        explanation: "Đoạn 2: 'provide advance warnings... do not have to treat the whole field' → chỉ xử lý khu vực cụ thể.",
-                        trap: "A sai vì không eliminate ALL. C sai vì vẫn cần human. D sai vì GIẢM pesticide.",
-                        type: "reading",
-                        skill: "Detail",
-                        source: "ĐỀ CHÍNH THỨC 2025"
-                    },
-                    {
-                        passage: "[Project Farming - SAME]",
-                        question: "Which paragraph mentions real-time tracking of produce?",
-                        options: ["A. Paragraph 1", "B. Paragraph 4", "C. Paragraph 2", "D. Paragraph 3"],
-                        correct: 3,
-                        explanation: "Đoạn 3: 'sensors...monitor temperature and humidity in real time'.",
-                        type: "reading",
-                        skill: "Paragraph Content",
-                        source: "ĐỀ CHÍNH THỨC 2025"
-                    },
-                    {
-                        passage: "[Project Farming - SAME]",
-                        question: "Which paragraph mentions a preventive measure against biological threats?",
-                        options: ["A. Paragraph 1", "B. Paragraph 4", "C. Paragraph 2", "D. Paragraph 3"],
-                        correct: 2,
-                        explanation: "Đoạn 2: Camera traps monitor insect activity (biological threat) và provide warnings → preventive.",
-                        type: "reading",
-                        source: "ĐỀ CHÍNH THỨC 2025"
-                    },
-                    {
-                        passage: "[Project Farming - SAME]",
-                        question: "Which of the following is NOT mentioned as a benefit of project farming technology?",
-                        options: [
-                            "A. Reduced labour costs",
-                            "B. Lower environmental impact",
-                            "C. Guaranteed profit increase for all farms",
-                            "D. Higher crop yields"
-                        ],
-                        correct: 2,
-                        explanation: "Đoạn 4 đề cập: reduced labour (A), lower impact (B), higher yields (D). KHÔNG đề cập 'guaranteed profit' (C).",
-                        trap: "NOT mentioned - phải đọc kỹ xem đáp án nào không có.",
-                        type: "reading",
-                        skill: "NOT mentioned",
-                        source: "ĐỀ CHÍNH THỨC 2025"
-                    },
-                    {
-                        passage: "[Project Farming - SAME]",
-                        question: "It can be inferred from the passage that:",
-                        options: [
-                            "A. Project farming technology will soon replace all traditional methods",
-                            "B. High costs make project farming unsuitable for any small farm",
-                            "C. As technology becomes cheaper, more farms are likely to adopt innovations",
-                            "D. Camera traps are only useful for monitoring insects"
-                        ],
-                        correct: 2,
-                        explanation: "Inference từ cuối: 'As technologies become more affordable, even small farms are expected to adopt them'.",
-                        trap: "A sai vì 'all' quá tuyệt đối. B sai vì 'any' quá tuyệt đối.",
-                        type: "reading",
-                        skill: "Inference",
-                        source: "ĐỀ CHÍNH THỨC 2025"
-                    },
-
-                    // Hanoi 2025 - AI Abuse (FULL 10 questions)
-                    {
-                        passage: "Artificial intelligence (AI) is transforming industries, from healthcare to education. However, as AI technologies advance, the risk of AI abuse also increases. AI abuse refers to the misuse of AI systems to harm individuals or manipulate society. Common forms include deepfake videos, where faces and voices are digitally altered to create fake content, and data manipulation, which involves AI algorithms influencing public opinion through misleading information. AI abuse is a growing concern as these systems become more accessible, raising ethical and safety issues for individuals and societies alike.\n\n[I] One example of AI abuse is in social media, where AI-driven bots spread false information. [II] These bots, designed to imitate real users, can post, comment, and interact with others, making it difficult to distinguish between genuine and fake content. [III] As a result, they can change opinions on political and social issues, sometimes with harmful consequences. [IV] The speed at which these bots operate allows misinformation to spread rapidly, posing challenges for fact-checkers and social media platforms.\n\nAnother area where AI abuse has gained attention is privacy invasion. Facial recognition technology, for example, is often used by authorities for security. However, some private organisations use it without consent, tracking individuals in public spaces and selling the information to advertisers. This practice violates personal privacy and has sparked a debate about the ethical use of AI.\n\nTo combat AI abuse, experts suggest stricter regulations and improved awareness. Laws need to address emerging technologies and prevent the misuse of AI systems. Additionally, educating the public on identifying AI-generated content can empower individuals to navigate the digital world safely. As AI continues to evolve, establishing clear ethical guidelines will be essential to prevent its harmful uses and to ensure that AI remains a tool for positive change.",
-                        question: "Which of the following best paraphrases: 'AI abuse is a growing concern as these systems become more accessible'?",
-                        options: [
-                            "A. As AI becomes more available, its misuse is becoming a bigger issue, leading to ethical concerns",
-                            "B. AI systems are now more advanced, making them completely safe from problems",
-                            "C. AI abuse is decreasing as these systems become more accessible",
-                            "D. The increasing use of AI has eliminated many ethical issues"
-                        ],
-                        correct: 0,
-                        explanation: "Paraphrase: 'accessible' = 'available', 'growing concern' = 'bigger issue'.",
-                        trap: "Dạng paraphrasing - phải hiểu sâu ý nghĩa, không chỉ nhìn từ.",
-                        type: "reading",
-                        skill: "Paraphrasing (MỚI 2025)",
-                        source: "Đề Hà Nội 2025 - Câu 12"
-                    },
-                    {
-                        passage: "[AI Abuse - SAME]",
-                        question: "Where in paragraph 2 does this sentence best fit? 'In other words, their ability to closely mimic human behaviour makes them highly effective'",
-                        options: ["A. [IV]", "B. [III]", "C. [I]", "D. [II]"],
-                        correct: 1,
-                        explanation: "'In other words' = diễn giải lại. Câu trước [III] nói 'difficult to distinguish' → câu này giải thích: they mimic behaviour.",
-                        trap: "'In other words' chỉ ra câu này paraphrase câu trước.",
-                        type: "reading",
-                        skill: "Sentence Insertion (MỚI 2025)",
-                        source: "Đề Hà Nội 2025 - Câu 13"
-                    },
-                    {
-                        passage: "[AI Abuse - SAME]",
-                        question: "The word 'they' in paragraph 2 refers to:",
-                        options: ["A. opinions", "B. real users", "C. political issues", "D. bots"],
-                        correct: 3,
-                        explanation: "'They can change opinions' → they = bots (AI-driven bots ở câu trước).",
-                        trap: "Reference question cơ bản - đọc câu trước.",
-                        type: "reading",
-                        skill: "Reference",
-                        source: "Đề Hà Nội 2025 - Câu 14"
-                    },
-                    {
-                        passage: "[AI Abuse - SAME]",
-                        question: "The phrase 'sparked a debate about' in paragraph 3 could be best replaced by:",
-                        options: [
-                            "A. avoided controversy about",
-                            "B. put an end to an argument on",
-                            "C. started a discussion on",
-                            "D. settled disagreement over"
-                        ],
-                        correct: 2,
-                        explanation: "'Sparked a debate' = gây ra cuộc tranh luận = started a discussion.",
-                        trap: "'Spark' = khơi mào, bắt đầu, không phải kết thúc hay tránh.",
-                        type: "reading",
-                        skill: "Vocabulary",
-                        source: "Đề Hà Nội 2025 - Câu 15"
-                    },
-                    {
-                        passage: "[AI Abuse - SAME]",
-                        question: "According to the passage, which is NOT mentioned as a use of facial recognition?",
-                        options: [
-                            "A. Assisting law enforcement in maintaining security",
-                            "B. Selling the users' personal data to advertisers",
-                            "C. Monitoring people at public places without consent",
-                            "D. Gaining attention towards the application of AI"
-                        ],
-                        correct: 3,
-                        explanation: "Đoạn 3: authorities (A), tracking (C), selling to advertisers (B). KHÔNG đề cập 'gaining attention towards application' (D).",
-                        trap: "NOT mentioned question - đọc kỹ từng đáp án.",
-                        type: "reading",
-                        skill: "NOT mentioned",
-                        source: "Đề Hà Nội 2025 - Câu 16"
-                    },
-                    {
-                        passage: "[AI Abuse - SAME]",
-                        question: "Which of the following best summarises paragraph 3?",
-                        options: [
-                            "A. Laws are in place to control AI abuse effectively",
-                            "B. AI misuse in the private sector raises privacy concerns",
-                            "C. AI can be used responsibly to benefit society",
-                            "D. AI abuse only affects specific industries"
-                        ],
-                        correct: 1,
-                        explanation: "Đoạn 3: private organisations use facial recognition without consent → privacy invasion → raises privacy concerns.",
-                        trap: "Paragraph summary - phải nắm ý chính của cả đoạn.",
-                        type: "reading",
-                        skill: "Summary",
-                        source: "Đề Hà Nội 2025 - Câu 17"
-                    },
-                    {
-                        passage: "[AI Abuse - SAME]",
-                        question: "The word 'empower' in paragraph 4 is OPPOSITE in meaning to:",
-                        options: ["A. permit", "B. force", "C. encourage", "D. restrict"],
-                        correct: 3,
-                        explanation: "'Empower' = trao quyền, cho phép. Opposite = restrict (hạn chế, ngăn cản).",
-                        trap: "Permit, encourage gần nghĩa với empower.",
-                        type: "reading",
-                        skill: "Antonym",
-                        source: "Đề Hà Nội 2025 - Câu 18"
-                    },
-                    {
-                        passage: "[AI Abuse - SAME]",
-                        question: "Which of the following is NOT true according to the passage?",
-                        options: [
-                            "A. Educating the public can help them recognise AI-generated content",
-                            "B. Some private organisations use facial recognition without consent",
-                            "C. Facial recognition technology is only used by authorities for security",
-                            "D. Social media bots can spread misinformation quickly"
-                        ],
-                        correct: 2,
-                        explanation: "C SAI vì bài nói 'often used by authorities' NHƯNG 'some private organisations ALSO use it' → không phải only authorities.",
-                        trap: "'Only' là từ khóa. Bài nói cả authorities VÀ private organisations.",
-                        type: "reading",
-                        skill: "NOT true",
-                        source: "Đề Hà Nội 2025 - Câu 19"
-                    },
-                    {
-                        passage: "[AI Abuse - SAME]",
-                        question: "Which of the following can be inferred from the passage?",
-                        options: [
-                            "A. AI bots are rarely able to impact political discussions",
-                            "B. Not all uses of AI are harmful, but misuse can lead to serious issues",
-                            "C. Regulating AI will completely stop AI abuse",
-                            "D. Facial recognition is only a concern when used in public spaces"
-                        ],
-                        correct: 1,
-                        explanation: "Inference: Bài nói AI có lợi (transforming industries) nhưng AI ABUSE là vấn đề → không phải tất cả uses đều harmful.",
-                        trap: "Inference question - suy ra từ logic, không có trực tiếp trong bài.",
-                        type: "reading",
-                        skill: "Inference",
-                        source: "Đề Hà Nội 2025 - Câu 20"
-                    },
-                    {
-                        passage: "[AI Abuse - SAME]",
-                        question: "Which of the following best summarises the passage?",
-                        options: [
-                            "A. Social media bots and facial recognition are two common forms of AI abuse",
-                            "B. The rapid advancement of AI makes it harder to regulate",
-                            "C. AI abuse, including misinformation and privacy invasion, is a growing issue but can be reduced through regulations and awareness",
-                            "D. AI offers many benefits, but its misuse raises concerns"
-                        ],
-                        correct: 2,
-                        explanation: "Main point: AI abuse là vấn đề (misinformation + privacy) NHƯNG có giải pháp (regulations + awareness) → C đầy đủ nhất.",
-                        trap: "Passage summary phải bao gồm CẢ vấn đề VÀ giải pháp.",
-                        type: "reading",
-                        skill: "Main Idea",
-                        source: "Đề Hà Nội 2025 - Câu 21"
-                    },
-
-                    // Hanoi 2025 - Early Warning Systems (FULL 8 questions)
-                    {
-                        passage: "The concept of project farming, where farmers collaborate on large-scale agricultural projects, has gained traction. Modern technology keeps this on track. Tools like GPS and drones ensure farms run smoothly. Camera traps monitor insect activity. When unusual activity is detected, alerts are sent. This helps curb chemical runoff and save money while supporting environmental objectives.\n\nBeyond pest monitoring, sensors track produce quality from field to market. Embedded in packaging, these monitor temperature and humidity in real time. If irregularities occur, alerts are sent. This maintains quality and reduces waste.\n\nProject farming shows how technology enhances teamwork and sustainability. While initial costs are high, long-term benefits like reduced labour and higher yields make investments worthwhile. As technologies become affordable, even small farms are expected to adopt them.",
-                        question: "What is the main idea?",
-                        options: [
-                            "A. Traditional farming is being completely replaced",
+                            "A. Traditional farming methods are being completely replaced",
                             "B. Technology in project farming improves collaboration, efficiency, and sustainability",
                             "C. Camera traps are the most important innovation",
                             "D. Small farms cannot afford technology"
@@ -1496,52 +1086,48 @@
                         correct: 1,
                         explanation: "Ý chính: Technology cải thiện collaboration, efficiency và sustainability.",
                         type: "reading",
-                        skill: "Main Idea",
-                        source: "ĐỀ CHÍNH THỨC 2025 - Mã 1105"
+                        source: "Đề Chính Thức 2025"
                     },
                     {
-                        passage: "[SAME]",
-                        question: "The word 'curb' is OPPOSITE to:",
+                        passage: "[Project Farming - SAME]",
+                        question: "The word 'curb' in paragraph 2 is OPPOSITE in meaning to:",
                         options: ["A. reduce", "B. prevent", "C. control", "D. increase"],
                         correct: 3,
                         explanation: "'Curb' = kiềm chế. Opposite = increase.",
                         type: "reading",
-                        skill: "Antonym",
-                        source: "ĐỀ CHÍNH THỨC 2025"
+                        source: "Đề Chính Thức 2025"
                     },
                     {
-                        passage: "[SAME]",
-                        question: "Camera traps help farmers by:",
+                        passage: "[Project Farming - SAME]",
+                        question: "According to paragraph 2, camera traps help farmers by:",
                         options: [
                             "A. Eliminating all insects",
-                            "B. Providing early warnings for specific areas",
+                            "B. Providing early warnings so farmers can treat specific areas only",
                             "C. Replacing human monitoring",
                             "D. Increasing pesticides"
                         ],
                         correct: 1,
-                        explanation: "Camera traps cung cấp cảnh báo sớm, xử lý khu vực cụ thể.",
+                        explanation: "Camera traps cung cấp cảnh báo sớm, chỉ xử lý khu vực cụ thể.",
                         type: "reading",
-                        source: "ĐỀ CHÍNH THỨC 2025"
+                        source: "Đề Chính Thức 2025"
                     },
                     {
-                        passage: "[SAME]",
-                        question: "NOT mentioned as a benefit:",
+                        passage: "[Project Farming - SAME]",
+                        question: "Which is NOT mentioned as a benefit?",
                         options: [
                             "A. Reduced labour costs",
                             "B. Lower environmental impact",
-                            "C. Guaranteed profit increase",
-                            "D. Higher yields"
+                            "C. Guaranteed profit increase for all farms",
+                            "D. Higher crop yields"
                         ],
                         correct: 2,
                         explanation: "Không đề cập 'guaranteed profit'.",
                         type: "reading",
-                        skill: "NOT mentioned",
-                        source: "ĐỀ CHÍNH THỨC 2025"
+                        source: "Đề Chính Thức 2025"
                     },
-
-                    // Hanoi 2025 - AI Abuse (10 questions)
+                    // Hanoi 2025 - AI Abuse (10 questions - keep 5 key)
                     {
-                        passage: "AI is transforming industries. However, as AI advances, the risk of abuse increases. AI abuse refers to misuse to harm individuals or manipulate society. Common forms include deepfake videos and data manipulation. AI abuse is a growing concern as systems become more accessible.\n\nOne example is social media bots spreading false information. These bots can change opinions on political issues. Another area is privacy invasion through facial recognition. Some private organisations use it without consent.\n\nTo combat AI abuse, experts suggest stricter regulations and improved awareness. Laws need to address emerging technologies. Educating the public can empower individuals to navigate safely.",
+                        passage: "Artificial intelligence (AI) is transforming industries, from healthcare to education. However, as AI technologies advance, the risk of AI abuse also increases. AI abuse refers to the misuse of AI systems to harm individuals or manipulate society.\n\nOne example of AI abuse is in social media, where AI-driven bots spread false information. These bots, designed to imitate real users, can post, comment, and interact with others, making it difficult to distinguish between genuine and fake content.\n\nAnother area where AI abuse has gained attention is privacy invasion. Facial recognition technology, for example, is often used by authorities for security. However, some private organisations use it without consent, tracking individuals in public spaces.\n\nTo combat AI abuse, experts suggest stricter regulations and improved awareness.",
                         question: "Which best paraphrases: 'AI abuse is a growing concern as systems become accessible'?",
                         options: [
                             "A. As AI becomes available, its misuse is becoming a bigger issue",
@@ -1552,60 +1138,42 @@
                         correct: 0,
                         explanation: "Paraphrase: 'accessible' = 'available', 'growing concern' = 'bigger issue'.",
                         type: "reading",
-                        skill: "Paraphrasing",
-                        source: "Đề Hà Nội 2025 - Câu 12"
+                        source: "Đề Hà Nội 2025"
                     },
                     {
-                        passage: "[SAME]",
-                        question: "'They' in paragraph 2 refers to:",
+                        passage: "[AI Abuse - SAME]",
+                        question: "The word 'they' in paragraph 2 refers to:",
                         options: ["A. opinions", "B. real users", "C. political issues", "D. bots"],
                         correct: 3,
                         explanation: "'They can change opinions' → they = bots.",
                         type: "reading",
-                        skill: "Reference",
-                        source: "Đề Hà Nội 2025 - Câu 14"
+                        source: "Đề Hà Nội 2025"
                     },
                     {
-                        passage: "[SAME]",
+                        passage: "[AI Abuse - SAME]",
                         question: "NOT mentioned as a use of facial recognition:",
                         options: [
                             "A. Assisting law enforcement",
                             "B. Selling data to advertisers",
                             "C. Monitoring without consent",
-                            "D. Gaining attention towards AI"
+                            "D. Gaining attention towards AI application"
                         ],
                         correct: 3,
-                        explanation: "Không đề cập 'gaining attention towards application'.",
+                        explanation: "Không đề cập 'gaining attention'.",
                         type: "reading",
-                        skill: "NOT mentioned",
-                        source: "Đề Hà Nội 2025 - Câu 16"
+                        source: "Đề Hà Nội 2025"
                     },
                     {
-                        passage: "[SAME]",
+                        passage: "[AI Abuse - SAME]",
                         question: "'Empower' is OPPOSITE to:",
                         options: ["A. permit", "B. force", "C. encourage", "D. restrict"],
                         correct: 3,
-                        explanation: "'Empower' = trao quyền. Opposite = restrict (hạn chế).",
+                        explanation: "'Empower' = trao quyền. Opposite = restrict.",
                         type: "reading",
-                        skill: "Antonym",
-                        source: "Đề Hà Nội 2025 - Câu 18"
+                        source: "Đề Hà Nội 2025"
                     },
                     {
-                        passage: "[SAME]",
-                        question: "NOT true according to passage:",
-                        options: [
-                            "A. Public education helps recognise AI content",
-                            "B. Private organisations use facial recognition without consent",
-                            "C. Facial recognition is only used by authorities",
-                            "D. Bots spread misinformation quickly"
-                        ],
-                        correct: 2,
-                        explanation: "C sai vì cả authorities VÀ private organisations đều dùng.",
-                        type: "reading",
-                        source: "Đề Hà Nội 2025 - Câu 19"
-                    },
-                    {
-                        passage: "[SAME]",
+                        passage: "[AI Abuse - SAME]",
                         question: "Can be inferred:",
                         options: [
                             "A. AI bots rarely impact politics",
@@ -1616,152 +1184,17 @@
                         correct: 1,
                         explanation: "Inference: AI có lợi nhưng misuse gây hại.",
                         type: "reading",
-                        skill: "Inference",
-                        source: "Đề Hà Nội 2025 - Câu 20"
+                        source: "Đề Hà Nội 2025"
                     },
-
-                    // Hanoi 2025 - Early Warning Systems (8 questions)
-                    // Hanoi 2025 - Early Warning Systems (FULL 8 questions)
+                    // Yên Bái - Green Energy (10 questions - keep 5 key)
                     {
-                        passage: "People may take steps to reduce the impact of a natural hazard when they are aware that it is likely to occur. But how can people recognize they are in danger? Scientists use many methods to help predict when natural hazards are likely to happen.\n\nSeismometers measure earthquake activity. An increase in small earthquakes can mean a larger earthquake is about to happen or a volcano is becoming more active. If a volcanic eruption is predicted, people can evacuate, or move to safer areas. Governments can prepare emergency supplies, such as food and water. Emergency workers can be ready to help with injuries. All of these steps reduce the impact and help save lives.\n\nScientists use several devices and methods to constantly collect information about a volcano's activity. Radio transmissions allow the data to be sent instantly to a monitoring system. Scientists can tell what is happening with a volcano almost as soon as it happens. They can also use that information to predict what is likely to happen next.\n\nBesides tracking seismic activity, scientists also monitor gases, temperature and water at a volcano site. A change in the amount of carbon dioxide and others given off by the volcano can be measured to comprehensive analysis of these factors help scientists improve eruption predictions and enhance public safety.",
-                        question: "Which of the following is NOT mentioned as a method scientists use to predict natural hazards?",
-                        options: [
-                            "A. Observing temperature changes in rocks",
-                            "B. Measuring earthquake activity",
-                            "C. Monitoring gases released by a volcano",
-                            "D. Studying animal behavior before an eruption"
-                        ],
-                        correct: 3,
-                        explanation: "Bài đề cập: measuring earthquakes (B), monitoring temperature (A), monitoring gases (C). KHÔNG đề cập studying animal behavior (D).",
-                        trap: "NOT mentioned - đọc kỹ từng phương pháp trong bài.",
-                        type: "reading",
-                        skill: "NOT mentioned",
-                        source: "Đề Hà Nội 2025 - Câu 28"
-                    },
-                    {
-                        passage: "[Early Warning - SAME]",
-                        question: "The word 'evacuate' in paragraph 2 is OPPOSITE in meaning to:",
-                        options: ["A. relocate", "B. return", "C. rebuild", "D. remain"],
-                        correct: 3,
-                        explanation: "'Evacuate' = di tản, rời đi. Opposite = remain (ở lại).",
-                        trap: "'Relocate' có vẻ giống evacuate nhưng không phải trái nghĩa.",
-                        type: "reading",
-                        skill: "Antonym",
-                        source: "Đề Hà Nội 2025 - Câu 29"
-                    },
-                    {
-                        passage: "[Early Warning - SAME]",
-                        question: "The word 'They' in paragraph 3 refers to:",
-                        options: ["A. radio transmissions", "B. scientists", "C. monitoring systems", "D. emergency workers"],
-                        correct: 1,
-                        explanation: "'They can tell what is happening' → They = scientists (chủ ngữ câu trước).",
-                        trap: "Reference question - chú ý subject của câu.",
-                        type: "reading",
-                        skill: "Reference",
-                        source: "Đề Hà Nội 2025 - Câu 30"
-                    },
-                    {
-                        passage: "[Early Warning - SAME]",
-                        question: "Which best paraphrases: 'Scientists can tell what is happening with a volcano almost as soon as it happens'?",
-                        options: [
-                            "A. Scientists can predict exactly when and where a volcano will erupt",
-                            "B. Scientists can foretell volcanic activity by staying near the volcano",
-                            "C. Scientists are able to predict volcanic activity long before it occurs",
-                            "D. Scientists can quickly detect and analyze volcanic activity in real time"
-                        ],
-                        correct: 3,
-                        explanation: "Paraphrase: 'tell what is happening' = 'detect and analyze', 'almost as soon as it happens' = 'in real time'.",
-                        trap: "A, C sai vì nói predict TRƯỚC, nhưng câu gốc nói 'as soon as it happens' = đồng thời.",
-                        type: "reading",
-                        skill: "Paraphrasing",
-                        source: "Đề Hà Nội 2025 - Câu 31"
-                    },
-                    {
-                        passage: "[Early Warning - SAME]",
-                        question: "The word 'comprehensive' in paragraph 4 could best be replaced by:",
-                        options: ["A. detailed", "B. inaccurate", "C. simple", "D. limited"],
-                        correct: 0,
-                        explanation: "'Comprehensive' = toàn diện, đầy đủ = detailed (chi tiết).",
-                        trap: "Synonym question. B, C, D đều trái nghĩa.",
-                        type: "reading",
-                        skill: "Synonym",
-                        source: "Đề Hà Nội 2025 - Câu 32"
-                    },
-                    {
-                        passage: "[Early Warning - SAME]",
-                        question: "Which of the following is TRUE according to the passage?",
-                        options: [
-                            "A. Seismometers can stop earthquakes and volcanic eruptions from happening",
-                            "B. Evacuation is unnecessary since volcanic activity rarely threatens lives",
-                            "C. If a volcanic eruption is predicted, governments can prepare emergency supplies to reduce the disaster's impact",
-                            "D. Scientists are unable to predict natural hazards, so people always face disasters without warning"
-                        ],
-                        correct: 2,
-                        explanation: "Đoạn 2: 'If a volcanic eruption is predicted, people can evacuate... Governments can prepare emergency supplies' → C đúng.",
-                        trap: "A sai vì seismometers chỉ measure, không stop. B, D hoàn toàn sai.",
-                        type: "reading",
-                        skill: "TRUE statement",
-                        source: "Đề Hà Nội 2025 - Câu 33"
-                    },
-                    {
-                        passage: "[Early Warning - SAME]",
-                        question: "In which paragraph does the writer discuss monitoring various natural factors to predict a volcanic eruption?",
-                        options: ["A. Paragraph 1", "B. Paragraph 2", "C. Paragraph 4", "D. Paragraph 3"],
-                        correct: 2,
-                        explanation: "Đoạn 4: 'scientists also monitor gases, temperature and water' → monitoring VARIOUS factors.",
-                        trap: "Câu hỏi về nội dung paragraph - cần đọc hiểu từng đoạn.",
-                        type: "reading",
-                        skill: "Paragraph Content",
-                        source: "Đề Hà Nội 2025 - Câu 34"
-                    },
-                    {
-                        passage: "[Early Warning - SAME]",
-                        question: "In which paragraph does the writer mention a conditional relationship?",
-                        options: ["A. Paragraph 1", "B. Paragraph 2", "C. Paragraph 4", "D. Paragraph 3"],
-                        correct: 1,
-                        explanation: "Đoạn 2: 'IF a volcanic eruption is predicted, people CAN evacuate' → câu điều kiện.",
-                        trap: "Conditional relationship = IF...THEN... Phải tìm câu có cấu trúc điều kiện.",
-                        type: "reading",
-                        skill: "Grammar Recognition",
-                        source: "Đề Hà Nội 2025 - Câu 35"
-                    }
-                ];
-
-                // Yên Bái 2025 Reading questions (18 total: 10 Green Energy + 8 Fast Fashion)
-                this.yenBaiReadingQuestions = [
-                    // Green Energy: Solar & Wind Power (10 questions - Câu 7-16)
-                    {
-                        passage: "As we continue to face the impacts of climate change, having a green environment has become increasingly important. To achieve this, the world is shifting towards green energy, particularly solar power and wind power.\n\n[I] Solar power is all about harnessing the energy of the sun by using solar panels to convert sunlight into usable electricity. [II] Moreover, solar panels are perfect for installation on a small scale, such as in private homes, since they require very little maintenance and have a long lifespan. [III] However, the ability to generate solar power depends on the time of day and weather conditions. [IV] This means that solar panels are often less useful if they are installed in places where sunny weather is not typical.\n\nWind power involves converting the energy of the wind into electricity using large turbines. Wind power doesn't produce any greenhouse gases, but it is not ideal for private use since turbines require consistent care. However, wind farms can be installed on a large scale and are able to produce electricity continuously regardless of the time of day. This means that if there were more investments in wind power, it could be a viable way to provide energy for major cities.\n\nWind and solar power contribute significantly to a green environment by reducing our reliance on fossil fuels, helping us cut down on pollution and slow climate change. Additionally, using renewable energy sources helps promote sustainable development by creating new career opportunities.\n\nFor now, the biggest challenge is the costs associated with installation and infrastructure, but the benefits unquestionably outweigh the downsides. If we want to stop the climate crisis and create a sustainable future, green energy sources will undoubtedly be the key.",
-                        question: "Where in paragraph 2 does this sentence best fit? 'This highly efficient form of energy produces zero emissions, so it can significantly reduce our carbon footprint.'",
-                        options: ["A. [IV]", "B. [II]", "C. [I]", "D. [III]"],
-                        correct: 1,
-                        explanation: "Câu nói về lợi ích của solar power (zero emissions, reduce carbon footprint) → đặt sau [I] (giới thiệu solar power) và trước [II] (Moreover - thêm lợi ích khác).",
-                        trap: "Đặt vào [II] để nối logic: giới thiệu solar → lợi ích 1 (zero emissions) → Moreover, lợi ích 2 (maintenance).",
-                        type: "reading",
-                        skill: "Sentence Insertion (MỚI 2025)",
-                        source: "Đề Yên Bái 2025 - Câu 7"
-                    },
-                    {
-                        passage: "[Green Energy - SAME]",
-                        question: "The phrase 'harnessing the energy' in paragraph 2 could best be replaced by:",
+                        passage: "As we continue to face the impacts of climate change, having a green environment has become increasingly important. To achieve this, the world is shifting towards green energy, particularly solar power and wind power.\n\nSolar power is all about harnessing the energy of the sun by using solar panels to convert sunlight into usable electricity. Moreover, solar panels are perfect for installation on a small scale, such as in private homes. However, the ability to generate solar power depends on the time of day and weather conditions.\n\nWind power involves converting the energy of the wind into electricity using large turbines. Wind power doesn't produce any greenhouse gases, but it is not ideal for private use since turbines require consistent care. However, wind farms can be installed on a large scale.\n\nFor now, the biggest challenge is the costs associated with installation and infrastructure, but the benefits unquestionably outweigh the downsides.",
+                        question: "The phrase 'harnessing the energy' could best be replaced by:",
                         options: ["A. saving the energy", "B. containing the energy", "C. exploiting the power", "D. storing the power"],
                         correct: 2,
-                        explanation: "'Harnessing' = khai thác, tận dụng = exploiting. Ngữ cảnh: khai thác năng lượng mặt trời.",
-                        trap: "Saving = tiết kiệm, storing = lưu trữ - không phải nghĩa của harness.",
+                        explanation: "'Harnessing' = khai thác = exploiting.",
                         type: "reading",
-                        skill: "Vocabulary",
-                        source: "Đề Yên Bái 2025 - Câu 8"
-                    },
-                    {
-                        passage: "[Green Energy - SAME]",
-                        question: "The word 'they' in paragraph 2 refers to:",
-                        options: ["A. energy sources", "B. solar panels", "C. weather conditions", "D. private homes"],
-                        correct: 1,
-                        explanation: "'They are installed' → they = solar panels (tấm pin mặt trời) ở câu trước.",
-                        trap: "Reference question - đọc câu trước để xác định.",
-                        type: "reading",
-                        skill: "Reference",
-                        source: "Đề Yên Bái 2025 - Câu 9"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         passage: "[Green Energy - SAME]",
@@ -1773,168 +1206,78 @@
                             "D. Low maintenance requirements"
                         ],
                         correct: 0,
-                        explanation: "A SAI vì đoạn 2 nói: 'ability to generate solar power DEPENDS on time of day and weather' → không phải at all times.",
-                        trap: "NOT benefit - B, C, D đều được đề cập là lợi ích. Chỉ A không phải.",
+                        explanation: "A SAI vì depends on time/weather.",
                         type: "reading",
-                        skill: "NOT mentioned",
-                        source: "Đề Yên Bái 2025 - Câu 10"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         passage: "[Green Energy - SAME]",
-                        question: "Which of the following best summarizes paragraph 3?",
-                        options: [
-                            "A. Wind power is eco-friendly but unsuitable for private use due to turbine maintenance needs",
-                            "B. Wind power produces greenhouse gases and cannot supply cities on a large scale",
-                            "C. Wind power requires private turbines to supply electricity continuously",
-                            "D. Large wind farms could sustainably power entire cities with investment in wind technology"
-                        ],
-                        correct: 3,
-                        explanation: "Đoạn 3 tóm tắt: wind farms (large scale) + produce continuously + with more investments → could power cities.",
-                        trap: "Paragraph summary phải nắm ý chính: potential của wind power với investment.",
-                        type: "reading",
-                        skill: "Summary",
-                        source: "Đề Yên Bái 2025 - Câu 11"
-                    },
-                    {
-                        passage: "[Green Energy - SAME]",
-                        question: "The word 'continuously' in paragraph 3 is CLOSEST in meaning to:",
+                        question: "The word 'continuously' is CLOSEST in meaning to:",
                         options: ["A. regularly", "B. endlessly", "C. periodically", "D. briefly"],
                         correct: 1,
-                        explanation: "'Continuously' = liên tục, không ngừng = endlessly (không ngừng nghỉ).",
-                        trap: "Regularly = đều đặn nhưng có thể có khoảng nghỉ. Periodically = theo chu kỳ.",
+                        explanation: "'Continuously' = liên tục = endlessly.",
                         type: "reading",
-                        skill: "Synonym",
-                        source: "Đề Yên Bái 2025 - Câu 12"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         passage: "[Green Energy - SAME]",
-                        question: "The word 'reducing' in paragraph 4 is OPPOSITE in meaning to:",
+                        question: "The word 'reducing' is OPPOSITE in meaning to:",
                         options: ["A. minimizing", "B. limiting", "C. increasing", "D. decreasing"],
                         correct: 2,
-                        explanation: "'Reducing' = giảm. Opposite = increasing (tăng).",
-                        trap: "Minimizing, limiting, decreasing đều là synonym của reducing.",
+                        explanation: "'Reducing' = giảm. Opposite = increasing.",
                         type: "reading",
-                        skill: "Antonym",
-                        source: "Đề Yên Bái 2025 - Câu 13"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         passage: "[Green Energy - SAME]",
-                        question: "Which of the following is TRUE according to the passage?",
+                        question: "Which best paraphrases: 'the benefits unquestionably outweigh the downsides'?",
                         options: [
-                            "A. Solar power can be generated at any time of day or night",
-                            "B. Solar energy cannot be used in homes because of high maintenance costs",
-                            "C. Solar and wind energy reduce our reliance on fossil fuels",
-                            "D. Wind power is suitable for private homes due to its low maintenance needs"
-                        ],
-                        correct: 2,
-                        explanation: "C ĐÚNG: Đoạn 4 nói 'Wind and solar power... reducing our reliance on fossil fuels'.",
-                        trap: "A sai (depends on time/weather). B sai (low maintenance). D sai (not ideal for private).",
-                        type: "reading",
-                        skill: "TRUE statement",
-                        source: "Đề Yên Bái 2025 - Câu 14"
-                    },
-                    {
-                        passage: "[Green Energy - SAME]",
-                        question: "Which best paraphrases: 'but the benefits unquestionably outweigh the downsides'?",
-                        options: [
-                            "A. Green energy offers very few benefits compared to its disadvantages",
-                            "B. The drawbacks are too significant to make green energy worthwhile",
+                            "A. Green energy offers very few benefits",
+                            "B. The drawbacks are too significant",
                             "C. Although green energy has some disadvantages, the positives far exceed them",
-                            "D. The disadvantages of green energy will always outbalance the benefits"
+                            "D. The disadvantages will always outbalance the benefits"
                         ],
                         correct: 2,
-                        explanation: "Paraphrase: 'benefits outweigh downsides' = 'positives far exceed disadvantages'. 'Although... has disadvantages' = 'but downsides'.",
-                        trap: "Dạng paraphrasing - phải hiểu sâu: outweigh = vượt trội hơn.",
+                        explanation: "Paraphrase: 'outweigh' = 'positives far exceed'.",
                         type: "reading",
-                        skill: "Paraphrasing (MỚI 2025)",
-                        source: "Đề Yên Bái 2025 - Câu 15"
+                        source: "Đề Yên Bái 2025"
                     },
+                    // Yên Bái - Fast Fashion (8 questions - keep 4 key)
                     {
-                        passage: "[Green Energy - SAME]",
-                        question: "Which of the following best summarizes the passage?",
-                        options: [
-                            "A. Solar and wind power reduce electricity costs and work best when installed together",
-                            "B. Solar and wind power have limited potential due to installation costs",
-                            "C. Wind power is more efficient than solar power due to continuous production",
-                            "D. Solar and wind power are green energy sources with distinct features and essential roles in fighting climate change"
-                        ],
-                        correct: 3,
-                        explanation: "Passage summary: Solar & wind có đặc điểm riêng (distinct features) + vai trò quan trọng (essential roles) chống climate change.",
-                        trap: "Passage summary phải bao gồm cả 2 loại năng lượng + vai trò chính.",
-                        type: "reading",
-                        skill: "Main Idea",
-                        source: "Đề Yên Bái 2025 - Câu 16"
-                    },
-
-                    // Fast Fashion (8 questions - Câu 17-24)
-                    {
-                        passage: "The phrase fast fashion describes the trendiest clothes available at the lowest prices. The prices are low because stores want customers to return soon to buy more newest fashions. Some stores display new clothes weekly or even twice a week!\n\nIn traditional fashion, new styles come out four times a year following the four seasons. In fast fashion, a new 'season' happens every month. Fast fashion makes a lot of money because there are more selling seasons within one year.\n\nOne important reason why fast fashion is less expensive is that the quality is worse. A trendy shirt doesn't need to last for years because it won't be stylish next season. Trendy clothes usually won't last because the materials used are cheap and not good quality. For example, you are more likely to find a sweater made of acrylic, a synthetic material, than wool.\n\nSome people think fast fashion is good because it means stylish clothes at low prices. Others disagree. They think that fast fashion creates a lot of waste. Since the early 2000s, when the trend started, the production of clothes has doubled. Now people are buying more clothes and wearing them for shorter times.\n\nFinally, clothing manufacturing can be bad for the environment. Producing materials, even natural ones such as cotton, requires huge amounts of water. Making synthetic materials can involve oil and other chemicals. And dyes used to color clothes are also a source of pollution.",
-                        question: "The word 'trendiest' in paragraph 1 is OPPOSITE in meaning to:",
+                        passage: "The phrase fast fashion describes the trendiest clothes available at the lowest prices. The prices are low because stores want customers to return soon to buy more newest fashions.\n\nIn traditional fashion, new styles come out four times a year. In fast fashion, a new 'season' happens every month.\n\nOne important reason why fast fashion is less expensive is that the quality is worse. A trendy shirt doesn't need to last for years because it won't be stylish next season.\n\nSome people think fast fashion is good because it means stylish clothes at low prices. Others disagree. They think that fast fashion creates a lot of waste.",
+                        question: "The word 'trendiest' is OPPOSITE in meaning to:",
                         options: ["A. stylish", "B. popular", "C. fashionable", "D. out-of-date"],
                         correct: 3,
-                        explanation: "'Trendiest' = hợp thời trang nhất. Opposite = out-of-date (lỗi thời).",
-                        trap: "Stylish, popular, fashionable đều là synonym của trendy.",
+                        explanation: "'Trendiest' = hợp thời. Opposite = out-of-date.",
                         type: "reading",
-                        skill: "Antonym",
-                        source: "Đề Yên Bái 2025 - Câu 17"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         passage: "[Fast Fashion - SAME]",
-                        question: "Which is NOT mentioned as a characteristic of fast fashion?",
+                        question: "Which is NOT mentioned as a characteristic?",
                         options: [
                             "A. Stores release new styles often",
                             "B. Clothes are sold at low prices",
                             "C. Clothing is made to last long",
-                            "D. The industry creates a lot of waste"
+                            "D. The industry creates waste"
                         ],
                         correct: 2,
-                        explanation: "C KHÔNG được đề cập. Ngược lại, bài nói 'doesn't need to last' và 'usually won't last'.",
-                        trap: "NOT mentioned - A, B, D đều có trong bài. Chỉ C là ngược lại với nội dung.",
+                        explanation: "C KHÔNG được đề cập. Ngược lại nói 'doesn't need to last'.",
                         type: "reading",
-                        skill: "NOT mentioned",
-                        source: "Đề Yên Bái 2025 - Câu 18"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         passage: "[Fast Fashion - SAME]",
-                        question: "The word 'synthetic' in paragraph 3 could best be replaced by:",
+                        question: "The word 'synthetic' could best be replaced by:",
                         options: ["A. cheap", "B. fake", "C. natural", "D. artificial"],
                         correct: 3,
-                        explanation: "'Synthetic' = tổng hợp, nhân tạo = artificial. Ví dụ: acrylic là synthetic material.",
-                        trap: "Fake = giả mạo (khác nghĩa). Natural là opposite. Cheap là đặc điểm, không phải synonym.",
+                        explanation: "'Synthetic' = tổng hợp = artificial.",
                         type: "reading",
-                        skill: "Vocabulary",
-                        source: "Đề Yên Bái 2025 - Câu 19"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         passage: "[Fast Fashion - SAME]",
-                        question: "Which best paraphrases: 'They think that fast fashion creates a lot of waste'?",
-                        options: [
-                            "A. Fast fashion critics believe it reduces the amount of clothing waste",
-                            "B. People argue that fast fashion has increased the amount of clothing waste",
-                            "C. Some people believe fast fashion helps reduce unnecessary waste",
-                            "D. Fast fashion supporters claim it doesn't lead to more waste production"
-                        ],
-                        correct: 1,
-                        explanation: "Paraphrase: 'creates a lot of waste' = 'has increased the amount of waste'. 'They think' = 'People argue'.",
-                        trap: "A, C, D nói ngược lại (reduce waste). Chỉ B đúng nghĩa (increase waste).",
-                        type: "reading",
-                        skill: "Paraphrasing",
-                        source: "Đề Yên Bái 2025 - Câu 20"
-                    },
-                    {
-                        passage: "[Fast Fashion - SAME]",
-                        question: "The word 'ones' in paragraph 5 refers to:",
-                        options: ["A. amounts", "B. clothes", "C. materials", "D. chemicals"],
-                        correct: 2,
-                        explanation: "'Even natural ones such as cotton' → ones = materials (nguyên liệu) ở câu trước.",
-                        trap: "Reference question - 'ones' thay thế cho noun trước đó.",
-                        type: "reading",
-                        skill: "Reference",
-                        source: "Đề Yên Bái 2025 - Câu 21"
-                    },
-                    {
-                        passage: "[Fast Fashion - SAME]",
-                        question: "Which of the following is TRUE according to the passage?",
+                        question: "Which is TRUE according to the passage?",
                         options: [
                             "A. Traditional fashion releases styles every month",
                             "B. Acrylic sweaters are common in fast fashion stores",
@@ -1942,61 +1285,31 @@
                             "D. Fast fashion clothes are designed to last for years"
                         ],
                         correct: 1,
-                        explanation: "B ĐÚNG: Đoạn 3 nói 'you are more likely to find a sweater made of acrylic' in fast fashion stores.",
-                        trap: "A sai (4 times/year). C sai (requires huge amounts). D sai (doesn't need to last).",
+                        explanation: "B ĐÚNG: 'more likely to find a sweater made of acrylic'.",
                         type: "reading",
-                        skill: "TRUE statement",
-                        source: "Đề Yên Bái 2025 - Câu 22"
-                    },
-                    {
-                        passage: "[Fast Fashion - SAME]",
-                        question: "In which paragraph does the writer mention the environmental impact of clothing?",
-                        options: ["A. Paragraph 4", "B. Paragraph 1", "C. Paragraph 5", "D. Paragraph 2"],
-                        correct: 2,
-                        explanation: "Paragraph 5: 'clothing manufacturing can be bad for the environment' + water, chemicals, pollution.",
-                        trap: "Paragraph content question - đọc kỹ từng đoạn.",
-                        type: "reading",
-                        skill: "Paragraph Content",
-                        source: "Đề Yên Bái 2025 - Câu 23"
-                    },
-                    {
-                        passage: "[Fast Fashion - SAME]",
-                        question: "In which paragraph does the writer mention the increase in clothing production since the start of fast fashion?",
-                        options: ["A. Paragraph 4", "B. Paragraph 5", "C. Paragraph 3", "D. Paragraph 1"],
-                        correct: 0,
-                        explanation: "Paragraph 4: 'Since the early 2000s... the production of clothes has doubled'.",
-                        trap: "Paragraph content question - tìm thông tin về production increase.",
-                        type: "reading",
-                        skill: "Paragraph Content",
-                        source: "Đề Yên Bái 2025 - Câu 24"
+                        source: "Đề Yên Bái 2025"
                     }
                 ];
 
-                // Combine all reading questions
-                this.readingQuestions = [
-                    ...this.readingQuestions,
-                    ...this.yenBaiReadingQuestions
-                ];
-
-                // Sentence Insertion questions (4 from Hanoi - Câu 37-40)
+                // Sentence Insertion questions (9 total: 4 Hanoi + 5 Yên Bái)
                 this.sentenceInsertionQuestions = [
+                    // Hanoi (4 questions)
                     {
-                        context: "Modern art can be controversial. Take Andy Warhol's Campbell's Soup Cans. (37)_____ in Los Angeles in 1962, some experts liked it, but many said it was not art.",
-                        question: "(37) _____ in Los Angeles in 1962",
+                        context: "Modern art can be controversial. Take Andy Warhol's Campbell's Soup Cans. (37)_____ in Los Angeles in 1962.",
+                        question: "(37) _____ in Los Angeles",
                         options: [
-                            "A. At the moment it is exhibited at the Ferus Gallery",
-                            "B. Having been displayed at the time of the Ferus Gallery",
+                            "A. At the moment it is exhibited",
+                            "B. Having been displayed at the time",
                             "C. When it was displayed at the Ferus Gallery",
-                            "D. Displayed for the first time at the Ferus Gallery"
+                            "D. Displayed for the first time"
                         ],
                         correct: 2,
-                        explanation: "Mệnh đề thời gian: When it was displayed... Câu chính theo sau.",
-                        trap: "D thiếu liên từ 'when'. A sai thì (at the moment = hiện tại).",
+                        explanation: "Mệnh đề thời gian: When it was displayed...",
                         type: "sentence-insertion",
-                        source: "Đề Hà Nội 2025 - Câu 37"
+                        source: "Đề Hà Nội 2025"
                     },
                     {
-                        context: "Carl Andre created Equivalent VIII, an installation (38)_____. The Tate bought it in 1976.",
+                        context: "Carl Andre created Equivalent VIII, an installation (38)_____.",
                         question: "(38) an installation _____",
                         options: [
                             "A. that is just an ordinary pile of bricks",
@@ -2005,105 +1318,94 @@
                             "D. consists only of basic bricks stacked together"
                         ],
                         correct: 0,
-                        explanation: "Mệnh đề quan hệ: an installation THAT IS... Định nghĩa installation này là gì.",
-                        trap: "B sai ngữ pháp (of which made). C, D thiếu relative pronoun/verb.",
+                        explanation: "Mệnh đề quan hệ: an installation THAT IS...",
                         type: "sentence-insertion",
-                        source: "Đề Hà Nội 2025 - Câu 38"
+                        source: "Đề Hà Nội 2025"
                     },
                     {
-                        context: "The Tate, (39)_____ England, bought the unique work in 1976.",
+                        context: "The Tate, (39)_____ England, bought the work.",
                         question: "(39) The Tate, _____ England",
                         options: [
-                            "A. one of the most famous gallery in London",
-                            "B. which a famous gallery in London",
+                            "A. one of the most famous gallery",
+                            "B. which a famous gallery",
                             "C. a famous gallery in London",
-                            "D. where is a famous gallery in London"
+                            "D. where is a famous gallery"
                         ],
                         correct: 2,
-                        explanation: "Đồng vị ngữ (appositive): The Tate, a famous gallery in London, ... Bổ nghĩa cho The Tate.",
-                        trap: "A sai (gallery → galleries). B, D sai ngữ pháp.",
+                        explanation: "Đồng vị ngữ (appositive): The Tate, a famous gallery,",
                         type: "sentence-insertion",
-                        source: "Đề Hà Nội 2025 - Câu 39"
+                        source: "Đề Hà Nội 2025"
                     },
                     {
-                        context: "Will people think they are works of genius, (40)_____? Only time will tell.",
+                        context: "Will people think they are works of genius, (40)_____?",
                         question: "(40) or _____?",
                         options: [
                             "A. or will their opinion change in a less favorable way",
-                            "B. or will people be unable to impress with artistic expression",
-                            "C. or maybe they won't think of it so highly with admiration",
-                            "D. or future generations may not appreciate critics in that way"
+                            "B. or will people be unable to impress",
+                            "C. or maybe they won't think of it so highly",
+                            "D. or future generations may not appreciate"
                         ],
                         correct: 0,
-                        explanation: "Câu hỏi đối lập song song: works of genius OR opinion change in less favorable way.",
-                        trap: "B, C, D không cấu trúc song song. Cần 'will' để tương ứng 'Will people think'.",
+                        explanation: "Câu hỏi song song: genius OR opinion change.",
                         type: "sentence-insertion",
-                        source: "Đề Hà Nội 2025 - Câu 40"
-                    }
-                ];
-
-                // Yên Bái 2025 - Crime Prediction Technology (5 questions - Câu 25-29)
-                this.yenBaiCrimeTechQuestions = [
+                        source: "Đề Hà Nội 2025"
+                    },
+                    // Yên Bái Crime Tech (5 questions)
                     {
-                        context: "Police forces (25)_____ and therefore to predict crime before it happens.",
+                        context: "Police forces (25)_____ to predict crime before it happens.",
                         question: "(25) police forces _____",
                         options: [
                             "A. are using it to improve crime prevention",
                             "B. that use it as a method to prevent crime",
-                            "C. on whom it depends for decreased crime rate",
-                            "D. having utilised it to stop criminal activities"
+                            "C. on whom it depends for decreased crime",
+                            "D. having utilised it to stop activities"
                         ],
                         correct: 0,
-                        explanation: "Câu cần động từ chính: 'are using it to improve crime prevention' = đang sử dụng nó để cải thiện phòng ngừa tội phạm.",
-                        trap: "B, C, D không phải động từ chính hoặc không hợp ngữ pháp.",
+                        explanation: "Câu cần động từ chính: 'are using it'.",
                         type: "sentence-insertion",
-                        grammar: "Sentence Completion",
-                        source: "Đề Yên Bái 2025 - Câu 25"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         context: "Crime prevention software called Predpol helps predict where crimes are likely to occur. (26)_____",
                         question: "(26) How does Predpol work?",
                         options: [
-                            "A. The analysis of the software helps locate the committed crimes as well as time and data",
-                            "B. Analysing years of data on the location, the software can determine time and nature of crimes",
-                            "C. Location, time and crimes committed are included in the software with years of data",
+                            "A. The analysis of the software helps locate",
+                            "B. Analysing years of data on the location",
+                            "C. Location, time and crimes are included",
                             "D. The software analyses years of data on the location, time and nature of crimes committed"
                         ],
                         correct: 3,
-                        explanation: "D đúng cấu trúc và nghĩa: Software (chủ ngữ) + analyses (động từ) + data on location, time, nature.",
-                        trap: "A, B, C sai về cấu trúc hoặc nghĩa không rõ ràng.",
+                        explanation: "D đúng cấu trúc: Software (S) + analyses (V) + data.",
                         type: "sentence-insertion",
-                        source: "Đề Yên Bái 2025 - Câu 26"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         context: "Crime figures for LA were reduced by 12% in 2011. (27)_____",
                         question: "(27) What happened next?",
                         options: [
-                            "A. The following year, Manchester had 26% of burglaries, with similar methods applied in the UK",
-                            "B. In the previous year, Manchester, UK, adopted the same methods to predict 26% of burglars",
-                            "C. The year after, 26% of similar methods were employed for burglaries in Manchester, UK",
+                            "A. The following year, Manchester had 26%",
+                            "B. In the previous year, Manchester adopted",
+                            "C. The year after, 26% of similar methods",
                             "D. In the same year, burglaries were cut by 26% in Manchester, UK, using the same methods"
                         ],
                         correct: 3,
-                        explanation: "D: 'In the same year' (2011) + 'cut by 26%' (giảm 26%) + 'same methods' → logic và rõ ràng.",
-                        trap: "A, B, C sai về thời gian hoặc nghĩa không rõ.",
+                        explanation: "D: 'In the same year' (2011) + 'cut by 26%' logic rõ ràng.",
                         type: "sentence-insertion",
-                        source: "Đề Yên Bái 2025 - Câu 27"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         context: "By combining information such as crime places with fastest escape routes, (28)_____",
                         question: "(28) _____ result",
                         options: [
                             "A. computers will direct patrols to where they can arrest criminals",
-                            "B. patrols will connect computers to where criminals can be found",
-                            "C. criminals will be arrested using computers controlled by patrols",
-                            "D. directions from computers will be of great help to arresting patrols"
+                            "B. patrols will connect computers",
+                            "C. criminals will be arrested using computers",
+                            "D. directions from computers will help"
                         ],
                         correct: 0,
-                        explanation: "A: Computers (chủ ngữ) + will direct (động từ) + patrols to where... → cấu trúc rõ ràng và logic.",
-                        trap: "B, C, D sai về cấu trúc hoặc chủ ngữ không phù hợp.",
+                        explanation: "A: Computers (S) + will direct (V) + patrols.",
                         type: "sentence-insertion",
-                        source: "Đề Yên Bái 2025 - Câu 28"
+                        source: "Đề Yên Bái 2025"
                     },
                     {
                         context: "If the police just focus on the neighbourhoods (29)_____, they will neglect others.",
@@ -2115,118 +1417,21 @@
                             "D. have crime everywhere"
                         ],
                         correct: 2,
-                        explanation: "C: 'neighbourhoods WHERE most crime occurs' = khu vực nơi mà hầu hết tội phạm xảy ra. Mệnh đề quan hệ đúng.",
-                        trap: "A, B, D sai ngữ pháp hoặc nghĩa không phù hợp.",
+                        explanation: "C: 'neighbourhoods WHERE most crime occurs' đúng.",
                         type: "sentence-insertion",
-                        source: "Đề Yên Bái 2025 - Câu 29"
+                        source: "Đề Yên Bái 2025"
                     }
-                ];
-
-                // Yên Bái 2025 - Ordering questions (5 questions - Câu 36-40)
-                this.yenBaiOrderingQuestions = [
-                    {
-                        question: "Choose the best arrangement (Đề Yên Bái 2025 - Câu 36):",
-                        sentences: [
-                            "1. Lisa: Hey, Sam. How's it going?",
-                            "2. Lisa: I'm fine. Hey, what's that?",
-                            "3. Sam: Hi, Lisa. I'm great. How are you doing?"
-                        ],
-                        options: ["A. 1-3-2", "B. 2-3-1", "C. 3-2-1", "D. 3-1-2"],
-                        correct: 0,
-                        explanation: "1 (Lisa chào trước) → 3 (Sam đáp và hỏi lại) → 2 (Lisa trả lời và hỏi tiếp).",
-                        trap: "Logic hội thoại: người chào trước → đáp lại + hỏi → trả lời + hỏi mới.",
-                        type: "ordering",
-                        source: "Đề Yên Bái 2025 - Câu 36"
-                    },
-                    {
-                        question: "Choose the best arrangement (Đề Yên Bái 2025 - Câu 37):",
-                        sentences: [
-                            "1. Mother: Oh, I'm afraid not. You must come back before 10 p.m.",
-                            "2. Mother: Certainly. Whose birthday is it?",
-                            "3. Lan: Mum, can I go to my friend's birthday party this Saturday?",
-                            "4. Lan: OK, Mum. I'll be home before 10 p.m. then",
-                            "5. Lan: It's Mai's birthday. Is it OK if I stay at her house the night after?"
-                        ],
-                        options: ["A. 4-5-1-2-3", "B. 4-2-1-5-3", "C. 3-5-4-2-1", "D. 3-2-5-1-4"],
-                        correct: 3,
-                        explanation: "3 (xin phép đi) → 2 (đồng ý, hỏi ai) → 5 (trả lời + xin thêm) → 1 (từ chối) → 4 (chấp nhận).",
-                        trap: "Hội thoại xin phép: hỏi → đồng ý + hỏi lại → trả lời + xin thêm → từ chối → chấp nhận.",
-                        type: "ordering",
-                        source: "Đề Yên Bái 2025 - Câu 37"
-                    },
-                    {
-                        question: "Choose the best arrangement (Đề Yên Bái 2025 - Câu 38):",
-                        context: "Dear Sir or Madam, ... Yours faithfully, Nguyen Ha Vi",
-                        sentences: [
-                            "1. I am interested in your community development projects.",
-                            "2. I am writing to apply for a volunteer position.",
-                            "3. I am available for an interview on any weekdays after 4.30 p.m.",
-                            "4. I have already filled in the online application form.",
-                            "5. I heard about this opportunity in a public announcement last Monday."
-                        ],
-                        options: ["A. 1-3-4-2-5", "B. 1-4-2-3-5", "C. 4-2-1-3-5", "D. 2-5-1-4-3"],
-                        correct: 3,
-                        explanation: "2 (mục đích viết thư) → 5 (nghe tin từ đâu) → 1 (lý do quan tâm) → 4 (đã làm gì) → 3 (sẵn sàng phỏng vấn).",
-                        trap: "Thư xin việc: mục đích → nguồn thông tin → lý do → hành động đã làm → sẵn sàng.",
-                        type: "ordering",
-                        source: "Đề Yên Bái 2025 - Câu 38"
-                    },
-                    {
-                        question: "Choose the best arrangement (Đề Yên Bái 2025 - Câu 39):",
-                        sentences: [
-                            "1. All in all, I believe that working mothers help with finances and are good examples.",
-                            "2. Firstly, mothers who go to work can provide an extra income for their families.",
-                            "3. That means a working mother can contribute to the household finances.",
-                            "4. I feel that mothers should be able to work if they want to.",
-                            "5. Secondly, working mothers are good role models."
-                        ],
-                        options: ["A. 4-2-3-5-1", "B. 3-1-4-2-5", "C. 2-3-4-1-5", "D. 1-2-3-4-5"],
-                        correct: 0,
-                        explanation: "4 (quan điểm chung) → 2 (Firstly, lý do 1) → 3 (That means, giải thích) → 5 (Secondly, lý do 2) → 1 (All in all, kết luận).",
-                        trap: "Bài luận: opinion → Firstly → giải thích → Secondly → All in all conclusion.",
-                        type: "ordering",
-                        source: "Đề Yên Bái 2025 - Câu 39"
-                    },
-                    {
-                        question: "Choose the best arrangement (Đề Yên Bái 2025 - Câu 40):",
-                        sentences: [
-                            "1. The good news is that biomass fuel is carbon neutral.",
-                            "2. The biomass is dried and then burnt as biomass fuel.",
-                            "3. Biomass fuel is easy to store for use when we need it.",
-                            "4. Biomass is material that comes from trees, recycled paper, animal waste.",
-                            "5. However, burning biomass produces carbon dioxide, a greenhouse gas."
-                        ],
-                        options: ["A. 4-2-3-5-1", "B. 4-5-2-3-1", "C. 4-5-1-2-3", "D. 4-3-1-2-5"],
-                        correct: 0,
-                        explanation: "4 (định nghĩa biomass) → 2 (xử lý và đốt) → 3 (lợi ích: dễ lưu) → 5 (However, nhược điểm) → 1 (good news, cân bằng carbon).",
-                        trap: "Logic: define → process → benefit → However drawback → but good news balance.",
-                        type: "ordering",
-                        source: "Đề Yên Bái 2025 - Câu 40"
-                    }
-                ];
-
-                // Combine all sentence insertion and ordering questions
-                this.sentenceInsertionQuestions = [
-                    ...this.sentenceInsertionQuestions,
-                    ...this.yenBaiCrimeTechQuestions
-                ];
-
-                this.orderingQuestions = [
-                    ...this.orderingQuestions,
-                    ...this.yenBaiOrderingQuestions
                 ];
             },
 
             // Setup Event Listeners
             setupEventListeners() {
-                // Navigation buttons
                 document.querySelectorAll('.nav-btn').forEach(btn => {
                     btn.addEventListener('click', () => {
                         this.showSection(btn.dataset.section);
                     });
                 });
 
-                // Tab buttons
                 document.querySelectorAll('.tab-btn').forEach(btn => {
                     btn.addEventListener('click', () => {
                         const parent = btn.closest('.section, #mocktest');
@@ -2238,7 +1443,6 @@
                         btn.classList.add('active');
                         parent.querySelector(`#${tab}`).classList.add('active');
 
-                        // Load quiz if practice tab
                         if (tab === 'quiz-ordering') this.loadQuiz('ordering', 'ordering-quiz');
                         if (tab === 'quiz-cloze') this.loadQuiz('cloze', 'cloze-quiz');
                         if (tab === 'quiz-reading') this.loadQuiz('reading', 'reading-quiz');
@@ -2249,6 +1453,11 @@
 
             // Show Section
             showSection(sectionId) {
+                if (this.mockTimer) {
+                    clearInterval(this.mockTimer);
+                    this.mockTimer = null;
+                }
+                
                 document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
                 document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
                 
@@ -2311,7 +1520,6 @@
                     <strong>✓ Đáp án đúng: ${q.options[q.correct]}</strong><br>
                     <strong>Giải thích:</strong> ${q.explanation}<br>
                     ${q.trap ? `<span style="color: #dc2626;"><strong>⚠️ Bẫy:</strong> ${q.trap}</span><br>` : ''}
-                    ${q.grammar ? `<span style="color: #059669;"><strong>Kiến thức:</strong> ${q.grammar}</span><br>` : ''}
                     ${q.source ? `<span style="color: #1e3a8a; font-size: 12px; font-weight: 600;">📝 ${q.source}</span>` : ''}
                 </div>`;
                 
@@ -2390,9 +1598,52 @@
                 });
             },
 
-            // Mock Test Functions
+            // Build Mock Questions
+            buildMockQuestions(type) {
+                if (type === 'hanoi') {
+                    const hanoiOrdering = this.orderingQuestions.slice(0, 5);
+                    const hanoiCloze = this.clozeQuestions.slice(6, 16);
+                    const hanoiReading = this.readingQuestions.filter(q => q.source && q.source.includes('Hà Nội'));
+                    const hanoiInsertion = this.sentenceInsertionQuestions.slice(0, 4);
+                    
+                    this.currentMockQuestions = [
+                        ...hanoiOrdering,
+                        ...hanoiCloze,
+                        ...hanoiReading,
+                        ...hanoiInsertion
+                    ].slice(0, 40);
+                } else if (type === 'yenbai') {
+                    const yenbaiOrdering = this.orderingQuestions.slice(5, 10);
+                    const yenbaiCloze = this.clozeQuestions.filter(q => q.source && q.source.includes('Yên Bái'));
+                    const yenbaiReading = this.readingQuestions.filter(q => q.source && q.source.includes('Yên Bái'));
+                    const yenbaiInsertion = this.sentenceInsertionQuestions.slice(4, 9);
+                    
+                    this.currentMockQuestions = [
+                        ...yenbaiOrdering,
+                        ...yenbaiCloze,
+                        ...yenbaiReading,
+                        ...yenbaiInsertion
+                    ].slice(0, 40);
+                } else {
+                    const mixOrdering = this.orderingQuestions.slice(0, 5);
+                    const mixCloze = this.clozeQuestions.slice(0, 13);
+                    const mixReading = this.readingQuestions.slice(0, 18);
+                    const mixInsertion = this.sentenceInsertionQuestions.slice(0, 4);
+                    
+                    this.currentMockQuestions = [
+                        ...mixOrdering,
+                        ...mixCloze,
+                        ...mixReading,
+                        ...mixInsertion
+                    ];
+                }
+            },
+
+            // Start Mock Test
             startMockTest(type) {
                 this.currentMockType = type;
+                this.buildMockQuestions(type);
+                
                 document.getElementById(`mocktest-${type}-start`).style.display = 'none';
                 document.getElementById(`mocktest-${type}-ongoing`).style.display = 'block';
                 
@@ -2404,6 +1655,7 @@
                 this.loadMockQuestion(type);
             },
 
+            // Start Timer
             startTimer(type) {
                 const timerEl = document.getElementById(`timer-${type}`);
                 
@@ -2425,45 +1677,10 @@
                 }, 1000);
             },
 
+            // Load Mock Question
             loadMockQuestion(type) {
-                // Build question sets based on test type
-                let questions = [];
-                
-                if (type === 'hanoi') {
-                    // Hanoi test: 5 ordering + 13 cloze (Hanoi only) + 18 reading (AI + Early Warning) + 4 insertion
-                    const hanoiCloze = this.clozeQuestions.slice(6, 19);
-                    const hanoiReading = [
-                        ...this.readingQuestions.filter(q => q.source && q.source.includes('AI')),
-                        ...this.readingQuestions.filter(q => q.source && q.source.includes('Early Warning'))
-                    ].slice(0, 18);
-                    
-                    questions = [
-                        ...this.orderingQuestions.slice(0, 5), // First 5 ordering (Hanoi)
-                        ...hanoiCloze,
-                        ...hanoiReading,
-                        ...this.sentenceInsertionQuestions.slice(0, 4) // First 4 insertion (Hanoi)
-                    ];
-                } else if (type === 'yenbai') {
-                    // Yên Bái test: 12 cloze (Yên Bái) + 18 reading (Yên Bái) + 5 crime tech + 5 ordering (Yên Bái)
-                    questions = [
-                        ...this.yenBaiClozeQuestions, // 12
-                        ...this.yenBaiReadingQuestions, // 18
-                        ...this.yenBaiCrimeTechQuestions, // 5
-                        ...this.yenBaiOrderingQuestions // 5
-                    ];
-                } else {
-                    // Mix test
-                    questions = [
-                        ...this.clozeQuestions.slice(0, 6), // Official 2025
-                        ...this.readingQuestions.filter(q => q.source && q.source.includes('CHÍNH THỨC')).slice(0, 8),
-                        ...this.orderingQuestions.slice(0, 5),
-                        ...this.clozeQuestions.slice(6, 19).slice(0, 10),
-                        ...this.readingQuestions.filter(q => q.source && q.source.includes('Hà Nội')).slice(0, 11)
-                    ];
-                }
-                
                 const container = document.getElementById(`mocktest-questions-${type}`);
-                const q = questions[this.currentMockQuestion];
+                const q = this.currentMockQuestions[this.currentMockQuestion];
                 
                 if (!q) {
                     console.error('Question not found at index:', this.currentMockQuestion);
@@ -2472,55 +1689,6 @@
                 
                 document.getElementById(`current-q-${type}`).textContent = this.currentMockQuestion + 1;
                 document.getElementById(`progress-${type}`).style.width = ((this.currentMockQuestion + 1) / 40 * 100) + '%';
-                
-                let htmlContent = '<div class="question-card">';
-                
-                if (q.passage) {
-                    htmlContent += `<div class="passage-box">${q.passage.replace(/\n/g, '<br><br>')}</div>`;
-                } else if (q.context) {
-                    htmlContent += `<div style="background: #f0f9ff; padding: 15px; border-radius: 6px; margin-bottom: 15px;">${q.context.replace(/\n/g, '<br>')}</div>`;
-                }
-                
-                htmlContent += `<div class="question-text"><strong>Câu ${this.currentMockQuestion + 1}/40:</strong> ${q.question}</div>`;
-                
-                if (q.sentences) {
-                    htmlContent += '<div style="background: #fef3c7; padding: 15px; margin-bottom: 15px; border-radius: 6px;">';
-                    q.sentences.forEach(s => {
-                        htmlContent += `<div style="margin-bottom: 8px;">${s}</div>`;
-                    });
-                    htmlContent += '</div>';
-                }
-                
-                htmlContent += '<div class="options">';
-                q.options.forEach((opt, i) => {
-                    const selected = this.mockTestAnswers[this.currentMockQuestion] === i ? 'selected' : '';
-                    htmlContent += `<div class="option ${selected}" data-idx="${i}"><span class="option-label">${opt.charAt(0)}</span><span>${opt.substring(3)}</span></div>`;
-                });
-                htmlContent += '</div>';
-                
-                htmlContent += `<div style="margin-top: 20px; display: flex; gap: 10px;">`;
-                if (this.currentMockQuestion > 0) {
-                    htmlContent += `<button class="btn btn-secondary" onclick="app.prevMockQuestion('${type}')">← Câu trước</button>`;
-                }
-                if (this.currentMockQuestion < 39) {
-                    htmlContent += `<button class="btn" onclick="app.nextMockQuestion('${type}')">Câu sau →</button>`;
-                } else {
-                    htmlContent += `<button class="btn" onclick="app.finishMockTest('${type}')">Nộp bài</button>`;
-                }
-                htmlContent += '</div></div>';
-                
-                container.innerHTML = htmlContent;
-
-                container.querySelectorAll('.option').forEach(opt => {
-                    opt.addEventListener('click', () => {
-                        const idx = parseInt(opt.dataset.idx);
-                        this.mockTestAnswers[this.currentMockQuestion] = idx;
-                        
-                        container.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
-                        opt.classList.add('selected');
-                    });
-                });
-            },
                 
                 let html = '<div class="question-card">';
                 
@@ -2563,6 +1731,7 @@
                 });
             },
 
+            // Next Question
             nextMockQuestion(type) {
                 if (this.currentMockQuestion < 39) {
                     this.currentMockQuestion++;
@@ -2570,6 +1739,7 @@
                 }
             },
 
+            // Previous Question
             prevMockQuestion(type) {
                 if (this.currentMockQuestion > 0) {
                     this.currentMockQuestion--;
@@ -2577,40 +1747,15 @@
                 }
             },
 
+            // Finish Mock Test
             finishMockTest(type) {
                 clearInterval(this.mockTimer);
                 
-                // Build same question set as loadMockQuestion
-                let questions = [];
+                const questions = this.currentMockQuestions;
                 
-                if (type === 'hanoi') {
-                    const hanoiCloze = this.clozeQuestions.slice(6, 19);
-                    const hanoiReading = [
-                        ...this.readingQuestions.filter(q => q.source && q.source.includes('AI')),
-                        ...this.readingQuestions.filter(q => q.source && q.source.includes('Early Warning'))
-                    ].slice(0, 18);
-                    
-                    questions = [
-                        ...this.orderingQuestions.slice(0, 5),
-                        ...hanoiCloze,
-                        ...hanoiReading,
-                        ...this.sentenceInsertionQuestions.slice(0, 4)
-                    ];
-                } else if (type === 'yenbai') {
-                    questions = [
-                        ...this.yenBaiClozeQuestions,
-                        ...this.yenBaiReadingQuestions,
-                        ...this.yenBaiCrimeTechQuestions,
-                        ...this.yenBaiOrderingQuestions
-                    ];
-                } else {
-                    questions = [
-                        ...this.clozeQuestions.slice(0, 6),
-                        ...this.readingQuestions.filter(q => q.source && q.source.includes('CHÍNH THỨC')).slice(0, 8),
-                        ...this.orderingQuestions.slice(0, 5),
-                        ...this.clozeQuestions.slice(6, 19).slice(0, 10),
-                        ...this.readingQuestions.filter(q => q.source && q.source.includes('Hà Nội')).slice(0, 11)
-                    ];
+                if (!questions || questions.length !== 40) {
+                    alert('Lỗi: Không đủ câu hỏi cho bài thi!');
+                    return;
                 }
                 
                 let correct = 0;
@@ -2673,12 +1818,21 @@
                 `;
             },
 
+            // Reset Mock Test
             resetMockTest(type) {
+                if (this.mockTimer) {
+                    clearInterval(this.mockTimer);
+                    this.mockTimer = null;
+                }
+                
                 document.getElementById(`mocktest-${type}-result`).style.display = 'none';
                 document.getElementById(`mocktest-${type}-start`).style.display = 'block';
+                
                 this.mockTestAnswers = [];
                 this.currentMockQuestion = 0;
                 this.mockTimeLeft = 3000;
+                this.currentMockQuestions = [];
+                this.currentMockType = null;
             }
         };
 
